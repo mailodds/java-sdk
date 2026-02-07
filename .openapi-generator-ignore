@@ -21,3 +21,12 @@
 #docs/*.md
 # Then explicitly reverse the ignore rule for a single file:
 #!docs/README.md
+
+# Preserve customized pom.xml (Java 17 source/target, not generator default Java 8)
+pom.xml
+
+# Preserve enterprise code (typed errors, retry, webhooks)
+src/main/java/com/mailodds/enterprise/**
+
+# Preserve CI workflow
+.github/workflows/maven.yml
