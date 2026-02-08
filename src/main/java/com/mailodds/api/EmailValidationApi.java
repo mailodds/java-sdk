@@ -28,6 +28,8 @@ import java.io.IOException;
 
 
 import com.mailodds.model.ErrorResponse;
+import com.mailodds.model.ValidateBatch200Response;
+import com.mailodds.model.ValidateBatchRequest;
 import com.mailodds.model.ValidateRequest;
 import com.mailodds.model.ValidationResponse;
 
@@ -74,6 +76,141 @@ public class EmailValidationApi {
         this.localCustomBaseUrl = customBaseUrl;
     }
 
+    /**
+     * Build call for validateBatch
+     * @param validateBatchRequest  (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Batch validation results </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call validateBatchCall(@javax.annotation.Nonnull ValidateBatchRequest validateBatchRequest, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = validateBatchRequest;
+
+        // create path and map variables
+        String localVarPath = "/v1/validate/batch";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "BearerAuth" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call validateBatchValidateBeforeCall(@javax.annotation.Nonnull ValidateBatchRequest validateBatchRequest, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'validateBatchRequest' is set
+        if (validateBatchRequest == null) {
+            throw new ApiException("Missing the required parameter 'validateBatchRequest' when calling validateBatch(Async)");
+        }
+
+        return validateBatchCall(validateBatchRequest, _callback);
+
+    }
+
+    /**
+     * Validate multiple emails (sync)
+     * Validate up to 100 email addresses synchronously. For larger lists, use the bulk jobs API.
+     * @param validateBatchRequest  (required)
+     * @return ValidateBatch200Response
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Batch validation results </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
+     </table>
+     */
+    public ValidateBatch200Response validateBatch(@javax.annotation.Nonnull ValidateBatchRequest validateBatchRequest) throws ApiException {
+        ApiResponse<ValidateBatch200Response> localVarResp = validateBatchWithHttpInfo(validateBatchRequest);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Validate multiple emails (sync)
+     * Validate up to 100 email addresses synchronously. For larger lists, use the bulk jobs API.
+     * @param validateBatchRequest  (required)
+     * @return ApiResponse&lt;ValidateBatch200Response&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Batch validation results </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<ValidateBatch200Response> validateBatchWithHttpInfo(@javax.annotation.Nonnull ValidateBatchRequest validateBatchRequest) throws ApiException {
+        okhttp3.Call localVarCall = validateBatchValidateBeforeCall(validateBatchRequest, null);
+        Type localVarReturnType = new TypeToken<ValidateBatch200Response>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Validate multiple emails (sync) (asynchronously)
+     * Validate up to 100 email addresses synchronously. For larger lists, use the bulk jobs API.
+     * @param validateBatchRequest  (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Batch validation results </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call validateBatchAsync(@javax.annotation.Nonnull ValidateBatchRequest validateBatchRequest, final ApiCallback<ValidateBatch200Response> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = validateBatchValidateBeforeCall(validateBatchRequest, _callback);
+        Type localVarReturnType = new TypeToken<ValidateBatch200Response>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
     /**
      * Build call for validateEmail
      * @param validateRequest  (required)

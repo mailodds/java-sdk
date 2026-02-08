@@ -46,10 +46,10 @@ import java.util.Set;
 import com.mailodds.JSON;
 
 /**
- * JobSummary
+ * ValidateBatch200ResponseSummary
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-08T17:48:30.569515929+01:00[Europe/Amsterdam]", comments = "Generator version: 7.19.0")
-public class JobSummary {
+public class ValidateBatch200ResponseSummary {
   public static final String SERIALIZED_NAME_VALID = "valid";
   @SerializedName(SERIALIZED_NAME_VALID)
   @javax.annotation.Nullable
@@ -60,25 +60,25 @@ public class JobSummary {
   @javax.annotation.Nullable
   private Integer invalid;
 
-  public static final String SERIALIZED_NAME_DO_NOT_MAIL = "do_not_mail";
-  @SerializedName(SERIALIZED_NAME_DO_NOT_MAIL)
+  public static final String SERIALIZED_NAME_CATCH_ALL = "catch_all";
+  @SerializedName(SERIALIZED_NAME_CATCH_ALL)
   @javax.annotation.Nullable
-  private Integer doNotMail;
+  private Integer catchAll;
 
   public static final String SERIALIZED_NAME_UNKNOWN = "unknown";
   @SerializedName(SERIALIZED_NAME_UNKNOWN)
   @javax.annotation.Nullable
   private Integer unknown;
 
-  public static final String SERIALIZED_NAME_CANCELLED_PENDING = "cancelled_pending";
-  @SerializedName(SERIALIZED_NAME_CANCELLED_PENDING)
+  public static final String SERIALIZED_NAME_DO_NOT_MAIL = "do_not_mail";
+  @SerializedName(SERIALIZED_NAME_DO_NOT_MAIL)
   @javax.annotation.Nullable
-  private Integer cancelledPending;
+  private Integer doNotMail;
 
-  public JobSummary() {
+  public ValidateBatch200ResponseSummary() {
   }
 
-  public JobSummary valid(@javax.annotation.Nullable Integer valid) {
+  public ValidateBatch200ResponseSummary valid(@javax.annotation.Nullable Integer valid) {
     this.valid = valid;
     return this;
   }
@@ -97,7 +97,7 @@ public class JobSummary {
   }
 
 
-  public JobSummary invalid(@javax.annotation.Nullable Integer invalid) {
+  public ValidateBatch200ResponseSummary invalid(@javax.annotation.Nullable Integer invalid) {
     this.invalid = invalid;
     return this;
   }
@@ -116,26 +116,26 @@ public class JobSummary {
   }
 
 
-  public JobSummary doNotMail(@javax.annotation.Nullable Integer doNotMail) {
-    this.doNotMail = doNotMail;
+  public ValidateBatch200ResponseSummary catchAll(@javax.annotation.Nullable Integer catchAll) {
+    this.catchAll = catchAll;
     return this;
   }
 
   /**
-   * Get doNotMail
-   * @return doNotMail
+   * Get catchAll
+   * @return catchAll
    */
   @javax.annotation.Nullable
-  public Integer getDoNotMail() {
-    return doNotMail;
+  public Integer getCatchAll() {
+    return catchAll;
   }
 
-  public void setDoNotMail(@javax.annotation.Nullable Integer doNotMail) {
-    this.doNotMail = doNotMail;
+  public void setCatchAll(@javax.annotation.Nullable Integer catchAll) {
+    this.catchAll = catchAll;
   }
 
 
-  public JobSummary unknown(@javax.annotation.Nullable Integer unknown) {
+  public ValidateBatch200ResponseSummary unknown(@javax.annotation.Nullable Integer unknown) {
     this.unknown = unknown;
     return this;
   }
@@ -154,22 +154,22 @@ public class JobSummary {
   }
 
 
-  public JobSummary cancelledPending(@javax.annotation.Nullable Integer cancelledPending) {
-    this.cancelledPending = cancelledPending;
+  public ValidateBatch200ResponseSummary doNotMail(@javax.annotation.Nullable Integer doNotMail) {
+    this.doNotMail = doNotMail;
     return this;
   }
 
   /**
-   * Get cancelledPending
-   * @return cancelledPending
+   * Get doNotMail
+   * @return doNotMail
    */
   @javax.annotation.Nullable
-  public Integer getCancelledPending() {
-    return cancelledPending;
+  public Integer getDoNotMail() {
+    return doNotMail;
   }
 
-  public void setCancelledPending(@javax.annotation.Nullable Integer cancelledPending) {
-    this.cancelledPending = cancelledPending;
+  public void setDoNotMail(@javax.annotation.Nullable Integer doNotMail) {
+    this.doNotMail = doNotMail;
   }
 
 
@@ -182,28 +182,28 @@ public class JobSummary {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    JobSummary jobSummary = (JobSummary) o;
-    return Objects.equals(this.valid, jobSummary.valid) &&
-        Objects.equals(this.invalid, jobSummary.invalid) &&
-        Objects.equals(this.doNotMail, jobSummary.doNotMail) &&
-        Objects.equals(this.unknown, jobSummary.unknown) &&
-        Objects.equals(this.cancelledPending, jobSummary.cancelledPending);
+    ValidateBatch200ResponseSummary validateBatch200ResponseSummary = (ValidateBatch200ResponseSummary) o;
+    return Objects.equals(this.valid, validateBatch200ResponseSummary.valid) &&
+        Objects.equals(this.invalid, validateBatch200ResponseSummary.invalid) &&
+        Objects.equals(this.catchAll, validateBatch200ResponseSummary.catchAll) &&
+        Objects.equals(this.unknown, validateBatch200ResponseSummary.unknown) &&
+        Objects.equals(this.doNotMail, validateBatch200ResponseSummary.doNotMail);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(valid, invalid, doNotMail, unknown, cancelledPending);
+    return Objects.hash(valid, invalid, catchAll, unknown, doNotMail);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class JobSummary {\n");
+    sb.append("class ValidateBatch200ResponseSummary {\n");
     sb.append("    valid: ").append(toIndentedString(valid)).append("\n");
     sb.append("    invalid: ").append(toIndentedString(invalid)).append("\n");
-    sb.append("    doNotMail: ").append(toIndentedString(doNotMail)).append("\n");
+    sb.append("    catchAll: ").append(toIndentedString(catchAll)).append("\n");
     sb.append("    unknown: ").append(toIndentedString(unknown)).append("\n");
-    sb.append("    cancelledPending: ").append(toIndentedString(cancelledPending)).append("\n");
+    sb.append("    doNotMail: ").append(toIndentedString(doNotMail)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -225,7 +225,7 @@ public class JobSummary {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("valid", "invalid", "do_not_mail", "unknown", "cancelled_pending"));
+    openapiFields = new HashSet<String>(Arrays.asList("valid", "invalid", "catch_all", "unknown", "do_not_mail"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -235,20 +235,20 @@ public class JobSummary {
    * Validates the JSON Element and throws an exception if issues found
    *
    * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to JobSummary
+   * @throws IOException if the JSON Element is invalid with respect to ValidateBatch200ResponseSummary
    */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!JobSummary.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in JobSummary is not found in the empty JSON string", JobSummary.openapiRequiredFields.toString()));
+        if (!ValidateBatch200ResponseSummary.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in ValidateBatch200ResponseSummary is not found in the empty JSON string", ValidateBatch200ResponseSummary.openapiRequiredFields.toString()));
         }
       }
 
       Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
-        if (!JobSummary.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `JobSummary` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        if (!ValidateBatch200ResponseSummary.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `ValidateBatch200ResponseSummary` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -258,22 +258,22 @@ public class JobSummary {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!JobSummary.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'JobSummary' and its subtypes
+       if (!ValidateBatch200ResponseSummary.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'ValidateBatch200ResponseSummary' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<JobSummary> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(JobSummary.class));
+       final TypeAdapter<ValidateBatch200ResponseSummary> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(ValidateBatch200ResponseSummary.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<JobSummary>() {
+       return (TypeAdapter<T>) new TypeAdapter<ValidateBatch200ResponseSummary>() {
            @Override
-           public void write(JsonWriter out, JobSummary value) throws IOException {
+           public void write(JsonWriter out, ValidateBatch200ResponseSummary value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              elementAdapter.write(out, obj);
            }
 
            @Override
-           public JobSummary read(JsonReader in) throws IOException {
+           public ValidateBatch200ResponseSummary read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              return thisAdapter.fromJsonTree(jsonElement);
@@ -284,18 +284,18 @@ public class JobSummary {
   }
 
   /**
-   * Create an instance of JobSummary given an JSON string
+   * Create an instance of ValidateBatch200ResponseSummary given an JSON string
    *
    * @param jsonString JSON string
-   * @return An instance of JobSummary
-   * @throws IOException if the JSON string is invalid with respect to JobSummary
+   * @return An instance of ValidateBatch200ResponseSummary
+   * @throws IOException if the JSON string is invalid with respect to ValidateBatch200ResponseSummary
    */
-  public static JobSummary fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, JobSummary.class);
+  public static ValidateBatch200ResponseSummary fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, ValidateBatch200ResponseSummary.class);
   }
 
   /**
-   * Convert an instance of JobSummary to an JSON string
+   * Convert an instance of ValidateBatch200ResponseSummary to an JSON string
    *
    * @return JSON string
    */

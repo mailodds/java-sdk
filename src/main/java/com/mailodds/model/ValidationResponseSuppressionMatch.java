@@ -46,15 +46,10 @@ import java.util.Set;
 import com.mailodds.JSON;
 
 /**
- * ValidationResponseSuppressionMatch
+ * Present only when email matched a suppression list entry.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-07T02:07:05.451650876+01:00[Europe/Amsterdam]", comments = "Generator version: 7.19.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-08T17:48:30.569515929+01:00[Europe/Amsterdam]", comments = "Generator version: 7.19.0")
 public class ValidationResponseSuppressionMatch {
-  public static final String SERIALIZED_NAME_MATCHED = "matched";
-  @SerializedName(SERIALIZED_NAME_MATCHED)
-  @javax.annotation.Nullable
-  private Boolean matched;
-
   /**
    * Gets or Sets matchType
    */
@@ -117,27 +112,13 @@ public class ValidationResponseSuppressionMatch {
   @javax.annotation.Nullable
   private String matchValue;
 
+  public static final String SERIALIZED_NAME_REASON = "reason";
+  @SerializedName(SERIALIZED_NAME_REASON)
+  @javax.annotation.Nullable
+  private String reason;
+
   public ValidationResponseSuppressionMatch() {
   }
-
-  public ValidationResponseSuppressionMatch matched(@javax.annotation.Nullable Boolean matched) {
-    this.matched = matched;
-    return this;
-  }
-
-  /**
-   * Get matched
-   * @return matched
-   */
-  @javax.annotation.Nullable
-  public Boolean getMatched() {
-    return matched;
-  }
-
-  public void setMatched(@javax.annotation.Nullable Boolean matched) {
-    this.matched = matched;
-  }
-
 
   public ValidationResponseSuppressionMatch matchType(@javax.annotation.Nullable MatchTypeEnum matchType) {
     this.matchType = matchType;
@@ -177,6 +158,25 @@ public class ValidationResponseSuppressionMatch {
   }
 
 
+  public ValidationResponseSuppressionMatch reason(@javax.annotation.Nullable String reason) {
+    this.reason = reason;
+    return this;
+  }
+
+  /**
+   * Get reason
+   * @return reason
+   */
+  @javax.annotation.Nullable
+  public String getReason() {
+    return reason;
+  }
+
+  public void setReason(@javax.annotation.Nullable String reason) {
+    this.reason = reason;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -187,23 +187,23 @@ public class ValidationResponseSuppressionMatch {
       return false;
     }
     ValidationResponseSuppressionMatch validationResponseSuppressionMatch = (ValidationResponseSuppressionMatch) o;
-    return Objects.equals(this.matched, validationResponseSuppressionMatch.matched) &&
-        Objects.equals(this.matchType, validationResponseSuppressionMatch.matchType) &&
-        Objects.equals(this.matchValue, validationResponseSuppressionMatch.matchValue);
+    return Objects.equals(this.matchType, validationResponseSuppressionMatch.matchType) &&
+        Objects.equals(this.matchValue, validationResponseSuppressionMatch.matchValue) &&
+        Objects.equals(this.reason, validationResponseSuppressionMatch.reason);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(matched, matchType, matchValue);
+    return Objects.hash(matchType, matchValue, reason);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ValidationResponseSuppressionMatch {\n");
-    sb.append("    matched: ").append(toIndentedString(matched)).append("\n");
     sb.append("    matchType: ").append(toIndentedString(matchType)).append("\n");
     sb.append("    matchValue: ").append(toIndentedString(matchValue)).append("\n");
+    sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -225,7 +225,7 @@ public class ValidationResponseSuppressionMatch {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("matched", "match_type", "match_value"));
+    openapiFields = new HashSet<String>(Arrays.asList("match_type", "match_value", "reason"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -261,6 +261,9 @@ public class ValidationResponseSuppressionMatch {
       }
       if ((jsonObj.get("match_value") != null && !jsonObj.get("match_value").isJsonNull()) && !jsonObj.get("match_value").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `match_value` to be a primitive type in the JSON string but got `%s`", jsonObj.get("match_value").toString()));
+      }
+      if ((jsonObj.get("reason") != null && !jsonObj.get("reason").isJsonNull()) && !jsonObj.get("reason").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `reason` to be a primitive type in the JSON string but got `%s`", jsonObj.get("reason").toString()));
       }
   }
 

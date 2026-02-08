@@ -19,8 +19,12 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.mailodds.model.ValidateBatch200ResponseSummary;
+import com.mailodds.model.ValidationResponse;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -46,29 +50,34 @@ import java.util.Set;
 import com.mailodds.JSON;
 
 /**
- * ErrorResponse
+ * ValidateBatch200Response
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-08T17:48:30.569515929+01:00[Europe/Amsterdam]", comments = "Generator version: 7.19.0")
-public class ErrorResponse {
+public class ValidateBatch200Response {
   public static final String SERIALIZED_NAME_SCHEMA_VERSION = "schema_version";
   @SerializedName(SERIALIZED_NAME_SCHEMA_VERSION)
   @javax.annotation.Nullable
   private String schemaVersion;
 
-  public static final String SERIALIZED_NAME_ERROR = "error";
-  @SerializedName(SERIALIZED_NAME_ERROR)
-  @javax.annotation.Nonnull
-  private String error;
-
-  public static final String SERIALIZED_NAME_MESSAGE = "message";
-  @SerializedName(SERIALIZED_NAME_MESSAGE)
+  public static final String SERIALIZED_NAME_TOTAL = "total";
+  @SerializedName(SERIALIZED_NAME_TOTAL)
   @javax.annotation.Nullable
-  private String message;
+  private Integer total;
 
-  public ErrorResponse() {
+  public static final String SERIALIZED_NAME_SUMMARY = "summary";
+  @SerializedName(SERIALIZED_NAME_SUMMARY)
+  @javax.annotation.Nullable
+  private ValidateBatch200ResponseSummary summary;
+
+  public static final String SERIALIZED_NAME_RESULTS = "results";
+  @SerializedName(SERIALIZED_NAME_RESULTS)
+  @javax.annotation.Nullable
+  private List<ValidationResponse> results = new ArrayList<>();
+
+  public ValidateBatch200Response() {
   }
 
-  public ErrorResponse schemaVersion(@javax.annotation.Nullable String schemaVersion) {
+  public ValidateBatch200Response schemaVersion(@javax.annotation.Nullable String schemaVersion) {
     this.schemaVersion = schemaVersion;
     return this;
   }
@@ -87,41 +96,68 @@ public class ErrorResponse {
   }
 
 
-  public ErrorResponse error(@javax.annotation.Nonnull String error) {
-    this.error = error;
+  public ValidateBatch200Response total(@javax.annotation.Nullable Integer total) {
+    this.total = total;
     return this;
   }
 
   /**
-   * Machine-readable error code
-   * @return error
-   */
-  @javax.annotation.Nonnull
-  public String getError() {
-    return error;
-  }
-
-  public void setError(@javax.annotation.Nonnull String error) {
-    this.error = error;
-  }
-
-
-  public ErrorResponse message(@javax.annotation.Nullable String message) {
-    this.message = message;
-    return this;
-  }
-
-  /**
-   * Human-readable error message
-   * @return message
+   * Get total
+   * @return total
    */
   @javax.annotation.Nullable
-  public String getMessage() {
-    return message;
+  public Integer getTotal() {
+    return total;
   }
 
-  public void setMessage(@javax.annotation.Nullable String message) {
-    this.message = message;
+  public void setTotal(@javax.annotation.Nullable Integer total) {
+    this.total = total;
+  }
+
+
+  public ValidateBatch200Response summary(@javax.annotation.Nullable ValidateBatch200ResponseSummary summary) {
+    this.summary = summary;
+    return this;
+  }
+
+  /**
+   * Get summary
+   * @return summary
+   */
+  @javax.annotation.Nullable
+  public ValidateBatch200ResponseSummary getSummary() {
+    return summary;
+  }
+
+  public void setSummary(@javax.annotation.Nullable ValidateBatch200ResponseSummary summary) {
+    this.summary = summary;
+  }
+
+
+  public ValidateBatch200Response results(@javax.annotation.Nullable List<ValidationResponse> results) {
+    this.results = results;
+    return this;
+  }
+
+  public ValidateBatch200Response addResultsItem(ValidationResponse resultsItem) {
+    if (this.results == null) {
+      this.results = new ArrayList<>();
+    }
+    this.results.add(resultsItem);
+    return this;
+  }
+
+  /**
+   * Get results
+   * @return results
+   */
+  @javax.annotation.Nullable
+  public List<ValidationResponse> getResults() {
+    return results;
+  }
+
+  public void setResults(@javax.annotation.Nullable List<ValidationResponse> results) {
+    this.results = results;
   }
 
 
@@ -134,24 +170,26 @@ public class ErrorResponse {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ErrorResponse errorResponse = (ErrorResponse) o;
-    return Objects.equals(this.schemaVersion, errorResponse.schemaVersion) &&
-        Objects.equals(this.error, errorResponse.error) &&
-        Objects.equals(this.message, errorResponse.message);
+    ValidateBatch200Response validateBatch200Response = (ValidateBatch200Response) o;
+    return Objects.equals(this.schemaVersion, validateBatch200Response.schemaVersion) &&
+        Objects.equals(this.total, validateBatch200Response.total) &&
+        Objects.equals(this.summary, validateBatch200Response.summary) &&
+        Objects.equals(this.results, validateBatch200Response.results);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(schemaVersion, error, message);
+    return Objects.hash(schemaVersion, total, summary, results);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ErrorResponse {\n");
+    sb.append("class ValidateBatch200Response {\n");
     sb.append("    schemaVersion: ").append(toIndentedString(schemaVersion)).append("\n");
-    sb.append("    error: ").append(toIndentedString(error)).append("\n");
-    sb.append("    message: ").append(toIndentedString(message)).append("\n");
+    sb.append("    total: ").append(toIndentedString(total)).append("\n");
+    sb.append("    summary: ").append(toIndentedString(summary)).append("\n");
+    sb.append("    results: ").append(toIndentedString(results)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -173,48 +211,53 @@ public class ErrorResponse {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("schema_version", "error", "message"));
+    openapiFields = new HashSet<String>(Arrays.asList("schema_version", "total", "summary", "results"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(Arrays.asList("error"));
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**
    * Validates the JSON Element and throws an exception if issues found
    *
    * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to ErrorResponse
+   * @throws IOException if the JSON Element is invalid with respect to ValidateBatch200Response
    */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!ErrorResponse.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in ErrorResponse is not found in the empty JSON string", ErrorResponse.openapiRequiredFields.toString()));
+        if (!ValidateBatch200Response.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in ValidateBatch200Response is not found in the empty JSON string", ValidateBatch200Response.openapiRequiredFields.toString()));
         }
       }
 
       Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
-        if (!ErrorResponse.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `ErrorResponse` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
-        }
-      }
-
-      // check to make sure all required properties/fields are present in the JSON string
-      for (String requiredField : ErrorResponse.openapiRequiredFields) {
-        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        if (!ValidateBatch200Response.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `ValidateBatch200Response` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("schema_version") != null && !jsonObj.get("schema_version").isJsonNull()) && !jsonObj.get("schema_version").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `schema_version` to be a primitive type in the JSON string but got `%s`", jsonObj.get("schema_version").toString()));
       }
-      if (!jsonObj.get("error").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `error` to be a primitive type in the JSON string but got `%s`", jsonObj.get("error").toString()));
+      // validate the optional field `summary`
+      if (jsonObj.get("summary") != null && !jsonObj.get("summary").isJsonNull()) {
+        ValidateBatch200ResponseSummary.validateJsonElement(jsonObj.get("summary"));
       }
-      if ((jsonObj.get("message") != null && !jsonObj.get("message").isJsonNull()) && !jsonObj.get("message").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `message` to be a primitive type in the JSON string but got `%s`", jsonObj.get("message").toString()));
+      if (jsonObj.get("results") != null && !jsonObj.get("results").isJsonNull()) {
+        JsonArray jsonArrayresults = jsonObj.getAsJsonArray("results");
+        if (jsonArrayresults != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("results").isJsonArray()) {
+            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `results` to be an array in the JSON string but got `%s`", jsonObj.get("results").toString()));
+          }
+
+          // validate the optional field `results` (array)
+          for (int i = 0; i < jsonArrayresults.size(); i++) {
+            ValidationResponse.validateJsonElement(jsonArrayresults.get(i));
+          };
+        }
       }
   }
 
@@ -222,22 +265,22 @@ public class ErrorResponse {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!ErrorResponse.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'ErrorResponse' and its subtypes
+       if (!ValidateBatch200Response.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'ValidateBatch200Response' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<ErrorResponse> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(ErrorResponse.class));
+       final TypeAdapter<ValidateBatch200Response> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(ValidateBatch200Response.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<ErrorResponse>() {
+       return (TypeAdapter<T>) new TypeAdapter<ValidateBatch200Response>() {
            @Override
-           public void write(JsonWriter out, ErrorResponse value) throws IOException {
+           public void write(JsonWriter out, ValidateBatch200Response value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              elementAdapter.write(out, obj);
            }
 
            @Override
-           public ErrorResponse read(JsonReader in) throws IOException {
+           public ValidateBatch200Response read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              return thisAdapter.fromJsonTree(jsonElement);
@@ -248,18 +291,18 @@ public class ErrorResponse {
   }
 
   /**
-   * Create an instance of ErrorResponse given an JSON string
+   * Create an instance of ValidateBatch200Response given an JSON string
    *
    * @param jsonString JSON string
-   * @return An instance of ErrorResponse
-   * @throws IOException if the JSON string is invalid with respect to ErrorResponse
+   * @return An instance of ValidateBatch200Response
+   * @throws IOException if the JSON string is invalid with respect to ValidateBatch200Response
    */
-  public static ErrorResponse fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, ErrorResponse.class);
+  public static ValidateBatch200Response fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, ValidateBatch200Response.class);
   }
 
   /**
-   * Convert an instance of ErrorResponse to an JSON string
+   * Convert an instance of ValidateBatch200Response to an JSON string
    *
    * @return JSON string
    */

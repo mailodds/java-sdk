@@ -143,8 +143,12 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.mailodds.model.TestPolicyRequest.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.mailodds.model.TestPolicyRequestTestResult.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.mailodds.model.UpdatePolicyRequest.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.mailodds.model.ValidateBatch200Response.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.mailodds.model.ValidateBatch200ResponseSummary.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.mailodds.model.ValidateBatchRequest.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.mailodds.model.ValidateRequest.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.mailodds.model.ValidationResponse.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.mailodds.model.ValidationResponsePolicyApplied.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.mailodds.model.ValidationResponseSuppressionMatch.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.mailodds.model.ValidationResult.CustomTypeAdapterFactory());
         gson = gsonBuilder.create();

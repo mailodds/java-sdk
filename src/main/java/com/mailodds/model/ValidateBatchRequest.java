@@ -20,7 +20,6 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
-import java.net.URI;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -49,44 +48,86 @@ import java.util.Set;
 import com.mailodds.JSON;
 
 /**
- * Bulk jobs use the account&#39;s default validation policy. To use a specific policy, set it as default via the Policies API.
+ * ValidateBatchRequest
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-08T17:48:30.569515929+01:00[Europe/Amsterdam]", comments = "Generator version: 7.19.0")
-public class CreateJobRequest {
+public class ValidateBatchRequest {
   public static final String SERIALIZED_NAME_EMAILS = "emails";
   @SerializedName(SERIALIZED_NAME_EMAILS)
   @javax.annotation.Nonnull
   private List<String> emails = new ArrayList<>();
 
-  public static final String SERIALIZED_NAME_DEDUP = "dedup";
-  @SerializedName(SERIALIZED_NAME_DEDUP)
-  @javax.annotation.Nullable
-  private Boolean dedup = false;
+  /**
+   * Gets or Sets depth
+   */
+  @JsonAdapter(DepthEnum.Adapter.class)
+  public enum DepthEnum {
+    STANDARD("standard"),
+    
+    ENHANCED("enhanced");
 
-  public static final String SERIALIZED_NAME_METADATA = "metadata";
-  @SerializedName(SERIALIZED_NAME_METADATA)
-  @javax.annotation.Nullable
-  private Object metadata;
+    private String value;
 
-  public static final String SERIALIZED_NAME_WEBHOOK_URL = "webhook_url";
-  @SerializedName(SERIALIZED_NAME_WEBHOOK_URL)
-  @javax.annotation.Nullable
-  private URI webhookUrl;
+    DepthEnum(String value) {
+      this.value = value;
+    }
 
-  public static final String SERIALIZED_NAME_IDEMPOTENCY_KEY = "idempotency_key";
-  @SerializedName(SERIALIZED_NAME_IDEMPOTENCY_KEY)
-  @javax.annotation.Nullable
-  private String idempotencyKey;
+    public String getValue() {
+      return value;
+    }
 
-  public CreateJobRequest() {
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static DepthEnum fromValue(String value) {
+      for (DepthEnum b : DepthEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<DepthEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final DepthEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public DepthEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return DepthEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      DepthEnum.fromValue(value);
+    }
   }
 
-  public CreateJobRequest emails(@javax.annotation.Nonnull List<String> emails) {
+  public static final String SERIALIZED_NAME_DEPTH = "depth";
+  @SerializedName(SERIALIZED_NAME_DEPTH)
+  @javax.annotation.Nullable
+  private DepthEnum depth = DepthEnum.ENHANCED;
+
+  public static final String SERIALIZED_NAME_POLICY_ID = "policy_id";
+  @SerializedName(SERIALIZED_NAME_POLICY_ID)
+  @javax.annotation.Nullable
+  private Integer policyId;
+
+  public ValidateBatchRequest() {
+  }
+
+  public ValidateBatchRequest emails(@javax.annotation.Nonnull List<String> emails) {
     this.emails = emails;
     return this;
   }
 
-  public CreateJobRequest addEmailsItem(String emailsItem) {
+  public ValidateBatchRequest addEmailsItem(String emailsItem) {
     if (this.emails == null) {
       this.emails = new ArrayList<>();
     }
@@ -108,79 +149,41 @@ public class CreateJobRequest {
   }
 
 
-  public CreateJobRequest dedup(@javax.annotation.Nullable Boolean dedup) {
-    this.dedup = dedup;
+  public ValidateBatchRequest depth(@javax.annotation.Nullable DepthEnum depth) {
+    this.depth = depth;
     return this;
   }
 
   /**
-   * Remove duplicate emails
-   * @return dedup
+   * Get depth
+   * @return depth
    */
   @javax.annotation.Nullable
-  public Boolean getDedup() {
-    return dedup;
+  public DepthEnum getDepth() {
+    return depth;
   }
 
-  public void setDedup(@javax.annotation.Nullable Boolean dedup) {
-    this.dedup = dedup;
+  public void setDepth(@javax.annotation.Nullable DepthEnum depth) {
+    this.depth = depth;
   }
 
 
-  public CreateJobRequest metadata(@javax.annotation.Nullable Object metadata) {
-    this.metadata = metadata;
+  public ValidateBatchRequest policyId(@javax.annotation.Nullable Integer policyId) {
+    this.policyId = policyId;
     return this;
   }
 
   /**
-   * Custom metadata for the job
-   * @return metadata
+   * Optional policy ID
+   * @return policyId
    */
   @javax.annotation.Nullable
-  public Object getMetadata() {
-    return metadata;
+  public Integer getPolicyId() {
+    return policyId;
   }
 
-  public void setMetadata(@javax.annotation.Nullable Object metadata) {
-    this.metadata = metadata;
-  }
-
-
-  public CreateJobRequest webhookUrl(@javax.annotation.Nullable URI webhookUrl) {
-    this.webhookUrl = webhookUrl;
-    return this;
-  }
-
-  /**
-   * URL for completion webhook
-   * @return webhookUrl
-   */
-  @javax.annotation.Nullable
-  public URI getWebhookUrl() {
-    return webhookUrl;
-  }
-
-  public void setWebhookUrl(@javax.annotation.Nullable URI webhookUrl) {
-    this.webhookUrl = webhookUrl;
-  }
-
-
-  public CreateJobRequest idempotencyKey(@javax.annotation.Nullable String idempotencyKey) {
-    this.idempotencyKey = idempotencyKey;
-    return this;
-  }
-
-  /**
-   * Unique key for idempotent requests
-   * @return idempotencyKey
-   */
-  @javax.annotation.Nullable
-  public String getIdempotencyKey() {
-    return idempotencyKey;
-  }
-
-  public void setIdempotencyKey(@javax.annotation.Nullable String idempotencyKey) {
-    this.idempotencyKey = idempotencyKey;
+  public void setPolicyId(@javax.annotation.Nullable Integer policyId) {
+    this.policyId = policyId;
   }
 
 
@@ -193,28 +196,24 @@ public class CreateJobRequest {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    CreateJobRequest createJobRequest = (CreateJobRequest) o;
-    return Objects.equals(this.emails, createJobRequest.emails) &&
-        Objects.equals(this.dedup, createJobRequest.dedup) &&
-        Objects.equals(this.metadata, createJobRequest.metadata) &&
-        Objects.equals(this.webhookUrl, createJobRequest.webhookUrl) &&
-        Objects.equals(this.idempotencyKey, createJobRequest.idempotencyKey);
+    ValidateBatchRequest validateBatchRequest = (ValidateBatchRequest) o;
+    return Objects.equals(this.emails, validateBatchRequest.emails) &&
+        Objects.equals(this.depth, validateBatchRequest.depth) &&
+        Objects.equals(this.policyId, validateBatchRequest.policyId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(emails, dedup, metadata, webhookUrl, idempotencyKey);
+    return Objects.hash(emails, depth, policyId);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class CreateJobRequest {\n");
+    sb.append("class ValidateBatchRequest {\n");
     sb.append("    emails: ").append(toIndentedString(emails)).append("\n");
-    sb.append("    dedup: ").append(toIndentedString(dedup)).append("\n");
-    sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
-    sb.append("    webhookUrl: ").append(toIndentedString(webhookUrl)).append("\n");
-    sb.append("    idempotencyKey: ").append(toIndentedString(idempotencyKey)).append("\n");
+    sb.append("    depth: ").append(toIndentedString(depth)).append("\n");
+    sb.append("    policyId: ").append(toIndentedString(policyId)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -236,7 +235,7 @@ public class CreateJobRequest {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("emails", "dedup", "metadata", "webhook_url", "idempotency_key"));
+    openapiFields = new HashSet<String>(Arrays.asList("emails", "depth", "policy_id"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("emails"));
@@ -246,25 +245,25 @@ public class CreateJobRequest {
    * Validates the JSON Element and throws an exception if issues found
    *
    * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to CreateJobRequest
+   * @throws IOException if the JSON Element is invalid with respect to ValidateBatchRequest
    */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!CreateJobRequest.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in CreateJobRequest is not found in the empty JSON string", CreateJobRequest.openapiRequiredFields.toString()));
+        if (!ValidateBatchRequest.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in ValidateBatchRequest is not found in the empty JSON string", ValidateBatchRequest.openapiRequiredFields.toString()));
         }
       }
 
       Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
-        if (!CreateJobRequest.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `CreateJobRequest` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        if (!ValidateBatchRequest.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `ValidateBatchRequest` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
-      for (String requiredField : CreateJobRequest.openapiRequiredFields) {
+      for (String requiredField : ValidateBatchRequest.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
           throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
@@ -276,11 +275,12 @@ public class CreateJobRequest {
       } else if (!jsonObj.get("emails").isJsonArray()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `emails` to be an array in the JSON string but got `%s`", jsonObj.get("emails").toString()));
       }
-      if ((jsonObj.get("webhook_url") != null && !jsonObj.get("webhook_url").isJsonNull()) && !jsonObj.get("webhook_url").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `webhook_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("webhook_url").toString()));
+      if ((jsonObj.get("depth") != null && !jsonObj.get("depth").isJsonNull()) && !jsonObj.get("depth").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `depth` to be a primitive type in the JSON string but got `%s`", jsonObj.get("depth").toString()));
       }
-      if ((jsonObj.get("idempotency_key") != null && !jsonObj.get("idempotency_key").isJsonNull()) && !jsonObj.get("idempotency_key").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `idempotency_key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("idempotency_key").toString()));
+      // validate the optional field `depth`
+      if (jsonObj.get("depth") != null && !jsonObj.get("depth").isJsonNull()) {
+        DepthEnum.validateJsonElement(jsonObj.get("depth"));
       }
   }
 
@@ -288,22 +288,22 @@ public class CreateJobRequest {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!CreateJobRequest.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'CreateJobRequest' and its subtypes
+       if (!ValidateBatchRequest.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'ValidateBatchRequest' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<CreateJobRequest> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(CreateJobRequest.class));
+       final TypeAdapter<ValidateBatchRequest> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(ValidateBatchRequest.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<CreateJobRequest>() {
+       return (TypeAdapter<T>) new TypeAdapter<ValidateBatchRequest>() {
            @Override
-           public void write(JsonWriter out, CreateJobRequest value) throws IOException {
+           public void write(JsonWriter out, ValidateBatchRequest value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              elementAdapter.write(out, obj);
            }
 
            @Override
-           public CreateJobRequest read(JsonReader in) throws IOException {
+           public ValidateBatchRequest read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              return thisAdapter.fromJsonTree(jsonElement);
@@ -314,18 +314,18 @@ public class CreateJobRequest {
   }
 
   /**
-   * Create an instance of CreateJobRequest given an JSON string
+   * Create an instance of ValidateBatchRequest given an JSON string
    *
    * @param jsonString JSON string
-   * @return An instance of CreateJobRequest
-   * @throws IOException if the JSON string is invalid with respect to CreateJobRequest
+   * @return An instance of ValidateBatchRequest
+   * @throws IOException if the JSON string is invalid with respect to ValidateBatchRequest
    */
-  public static CreateJobRequest fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, CreateJobRequest.class);
+  public static ValidateBatchRequest fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, ValidateBatchRequest.class);
   }
 
   /**
-   * Convert an instance of CreateJobRequest to an JSON string
+   * Convert an instance of ValidateBatchRequest to an JSON string
    *
    * @return JSON string
    */

@@ -11,27 +11,56 @@
  */
 
 
-package com.mailodds;
+package com.mailodds.model;
 
-import java.util.HashSet;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
- * Representing a Server Variable for server URL template substitution.
+ * Model tests for ValidateBatchRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-08T17:48:30.569515929+01:00[Europe/Amsterdam]", comments = "Generator version: 7.19.0")
-public class ServerVariable {
-    public String description;
-    public String defaultValue;
-    public HashSet<String> enumValues = null;
+public class ValidateBatchRequestTest {
+    private final ValidateBatchRequest model = new ValidateBatchRequest();
 
     /**
-     * @param description A description for the server variable.
-     * @param defaultValue The default value to use for substitution.
-     * @param enumValues An enumeration of string values to be used if the substitution options are from a limited set.
+     * Model tests for ValidateBatchRequest
      */
-    public ServerVariable(String description, String defaultValue, HashSet<String> enumValues) {
-        this.description = description;
-        this.defaultValue = defaultValue;
-        this.enumValues = enumValues;
+    @Test
+    public void testValidateBatchRequest() {
+        // TODO: test ValidateBatchRequest
     }
+
+    /**
+     * Test the property 'emails'
+     */
+    @Test
+    public void emailsTest() {
+        // TODO: test emails
+    }
+
+    /**
+     * Test the property 'depth'
+     */
+    @Test
+    public void depthTest() {
+        // TODO: test depth
+    }
+
+    /**
+     * Test the property 'policyId'
+     */
+    @Test
+    public void policyIdTest() {
+        // TODO: test policyId
+    }
+
 }

@@ -19,8 +19,10 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.mailodds.model.ValidationResponsePolicyApplied;
 import com.mailodds.model.ValidationResponseSuppressionMatch;
 import java.io.IOException;
+import java.time.OffsetDateTime;
 import java.util.Arrays;
 
 import com.google.gson.Gson;
@@ -47,13 +49,13 @@ import java.util.Set;
 import com.mailodds.JSON;
 
 /**
- * ValidationResponse
+ * Flat validation response. Conditional fields are omitted (not null) when not applicable.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-07T02:07:05.451650876+01:00[Europe/Amsterdam]", comments = "Generator version: 7.19.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-08T17:48:30.569515929+01:00[Europe/Amsterdam]", comments = "Generator version: 7.19.0")
 public class ValidationResponse {
   public static final String SERIALIZED_NAME_SCHEMA_VERSION = "schema_version";
   @SerializedName(SERIALIZED_NAME_SCHEMA_VERSION)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private String schemaVersion;
 
   public static final String SERIALIZED_NAME_EMAIL = "email";
@@ -124,11 +126,6 @@ public class ValidationResponse {
   @javax.annotation.Nonnull
   private StatusEnum status;
 
-  public static final String SERIALIZED_NAME_SUB_STATUS = "sub_status";
-  @SerializedName(SERIALIZED_NAME_SUB_STATUS)
-  @javax.annotation.Nullable
-  private String subStatus;
-
   /**
    * Recommended action
    */
@@ -190,45 +187,205 @@ public class ValidationResponse {
   @javax.annotation.Nonnull
   private ActionEnum action;
 
+  /**
+   * Detailed status reason. Omitted when none.
+   */
+  @JsonAdapter(SubStatusEnum.Adapter.class)
+  public enum SubStatusEnum {
+    FORMAT_INVALID("format_invalid"),
+    
+    MX_MISSING("mx_missing"),
+    
+    MX_TIMEOUT("mx_timeout"),
+    
+    SMTP_UNREACHABLE("smtp_unreachable"),
+    
+    SMTP_REJECTED("smtp_rejected"),
+    
+    DISPOSABLE("disposable"),
+    
+    ROLE_ACCOUNT("role_account"),
+    
+    GREYLISTED("greylisted"),
+    
+    CATCH_ALL_DETECTED("catch_all_detected"),
+    
+    SUPPRESSION_MATCH("suppression_match");
+
+    private String value;
+
+    SubStatusEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static SubStatusEnum fromValue(String value) {
+      for (SubStatusEnum b : SubStatusEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<SubStatusEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final SubStatusEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public SubStatusEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return SubStatusEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      SubStatusEnum.fromValue(value);
+    }
+  }
+
+  public static final String SERIALIZED_NAME_SUB_STATUS = "sub_status";
+  @SerializedName(SERIALIZED_NAME_SUB_STATUS)
+  @javax.annotation.Nullable
+  private SubStatusEnum subStatus;
+
   public static final String SERIALIZED_NAME_DOMAIN = "domain";
   @SerializedName(SERIALIZED_NAME_DOMAIN)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private String domain;
 
   public static final String SERIALIZED_NAME_MX_FOUND = "mx_found";
   @SerializedName(SERIALIZED_NAME_MX_FOUND)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private Boolean mxFound;
+
+  public static final String SERIALIZED_NAME_MX_HOST = "mx_host";
+  @SerializedName(SERIALIZED_NAME_MX_HOST)
+  @javax.annotation.Nullable
+  private String mxHost;
 
   public static final String SERIALIZED_NAME_SMTP_CHECK = "smtp_check";
   @SerializedName(SERIALIZED_NAME_SMTP_CHECK)
   @javax.annotation.Nullable
   private Boolean smtpCheck;
 
+  public static final String SERIALIZED_NAME_CATCH_ALL = "catch_all";
+  @SerializedName(SERIALIZED_NAME_CATCH_ALL)
+  @javax.annotation.Nullable
+  private Boolean catchAll;
+
   public static final String SERIALIZED_NAME_DISPOSABLE = "disposable";
   @SerializedName(SERIALIZED_NAME_DISPOSABLE)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private Boolean disposable;
 
   public static final String SERIALIZED_NAME_ROLE_ACCOUNT = "role_account";
   @SerializedName(SERIALIZED_NAME_ROLE_ACCOUNT)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private Boolean roleAccount;
 
   public static final String SERIALIZED_NAME_FREE_PROVIDER = "free_provider";
   @SerializedName(SERIALIZED_NAME_FREE_PROVIDER)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private Boolean freeProvider;
+
+  /**
+   * Validation depth used for this check
+   */
+  @JsonAdapter(DepthEnum.Adapter.class)
+  public enum DepthEnum {
+    STANDARD("standard"),
+    
+    ENHANCED("enhanced");
+
+    private String value;
+
+    DepthEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static DepthEnum fromValue(String value) {
+      for (DepthEnum b : DepthEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<DepthEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final DepthEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public DepthEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return DepthEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      DepthEnum.fromValue(value);
+    }
+  }
+
+  public static final String SERIALIZED_NAME_DEPTH = "depth";
+  @SerializedName(SERIALIZED_NAME_DEPTH)
+  @javax.annotation.Nonnull
+  private DepthEnum depth;
+
+  public static final String SERIALIZED_NAME_PROCESSED_AT = "processed_at";
+  @SerializedName(SERIALIZED_NAME_PROCESSED_AT)
+  @javax.annotation.Nonnull
+  private OffsetDateTime processedAt;
+
+  public static final String SERIALIZED_NAME_SUGGESTED_EMAIL = "suggested_email";
+  @SerializedName(SERIALIZED_NAME_SUGGESTED_EMAIL)
+  @javax.annotation.Nullable
+  private String suggestedEmail;
+
+  public static final String SERIALIZED_NAME_RETRY_AFTER_MS = "retry_after_ms";
+  @SerializedName(SERIALIZED_NAME_RETRY_AFTER_MS)
+  @javax.annotation.Nullable
+  private Integer retryAfterMs;
 
   public static final String SERIALIZED_NAME_SUPPRESSION_MATCH = "suppression_match";
   @SerializedName(SERIALIZED_NAME_SUPPRESSION_MATCH)
   @javax.annotation.Nullable
   private ValidationResponseSuppressionMatch suppressionMatch;
 
+  public static final String SERIALIZED_NAME_POLICY_APPLIED = "policy_applied";
+  @SerializedName(SERIALIZED_NAME_POLICY_APPLIED)
+  @javax.annotation.Nullable
+  private ValidationResponsePolicyApplied policyApplied;
+
   public ValidationResponse() {
   }
 
-  public ValidationResponse schemaVersion(@javax.annotation.Nullable String schemaVersion) {
+  public ValidationResponse schemaVersion(@javax.annotation.Nonnull String schemaVersion) {
     this.schemaVersion = schemaVersion;
     return this;
   }
@@ -237,12 +394,12 @@ public class ValidationResponse {
    * Get schemaVersion
    * @return schemaVersion
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public String getSchemaVersion() {
     return schemaVersion;
   }
 
-  public void setSchemaVersion(@javax.annotation.Nullable String schemaVersion) {
+  public void setSchemaVersion(@javax.annotation.Nonnull String schemaVersion) {
     this.schemaVersion = schemaVersion;
   }
 
@@ -285,25 +442,6 @@ public class ValidationResponse {
   }
 
 
-  public ValidationResponse subStatus(@javax.annotation.Nullable String subStatus) {
-    this.subStatus = subStatus;
-    return this;
-  }
-
-  /**
-   * Detailed status reason
-   * @return subStatus
-   */
-  @javax.annotation.Nullable
-  public String getSubStatus() {
-    return subStatus;
-  }
-
-  public void setSubStatus(@javax.annotation.Nullable String subStatus) {
-    this.subStatus = subStatus;
-  }
-
-
   public ValidationResponse action(@javax.annotation.Nonnull ActionEnum action) {
     this.action = action;
     return this;
@@ -323,7 +461,26 @@ public class ValidationResponse {
   }
 
 
-  public ValidationResponse domain(@javax.annotation.Nullable String domain) {
+  public ValidationResponse subStatus(@javax.annotation.Nullable SubStatusEnum subStatus) {
+    this.subStatus = subStatus;
+    return this;
+  }
+
+  /**
+   * Detailed status reason. Omitted when none.
+   * @return subStatus
+   */
+  @javax.annotation.Nullable
+  public SubStatusEnum getSubStatus() {
+    return subStatus;
+  }
+
+  public void setSubStatus(@javax.annotation.Nullable SubStatusEnum subStatus) {
+    this.subStatus = subStatus;
+  }
+
+
+  public ValidationResponse domain(@javax.annotation.Nonnull String domain) {
     this.domain = domain;
     return this;
   }
@@ -332,32 +489,51 @@ public class ValidationResponse {
    * Get domain
    * @return domain
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public String getDomain() {
     return domain;
   }
 
-  public void setDomain(@javax.annotation.Nullable String domain) {
+  public void setDomain(@javax.annotation.Nonnull String domain) {
     this.domain = domain;
   }
 
 
-  public ValidationResponse mxFound(@javax.annotation.Nullable Boolean mxFound) {
+  public ValidationResponse mxFound(@javax.annotation.Nonnull Boolean mxFound) {
     this.mxFound = mxFound;
     return this;
   }
 
   /**
-   * Get mxFound
+   * Whether MX records were found for the domain
    * @return mxFound
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public Boolean getMxFound() {
     return mxFound;
   }
 
-  public void setMxFound(@javax.annotation.Nullable Boolean mxFound) {
+  public void setMxFound(@javax.annotation.Nonnull Boolean mxFound) {
     this.mxFound = mxFound;
+  }
+
+
+  public ValidationResponse mxHost(@javax.annotation.Nullable String mxHost) {
+    this.mxHost = mxHost;
+    return this;
+  }
+
+  /**
+   * Primary MX hostname. Omitted when MX not resolved.
+   * @return mxHost
+   */
+  @javax.annotation.Nullable
+  public String getMxHost() {
+    return mxHost;
+  }
+
+  public void setMxHost(@javax.annotation.Nullable String mxHost) {
+    this.mxHost = mxHost;
   }
 
 
@@ -367,7 +543,7 @@ public class ValidationResponse {
   }
 
   /**
-   * Get smtpCheck
+   * Whether SMTP verification passed. Omitted when SMTP not checked.
    * @return smtpCheck
    */
   @javax.annotation.Nullable
@@ -380,60 +556,155 @@ public class ValidationResponse {
   }
 
 
-  public ValidationResponse disposable(@javax.annotation.Nullable Boolean disposable) {
+  public ValidationResponse catchAll(@javax.annotation.Nullable Boolean catchAll) {
+    this.catchAll = catchAll;
+    return this;
+  }
+
+  /**
+   * Whether domain is catch-all. Omitted when SMTP not checked.
+   * @return catchAll
+   */
+  @javax.annotation.Nullable
+  public Boolean getCatchAll() {
+    return catchAll;
+  }
+
+  public void setCatchAll(@javax.annotation.Nullable Boolean catchAll) {
+    this.catchAll = catchAll;
+  }
+
+
+  public ValidationResponse disposable(@javax.annotation.Nonnull Boolean disposable) {
     this.disposable = disposable;
     return this;
   }
 
   /**
-   * Get disposable
+   * Whether domain is a known disposable email provider
    * @return disposable
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public Boolean getDisposable() {
     return disposable;
   }
 
-  public void setDisposable(@javax.annotation.Nullable Boolean disposable) {
+  public void setDisposable(@javax.annotation.Nonnull Boolean disposable) {
     this.disposable = disposable;
   }
 
 
-  public ValidationResponse roleAccount(@javax.annotation.Nullable Boolean roleAccount) {
+  public ValidationResponse roleAccount(@javax.annotation.Nonnull Boolean roleAccount) {
     this.roleAccount = roleAccount;
     return this;
   }
 
   /**
-   * Get roleAccount
+   * Whether address is a role account (e.g., info@, admin@)
    * @return roleAccount
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public Boolean getRoleAccount() {
     return roleAccount;
   }
 
-  public void setRoleAccount(@javax.annotation.Nullable Boolean roleAccount) {
+  public void setRoleAccount(@javax.annotation.Nonnull Boolean roleAccount) {
     this.roleAccount = roleAccount;
   }
 
 
-  public ValidationResponse freeProvider(@javax.annotation.Nullable Boolean freeProvider) {
+  public ValidationResponse freeProvider(@javax.annotation.Nonnull Boolean freeProvider) {
     this.freeProvider = freeProvider;
     return this;
   }
 
   /**
-   * Get freeProvider
+   * Whether domain is a known free email provider (e.g., gmail.com)
    * @return freeProvider
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public Boolean getFreeProvider() {
     return freeProvider;
   }
 
-  public void setFreeProvider(@javax.annotation.Nullable Boolean freeProvider) {
+  public void setFreeProvider(@javax.annotation.Nonnull Boolean freeProvider) {
     this.freeProvider = freeProvider;
+  }
+
+
+  public ValidationResponse depth(@javax.annotation.Nonnull DepthEnum depth) {
+    this.depth = depth;
+    return this;
+  }
+
+  /**
+   * Validation depth used for this check
+   * @return depth
+   */
+  @javax.annotation.Nonnull
+  public DepthEnum getDepth() {
+    return depth;
+  }
+
+  public void setDepth(@javax.annotation.Nonnull DepthEnum depth) {
+    this.depth = depth;
+  }
+
+
+  public ValidationResponse processedAt(@javax.annotation.Nonnull OffsetDateTime processedAt) {
+    this.processedAt = processedAt;
+    return this;
+  }
+
+  /**
+   * ISO 8601 timestamp of validation
+   * @return processedAt
+   */
+  @javax.annotation.Nonnull
+  public OffsetDateTime getProcessedAt() {
+    return processedAt;
+  }
+
+  public void setProcessedAt(@javax.annotation.Nonnull OffsetDateTime processedAt) {
+    this.processedAt = processedAt;
+  }
+
+
+  public ValidationResponse suggestedEmail(@javax.annotation.Nullable String suggestedEmail) {
+    this.suggestedEmail = suggestedEmail;
+    return this;
+  }
+
+  /**
+   * Typo correction suggestion. Omitted when no typo detected.
+   * @return suggestedEmail
+   */
+  @javax.annotation.Nullable
+  public String getSuggestedEmail() {
+    return suggestedEmail;
+  }
+
+  public void setSuggestedEmail(@javax.annotation.Nullable String suggestedEmail) {
+    this.suggestedEmail = suggestedEmail;
+  }
+
+
+  public ValidationResponse retryAfterMs(@javax.annotation.Nullable Integer retryAfterMs) {
+    this.retryAfterMs = retryAfterMs;
+    return this;
+  }
+
+  /**
+   * Suggested retry delay in milliseconds. Present only for retry_later action.
+   * @return retryAfterMs
+   */
+  @javax.annotation.Nullable
+  public Integer getRetryAfterMs() {
+    return retryAfterMs;
+  }
+
+  public void setRetryAfterMs(@javax.annotation.Nullable Integer retryAfterMs) {
+    this.retryAfterMs = retryAfterMs;
   }
 
 
@@ -456,6 +727,25 @@ public class ValidationResponse {
   }
 
 
+  public ValidationResponse policyApplied(@javax.annotation.Nullable ValidationResponsePolicyApplied policyApplied) {
+    this.policyApplied = policyApplied;
+    return this;
+  }
+
+  /**
+   * Get policyApplied
+   * @return policyApplied
+   */
+  @javax.annotation.Nullable
+  public ValidationResponsePolicyApplied getPolicyApplied() {
+    return policyApplied;
+  }
+
+  public void setPolicyApplied(@javax.annotation.Nullable ValidationResponsePolicyApplied policyApplied) {
+    this.policyApplied = policyApplied;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -469,20 +759,27 @@ public class ValidationResponse {
     return Objects.equals(this.schemaVersion, validationResponse.schemaVersion) &&
         Objects.equals(this.email, validationResponse.email) &&
         Objects.equals(this.status, validationResponse.status) &&
-        Objects.equals(this.subStatus, validationResponse.subStatus) &&
         Objects.equals(this.action, validationResponse.action) &&
+        Objects.equals(this.subStatus, validationResponse.subStatus) &&
         Objects.equals(this.domain, validationResponse.domain) &&
         Objects.equals(this.mxFound, validationResponse.mxFound) &&
+        Objects.equals(this.mxHost, validationResponse.mxHost) &&
         Objects.equals(this.smtpCheck, validationResponse.smtpCheck) &&
+        Objects.equals(this.catchAll, validationResponse.catchAll) &&
         Objects.equals(this.disposable, validationResponse.disposable) &&
         Objects.equals(this.roleAccount, validationResponse.roleAccount) &&
         Objects.equals(this.freeProvider, validationResponse.freeProvider) &&
-        Objects.equals(this.suppressionMatch, validationResponse.suppressionMatch);
+        Objects.equals(this.depth, validationResponse.depth) &&
+        Objects.equals(this.processedAt, validationResponse.processedAt) &&
+        Objects.equals(this.suggestedEmail, validationResponse.suggestedEmail) &&
+        Objects.equals(this.retryAfterMs, validationResponse.retryAfterMs) &&
+        Objects.equals(this.suppressionMatch, validationResponse.suppressionMatch) &&
+        Objects.equals(this.policyApplied, validationResponse.policyApplied);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(schemaVersion, email, status, subStatus, action, domain, mxFound, smtpCheck, disposable, roleAccount, freeProvider, suppressionMatch);
+    return Objects.hash(schemaVersion, email, status, action, subStatus, domain, mxFound, mxHost, smtpCheck, catchAll, disposable, roleAccount, freeProvider, depth, processedAt, suggestedEmail, retryAfterMs, suppressionMatch, policyApplied);
   }
 
   @Override
@@ -492,15 +789,22 @@ public class ValidationResponse {
     sb.append("    schemaVersion: ").append(toIndentedString(schemaVersion)).append("\n");
     sb.append("    email: ").append(toIndentedString(email)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
-    sb.append("    subStatus: ").append(toIndentedString(subStatus)).append("\n");
     sb.append("    action: ").append(toIndentedString(action)).append("\n");
+    sb.append("    subStatus: ").append(toIndentedString(subStatus)).append("\n");
     sb.append("    domain: ").append(toIndentedString(domain)).append("\n");
     sb.append("    mxFound: ").append(toIndentedString(mxFound)).append("\n");
+    sb.append("    mxHost: ").append(toIndentedString(mxHost)).append("\n");
     sb.append("    smtpCheck: ").append(toIndentedString(smtpCheck)).append("\n");
+    sb.append("    catchAll: ").append(toIndentedString(catchAll)).append("\n");
     sb.append("    disposable: ").append(toIndentedString(disposable)).append("\n");
     sb.append("    roleAccount: ").append(toIndentedString(roleAccount)).append("\n");
     sb.append("    freeProvider: ").append(toIndentedString(freeProvider)).append("\n");
+    sb.append("    depth: ").append(toIndentedString(depth)).append("\n");
+    sb.append("    processedAt: ").append(toIndentedString(processedAt)).append("\n");
+    sb.append("    suggestedEmail: ").append(toIndentedString(suggestedEmail)).append("\n");
+    sb.append("    retryAfterMs: ").append(toIndentedString(retryAfterMs)).append("\n");
     sb.append("    suppressionMatch: ").append(toIndentedString(suppressionMatch)).append("\n");
+    sb.append("    policyApplied: ").append(toIndentedString(policyApplied)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -522,10 +826,10 @@ public class ValidationResponse {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("schema_version", "email", "status", "sub_status", "action", "domain", "mx_found", "smtp_check", "disposable", "role_account", "free_provider", "suppression_match"));
+    openapiFields = new HashSet<String>(Arrays.asList("schema_version", "email", "status", "action", "sub_status", "domain", "mx_found", "mx_host", "smtp_check", "catch_all", "disposable", "role_account", "free_provider", "depth", "processed_at", "suggested_email", "retry_after_ms", "suppression_match", "policy_applied"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(Arrays.asList("email", "status", "action"));
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("schema_version", "email", "status", "action", "domain", "mx_found", "disposable", "role_account", "free_provider", "depth", "processed_at"));
   }
 
   /**
@@ -556,7 +860,7 @@ public class ValidationResponse {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("schema_version") != null && !jsonObj.get("schema_version").isJsonNull()) && !jsonObj.get("schema_version").isJsonPrimitive()) {
+      if (!jsonObj.get("schema_version").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `schema_version` to be a primitive type in the JSON string but got `%s`", jsonObj.get("schema_version").toString()));
       }
       if (!jsonObj.get("email").isJsonPrimitive()) {
@@ -567,20 +871,39 @@ public class ValidationResponse {
       }
       // validate the required field `status`
       StatusEnum.validateJsonElement(jsonObj.get("status"));
-      if ((jsonObj.get("sub_status") != null && !jsonObj.get("sub_status").isJsonNull()) && !jsonObj.get("sub_status").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `sub_status` to be a primitive type in the JSON string but got `%s`", jsonObj.get("sub_status").toString()));
-      }
       if (!jsonObj.get("action").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `action` to be a primitive type in the JSON string but got `%s`", jsonObj.get("action").toString()));
       }
       // validate the required field `action`
       ActionEnum.validateJsonElement(jsonObj.get("action"));
-      if ((jsonObj.get("domain") != null && !jsonObj.get("domain").isJsonNull()) && !jsonObj.get("domain").isJsonPrimitive()) {
+      if ((jsonObj.get("sub_status") != null && !jsonObj.get("sub_status").isJsonNull()) && !jsonObj.get("sub_status").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `sub_status` to be a primitive type in the JSON string but got `%s`", jsonObj.get("sub_status").toString()));
+      }
+      // validate the optional field `sub_status`
+      if (jsonObj.get("sub_status") != null && !jsonObj.get("sub_status").isJsonNull()) {
+        SubStatusEnum.validateJsonElement(jsonObj.get("sub_status"));
+      }
+      if (!jsonObj.get("domain").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `domain` to be a primitive type in the JSON string but got `%s`", jsonObj.get("domain").toString()));
+      }
+      if ((jsonObj.get("mx_host") != null && !jsonObj.get("mx_host").isJsonNull()) && !jsonObj.get("mx_host").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `mx_host` to be a primitive type in the JSON string but got `%s`", jsonObj.get("mx_host").toString()));
+      }
+      if (!jsonObj.get("depth").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `depth` to be a primitive type in the JSON string but got `%s`", jsonObj.get("depth").toString()));
+      }
+      // validate the required field `depth`
+      DepthEnum.validateJsonElement(jsonObj.get("depth"));
+      if ((jsonObj.get("suggested_email") != null && !jsonObj.get("suggested_email").isJsonNull()) && !jsonObj.get("suggested_email").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `suggested_email` to be a primitive type in the JSON string but got `%s`", jsonObj.get("suggested_email").toString()));
       }
       // validate the optional field `suppression_match`
       if (jsonObj.get("suppression_match") != null && !jsonObj.get("suppression_match").isJsonNull()) {
         ValidationResponseSuppressionMatch.validateJsonElement(jsonObj.get("suppression_match"));
+      }
+      // validate the optional field `policy_applied`
+      if (jsonObj.get("policy_applied") != null && !jsonObj.get("policy_applied").isJsonNull()) {
+        ValidationResponsePolicyApplied.validateJsonElement(jsonObj.get("policy_applied"));
       }
   }
 

@@ -48,12 +48,69 @@ import com.mailodds.JSON;
 /**
  * ValidateRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-07T02:07:05.451650876+01:00[Europe/Amsterdam]", comments = "Generator version: 7.19.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-08T17:48:30.569515929+01:00[Europe/Amsterdam]", comments = "Generator version: 7.19.0")
 public class ValidateRequest {
   public static final String SERIALIZED_NAME_EMAIL = "email";
   @SerializedName(SERIALIZED_NAME_EMAIL)
   @javax.annotation.Nonnull
   private String email;
+
+  /**
+   * Validation depth. &#39;standard&#39; skips SMTP verification.
+   */
+  @JsonAdapter(DepthEnum.Adapter.class)
+  public enum DepthEnum {
+    STANDARD("standard"),
+    
+    ENHANCED("enhanced");
+
+    private String value;
+
+    DepthEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static DepthEnum fromValue(String value) {
+      for (DepthEnum b : DepthEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<DepthEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final DepthEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public DepthEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return DepthEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      DepthEnum.fromValue(value);
+    }
+  }
+
+  public static final String SERIALIZED_NAME_DEPTH = "depth";
+  @SerializedName(SERIALIZED_NAME_DEPTH)
+  @javax.annotation.Nullable
+  private DepthEnum depth = DepthEnum.ENHANCED;
 
   public static final String SERIALIZED_NAME_POLICY_ID = "policy_id";
   @SerializedName(SERIALIZED_NAME_POLICY_ID)
@@ -79,6 +136,25 @@ public class ValidateRequest {
 
   public void setEmail(@javax.annotation.Nonnull String email) {
     this.email = email;
+  }
+
+
+  public ValidateRequest depth(@javax.annotation.Nullable DepthEnum depth) {
+    this.depth = depth;
+    return this;
+  }
+
+  /**
+   * Validation depth. &#39;standard&#39; skips SMTP verification.
+   * @return depth
+   */
+  @javax.annotation.Nullable
+  public DepthEnum getDepth() {
+    return depth;
+  }
+
+  public void setDepth(@javax.annotation.Nullable DepthEnum depth) {
+    this.depth = depth;
   }
 
 
@@ -112,12 +188,13 @@ public class ValidateRequest {
     }
     ValidateRequest validateRequest = (ValidateRequest) o;
     return Objects.equals(this.email, validateRequest.email) &&
+        Objects.equals(this.depth, validateRequest.depth) &&
         Objects.equals(this.policyId, validateRequest.policyId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(email, policyId);
+    return Objects.hash(email, depth, policyId);
   }
 
   @Override
@@ -125,6 +202,7 @@ public class ValidateRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class ValidateRequest {\n");
     sb.append("    email: ").append(toIndentedString(email)).append("\n");
+    sb.append("    depth: ").append(toIndentedString(depth)).append("\n");
     sb.append("    policyId: ").append(toIndentedString(policyId)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -147,7 +225,7 @@ public class ValidateRequest {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("email", "policy_id"));
+    openapiFields = new HashSet<String>(Arrays.asList("email", "depth", "policy_id"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("email"));
@@ -183,6 +261,13 @@ public class ValidateRequest {
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("email").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `email` to be a primitive type in the JSON string but got `%s`", jsonObj.get("email").toString()));
+      }
+      if ((jsonObj.get("depth") != null && !jsonObj.get("depth").isJsonNull()) && !jsonObj.get("depth").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `depth` to be a primitive type in the JSON string but got `%s`", jsonObj.get("depth").toString()));
+      }
+      // validate the optional field `depth`
+      if (jsonObj.get("depth") != null && !jsonObj.get("depth").isJsonNull()) {
+        DepthEnum.validateJsonElement(jsonObj.get("depth"));
       }
   }
 

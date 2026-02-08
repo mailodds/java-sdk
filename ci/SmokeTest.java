@@ -48,7 +48,7 @@ public class SmokeTest {
                 ValidationResponse resp = api.validateEmail(req);
                 check(domain + ".status", c[1], resp.getStatus().getValue());
                 check(domain + ".action", c[2], resp.getAction().getValue());
-                check(domain + ".sub_status", c[3], resp.getSubStatus());
+                check(domain + ".sub_status", c[3], resp.getSubStatus() != null ? resp.getSubStatus().getValue() : null);
             } catch (Exception e) {
                 failed++;
                 System.out.printf("  FAIL: %s error: %s%n", domain, e.getMessage());
