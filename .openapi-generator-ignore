@@ -30,3 +30,8 @@ src/main/java/com/mailodds/enterprise/**
 
 # Preserve CI workflow
 .github/workflows/maven.yml
+
+# Preserve CI smoke tests
+ci/**
+# Preserve GitHub Actions workflows
+.github/**
