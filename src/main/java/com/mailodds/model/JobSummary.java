@@ -48,7 +48,7 @@ import com.mailodds.JSON;
 /**
  * JobSummary
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-08T17:48:30.569515929+01:00[Europe/Amsterdam]", comments = "Generator version: 7.19.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-26T01:37:38.039547555+01:00[Europe/Amsterdam]", comments = "Generator version: 7.19.0")
 public class JobSummary {
   public static final String SERIALIZED_NAME_VALID = "valid";
   @SerializedName(SERIALIZED_NAME_VALID)
@@ -59,6 +59,11 @@ public class JobSummary {
   @SerializedName(SERIALIZED_NAME_INVALID)
   @javax.annotation.Nullable
   private Integer invalid;
+
+  public static final String SERIALIZED_NAME_CATCH_ALL = "catch_all";
+  @SerializedName(SERIALIZED_NAME_CATCH_ALL)
+  @javax.annotation.Nullable
+  private Integer catchAll;
 
   public static final String SERIALIZED_NAME_DO_NOT_MAIL = "do_not_mail";
   @SerializedName(SERIALIZED_NAME_DO_NOT_MAIL)
@@ -113,6 +118,25 @@ public class JobSummary {
 
   public void setInvalid(@javax.annotation.Nullable Integer invalid) {
     this.invalid = invalid;
+  }
+
+
+  public JobSummary catchAll(@javax.annotation.Nullable Integer catchAll) {
+    this.catchAll = catchAll;
+    return this;
+  }
+
+  /**
+   * Get catchAll
+   * @return catchAll
+   */
+  @javax.annotation.Nullable
+  public Integer getCatchAll() {
+    return catchAll;
+  }
+
+  public void setCatchAll(@javax.annotation.Nullable Integer catchAll) {
+    this.catchAll = catchAll;
   }
 
 
@@ -185,6 +209,7 @@ public class JobSummary {
     JobSummary jobSummary = (JobSummary) o;
     return Objects.equals(this.valid, jobSummary.valid) &&
         Objects.equals(this.invalid, jobSummary.invalid) &&
+        Objects.equals(this.catchAll, jobSummary.catchAll) &&
         Objects.equals(this.doNotMail, jobSummary.doNotMail) &&
         Objects.equals(this.unknown, jobSummary.unknown) &&
         Objects.equals(this.cancelledPending, jobSummary.cancelledPending);
@@ -192,7 +217,7 @@ public class JobSummary {
 
   @Override
   public int hashCode() {
-    return Objects.hash(valid, invalid, doNotMail, unknown, cancelledPending);
+    return Objects.hash(valid, invalid, catchAll, doNotMail, unknown, cancelledPending);
   }
 
   @Override
@@ -201,6 +226,7 @@ public class JobSummary {
     sb.append("class JobSummary {\n");
     sb.append("    valid: ").append(toIndentedString(valid)).append("\n");
     sb.append("    invalid: ").append(toIndentedString(invalid)).append("\n");
+    sb.append("    catchAll: ").append(toIndentedString(catchAll)).append("\n");
     sb.append("    doNotMail: ").append(toIndentedString(doNotMail)).append("\n");
     sb.append("    unknown: ").append(toIndentedString(unknown)).append("\n");
     sb.append("    cancelledPending: ").append(toIndentedString(cancelledPending)).append("\n");
@@ -225,7 +251,7 @@ public class JobSummary {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("valid", "invalid", "do_not_mail", "unknown", "cancelled_pending"));
+    openapiFields = new HashSet<String>(Arrays.asList("valid", "invalid", "catch_all", "do_not_mail", "unknown", "cancelled_pending"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -244,13 +270,7 @@ public class JobSummary {
         }
       }
 
-      Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Map.Entry<String, JsonElement> entry : entries) {
-        if (!JobSummary.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `JobSummary` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
-        }
-      }
+
         JsonObject jsonObj = jsonElement.getAsJsonObject();
   }
 

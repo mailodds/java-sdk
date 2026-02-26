@@ -51,12 +51,17 @@ import com.mailodds.JSON;
 /**
  * Flat validation response. Conditional fields are omitted (not null) when not applicable.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-08T17:48:30.569515929+01:00[Europe/Amsterdam]", comments = "Generator version: 7.19.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-26T01:37:38.039547555+01:00[Europe/Amsterdam]", comments = "Generator version: 7.19.0")
 public class ValidationResponse {
   public static final String SERIALIZED_NAME_SCHEMA_VERSION = "schema_version";
   @SerializedName(SERIALIZED_NAME_SCHEMA_VERSION)
   @javax.annotation.Nonnull
   private String schemaVersion;
+
+  public static final String SERIALIZED_NAME_REQUEST_ID = "request_id";
+  @SerializedName(SERIALIZED_NAME_REQUEST_ID)
+  @javax.annotation.Nullable
+  private String requestId;
 
   public static final String SERIALIZED_NAME_EMAIL = "email";
   @SerializedName(SERIALIZED_NAME_EMAIL)
@@ -210,7 +215,13 @@ public class ValidationResponse {
     
     CATCH_ALL_DETECTED("catch_all_detected"),
     
-    SUPPRESSION_MATCH("suppression_match");
+    DOMAIN_NOT_FOUND("domain_not_found"),
+    
+    SUPPRESSION_MATCH("suppression_match"),
+    
+    RESTRICTED_MILITARY("restricted_military"),
+    
+    RESTRICTED_SANCTIONED("restricted_sanctioned");
 
     private String value;
 
@@ -372,6 +383,80 @@ public class ValidationResponse {
   @javax.annotation.Nullable
   private Integer retryAfterMs;
 
+  public static final String SERIALIZED_NAME_HAS_SPF = "has_spf";
+  @SerializedName(SERIALIZED_NAME_HAS_SPF)
+  @javax.annotation.Nullable
+  private Boolean hasSpf;
+
+  public static final String SERIALIZED_NAME_HAS_DMARC = "has_dmarc";
+  @SerializedName(SERIALIZED_NAME_HAS_DMARC)
+  @javax.annotation.Nullable
+  private Boolean hasDmarc;
+
+  /**
+   * The domain&#39;s DMARC policy. Omitted when no DMARC record found.
+   */
+  @JsonAdapter(DmarcPolicyEnum.Adapter.class)
+  public enum DmarcPolicyEnum {
+    NONE("none"),
+    
+    QUARANTINE("quarantine"),
+    
+    REJECT("reject");
+
+    private String value;
+
+    DmarcPolicyEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static DmarcPolicyEnum fromValue(String value) {
+      for (DmarcPolicyEnum b : DmarcPolicyEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<DmarcPolicyEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final DmarcPolicyEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public DmarcPolicyEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return DmarcPolicyEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      DmarcPolicyEnum.fromValue(value);
+    }
+  }
+
+  public static final String SERIALIZED_NAME_DMARC_POLICY = "dmarc_policy";
+  @SerializedName(SERIALIZED_NAME_DMARC_POLICY)
+  @javax.annotation.Nullable
+  private DmarcPolicyEnum dmarcPolicy;
+
+  public static final String SERIALIZED_NAME_DNSBL_LISTED = "dnsbl_listed";
+  @SerializedName(SERIALIZED_NAME_DNSBL_LISTED)
+  @javax.annotation.Nullable
+  private Boolean dnsblListed;
+
   public static final String SERIALIZED_NAME_SUPPRESSION_MATCH = "suppression_match";
   @SerializedName(SERIALIZED_NAME_SUPPRESSION_MATCH)
   @javax.annotation.Nullable
@@ -401,6 +486,25 @@ public class ValidationResponse {
 
   public void setSchemaVersion(@javax.annotation.Nonnull String schemaVersion) {
     this.schemaVersion = schemaVersion;
+  }
+
+
+  public ValidationResponse requestId(@javax.annotation.Nullable String requestId) {
+    this.requestId = requestId;
+    return this;
+  }
+
+  /**
+   * Unique request identifier
+   * @return requestId
+   */
+  @javax.annotation.Nullable
+  public String getRequestId() {
+    return requestId;
+  }
+
+  public void setRequestId(@javax.annotation.Nullable String requestId) {
+    this.requestId = requestId;
   }
 
 
@@ -708,6 +812,82 @@ public class ValidationResponse {
   }
 
 
+  public ValidationResponse hasSpf(@javax.annotation.Nullable Boolean hasSpf) {
+    this.hasSpf = hasSpf;
+    return this;
+  }
+
+  /**
+   * Whether the domain has an SPF record. Omitted for standard depth.
+   * @return hasSpf
+   */
+  @javax.annotation.Nullable
+  public Boolean getHasSpf() {
+    return hasSpf;
+  }
+
+  public void setHasSpf(@javax.annotation.Nullable Boolean hasSpf) {
+    this.hasSpf = hasSpf;
+  }
+
+
+  public ValidationResponse hasDmarc(@javax.annotation.Nullable Boolean hasDmarc) {
+    this.hasDmarc = hasDmarc;
+    return this;
+  }
+
+  /**
+   * Whether the domain has a DMARC record. Omitted for standard depth.
+   * @return hasDmarc
+   */
+  @javax.annotation.Nullable
+  public Boolean getHasDmarc() {
+    return hasDmarc;
+  }
+
+  public void setHasDmarc(@javax.annotation.Nullable Boolean hasDmarc) {
+    this.hasDmarc = hasDmarc;
+  }
+
+
+  public ValidationResponse dmarcPolicy(@javax.annotation.Nullable DmarcPolicyEnum dmarcPolicy) {
+    this.dmarcPolicy = dmarcPolicy;
+    return this;
+  }
+
+  /**
+   * The domain&#39;s DMARC policy. Omitted when no DMARC record found.
+   * @return dmarcPolicy
+   */
+  @javax.annotation.Nullable
+  public DmarcPolicyEnum getDmarcPolicy() {
+    return dmarcPolicy;
+  }
+
+  public void setDmarcPolicy(@javax.annotation.Nullable DmarcPolicyEnum dmarcPolicy) {
+    this.dmarcPolicy = dmarcPolicy;
+  }
+
+
+  public ValidationResponse dnsblListed(@javax.annotation.Nullable Boolean dnsblListed) {
+    this.dnsblListed = dnsblListed;
+    return this;
+  }
+
+  /**
+   * Whether the domain&#39;s MX IP is on a DNS blocklist (Spamhaus ZEN). Omitted for standard depth.
+   * @return dnsblListed
+   */
+  @javax.annotation.Nullable
+  public Boolean getDnsblListed() {
+    return dnsblListed;
+  }
+
+  public void setDnsblListed(@javax.annotation.Nullable Boolean dnsblListed) {
+    this.dnsblListed = dnsblListed;
+  }
+
+
   public ValidationResponse suppressionMatch(@javax.annotation.Nullable ValidationResponseSuppressionMatch suppressionMatch) {
     this.suppressionMatch = suppressionMatch;
     return this;
@@ -757,6 +937,7 @@ public class ValidationResponse {
     }
     ValidationResponse validationResponse = (ValidationResponse) o;
     return Objects.equals(this.schemaVersion, validationResponse.schemaVersion) &&
+        Objects.equals(this.requestId, validationResponse.requestId) &&
         Objects.equals(this.email, validationResponse.email) &&
         Objects.equals(this.status, validationResponse.status) &&
         Objects.equals(this.action, validationResponse.action) &&
@@ -773,13 +954,17 @@ public class ValidationResponse {
         Objects.equals(this.processedAt, validationResponse.processedAt) &&
         Objects.equals(this.suggestedEmail, validationResponse.suggestedEmail) &&
         Objects.equals(this.retryAfterMs, validationResponse.retryAfterMs) &&
+        Objects.equals(this.hasSpf, validationResponse.hasSpf) &&
+        Objects.equals(this.hasDmarc, validationResponse.hasDmarc) &&
+        Objects.equals(this.dmarcPolicy, validationResponse.dmarcPolicy) &&
+        Objects.equals(this.dnsblListed, validationResponse.dnsblListed) &&
         Objects.equals(this.suppressionMatch, validationResponse.suppressionMatch) &&
         Objects.equals(this.policyApplied, validationResponse.policyApplied);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(schemaVersion, email, status, action, subStatus, domain, mxFound, mxHost, smtpCheck, catchAll, disposable, roleAccount, freeProvider, depth, processedAt, suggestedEmail, retryAfterMs, suppressionMatch, policyApplied);
+    return Objects.hash(schemaVersion, requestId, email, status, action, subStatus, domain, mxFound, mxHost, smtpCheck, catchAll, disposable, roleAccount, freeProvider, depth, processedAt, suggestedEmail, retryAfterMs, hasSpf, hasDmarc, dmarcPolicy, dnsblListed, suppressionMatch, policyApplied);
   }
 
   @Override
@@ -787,6 +972,7 @@ public class ValidationResponse {
     StringBuilder sb = new StringBuilder();
     sb.append("class ValidationResponse {\n");
     sb.append("    schemaVersion: ").append(toIndentedString(schemaVersion)).append("\n");
+    sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
     sb.append("    email: ").append(toIndentedString(email)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    action: ").append(toIndentedString(action)).append("\n");
@@ -803,6 +989,10 @@ public class ValidationResponse {
     sb.append("    processedAt: ").append(toIndentedString(processedAt)).append("\n");
     sb.append("    suggestedEmail: ").append(toIndentedString(suggestedEmail)).append("\n");
     sb.append("    retryAfterMs: ").append(toIndentedString(retryAfterMs)).append("\n");
+    sb.append("    hasSpf: ").append(toIndentedString(hasSpf)).append("\n");
+    sb.append("    hasDmarc: ").append(toIndentedString(hasDmarc)).append("\n");
+    sb.append("    dmarcPolicy: ").append(toIndentedString(dmarcPolicy)).append("\n");
+    sb.append("    dnsblListed: ").append(toIndentedString(dnsblListed)).append("\n");
     sb.append("    suppressionMatch: ").append(toIndentedString(suppressionMatch)).append("\n");
     sb.append("    policyApplied: ").append(toIndentedString(policyApplied)).append("\n");
     sb.append("}");
@@ -826,7 +1016,7 @@ public class ValidationResponse {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("schema_version", "email", "status", "action", "sub_status", "domain", "mx_found", "mx_host", "smtp_check", "catch_all", "disposable", "role_account", "free_provider", "depth", "processed_at", "suggested_email", "retry_after_ms", "suppression_match", "policy_applied"));
+    openapiFields = new HashSet<String>(Arrays.asList("schema_version", "request_id", "email", "status", "action", "sub_status", "domain", "mx_found", "mx_host", "smtp_check", "catch_all", "disposable", "role_account", "free_provider", "depth", "processed_at", "suggested_email", "retry_after_ms", "has_spf", "has_dmarc", "dmarc_policy", "dnsbl_listed", "suppression_match", "policy_applied"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("schema_version", "email", "status", "action", "domain", "mx_found", "disposable", "role_account", "free_provider", "depth", "processed_at"));
@@ -845,23 +1035,19 @@ public class ValidationResponse {
         }
       }
 
-      Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Map.Entry<String, JsonElement> entry : entries) {
-        if (!ValidationResponse.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `ValidationResponse` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
-        }
-      }
-
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : ValidationResponse.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
           throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
+
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("schema_version").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `schema_version` to be a primitive type in the JSON string but got `%s`", jsonObj.get("schema_version").toString()));
+      }
+      if ((jsonObj.get("request_id") != null && !jsonObj.get("request_id").isJsonNull()) && !jsonObj.get("request_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `request_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("request_id").toString()));
       }
       if (!jsonObj.get("email").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `email` to be a primitive type in the JSON string but got `%s`", jsonObj.get("email").toString()));
@@ -896,6 +1082,13 @@ public class ValidationResponse {
       DepthEnum.validateJsonElement(jsonObj.get("depth"));
       if ((jsonObj.get("suggested_email") != null && !jsonObj.get("suggested_email").isJsonNull()) && !jsonObj.get("suggested_email").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `suggested_email` to be a primitive type in the JSON string but got `%s`", jsonObj.get("suggested_email").toString()));
+      }
+      if ((jsonObj.get("dmarc_policy") != null && !jsonObj.get("dmarc_policy").isJsonNull()) && !jsonObj.get("dmarc_policy").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `dmarc_policy` to be a primitive type in the JSON string but got `%s`", jsonObj.get("dmarc_policy").toString()));
+      }
+      // validate the optional field `dmarc_policy`
+      if (jsonObj.get("dmarc_policy") != null && !jsonObj.get("dmarc_policy").isJsonNull()) {
+        DmarcPolicyEnum.validateJsonElement(jsonObj.get("dmarc_policy"));
       }
       // validate the optional field `suppression_match`
       if (jsonObj.get("suppression_match") != null && !jsonObj.get("suppression_match").isJsonNull()) {

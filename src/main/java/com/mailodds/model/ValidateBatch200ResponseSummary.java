@@ -48,7 +48,7 @@ import com.mailodds.JSON;
 /**
  * ValidateBatch200ResponseSummary
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-08T17:48:30.569515929+01:00[Europe/Amsterdam]", comments = "Generator version: 7.19.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-26T01:37:38.039547555+01:00[Europe/Amsterdam]", comments = "Generator version: 7.19.0")
 public class ValidateBatch200ResponseSummary {
   public static final String SERIALIZED_NAME_VALID = "valid";
   @SerializedName(SERIALIZED_NAME_VALID)
@@ -244,13 +244,7 @@ public class ValidateBatch200ResponseSummary {
         }
       }
 
-      Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Map.Entry<String, JsonElement> entry : entries) {
-        if (!ValidateBatch200ResponseSummary.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `ValidateBatch200ResponseSummary` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
-        }
-      }
+
         JsonObject jsonObj = jsonElement.getAsJsonObject();
   }
 

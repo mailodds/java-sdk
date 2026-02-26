@@ -52,12 +52,17 @@ import com.mailodds.JSON;
 /**
  * PolicyListResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-08T17:48:30.569515929+01:00[Europe/Amsterdam]", comments = "Generator version: 7.19.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-26T01:37:38.039547555+01:00[Europe/Amsterdam]", comments = "Generator version: 7.19.0")
 public class PolicyListResponse {
   public static final String SERIALIZED_NAME_SCHEMA_VERSION = "schema_version";
   @SerializedName(SERIALIZED_NAME_SCHEMA_VERSION)
   @javax.annotation.Nullable
   private String schemaVersion;
+
+  public static final String SERIALIZED_NAME_REQUEST_ID = "request_id";
+  @SerializedName(SERIALIZED_NAME_REQUEST_ID)
+  @javax.annotation.Nullable
+  private String requestId;
 
   public static final String SERIALIZED_NAME_POLICIES = "policies";
   @SerializedName(SERIALIZED_NAME_POLICIES)
@@ -88,6 +93,25 @@ public class PolicyListResponse {
 
   public void setSchemaVersion(@javax.annotation.Nullable String schemaVersion) {
     this.schemaVersion = schemaVersion;
+  }
+
+
+  public PolicyListResponse requestId(@javax.annotation.Nullable String requestId) {
+    this.requestId = requestId;
+    return this;
+  }
+
+  /**
+   * Unique request identifier
+   * @return requestId
+   */
+  @javax.annotation.Nullable
+  public String getRequestId() {
+    return requestId;
+  }
+
+  public void setRequestId(@javax.annotation.Nullable String requestId) {
+    this.requestId = requestId;
   }
 
 
@@ -148,13 +172,14 @@ public class PolicyListResponse {
     }
     PolicyListResponse policyListResponse = (PolicyListResponse) o;
     return Objects.equals(this.schemaVersion, policyListResponse.schemaVersion) &&
+        Objects.equals(this.requestId, policyListResponse.requestId) &&
         Objects.equals(this.policies, policyListResponse.policies) &&
         Objects.equals(this.limits, policyListResponse.limits);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(schemaVersion, policies, limits);
+    return Objects.hash(schemaVersion, requestId, policies, limits);
   }
 
   @Override
@@ -162,6 +187,7 @@ public class PolicyListResponse {
     StringBuilder sb = new StringBuilder();
     sb.append("class PolicyListResponse {\n");
     sb.append("    schemaVersion: ").append(toIndentedString(schemaVersion)).append("\n");
+    sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
     sb.append("    policies: ").append(toIndentedString(policies)).append("\n");
     sb.append("    limits: ").append(toIndentedString(limits)).append("\n");
     sb.append("}");
@@ -185,7 +211,7 @@ public class PolicyListResponse {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("schema_version", "policies", "limits"));
+    openapiFields = new HashSet<String>(Arrays.asList("schema_version", "request_id", "policies", "limits"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -204,16 +230,13 @@ public class PolicyListResponse {
         }
       }
 
-      Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Map.Entry<String, JsonElement> entry : entries) {
-        if (!PolicyListResponse.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `PolicyListResponse` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
-        }
-      }
+
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("schema_version") != null && !jsonObj.get("schema_version").isJsonNull()) && !jsonObj.get("schema_version").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `schema_version` to be a primitive type in the JSON string but got `%s`", jsonObj.get("schema_version").toString()));
+      }
+      if ((jsonObj.get("request_id") != null && !jsonObj.get("request_id").isJsonNull()) && !jsonObj.get("request_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `request_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("request_id").toString()));
       }
       if (jsonObj.get("policies") != null && !jsonObj.get("policies").isJsonNull()) {
         JsonArray jsonArraypolicies = jsonObj.getAsJsonArray("policies");

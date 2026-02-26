@@ -8,6 +8,7 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**schemaVersion** | **String** |  |  [optional] |
+|**requestId** | **String** | Unique request identifier |  [optional] |
 |**original** | **Object** | Original validation result before policy |  [optional] |
 |**modified** | **Object** | Result after policy applied |  [optional] |
 |**matchedRule** | **Object** | The rule that matched, or null if none matched |  [optional] |

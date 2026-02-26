@@ -9,6 +9,7 @@ Flat validation response. Conditional fields are omitted (not null) when not app
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**schemaVersion** | **String** |  |  |
+|**requestId** | **String** | Unique request identifier |  [optional] |
 |**email** | **String** |  |  |
 |**status** | [**StatusEnum**](#StatusEnum) | Validation status |  |
 |**action** | [**ActionEnum**](#ActionEnum) | Recommended action |  |
@@ -25,6 +26,10 @@ Flat validation response. Conditional fields are omitted (not null) when not app
 |**processedAt** | **OffsetDateTime** | ISO 8601 timestamp of validation |  |
 |**suggestedEmail** | **String** | Typo correction suggestion. Omitted when no typo detected. |  [optional] |
 |**retryAfterMs** | **Integer** | Suggested retry delay in milliseconds. Present only for retry_later action. |  [optional] |
+|**hasSpf** | **Boolean** | Whether the domain has an SPF record. Omitted for standard depth. |  [optional] |
+|**hasDmarc** | **Boolean** | Whether the domain has a DMARC record. Omitted for standard depth. |  [optional] |
+|**dmarcPolicy** | [**DmarcPolicyEnum**](#DmarcPolicyEnum) | The domain&#39;s DMARC policy. Omitted when no DMARC record found. |  [optional] |
+|**dnsblListed** | **Boolean** | Whether the domain&#39;s MX IP is on a DNS blocklist (Spamhaus ZEN). Omitted for standard depth. |  [optional] |
 |**suppressionMatch** | [**ValidationResponseSuppressionMatch**](ValidationResponseSuppressionMatch.md) |  |  [optional] |
 |**policyApplied** | [**ValidationResponsePolicyApplied**](ValidationResponsePolicyApplied.md) |  |  [optional] |
 
@@ -66,7 +71,10 @@ Flat validation response. Conditional fields are omitted (not null) when not app
 | ROLE_ACCOUNT | &quot;role_account&quot; |
 | GREYLISTED | &quot;greylisted&quot; |
 | CATCH_ALL_DETECTED | &quot;catch_all_detected&quot; |
+| DOMAIN_NOT_FOUND | &quot;domain_not_found&quot; |
 | SUPPRESSION_MATCH | &quot;suppression_match&quot; |
+| RESTRICTED_MILITARY | &quot;restricted_military&quot; |
+| RESTRICTED_SANCTIONED | &quot;restricted_sanctioned&quot; |
 
 
 
@@ -76,6 +84,16 @@ Flat validation response. Conditional fields are omitted (not null) when not app
 |---- | -----|
 | STANDARD | &quot;standard&quot; |
 | ENHANCED | &quot;enhanced&quot; |
+
+
+
+## Enum: DmarcPolicyEnum
+
+| Name | Value |
+|---- | -----|
+| NONE | &quot;none&quot; |
+| QUARANTINE | &quot;quarantine&quot; |
+| REJECT | &quot;reject&quot; |
 
 
 

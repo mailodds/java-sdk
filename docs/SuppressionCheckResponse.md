@@ -8,6 +8,7 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**schemaVersion** | **String** |  |  [optional] |
+|**requestId** | **String** | Unique request identifier |  [optional] |
 |**email** | **String** |  |  [optional] |
 |**suppressed** | **Boolean** |  |  [optional] |
 |**matchType** | [**MatchTypeEnum**](#MatchTypeEnum) |  |  [optional] |

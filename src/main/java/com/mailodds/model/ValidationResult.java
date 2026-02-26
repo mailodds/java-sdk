@@ -49,27 +49,141 @@ import com.mailodds.JSON;
 /**
  * ValidationResult
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-08T17:48:30.569515929+01:00[Europe/Amsterdam]", comments = "Generator version: 7.19.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-26T01:37:38.039547555+01:00[Europe/Amsterdam]", comments = "Generator version: 7.19.0")
 public class ValidationResult {
   public static final String SERIALIZED_NAME_EMAIL = "email";
   @SerializedName(SERIALIZED_NAME_EMAIL)
   @javax.annotation.Nullable
   private String email;
 
+  /**
+   * Gets or Sets status
+   */
+  @JsonAdapter(StatusEnum.Adapter.class)
+  public enum StatusEnum {
+    VALID("valid"),
+    
+    INVALID("invalid"),
+    
+    CATCH_ALL("catch_all"),
+    
+    DO_NOT_MAIL("do_not_mail"),
+    
+    UNKNOWN("unknown");
+
+    private String value;
+
+    StatusEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static StatusEnum fromValue(String value) {
+      for (StatusEnum b : StatusEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<StatusEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final StatusEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public StatusEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return StatusEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      StatusEnum.fromValue(value);
+    }
+  }
+
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
   @javax.annotation.Nullable
-  private String status;
+  private StatusEnum status;
 
   public static final String SERIALIZED_NAME_SUB_STATUS = "sub_status";
   @SerializedName(SERIALIZED_NAME_SUB_STATUS)
   @javax.annotation.Nullable
   private String subStatus;
 
+  /**
+   * Gets or Sets action
+   */
+  @JsonAdapter(ActionEnum.Adapter.class)
+  public enum ActionEnum {
+    ACCEPT("accept"),
+    
+    ACCEPT_WITH_CAUTION("accept_with_caution"),
+    
+    REJECT("reject"),
+    
+    RETRY_LATER("retry_later");
+
+    private String value;
+
+    ActionEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static ActionEnum fromValue(String value) {
+      for (ActionEnum b : ActionEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<ActionEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final ActionEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public ActionEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return ActionEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      ActionEnum.fromValue(value);
+    }
+  }
+
   public static final String SERIALIZED_NAME_ACTION = "action";
   @SerializedName(SERIALIZED_NAME_ACTION)
   @javax.annotation.Nullable
-  private String action;
+  private ActionEnum action;
 
   public static final String SERIALIZED_NAME_PROCESSED_AT = "processed_at";
   @SerializedName(SERIALIZED_NAME_PROCESSED_AT)
@@ -98,7 +212,7 @@ public class ValidationResult {
   }
 
 
-  public ValidationResult status(@javax.annotation.Nullable String status) {
+  public ValidationResult status(@javax.annotation.Nullable StatusEnum status) {
     this.status = status;
     return this;
   }
@@ -108,11 +222,11 @@ public class ValidationResult {
    * @return status
    */
   @javax.annotation.Nullable
-  public String getStatus() {
+  public StatusEnum getStatus() {
     return status;
   }
 
-  public void setStatus(@javax.annotation.Nullable String status) {
+  public void setStatus(@javax.annotation.Nullable StatusEnum status) {
     this.status = status;
   }
 
@@ -136,7 +250,7 @@ public class ValidationResult {
   }
 
 
-  public ValidationResult action(@javax.annotation.Nullable String action) {
+  public ValidationResult action(@javax.annotation.Nullable ActionEnum action) {
     this.action = action;
     return this;
   }
@@ -146,11 +260,11 @@ public class ValidationResult {
    * @return action
    */
   @javax.annotation.Nullable
-  public String getAction() {
+  public ActionEnum getAction() {
     return action;
   }
 
-  public void setAction(@javax.annotation.Nullable String action) {
+  public void setAction(@javax.annotation.Nullable ActionEnum action) {
     this.action = action;
   }
 
@@ -245,13 +359,7 @@ public class ValidationResult {
         }
       }
 
-      Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Map.Entry<String, JsonElement> entry : entries) {
-        if (!ValidationResult.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `ValidationResult` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
-        }
-      }
+
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("email") != null && !jsonObj.get("email").isJsonNull()) && !jsonObj.get("email").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `email` to be a primitive type in the JSON string but got `%s`", jsonObj.get("email").toString()));
@@ -259,11 +367,19 @@ public class ValidationResult {
       if ((jsonObj.get("status") != null && !jsonObj.get("status").isJsonNull()) && !jsonObj.get("status").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `status` to be a primitive type in the JSON string but got `%s`", jsonObj.get("status").toString()));
       }
+      // validate the optional field `status`
+      if (jsonObj.get("status") != null && !jsonObj.get("status").isJsonNull()) {
+        StatusEnum.validateJsonElement(jsonObj.get("status"));
+      }
       if ((jsonObj.get("sub_status") != null && !jsonObj.get("sub_status").isJsonNull()) && !jsonObj.get("sub_status").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `sub_status` to be a primitive type in the JSON string but got `%s`", jsonObj.get("sub_status").toString()));
       }
       if ((jsonObj.get("action") != null && !jsonObj.get("action").isJsonNull()) && !jsonObj.get("action").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `action` to be a primitive type in the JSON string but got `%s`", jsonObj.get("action").toString()));
+      }
+      // validate the optional field `action`
+      if (jsonObj.get("action") != null && !jsonObj.get("action").isJsonNull()) {
+        ActionEnum.validateJsonElement(jsonObj.get("action"));
       }
   }
 

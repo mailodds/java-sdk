@@ -48,12 +48,17 @@ import com.mailodds.JSON;
 /**
  * DeleteJob200Response
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-08T17:48:30.569515929+01:00[Europe/Amsterdam]", comments = "Generator version: 7.19.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-26T01:37:38.039547555+01:00[Europe/Amsterdam]", comments = "Generator version: 7.19.0")
 public class DeleteJob200Response {
   public static final String SERIALIZED_NAME_SCHEMA_VERSION = "schema_version";
   @SerializedName(SERIALIZED_NAME_SCHEMA_VERSION)
   @javax.annotation.Nullable
   private String schemaVersion;
+
+  public static final String SERIALIZED_NAME_REQUEST_ID = "request_id";
+  @SerializedName(SERIALIZED_NAME_REQUEST_ID)
+  @javax.annotation.Nullable
+  private String requestId;
 
   public static final String SERIALIZED_NAME_DELETED = "deleted";
   @SerializedName(SERIALIZED_NAME_DELETED)
@@ -79,6 +84,25 @@ public class DeleteJob200Response {
 
   public void setSchemaVersion(@javax.annotation.Nullable String schemaVersion) {
     this.schemaVersion = schemaVersion;
+  }
+
+
+  public DeleteJob200Response requestId(@javax.annotation.Nullable String requestId) {
+    this.requestId = requestId;
+    return this;
+  }
+
+  /**
+   * Unique request identifier
+   * @return requestId
+   */
+  @javax.annotation.Nullable
+  public String getRequestId() {
+    return requestId;
+  }
+
+  public void setRequestId(@javax.annotation.Nullable String requestId) {
+    this.requestId = requestId;
   }
 
 
@@ -112,12 +136,13 @@ public class DeleteJob200Response {
     }
     DeleteJob200Response deleteJob200Response = (DeleteJob200Response) o;
     return Objects.equals(this.schemaVersion, deleteJob200Response.schemaVersion) &&
+        Objects.equals(this.requestId, deleteJob200Response.requestId) &&
         Objects.equals(this.deleted, deleteJob200Response.deleted);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(schemaVersion, deleted);
+    return Objects.hash(schemaVersion, requestId, deleted);
   }
 
   @Override
@@ -125,6 +150,7 @@ public class DeleteJob200Response {
     StringBuilder sb = new StringBuilder();
     sb.append("class DeleteJob200Response {\n");
     sb.append("    schemaVersion: ").append(toIndentedString(schemaVersion)).append("\n");
+    sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
     sb.append("    deleted: ").append(toIndentedString(deleted)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -147,7 +173,7 @@ public class DeleteJob200Response {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("schema_version", "deleted"));
+    openapiFields = new HashSet<String>(Arrays.asList("schema_version", "request_id", "deleted"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -166,16 +192,13 @@ public class DeleteJob200Response {
         }
       }
 
-      Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Map.Entry<String, JsonElement> entry : entries) {
-        if (!DeleteJob200Response.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `DeleteJob200Response` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
-        }
-      }
+
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("schema_version") != null && !jsonObj.get("schema_version").isJsonNull()) && !jsonObj.get("schema_version").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `schema_version` to be a primitive type in the JSON string but got `%s`", jsonObj.get("schema_version").toString()));
+      }
+      if ((jsonObj.get("request_id") != null && !jsonObj.get("request_id").isJsonNull()) && !jsonObj.get("request_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `request_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("request_id").toString()));
       }
   }
 
