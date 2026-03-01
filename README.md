@@ -148,6 +148,58 @@ public class Example {
 
 ```
 
+## Sending Email
+
+### Send a Single Email
+
+```java
+import com.mailodds.api.EmailSendingApi;
+import com.mailodds.api.SendingDomainsApi;
+import com.mailodds.model.*;
+import java.util.Arrays;
+
+EmailSendingApi sendingApi = new EmailSendingApi(defaultClient);
+
+DeliverRequestToInner recipient = new DeliverRequestToInner();
+recipient.setEmail("recipient@example.com");
+recipient.setName("Jane");
+
+DeliverRequest request = new DeliverRequest();
+request.setTo(Arrays.asList(recipient));
+request.setFrom("you@yourdomain.com");
+request.setSubject("Hello from MailOdds");
+request.setHtml("<h1>Welcome!</h1><p>Your order has been confirmed.</p>");
+request.setDomainId("your-domain-uuid");
+
+try {
+    DeliverResponse result = sendingApi.deliverEmail(request);
+    System.out.println(result.getDelivery().getMessageId());
+} catch (ApiException e) {
+    System.err.println("Exception when calling EmailSendingApi#deliverEmail");
+    e.printStackTrace();
+}
+```
+
+### Managing Sending Domains
+
+```java
+SendingDomainsApi domainsApi = new SendingDomainsApi(defaultClient);
+
+// List sending domains
+ListSendingDomains200Response domains = domainsApi.listSendingDomains();
+for (SendingDomain domain : domains.getDomains()) {
+    System.out.println(domain.getDomain() + ": " + domain.getStatus());
+}
+
+// Add a new sending domain
+CreateSendingDomainRequest domainRequest = new CreateSendingDomainRequest();
+domainRequest.setDomain("yourdomain.com");
+CreateSendingDomain201Response newDomain = domainsApi.createSendingDomain(domainRequest);
+System.out.println(newDomain.getDnsRecords()); // DKIM records to add
+```
+
+For batch sending, scheduled delivery, and campaign management, see the [API documentation](https://mailodds.com/docs).
+
 ## Documentation for API Endpoints
 
 All URIs are relative to *https://api.mailodds.com/v1*
