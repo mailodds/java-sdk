@@ -1,6 +1,6 @@
 /*
  * MailOdds Email Validation API
- * MailOdds provides email validation services to help maintain clean email lists  and improve deliverability. The API performs multiple validation checks including  format verification, domain validation, MX record checking, and disposable email detection.  ## Authentication  All API requests require authentication using a Bearer token. Include your API key  in the Authorization header:  ``` Authorization: Bearer YOUR_API_KEY ```  API keys can be created in the MailOdds dashboard.  ## Rate Limits  Rate limits vary by plan: - Free: 10 requests/minute - Starter: 60 requests/minute   - Pro: 300 requests/minute - Business: 1000 requests/minute - Enterprise: Custom limits  ## Response Format  All responses include: - `schema_version`: API schema version (currently \"1.0\") - `request_id`: Unique request identifier for debugging  Error responses include: - `error`: Machine-readable error code - `message`: Human-readable error description 
+ * MailOdds provides email validation services to help maintain clean email lists  and improve deliverability. The API performs multiple validation checks including  format verification, domain validation, MX record checking, and disposable email detection.  ## Authentication  All API requests require authentication using a Bearer token. Include your API key  in the Authorization header:  ``` Authorization: Bearer YOUR_API_KEY ```  API keys can be created in the MailOdds dashboard.  ## Rate Limits  Rate limits vary by plan: - Free: 10 requests/minute - Starter: 60 requests/minute   - Pro: 300 requests/minute - Business: 1000 requests/minute - Enterprise: Custom limits  ## Response Format  All responses include: - `schema_version`: API schema version (currently \"1.0\") - `request_id`: Unique request identifier for debugging  Error responses include: - `error`: Machine-readable error code - `message`: Human-readable error description  ## Webhooks  MailOdds can send webhook notifications for job completion and email delivery events. Configure webhooks in the dashboard or per-job via the `webhook_url` field.  ### Event Types  | Event | Description | |-------|-------------| | `job.completed` | Validation job finished processing | | `job.failed` | Validation job failed | | `message.queued` | Email queued for delivery | | `message.delivered` | Email delivered to recipient | | `message.bounced` | Email bounced | | `message.deferred` | Email delivery deferred | | `message.failed` | Email delivery failed | | `message.opened` | Recipient opened the email | | `message.clicked` | Recipient clicked a link |  ### Payload Format  ```json {   \"event\": \"job.completed\",   \"job\": { ... },   \"timestamp\": \"2026-01-15T10:30:00Z\" } ```  ### Webhook Signing  If a webhook secret is configured, each request includes an `X-MailOdds-Signature` header containing an HMAC-SHA256 hex digest of the request body.  **Verification pseudocode:** ``` expected = HMAC-SHA256(webhook_secret, request_body) valid = constant_time_compare(request.headers[\"X-MailOdds-Signature\"], hex(expected)) ```  The payload is serialized with compact JSON (no extra whitespace, sorted keys) before signing.  ### Headers  All webhook requests include: - `Content-Type: application/json` - `User-Agent: MailOdds-Webhook/1.0` - `X-MailOdds-Event: {event_type}` - `X-Request-Id: {uuid}` - `X-MailOdds-Signature: {hmac}` (when secret is configured)  ### Retry Policy  Failed deliveries (non-2xx response or timeout) are retried up to 3 times with exponential backoff (10s, 60s, 300s). 
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@mailodds.com
@@ -25,7 +25,9 @@ import com.mailodds.model.DeliverRequestToInner;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -53,7 +55,7 @@ import com.mailodds.JSON;
 /**
  * DeliverRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-26T01:37:38.039547555+01:00[Europe/Amsterdam]", comments = "Generator version: 7.19.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-01T18:02:02.335122536+01:00[Europe/Amsterdam]", comments = "Generator version: 7.19.0")
 public class DeliverRequest {
   public static final String SERIALIZED_NAME_TO = "to";
   @SerializedName(SERIALIZED_NAME_TO)
@@ -177,6 +179,21 @@ public class DeliverRequest {
   @SerializedName(SERIALIZED_NAME_STRUCTURED_DATA)
   @javax.annotation.Nullable
   private DeliverRequestStructuredData structuredData;
+
+  public static final String SERIALIZED_NAME_SCHEMA_DATA = "schema_data";
+  @SerializedName(SERIALIZED_NAME_SCHEMA_DATA)
+  @javax.annotation.Nullable
+  private Map<String, String> schemaData = new HashMap<>();
+
+  public static final String SERIALIZED_NAME_AUTO_DETECT_SCHEMA = "auto_detect_schema";
+  @SerializedName(SERIALIZED_NAME_AUTO_DETECT_SCHEMA)
+  @javax.annotation.Nullable
+  private Boolean autoDetectSchema = false;
+
+  public static final String SERIALIZED_NAME_AI_SUMMARY = "ai_summary";
+  @SerializedName(SERIALIZED_NAME_AI_SUMMARY)
+  @javax.annotation.Nullable
+  private String aiSummary;
 
   public static final String SERIALIZED_NAME_OPTIONS = "options";
   @SerializedName(SERIALIZED_NAME_OPTIONS)
@@ -411,6 +428,71 @@ public class DeliverRequest {
   }
 
 
+  public DeliverRequest schemaData(@javax.annotation.Nullable Map<String, String> schemaData) {
+    this.schemaData = schemaData;
+    return this;
+  }
+
+  public DeliverRequest putSchemaDataItem(String key, String schemaDataItem) {
+    if (this.schemaData == null) {
+      this.schemaData = new HashMap<>();
+    }
+    this.schemaData.put(key, schemaDataItem);
+    return this;
+  }
+
+  /**
+   * Key-value pairs for campaign_type JSON-LD resolution (e.g., order_number, tracking_url)
+   * @return schemaData
+   */
+  @javax.annotation.Nullable
+  public Map<String, String> getSchemaData() {
+    return schemaData;
+  }
+
+  public void setSchemaData(@javax.annotation.Nullable Map<String, String> schemaData) {
+    this.schemaData = schemaData;
+  }
+
+
+  public DeliverRequest autoDetectSchema(@javax.annotation.Nullable Boolean autoDetectSchema) {
+    this.autoDetectSchema = autoDetectSchema;
+    return this;
+  }
+
+  /**
+   * Auto-detect JSON-LD structured data type from subject line
+   * @return autoDetectSchema
+   */
+  @javax.annotation.Nullable
+  public Boolean getAutoDetectSchema() {
+    return autoDetectSchema;
+  }
+
+  public void setAutoDetectSchema(@javax.annotation.Nullable Boolean autoDetectSchema) {
+    this.autoDetectSchema = autoDetectSchema;
+  }
+
+
+  public DeliverRequest aiSummary(@javax.annotation.Nullable String aiSummary) {
+    this.aiSummary = aiSummary;
+    return this;
+  }
+
+  /**
+   * Hidden text summary for AI email assistants (max 500 characters)
+   * @return aiSummary
+   */
+  @javax.annotation.Nullable
+  public String getAiSummary() {
+    return aiSummary;
+  }
+
+  public void setAiSummary(@javax.annotation.Nullable String aiSummary) {
+    this.aiSummary = aiSummary;
+  }
+
+
   public DeliverRequest options(@javax.annotation.Nullable DeliverRequestOptions options) {
     this.options = options;
     return this;
@@ -451,12 +533,15 @@ public class DeliverRequest {
         Objects.equals(this.tags, deliverRequest.tags) &&
         Objects.equals(this.campaignType, deliverRequest.campaignType) &&
         Objects.equals(this.structuredData, deliverRequest.structuredData) &&
+        Objects.equals(this.schemaData, deliverRequest.schemaData) &&
+        Objects.equals(this.autoDetectSchema, deliverRequest.autoDetectSchema) &&
+        Objects.equals(this.aiSummary, deliverRequest.aiSummary) &&
         Objects.equals(this.options, deliverRequest.options);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(to, from, subject, html, text, domainId, replyTo, headers, tags, campaignType, structuredData, options);
+    return Objects.hash(to, from, subject, html, text, domainId, replyTo, headers, tags, campaignType, structuredData, schemaData, autoDetectSchema, aiSummary, options);
   }
 
   @Override
@@ -474,6 +559,9 @@ public class DeliverRequest {
     sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
     sb.append("    campaignType: ").append(toIndentedString(campaignType)).append("\n");
     sb.append("    structuredData: ").append(toIndentedString(structuredData)).append("\n");
+    sb.append("    schemaData: ").append(toIndentedString(schemaData)).append("\n");
+    sb.append("    autoDetectSchema: ").append(toIndentedString(autoDetectSchema)).append("\n");
+    sb.append("    aiSummary: ").append(toIndentedString(aiSummary)).append("\n");
     sb.append("    options: ").append(toIndentedString(options)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -496,7 +584,7 @@ public class DeliverRequest {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("to", "from", "subject", "html", "text", "domain_id", "reply_to", "headers", "tags", "campaign_type", "structured_data", "options"));
+    openapiFields = new HashSet<String>(Arrays.asList("to", "from", "subject", "html", "text", "domain_id", "reply_to", "headers", "tags", "campaign_type", "structured_data", "schema_data", "auto_detect_schema", "ai_summary", "options"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("to", "from", "subject", "domain_id"));
@@ -515,13 +603,20 @@ public class DeliverRequest {
         }
       }
 
+      Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
+      // check to see if the JSON string contains additional fields
+      for (Map.Entry<String, JsonElement> entry : entries) {
+        if (!DeliverRequest.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `DeliverRequest` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        }
+      }
+
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : DeliverRequest.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
           throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
-
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       // ensure the json data is an array
       if (!jsonObj.get("to").isJsonArray()) {
@@ -565,6 +660,9 @@ public class DeliverRequest {
       // validate the optional field `structured_data`
       if (jsonObj.get("structured_data") != null && !jsonObj.get("structured_data").isJsonNull()) {
         DeliverRequestStructuredData.validateJsonElement(jsonObj.get("structured_data"));
+      }
+      if ((jsonObj.get("ai_summary") != null && !jsonObj.get("ai_summary").isJsonNull()) && !jsonObj.get("ai_summary").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `ai_summary` to be a primitive type in the JSON string but got `%s`", jsonObj.get("ai_summary").toString()));
       }
       // validate the optional field `options`
       if (jsonObj.get("options") != null && !jsonObj.get("options").isJsonNull()) {

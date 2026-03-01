@@ -9,8 +9,9 @@
 |------------ | ------------- | ------------- | -------------|
 |**schemaVersion** | **String** |  |  [optional] |
 |**requestId** | **String** | Unique request identifier |  [optional] |
-|**jobs** | [**List&lt;Job&gt;**](Job.md) |  |  [optional] |
-|**pagination** | [**Pagination**](Pagination.md) |  |  [optional] |
+|**data** | [**List&lt;Job&gt;**](Job.md) | List of jobs |  [optional] |
+|**nextCursor** | **String** | Cursor for next page. Null when no more results. |  [optional] |
+|**hasMore** | **Boolean** | Whether more results exist beyond this page |  [optional] |
 
 
 

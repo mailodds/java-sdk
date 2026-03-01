@@ -2,7 +2,7 @@
 
 MailOdds Email Validation API
 - API version: 1.0.0
-  - Build date: 2026-02-26T01:37:38.039547555+01:00[Europe/Amsterdam]
+  - Build date: 2026-03-01T18:02:02.335122536+01:00[Europe/Amsterdam]
   - Generator version: 7.19.0
 
 MailOdds provides email validation services to help maintain clean email lists 
@@ -38,6 +38,61 @@ All responses include:
 Error responses include:
 - `error`: Machine-readable error code
 - `message`: Human-readable error description
+
+## Webhooks
+
+MailOdds can send webhook notifications for job completion and email delivery events.
+Configure webhooks in the dashboard or per-job via the `webhook_url` field.
+
+### Event Types
+
+| Event | Description |
+|-------|-------------|
+| `job.completed` | Validation job finished processing |
+| `job.failed` | Validation job failed |
+| `message.queued` | Email queued for delivery |
+| `message.delivered` | Email delivered to recipient |
+| `message.bounced` | Email bounced |
+| `message.deferred` | Email delivery deferred |
+| `message.failed` | Email delivery failed |
+| `message.opened` | Recipient opened the email |
+| `message.clicked` | Recipient clicked a link |
+
+### Payload Format
+
+```json
+{
+  \"event\": \"job.completed\",
+  \"job\": { ... },
+  \"timestamp\": \"2026-01-15T10:30:00Z\"
+}
+```
+
+### Webhook Signing
+
+If a webhook secret is configured, each request includes an `X-MailOdds-Signature` header
+containing an HMAC-SHA256 hex digest of the request body.
+
+**Verification pseudocode:**
+```
+expected = HMAC-SHA256(webhook_secret, request_body)
+valid = constant_time_compare(request.headers[\"X-MailOdds-Signature\"], hex(expected))
+```
+
+The payload is serialized with compact JSON (no extra whitespace, sorted keys) before signing.
+
+### Headers
+
+All webhook requests include:
+- `Content-Type: application/json`
+- `User-Agent: MailOdds-Webhook/1.0`
+- `X-MailOdds-Event: {event_type}`
+- `X-Request-Id: {uuid}`
+- `X-MailOdds-Signature: {hmac}` (when secret is configured)
+
+### Retry Policy
+
+Failed deliveries (non-2xx response or timeout) are retried up to 3 times with exponential backoff (10s, 60s, 300s).
 
 
   For more information, please visit [https://mailodds.com/contact](https://mailodds.com/contact)
@@ -148,58 +203,6 @@ public class Example {
 
 ```
 
-## Sending Email
-
-### Send a Single Email
-
-```java
-import com.mailodds.api.EmailSendingApi;
-import com.mailodds.api.SendingDomainsApi;
-import com.mailodds.model.*;
-import java.util.Arrays;
-
-EmailSendingApi sendingApi = new EmailSendingApi(defaultClient);
-
-DeliverRequestToInner recipient = new DeliverRequestToInner();
-recipient.setEmail("recipient@example.com");
-recipient.setName("Jane");
-
-DeliverRequest request = new DeliverRequest();
-request.setTo(Arrays.asList(recipient));
-request.setFrom("you@yourdomain.com");
-request.setSubject("Hello from MailOdds");
-request.setHtml("<h1>Welcome!</h1><p>Your order has been confirmed.</p>");
-request.setDomainId("your-domain-uuid");
-
-try {
-    DeliverResponse result = sendingApi.deliverEmail(request);
-    System.out.println(result.getDelivery().getMessageId());
-} catch (ApiException e) {
-    System.err.println("Exception when calling EmailSendingApi#deliverEmail");
-    e.printStackTrace();
-}
-```
-
-### Managing Sending Domains
-
-```java
-SendingDomainsApi domainsApi = new SendingDomainsApi(defaultClient);
-
-// List sending domains
-ListSendingDomains200Response domains = domainsApi.listSendingDomains();
-for (SendingDomain domain : domains.getDomains()) {
-    System.out.println(domain.getDomain() + ": " + domain.getStatus());
-}
-
-// Add a new sending domain
-CreateSendingDomainRequest domainRequest = new CreateSendingDomainRequest();
-domainRequest.setDomain("yourdomain.com");
-CreateSendingDomain201Response newDomain = domainsApi.createSendingDomain(domainRequest);
-System.out.println(newDomain.getDnsRecords()); // DKIM records to add
-```
-
-For batch sending, scheduled delivery, and campaign management, see the [API documentation](https://mailodds.com/docs).
-
 ## Documentation for API Endpoints
 
 All URIs are relative to *https://api.mailodds.com/v1*
@@ -236,6 +239,7 @@ Class | Method | HTTP request | Description
 *SubscriberListsApi* | [**unsubscribeSubscriber**](docs/SubscriberListsApi.md#unsubscribeSubscriber) | **DELETE** /v1/lists/{list_id}/subscribers/{subscriber_id} | Unsubscribe a subscriber
 *SuppressionListsApi* | [**addSuppression**](docs/SuppressionListsApi.md#addSuppression) | **POST** /v1/suppression | Add suppression entries
 *SuppressionListsApi* | [**checkSuppression**](docs/SuppressionListsApi.md#checkSuppression) | **POST** /v1/suppression/check | Check suppression status
+*SuppressionListsApi* | [**getSuppressionAuditLog**](docs/SuppressionListsApi.md#getSuppressionAuditLog) | **GET** /v1/suppression/audit | Get suppression audit log
 *SuppressionListsApi* | [**getSuppressionStats**](docs/SuppressionListsApi.md#getSuppressionStats) | **GET** /v1/suppression/stats | Get suppression statistics
 *SuppressionListsApi* | [**listSuppression**](docs/SuppressionListsApi.md#listSuppression) | **GET** /v1/suppression | List suppression entries
 *SuppressionListsApi* | [**removeSuppression**](docs/SuppressionListsApi.md#removeSuppression) | **DELETE** /v1/suppression | Remove suppression entries
@@ -291,7 +295,9 @@ Class | Method | HTTP request | Description
  - [GetSendingStats200ResponseStats](docs/GetSendingStats200ResponseStats.md)
  - [GetSubscribers200Response](docs/GetSubscribers200Response.md)
  - [HealthCheck200Response](docs/HealthCheck200Response.md)
+ - [IdentityScoreCheck](docs/IdentityScoreCheck.md)
  - [Job](docs/Job.md)
+ - [JobArtifacts](docs/JobArtifacts.md)
  - [JobListResponse](docs/JobListResponse.md)
  - [JobResponse](docs/JobResponse.md)
  - [JobSummary](docs/JobSummary.md)
@@ -315,12 +321,12 @@ Class | Method | HTTP request | Description
  - [SendingDomainDnsRecords](docs/SendingDomainDnsRecords.md)
  - [SendingDomainDnsRecordsNs](docs/SendingDomainDnsRecordsNs.md)
  - [SendingDomainIdentityScore](docs/SendingDomainIdentityScore.md)
- - [SendingDomainIdentityScoreChecks](docs/SendingDomainIdentityScoreChecks.md)
- - [SendingDomainIdentityScoreChecksDkim](docs/SendingDomainIdentityScoreChecksDkim.md)
- - [SendingDomainIdentityScoreChecksDmarc](docs/SendingDomainIdentityScoreChecksDmarc.md)
+ - [SendingDomainIdentityScoreBreakdown](docs/SendingDomainIdentityScoreBreakdown.md)
  - [SubscribeRequest](docs/SubscribeRequest.md)
  - [Subscriber](docs/Subscriber.md)
  - [SubscriberList](docs/SubscriberList.md)
+ - [SuppressionAuditResponse](docs/SuppressionAuditResponse.md)
+ - [SuppressionAuditResponseEntriesInner](docs/SuppressionAuditResponseEntriesInner.md)
  - [SuppressionCheckResponse](docs/SuppressionCheckResponse.md)
  - [SuppressionEntry](docs/SuppressionEntry.md)
  - [SuppressionListResponse](docs/SuppressionListResponse.md)
@@ -343,6 +349,8 @@ Class | Method | HTTP request | Description
  - [ValidationResponsePolicyApplied](docs/ValidationResponsePolicyApplied.md)
  - [ValidationResponseSuppressionMatch](docs/ValidationResponseSuppressionMatch.md)
  - [ValidationResult](docs/ValidationResult.md)
+ - [ValidationResultSuppression](docs/ValidationResultSuppression.md)
+ - [WebhookEvent](docs/WebhookEvent.md)
 
 
 <a id="documentation-for-authorization"></a>

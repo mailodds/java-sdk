@@ -24,7 +24,7 @@ Flat validation response. Conditional fields are omitted (not null) when not app
 |**freeProvider** | **Boolean** | Whether domain is a known free email provider (e.g., gmail.com) |  |
 |**depth** | [**DepthEnum**](#DepthEnum) | Validation depth used for this check |  |
 |**processedAt** | **OffsetDateTime** | ISO 8601 timestamp of validation |  |
-|**suggestedEmail** | **String** | Typo correction suggestion. Omitted when no typo detected. |  [optional] |
+|**suggestedEmail** | **String** | Domain typo correction suggestion based on a static lookup table of common misspellings (e.g. gmial.com -&gt; gmail.com). Not validated via SMTP. Omitted when no match found. |  [optional] |
 |**retryAfterMs** | **Integer** | Suggested retry delay in milliseconds. Present only for retry_later action. |  [optional] |
 |**hasSpf** | **Boolean** | Whether the domain has an SPF record. Omitted for standard depth. |  [optional] |
 |**hasDmarc** | **Boolean** | Whether the domain has a DMARC record. Omitted for standard depth. |  [optional] |

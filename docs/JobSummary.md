@@ -2,6 +2,7 @@
 
 # JobSummary
 
+Status breakdown. Present when processing has started.
 
 ## Properties
 
@@ -12,7 +13,6 @@
 |**catchAll** | **Integer** |  |  [optional] |
 |**doNotMail** | **Integer** |  |  [optional] |
 |**unknown** | **Integer** |  |  [optional] |
-|**cancelledPending** | **Integer** |  |  [optional] |
 
 
 

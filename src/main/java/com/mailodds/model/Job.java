@@ -1,6 +1,6 @@
 /*
  * MailOdds Email Validation API
- * MailOdds provides email validation services to help maintain clean email lists  and improve deliverability. The API performs multiple validation checks including  format verification, domain validation, MX record checking, and disposable email detection.  ## Authentication  All API requests require authentication using a Bearer token. Include your API key  in the Authorization header:  ``` Authorization: Bearer YOUR_API_KEY ```  API keys can be created in the MailOdds dashboard.  ## Rate Limits  Rate limits vary by plan: - Free: 10 requests/minute - Starter: 60 requests/minute   - Pro: 300 requests/minute - Business: 1000 requests/minute - Enterprise: Custom limits  ## Response Format  All responses include: - `schema_version`: API schema version (currently \"1.0\") - `request_id`: Unique request identifier for debugging  Error responses include: - `error`: Machine-readable error code - `message`: Human-readable error description 
+ * MailOdds provides email validation services to help maintain clean email lists  and improve deliverability. The API performs multiple validation checks including  format verification, domain validation, MX record checking, and disposable email detection.  ## Authentication  All API requests require authentication using a Bearer token. Include your API key  in the Authorization header:  ``` Authorization: Bearer YOUR_API_KEY ```  API keys can be created in the MailOdds dashboard.  ## Rate Limits  Rate limits vary by plan: - Free: 10 requests/minute - Starter: 60 requests/minute   - Pro: 300 requests/minute - Business: 1000 requests/minute - Enterprise: Custom limits  ## Response Format  All responses include: - `schema_version`: API schema version (currently \"1.0\") - `request_id`: Unique request identifier for debugging  Error responses include: - `error`: Machine-readable error code - `message`: Human-readable error description  ## Webhooks  MailOdds can send webhook notifications for job completion and email delivery events. Configure webhooks in the dashboard or per-job via the `webhook_url` field.  ### Event Types  | Event | Description | |-------|-------------| | `job.completed` | Validation job finished processing | | `job.failed` | Validation job failed | | `message.queued` | Email queued for delivery | | `message.delivered` | Email delivered to recipient | | `message.bounced` | Email bounced | | `message.deferred` | Email delivery deferred | | `message.failed` | Email delivery failed | | `message.opened` | Recipient opened the email | | `message.clicked` | Recipient clicked a link |  ### Payload Format  ```json {   \"event\": \"job.completed\",   \"job\": { ... },   \"timestamp\": \"2026-01-15T10:30:00Z\" } ```  ### Webhook Signing  If a webhook secret is configured, each request includes an `X-MailOdds-Signature` header containing an HMAC-SHA256 hex digest of the request body.  **Verification pseudocode:** ``` expected = HMAC-SHA256(webhook_secret, request_body) valid = constant_time_compare(request.headers[\"X-MailOdds-Signature\"], hex(expected)) ```  The payload is serialized with compact JSON (no extra whitespace, sorted keys) before signing.  ### Headers  All webhook requests include: - `Content-Type: application/json` - `User-Agent: MailOdds-Webhook/1.0` - `X-MailOdds-Event: {event_type}` - `X-Request-Id: {uuid}` - `X-MailOdds-Signature: {hmac}` (when secret is configured)  ### Retry Policy  Failed deliveries (non-2xx response or timeout) are retried up to 3 times with exponential backoff (10s, 60s, 300s). 
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@mailodds.com
@@ -19,6 +19,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.mailodds.model.JobArtifacts;
 import com.mailodds.model.JobSummary;
 import java.io.IOException;
 import java.time.OffsetDateTime;
@@ -50,12 +51,17 @@ import com.mailodds.JSON;
 /**
  * Job
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-26T01:37:38.039547555+01:00[Europe/Amsterdam]", comments = "Generator version: 7.19.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-01T18:02:02.335122536+01:00[Europe/Amsterdam]", comments = "Generator version: 7.19.0")
 public class Job {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private String id;
+
+  public static final String SERIALIZED_NAME_NAME = "name";
+  @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nonnull
+  private String name;
 
   /**
    * Gets or Sets status
@@ -117,23 +123,18 @@ public class Job {
 
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private StatusEnum status;
 
   public static final String SERIALIZED_NAME_TOTAL_COUNT = "total_count";
   @SerializedName(SERIALIZED_NAME_TOTAL_COUNT)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private Integer totalCount;
 
   public static final String SERIALIZED_NAME_PROCESSED_COUNT = "processed_count";
   @SerializedName(SERIALIZED_NAME_PROCESSED_COUNT)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private Integer processedCount;
-
-  public static final String SERIALIZED_NAME_PROGRESS_PERCENT = "progress_percent";
-  @SerializedName(SERIALIZED_NAME_PROGRESS_PERCENT)
-  @javax.annotation.Nullable
-  private Integer progressPercent;
 
   public static final String SERIALIZED_NAME_SUMMARY = "summary";
   @SerializedName(SERIALIZED_NAME_SUMMARY)
@@ -142,23 +143,48 @@ public class Job {
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private OffsetDateTime createdAt;
+
+  public static final String SERIALIZED_NAME_STARTED_AT = "started_at";
+  @SerializedName(SERIALIZED_NAME_STARTED_AT)
+  @javax.annotation.Nullable
+  private OffsetDateTime startedAt;
 
   public static final String SERIALIZED_NAME_COMPLETED_AT = "completed_at";
   @SerializedName(SERIALIZED_NAME_COMPLETED_AT)
   @javax.annotation.Nullable
   private OffsetDateTime completedAt;
 
+  public static final String SERIALIZED_NAME_RESULTS_EXPIRE_AT = "results_expire_at";
+  @SerializedName(SERIALIZED_NAME_RESULTS_EXPIRE_AT)
+  @javax.annotation.Nonnull
+  private OffsetDateTime resultsExpireAt;
+
   public static final String SERIALIZED_NAME_METADATA = "metadata";
   @SerializedName(SERIALIZED_NAME_METADATA)
   @javax.annotation.Nullable
   private Object metadata;
 
+  public static final String SERIALIZED_NAME_ERROR_MESSAGE = "error_message";
+  @SerializedName(SERIALIZED_NAME_ERROR_MESSAGE)
+  @javax.annotation.Nullable
+  private String errorMessage;
+
+  public static final String SERIALIZED_NAME_REQUEST_ID = "request_id";
+  @SerializedName(SERIALIZED_NAME_REQUEST_ID)
+  @javax.annotation.Nullable
+  private String requestId;
+
+  public static final String SERIALIZED_NAME_ARTIFACTS = "artifacts";
+  @SerializedName(SERIALIZED_NAME_ARTIFACTS)
+  @javax.annotation.Nullable
+  private JobArtifacts artifacts;
+
   public Job() {
   }
 
-  public Job id(@javax.annotation.Nullable String id) {
+  public Job id(@javax.annotation.Nonnull String id) {
     this.id = id;
     return this;
   }
@@ -167,17 +193,36 @@ public class Job {
    * Get id
    * @return id
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public String getId() {
     return id;
   }
 
-  public void setId(@javax.annotation.Nullable String id) {
+  public void setId(@javax.annotation.Nonnull String id) {
     this.id = id;
   }
 
 
-  public Job status(@javax.annotation.Nullable StatusEnum status) {
+  public Job name(@javax.annotation.Nonnull String name) {
+    this.name = name;
+    return this;
+  }
+
+  /**
+   * Job name (from metadata or auto-generated)
+   * @return name
+   */
+  @javax.annotation.Nonnull
+  public String getName() {
+    return name;
+  }
+
+  public void setName(@javax.annotation.Nonnull String name) {
+    this.name = name;
+  }
+
+
+  public Job status(@javax.annotation.Nonnull StatusEnum status) {
     this.status = status;
     return this;
   }
@@ -186,17 +231,17 @@ public class Job {
    * Get status
    * @return status
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public StatusEnum getStatus() {
     return status;
   }
 
-  public void setStatus(@javax.annotation.Nullable StatusEnum status) {
+  public void setStatus(@javax.annotation.Nonnull StatusEnum status) {
     this.status = status;
   }
 
 
-  public Job totalCount(@javax.annotation.Nullable Integer totalCount) {
+  public Job totalCount(@javax.annotation.Nonnull Integer totalCount) {
     this.totalCount = totalCount;
     return this;
   }
@@ -205,17 +250,17 @@ public class Job {
    * Get totalCount
    * @return totalCount
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public Integer getTotalCount() {
     return totalCount;
   }
 
-  public void setTotalCount(@javax.annotation.Nullable Integer totalCount) {
+  public void setTotalCount(@javax.annotation.Nonnull Integer totalCount) {
     this.totalCount = totalCount;
   }
 
 
-  public Job processedCount(@javax.annotation.Nullable Integer processedCount) {
+  public Job processedCount(@javax.annotation.Nonnull Integer processedCount) {
     this.processedCount = processedCount;
     return this;
   }
@@ -224,34 +269,13 @@ public class Job {
    * Get processedCount
    * @return processedCount
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public Integer getProcessedCount() {
     return processedCount;
   }
 
-  public void setProcessedCount(@javax.annotation.Nullable Integer processedCount) {
+  public void setProcessedCount(@javax.annotation.Nonnull Integer processedCount) {
     this.processedCount = processedCount;
-  }
-
-
-  public Job progressPercent(@javax.annotation.Nullable Integer progressPercent) {
-    this.progressPercent = progressPercent;
-    return this;
-  }
-
-  /**
-   * Get progressPercent
-   * minimum: 0
-   * maximum: 100
-   * @return progressPercent
-   */
-  @javax.annotation.Nullable
-  public Integer getProgressPercent() {
-    return progressPercent;
-  }
-
-  public void setProgressPercent(@javax.annotation.Nullable Integer progressPercent) {
-    this.progressPercent = progressPercent;
   }
 
 
@@ -274,7 +298,7 @@ public class Job {
   }
 
 
-  public Job createdAt(@javax.annotation.Nullable OffsetDateTime createdAt) {
+  public Job createdAt(@javax.annotation.Nonnull OffsetDateTime createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -283,13 +307,32 @@ public class Job {
    * Get createdAt
    * @return createdAt
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public OffsetDateTime getCreatedAt() {
     return createdAt;
   }
 
-  public void setCreatedAt(@javax.annotation.Nullable OffsetDateTime createdAt) {
+  public void setCreatedAt(@javax.annotation.Nonnull OffsetDateTime createdAt) {
     this.createdAt = createdAt;
+  }
+
+
+  public Job startedAt(@javax.annotation.Nullable OffsetDateTime startedAt) {
+    this.startedAt = startedAt;
+    return this;
+  }
+
+  /**
+   * When processing began. Omitted if not yet started.
+   * @return startedAt
+   */
+  @javax.annotation.Nullable
+  public OffsetDateTime getStartedAt() {
+    return startedAt;
+  }
+
+  public void setStartedAt(@javax.annotation.Nullable OffsetDateTime startedAt) {
+    this.startedAt = startedAt;
   }
 
 
@@ -299,7 +342,7 @@ public class Job {
   }
 
   /**
-   * Get completedAt
+   * Omitted if not yet completed.
    * @return completedAt
    */
   @javax.annotation.Nullable
@@ -312,13 +355,32 @@ public class Job {
   }
 
 
+  public Job resultsExpireAt(@javax.annotation.Nonnull OffsetDateTime resultsExpireAt) {
+    this.resultsExpireAt = resultsExpireAt;
+    return this;
+  }
+
+  /**
+   * When job results will be purged
+   * @return resultsExpireAt
+   */
+  @javax.annotation.Nonnull
+  public OffsetDateTime getResultsExpireAt() {
+    return resultsExpireAt;
+  }
+
+  public void setResultsExpireAt(@javax.annotation.Nonnull OffsetDateTime resultsExpireAt) {
+    this.resultsExpireAt = resultsExpireAt;
+  }
+
+
   public Job metadata(@javax.annotation.Nullable Object metadata) {
     this.metadata = metadata;
     return this;
   }
 
   /**
-   * Get metadata
+   * Custom metadata attached at creation
    * @return metadata
    */
   @javax.annotation.Nullable
@@ -328,6 +390,63 @@ public class Job {
 
   public void setMetadata(@javax.annotation.Nullable Object metadata) {
     this.metadata = metadata;
+  }
+
+
+  public Job errorMessage(@javax.annotation.Nullable String errorMessage) {
+    this.errorMessage = errorMessage;
+    return this;
+  }
+
+  /**
+   * Error details. Present only for failed jobs.
+   * @return errorMessage
+   */
+  @javax.annotation.Nullable
+  public String getErrorMessage() {
+    return errorMessage;
+  }
+
+  public void setErrorMessage(@javax.annotation.Nullable String errorMessage) {
+    this.errorMessage = errorMessage;
+  }
+
+
+  public Job requestId(@javax.annotation.Nullable String requestId) {
+    this.requestId = requestId;
+    return this;
+  }
+
+  /**
+   * Request ID from the job creation request
+   * @return requestId
+   */
+  @javax.annotation.Nullable
+  public String getRequestId() {
+    return requestId;
+  }
+
+  public void setRequestId(@javax.annotation.Nullable String requestId) {
+    this.requestId = requestId;
+  }
+
+
+  public Job artifacts(@javax.annotation.Nullable JobArtifacts artifacts) {
+    this.artifacts = artifacts;
+    return this;
+  }
+
+  /**
+   * Get artifacts
+   * @return artifacts
+   */
+  @javax.annotation.Nullable
+  public JobArtifacts getArtifacts() {
+    return artifacts;
+  }
+
+  public void setArtifacts(@javax.annotation.Nullable JobArtifacts artifacts) {
+    this.artifacts = artifacts;
   }
 
 
@@ -342,19 +461,24 @@ public class Job {
     }
     Job job = (Job) o;
     return Objects.equals(this.id, job.id) &&
+        Objects.equals(this.name, job.name) &&
         Objects.equals(this.status, job.status) &&
         Objects.equals(this.totalCount, job.totalCount) &&
         Objects.equals(this.processedCount, job.processedCount) &&
-        Objects.equals(this.progressPercent, job.progressPercent) &&
         Objects.equals(this.summary, job.summary) &&
         Objects.equals(this.createdAt, job.createdAt) &&
+        Objects.equals(this.startedAt, job.startedAt) &&
         Objects.equals(this.completedAt, job.completedAt) &&
-        Objects.equals(this.metadata, job.metadata);
+        Objects.equals(this.resultsExpireAt, job.resultsExpireAt) &&
+        Objects.equals(this.metadata, job.metadata) &&
+        Objects.equals(this.errorMessage, job.errorMessage) &&
+        Objects.equals(this.requestId, job.requestId) &&
+        Objects.equals(this.artifacts, job.artifacts);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, status, totalCount, processedCount, progressPercent, summary, createdAt, completedAt, metadata);
+    return Objects.hash(id, name, status, totalCount, processedCount, summary, createdAt, startedAt, completedAt, resultsExpireAt, metadata, errorMessage, requestId, artifacts);
   }
 
   @Override
@@ -362,14 +486,19 @@ public class Job {
     StringBuilder sb = new StringBuilder();
     sb.append("class Job {\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    totalCount: ").append(toIndentedString(totalCount)).append("\n");
     sb.append("    processedCount: ").append(toIndentedString(processedCount)).append("\n");
-    sb.append("    progressPercent: ").append(toIndentedString(progressPercent)).append("\n");
     sb.append("    summary: ").append(toIndentedString(summary)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
+    sb.append("    startedAt: ").append(toIndentedString(startedAt)).append("\n");
     sb.append("    completedAt: ").append(toIndentedString(completedAt)).append("\n");
+    sb.append("    resultsExpireAt: ").append(toIndentedString(resultsExpireAt)).append("\n");
     sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
+    sb.append("    errorMessage: ").append(toIndentedString(errorMessage)).append("\n");
+    sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
+    sb.append("    artifacts: ").append(toIndentedString(artifacts)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -391,10 +520,10 @@ public class Job {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("id", "status", "total_count", "processed_count", "progress_percent", "summary", "created_at", "completed_at", "metadata"));
+    openapiFields = new HashSet<String>(Arrays.asList("id", "name", "status", "total_count", "processed_count", "summary", "created_at", "started_at", "completed_at", "results_expire_at", "metadata", "error_message", "request_id", "artifacts"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(0);
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("id", "name", "status", "total_count", "processed_count", "created_at", "results_expire_at"));
   }
 
   /**
@@ -410,21 +539,45 @@ public class Job {
         }
       }
 
+      Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
+      // check to see if the JSON string contains additional fields
+      for (Map.Entry<String, JsonElement> entry : entries) {
+        if (!Job.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `Job` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        }
+      }
 
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : Job.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        }
+      }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("id") != null && !jsonObj.get("id").isJsonNull()) && !jsonObj.get("id").isJsonPrimitive()) {
+      if (!jsonObj.get("id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
       }
-      if ((jsonObj.get("status") != null && !jsonObj.get("status").isJsonNull()) && !jsonObj.get("status").isJsonPrimitive()) {
+      if (!jsonObj.get("name").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+      }
+      if (!jsonObj.get("status").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `status` to be a primitive type in the JSON string but got `%s`", jsonObj.get("status").toString()));
       }
-      // validate the optional field `status`
-      if (jsonObj.get("status") != null && !jsonObj.get("status").isJsonNull()) {
-        StatusEnum.validateJsonElement(jsonObj.get("status"));
-      }
+      // validate the required field `status`
+      StatusEnum.validateJsonElement(jsonObj.get("status"));
       // validate the optional field `summary`
       if (jsonObj.get("summary") != null && !jsonObj.get("summary").isJsonNull()) {
         JobSummary.validateJsonElement(jsonObj.get("summary"));
+      }
+      if ((jsonObj.get("error_message") != null && !jsonObj.get("error_message").isJsonNull()) && !jsonObj.get("error_message").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `error_message` to be a primitive type in the JSON string but got `%s`", jsonObj.get("error_message").toString()));
+      }
+      if ((jsonObj.get("request_id") != null && !jsonObj.get("request_id").isJsonNull()) && !jsonObj.get("request_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `request_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("request_id").toString()));
+      }
+      // validate the optional field `artifacts`
+      if (jsonObj.get("artifacts") != null && !jsonObj.get("artifacts").isJsonNull()) {
+        JobArtifacts.validateJsonElement(jsonObj.get("artifacts"));
       }
   }
 

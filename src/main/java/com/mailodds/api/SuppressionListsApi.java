@@ -1,6 +1,6 @@
 /*
  * MailOdds Email Validation API
- * MailOdds provides email validation services to help maintain clean email lists  and improve deliverability. The API performs multiple validation checks including  format verification, domain validation, MX record checking, and disposable email detection.  ## Authentication  All API requests require authentication using a Bearer token. Include your API key  in the Authorization header:  ``` Authorization: Bearer YOUR_API_KEY ```  API keys can be created in the MailOdds dashboard.  ## Rate Limits  Rate limits vary by plan: - Free: 10 requests/minute - Starter: 60 requests/minute   - Pro: 300 requests/minute - Business: 1000 requests/minute - Enterprise: Custom limits  ## Response Format  All responses include: - `schema_version`: API schema version (currently \"1.0\") - `request_id`: Unique request identifier for debugging  Error responses include: - `error`: Machine-readable error code - `message`: Human-readable error description 
+ * MailOdds provides email validation services to help maintain clean email lists  and improve deliverability. The API performs multiple validation checks including  format verification, domain validation, MX record checking, and disposable email detection.  ## Authentication  All API requests require authentication using a Bearer token. Include your API key  in the Authorization header:  ``` Authorization: Bearer YOUR_API_KEY ```  API keys can be created in the MailOdds dashboard.  ## Rate Limits  Rate limits vary by plan: - Free: 10 requests/minute - Starter: 60 requests/minute   - Pro: 300 requests/minute - Business: 1000 requests/minute - Enterprise: Custom limits  ## Response Format  All responses include: - `schema_version`: API schema version (currently \"1.0\") - `request_id`: Unique request identifier for debugging  Error responses include: - `error`: Machine-readable error code - `message`: Human-readable error description  ## Webhooks  MailOdds can send webhook notifications for job completion and email delivery events. Configure webhooks in the dashboard or per-job via the `webhook_url` field.  ### Event Types  | Event | Description | |-------|-------------| | `job.completed` | Validation job finished processing | | `job.failed` | Validation job failed | | `message.queued` | Email queued for delivery | | `message.delivered` | Email delivered to recipient | | `message.bounced` | Email bounced | | `message.deferred` | Email delivery deferred | | `message.failed` | Email delivery failed | | `message.opened` | Recipient opened the email | | `message.clicked` | Recipient clicked a link |  ### Payload Format  ```json {   \"event\": \"job.completed\",   \"job\": { ... },   \"timestamp\": \"2026-01-15T10:30:00Z\" } ```  ### Webhook Signing  If a webhook secret is configured, each request includes an `X-MailOdds-Signature` header containing an HMAC-SHA256 hex digest of the request body.  **Verification pseudocode:** ``` expected = HMAC-SHA256(webhook_secret, request_body) valid = constant_time_compare(request.headers[\"X-MailOdds-Signature\"], hex(expected)) ```  The payload is serialized with compact JSON (no extra whitespace, sorted keys) before signing.  ### Headers  All webhook requests include: - `Content-Type: application/json` - `User-Agent: MailOdds-Webhook/1.0` - `X-MailOdds-Event: {event_type}` - `X-Request-Id: {uuid}` - `X-MailOdds-Signature: {hmac}` (when secret is configured)  ### Retry Policy  Failed deliveries (non-2xx response or timeout) are retried up to 3 times with exponential backoff (10s, 60s, 300s). 
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@mailodds.com
@@ -33,6 +33,7 @@ import com.mailodds.model.CheckSuppressionRequest;
 import com.mailodds.model.ErrorResponse;
 import com.mailodds.model.RemoveSuppression200Response;
 import com.mailodds.model.RemoveSuppressionRequest;
+import com.mailodds.model.SuppressionAuditResponse;
 import com.mailodds.model.SuppressionCheckResponse;
 import com.mailodds.model.SuppressionListResponse;
 import com.mailodds.model.SuppressionStatsResponse;
@@ -347,6 +348,143 @@ public class SuppressionListsApi {
         return localVarCall;
     }
     /**
+     * Build call for getSuppressionAuditLog
+     * @param page  (optional, default to 1)
+     * @param limit  (optional, default to 20)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Audit log entries </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getSuppressionAuditLogCall(@javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer limit, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/v1/suppression/audit";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (page != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("page", page));
+        }
+
+        if (limit != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("limit", limit));
+        }
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "BearerAuth" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call getSuppressionAuditLogValidateBeforeCall(@javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer limit, final ApiCallback _callback) throws ApiException {
+        return getSuppressionAuditLogCall(page, limit, _callback);
+
+    }
+
+    /**
+     * Get suppression audit log
+     * Get a chronological log of suppression list changes (additions, removals).
+     * @param page  (optional, default to 1)
+     * @param limit  (optional, default to 20)
+     * @return SuppressionAuditResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Audit log entries </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
+     </table>
+     */
+    public SuppressionAuditResponse getSuppressionAuditLog(@javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer limit) throws ApiException {
+        ApiResponse<SuppressionAuditResponse> localVarResp = getSuppressionAuditLogWithHttpInfo(page, limit);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Get suppression audit log
+     * Get a chronological log of suppression list changes (additions, removals).
+     * @param page  (optional, default to 1)
+     * @param limit  (optional, default to 20)
+     * @return ApiResponse&lt;SuppressionAuditResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Audit log entries </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<SuppressionAuditResponse> getSuppressionAuditLogWithHttpInfo(@javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer limit) throws ApiException {
+        okhttp3.Call localVarCall = getSuppressionAuditLogValidateBeforeCall(page, limit, null);
+        Type localVarReturnType = new TypeToken<SuppressionAuditResponse>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Get suppression audit log (asynchronously)
+     * Get a chronological log of suppression list changes (additions, removals).
+     * @param page  (optional, default to 1)
+     * @param limit  (optional, default to 20)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Audit log entries </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getSuppressionAuditLogAsync(@javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer limit, final ApiCallback<SuppressionAuditResponse> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = getSuppressionAuditLogValidateBeforeCall(page, limit, _callback);
+        Type localVarReturnType = new TypeToken<SuppressionAuditResponse>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
      * Build call for getSuppressionStats
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -473,6 +611,7 @@ public class SuppressionListsApi {
      * @param perPage  (optional, default to 50)
      * @param type  (optional)
      * @param search  (optional)
+     * @param source Filter by entry source (e.g. api, bounce, complaint) (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -484,7 +623,7 @@ public class SuppressionListsApi {
         <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listSuppressionCall(@javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String type, @javax.annotation.Nullable String search, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listSuppressionCall(@javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String type, @javax.annotation.Nullable String search, @javax.annotation.Nullable String source, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -525,6 +664,10 @@ public class SuppressionListsApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("search", search));
         }
 
+        if (source != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("source", source));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -545,8 +688,8 @@ public class SuppressionListsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listSuppressionValidateBeforeCall(@javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String type, @javax.annotation.Nullable String search, final ApiCallback _callback) throws ApiException {
-        return listSuppressionCall(page, perPage, type, search, _callback);
+    private okhttp3.Call listSuppressionValidateBeforeCall(@javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String type, @javax.annotation.Nullable String search, @javax.annotation.Nullable String source, final ApiCallback _callback) throws ApiException {
+        return listSuppressionCall(page, perPage, type, search, source, _callback);
 
     }
 
@@ -557,6 +700,7 @@ public class SuppressionListsApi {
      * @param perPage  (optional, default to 50)
      * @param type  (optional)
      * @param search  (optional)
+     * @param source Filter by entry source (e.g. api, bounce, complaint) (optional)
      * @return SuppressionListResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -567,8 +711,8 @@ public class SuppressionListsApi {
         <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
-    public SuppressionListResponse listSuppression(@javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String type, @javax.annotation.Nullable String search) throws ApiException {
-        ApiResponse<SuppressionListResponse> localVarResp = listSuppressionWithHttpInfo(page, perPage, type, search);
+    public SuppressionListResponse listSuppression(@javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String type, @javax.annotation.Nullable String search, @javax.annotation.Nullable String source) throws ApiException {
+        ApiResponse<SuppressionListResponse> localVarResp = listSuppressionWithHttpInfo(page, perPage, type, search, source);
         return localVarResp.getData();
     }
 
@@ -579,6 +723,7 @@ public class SuppressionListsApi {
      * @param perPage  (optional, default to 50)
      * @param type  (optional)
      * @param search  (optional)
+     * @param source Filter by entry source (e.g. api, bounce, complaint) (optional)
      * @return ApiResponse&lt;SuppressionListResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -589,8 +734,8 @@ public class SuppressionListsApi {
         <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<SuppressionListResponse> listSuppressionWithHttpInfo(@javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String type, @javax.annotation.Nullable String search) throws ApiException {
-        okhttp3.Call localVarCall = listSuppressionValidateBeforeCall(page, perPage, type, search, null);
+    public ApiResponse<SuppressionListResponse> listSuppressionWithHttpInfo(@javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String type, @javax.annotation.Nullable String search, @javax.annotation.Nullable String source) throws ApiException {
+        okhttp3.Call localVarCall = listSuppressionValidateBeforeCall(page, perPage, type, search, source, null);
         Type localVarReturnType = new TypeToken<SuppressionListResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -602,6 +747,7 @@ public class SuppressionListsApi {
      * @param perPage  (optional, default to 50)
      * @param type  (optional)
      * @param search  (optional)
+     * @param source Filter by entry source (e.g. api, bounce, complaint) (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -613,9 +759,9 @@ public class SuppressionListsApi {
         <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listSuppressionAsync(@javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String type, @javax.annotation.Nullable String search, final ApiCallback<SuppressionListResponse> _callback) throws ApiException {
+    public okhttp3.Call listSuppressionAsync(@javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String type, @javax.annotation.Nullable String search, @javax.annotation.Nullable String source, final ApiCallback<SuppressionListResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = listSuppressionValidateBeforeCall(page, perPage, type, search, _callback);
+        okhttp3.Call localVarCall = listSuppressionValidateBeforeCall(page, perPage, type, search, source, _callback);
         Type localVarReturnType = new TypeToken<SuppressionListResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

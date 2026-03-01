@@ -7,15 +7,20 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**id** | **String** |  |  [optional] |
-|**status** | [**StatusEnum**](#StatusEnum) |  |  [optional] |
-|**totalCount** | **Integer** |  |  [optional] |
-|**processedCount** | **Integer** |  |  [optional] |
-|**progressPercent** | **Integer** |  |  [optional] |
+|**id** | **String** |  |  |
+|**name** | **String** | Job name (from metadata or auto-generated) |  |
+|**status** | [**StatusEnum**](#StatusEnum) |  |  |
+|**totalCount** | **Integer** |  |  |
+|**processedCount** | **Integer** |  |  |
 |**summary** | [**JobSummary**](JobSummary.md) |  |  [optional] |
-|**createdAt** | **OffsetDateTime** |  |  [optional] |
-|**completedAt** | **OffsetDateTime** |  |  [optional] |
-|**metadata** | **Object** |  |  [optional] |
+|**createdAt** | **OffsetDateTime** |  |  |
+|**startedAt** | **OffsetDateTime** | When processing began. Omitted if not yet started. |  [optional] |
+|**completedAt** | **OffsetDateTime** | Omitted if not yet completed. |  [optional] |
+|**resultsExpireAt** | **OffsetDateTime** | When job results will be purged |  |
+|**metadata** | **Object** | Custom metadata attached at creation |  [optional] |
+|**errorMessage** | **String** | Error details. Present only for failed jobs. |  [optional] |
+|**requestId** | **String** | Request ID from the job creation request |  [optional] |
+|**artifacts** | [**JobArtifacts**](JobArtifacts.md) |  |  [optional] |
 
 
 

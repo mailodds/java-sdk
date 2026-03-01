@@ -2,16 +2,21 @@
 
 # ValidationResult
 
+Individual result from a bulk validation job
 
 ## Properties
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**email** | **String** |  |  [optional] |
-|**status** | [**StatusEnum**](#StatusEnum) |  |  [optional] |
-|**subStatus** | **String** |  |  [optional] |
-|**action** | [**ActionEnum**](#ActionEnum) |  |  [optional] |
-|**processedAt** | **OffsetDateTime** |  |  [optional] |
+|**email** | **String** |  |  |
+|**status** | [**StatusEnum**](#StatusEnum) |  |  |
+|**subStatus** | **String** | Detailed reason. Omitted when none. |  [optional] |
+|**action** | [**ActionEnum**](#ActionEnum) |  |  |
+|**domain** | **String** | Email domain |  |
+|**mxHost** | **String** | Primary MX hostname. Omitted when not resolved. |  [optional] |
+|**checks** | **Map&lt;String, Object&gt;** | Detailed check results (JSONB). Omitted when not available. |  [optional] |
+|**suppression** | [**ValidationResultSuppression**](ValidationResultSuppression.md) |  |  [optional] |
+|**processedAt** | **OffsetDateTime** |  |  |
 
 
 

@@ -582,7 +582,7 @@ public class Example {
 
 <a id="listJobs"></a>
 # **listJobs**
-> JobListResponse listJobs(page, perPage, status)
+> JobListResponse listJobs(cursor, limit, status)
 
 List validation jobs
 
@@ -608,11 +608,11 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     BulkValidationApi apiInstance = new BulkValidationApi(defaultClient);
-    Integer page = 1; // Integer | 
-    Integer perPage = 20; // Integer | 
+    String cursor = "cursor_example"; // String | Pagination cursor (ISO timestamp from previous response)
+    Integer limit = 50; // Integer | Results per page
     String status = "pending"; // String | 
     try {
-      JobListResponse result = apiInstance.listJobs(page, perPage, status);
+      JobListResponse result = apiInstance.listJobs(cursor, limit, status);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling BulkValidationApi#listJobs");
@@ -629,8 +629,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **page** | **Integer**|  | [optional] [default to 1] |
-| **perPage** | **Integer**|  | [optional] [default to 20] |
+| **cursor** | **String**| Pagination cursor (ISO timestamp from previous response) | [optional] |
+| **limit** | **Integer**| Results per page | [optional] [default to 50] |
 | **status** | **String**|  | [optional] [enum: pending, processing, completed, failed, cancelled] |
 
 ### Return type

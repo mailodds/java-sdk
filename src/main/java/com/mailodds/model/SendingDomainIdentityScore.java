@@ -1,6 +1,6 @@
 /*
  * MailOdds Email Validation API
- * MailOdds provides email validation services to help maintain clean email lists  and improve deliverability. The API performs multiple validation checks including  format verification, domain validation, MX record checking, and disposable email detection.  ## Authentication  All API requests require authentication using a Bearer token. Include your API key  in the Authorization header:  ``` Authorization: Bearer YOUR_API_KEY ```  API keys can be created in the MailOdds dashboard.  ## Rate Limits  Rate limits vary by plan: - Free: 10 requests/minute - Starter: 60 requests/minute   - Pro: 300 requests/minute - Business: 1000 requests/minute - Enterprise: Custom limits  ## Response Format  All responses include: - `schema_version`: API schema version (currently \"1.0\") - `request_id`: Unique request identifier for debugging  Error responses include: - `error`: Machine-readable error code - `message`: Human-readable error description 
+ * MailOdds provides email validation services to help maintain clean email lists  and improve deliverability. The API performs multiple validation checks including  format verification, domain validation, MX record checking, and disposable email detection.  ## Authentication  All API requests require authentication using a Bearer token. Include your API key  in the Authorization header:  ``` Authorization: Bearer YOUR_API_KEY ```  API keys can be created in the MailOdds dashboard.  ## Rate Limits  Rate limits vary by plan: - Free: 10 requests/minute - Starter: 60 requests/minute   - Pro: 300 requests/minute - Business: 1000 requests/minute - Enterprise: Custom limits  ## Response Format  All responses include: - `schema_version`: API schema version (currently \"1.0\") - `request_id`: Unique request identifier for debugging  Error responses include: - `error`: Machine-readable error code - `message`: Human-readable error description  ## Webhooks  MailOdds can send webhook notifications for job completion and email delivery events. Configure webhooks in the dashboard or per-job via the `webhook_url` field.  ### Event Types  | Event | Description | |-------|-------------| | `job.completed` | Validation job finished processing | | `job.failed` | Validation job failed | | `message.queued` | Email queued for delivery | | `message.delivered` | Email delivered to recipient | | `message.bounced` | Email bounced | | `message.deferred` | Email delivery deferred | | `message.failed` | Email delivery failed | | `message.opened` | Recipient opened the email | | `message.clicked` | Recipient clicked a link |  ### Payload Format  ```json {   \"event\": \"job.completed\",   \"job\": { ... },   \"timestamp\": \"2026-01-15T10:30:00Z\" } ```  ### Webhook Signing  If a webhook secret is configured, each request includes an `X-MailOdds-Signature` header containing an HMAC-SHA256 hex digest of the request body.  **Verification pseudocode:** ``` expected = HMAC-SHA256(webhook_secret, request_body) valid = constant_time_compare(request.headers[\"X-MailOdds-Signature\"], hex(expected)) ```  The payload is serialized with compact JSON (no extra whitespace, sorted keys) before signing.  ### Headers  All webhook requests include: - `Content-Type: application/json` - `User-Agent: MailOdds-Webhook/1.0` - `X-MailOdds-Event: {event_type}` - `X-Request-Id: {uuid}` - `X-MailOdds-Signature: {hmac}` (when secret is configured)  ### Retry Policy  Failed deliveries (non-2xx response or timeout) are retried up to 3 times with exponential backoff (10s, 60s, 300s). 
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@mailodds.com
@@ -19,9 +19,8 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.mailodds.model.SendingDomainIdentityScoreChecks;
+import com.mailodds.model.SendingDomainIdentityScoreBreakdown;
 import java.io.IOException;
-import java.math.BigDecimal;
 import java.util.Arrays;
 
 import com.google.gson.Gson;
@@ -50,56 +49,188 @@ import com.mailodds.JSON;
 /**
  * SendingDomainIdentityScore
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-26T01:37:38.039547555+01:00[Europe/Amsterdam]", comments = "Generator version: 7.19.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-01T18:02:02.335122536+01:00[Europe/Amsterdam]", comments = "Generator version: 7.19.0")
 public class SendingDomainIdentityScore {
-  public static final String SERIALIZED_NAME_OVERALL_SCORE = "overall_score";
-  @SerializedName(SERIALIZED_NAME_OVERALL_SCORE)
-  @javax.annotation.Nullable
-  private BigDecimal overallScore;
+  public static final String SERIALIZED_NAME_SCORE = "score";
+  @SerializedName(SERIALIZED_NAME_SCORE)
+  @javax.annotation.Nonnull
+  private Integer score;
 
-  public static final String SERIALIZED_NAME_CHECKS = "checks";
-  @SerializedName(SERIALIZED_NAME_CHECKS)
-  @javax.annotation.Nullable
-  private SendingDomainIdentityScoreChecks checks;
+  public static final String SERIALIZED_NAME_MAX_SCORE = "max_score";
+  @SerializedName(SERIALIZED_NAME_MAX_SCORE)
+  @javax.annotation.Nonnull
+  private Integer maxScore;
+
+  public static final String SERIALIZED_NAME_PERCENTAGE = "percentage";
+  @SerializedName(SERIALIZED_NAME_PERCENTAGE)
+  @javax.annotation.Nonnull
+  private Integer percentage;
+
+  public static final String SERIALIZED_NAME_BREAKDOWN = "breakdown";
+  @SerializedName(SERIALIZED_NAME_BREAKDOWN)
+  @javax.annotation.Nonnull
+  private SendingDomainIdentityScoreBreakdown breakdown;
+
+  /**
+   * Letter grade (A+, A, B, C, D, F)
+   */
+  @JsonAdapter(GradeEnum.Adapter.class)
+  public enum GradeEnum {
+    A_("A+"),
+    
+    A("A"),
+    
+    B("B"),
+    
+    C("C"),
+    
+    D("D"),
+    
+    F("F");
+
+    private String value;
+
+    GradeEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static GradeEnum fromValue(String value) {
+      for (GradeEnum b : GradeEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<GradeEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final GradeEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public GradeEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return GradeEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      GradeEnum.fromValue(value);
+    }
+  }
+
+  public static final String SERIALIZED_NAME_GRADE = "grade";
+  @SerializedName(SERIALIZED_NAME_GRADE)
+  @javax.annotation.Nonnull
+  private GradeEnum grade;
 
   public SendingDomainIdentityScore() {
   }
 
-  public SendingDomainIdentityScore overallScore(@javax.annotation.Nullable BigDecimal overallScore) {
-    this.overallScore = overallScore;
+  public SendingDomainIdentityScore score(@javax.annotation.Nonnull Integer score) {
+    this.score = score;
     return this;
   }
 
   /**
-   * Composite score 0-100
-   * @return overallScore
+   * Total points earned across all checks
+   * @return score
    */
-  @javax.annotation.Nullable
-  public BigDecimal getOverallScore() {
-    return overallScore;
+  @javax.annotation.Nonnull
+  public Integer getScore() {
+    return score;
   }
 
-  public void setOverallScore(@javax.annotation.Nullable BigDecimal overallScore) {
-    this.overallScore = overallScore;
+  public void setScore(@javax.annotation.Nonnull Integer score) {
+    this.score = score;
   }
 
 
-  public SendingDomainIdentityScore checks(@javax.annotation.Nullable SendingDomainIdentityScoreChecks checks) {
-    this.checks = checks;
+  public SendingDomainIdentityScore maxScore(@javax.annotation.Nonnull Integer maxScore) {
+    this.maxScore = maxScore;
     return this;
   }
 
   /**
-   * Get checks
-   * @return checks
+   * Maximum possible score (100)
+   * @return maxScore
    */
-  @javax.annotation.Nullable
-  public SendingDomainIdentityScoreChecks getChecks() {
-    return checks;
+  @javax.annotation.Nonnull
+  public Integer getMaxScore() {
+    return maxScore;
   }
 
-  public void setChecks(@javax.annotation.Nullable SendingDomainIdentityScoreChecks checks) {
-    this.checks = checks;
+  public void setMaxScore(@javax.annotation.Nonnull Integer maxScore) {
+    this.maxScore = maxScore;
+  }
+
+
+  public SendingDomainIdentityScore percentage(@javax.annotation.Nonnull Integer percentage) {
+    this.percentage = percentage;
+    return this;
+  }
+
+  /**
+   * Score as percentage (same as score since max is 100)
+   * @return percentage
+   */
+  @javax.annotation.Nonnull
+  public Integer getPercentage() {
+    return percentage;
+  }
+
+  public void setPercentage(@javax.annotation.Nonnull Integer percentage) {
+    this.percentage = percentage;
+  }
+
+
+  public SendingDomainIdentityScore breakdown(@javax.annotation.Nonnull SendingDomainIdentityScoreBreakdown breakdown) {
+    this.breakdown = breakdown;
+    return this;
+  }
+
+  /**
+   * Get breakdown
+   * @return breakdown
+   */
+  @javax.annotation.Nonnull
+  public SendingDomainIdentityScoreBreakdown getBreakdown() {
+    return breakdown;
+  }
+
+  public void setBreakdown(@javax.annotation.Nonnull SendingDomainIdentityScoreBreakdown breakdown) {
+    this.breakdown = breakdown;
+  }
+
+
+  public SendingDomainIdentityScore grade(@javax.annotation.Nonnull GradeEnum grade) {
+    this.grade = grade;
+    return this;
+  }
+
+  /**
+   * Letter grade (A+, A, B, C, D, F)
+   * @return grade
+   */
+  @javax.annotation.Nonnull
+  public GradeEnum getGrade() {
+    return grade;
+  }
+
+  public void setGrade(@javax.annotation.Nonnull GradeEnum grade) {
+    this.grade = grade;
   }
 
 
@@ -113,21 +244,27 @@ public class SendingDomainIdentityScore {
       return false;
     }
     SendingDomainIdentityScore sendingDomainIdentityScore = (SendingDomainIdentityScore) o;
-    return Objects.equals(this.overallScore, sendingDomainIdentityScore.overallScore) &&
-        Objects.equals(this.checks, sendingDomainIdentityScore.checks);
+    return Objects.equals(this.score, sendingDomainIdentityScore.score) &&
+        Objects.equals(this.maxScore, sendingDomainIdentityScore.maxScore) &&
+        Objects.equals(this.percentage, sendingDomainIdentityScore.percentage) &&
+        Objects.equals(this.breakdown, sendingDomainIdentityScore.breakdown) &&
+        Objects.equals(this.grade, sendingDomainIdentityScore.grade);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(overallScore, checks);
+    return Objects.hash(score, maxScore, percentage, breakdown, grade);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class SendingDomainIdentityScore {\n");
-    sb.append("    overallScore: ").append(toIndentedString(overallScore)).append("\n");
-    sb.append("    checks: ").append(toIndentedString(checks)).append("\n");
+    sb.append("    score: ").append(toIndentedString(score)).append("\n");
+    sb.append("    maxScore: ").append(toIndentedString(maxScore)).append("\n");
+    sb.append("    percentage: ").append(toIndentedString(percentage)).append("\n");
+    sb.append("    breakdown: ").append(toIndentedString(breakdown)).append("\n");
+    sb.append("    grade: ").append(toIndentedString(grade)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -149,10 +286,10 @@ public class SendingDomainIdentityScore {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("overall_score", "checks"));
+    openapiFields = new HashSet<String>(Arrays.asList("score", "max_score", "percentage", "breakdown", "grade"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(0);
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("score", "max_score", "percentage", "breakdown", "grade"));
   }
 
   /**
@@ -168,12 +305,28 @@ public class SendingDomainIdentityScore {
         }
       }
 
-
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-      // validate the optional field `checks`
-      if (jsonObj.get("checks") != null && !jsonObj.get("checks").isJsonNull()) {
-        SendingDomainIdentityScoreChecks.validateJsonElement(jsonObj.get("checks"));
+      Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
+      // check to see if the JSON string contains additional fields
+      for (Map.Entry<String, JsonElement> entry : entries) {
+        if (!SendingDomainIdentityScore.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `SendingDomainIdentityScore` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        }
       }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : SendingDomainIdentityScore.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        }
+      }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      // validate the required field `breakdown`
+      SendingDomainIdentityScoreBreakdown.validateJsonElement(jsonObj.get("breakdown"));
+      if (!jsonObj.get("grade").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `grade` to be a primitive type in the JSON string but got `%s`", jsonObj.get("grade").toString()));
+      }
+      // validate the required field `grade`
+      GradeEnum.validateJsonElement(jsonObj.get("grade"));
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {

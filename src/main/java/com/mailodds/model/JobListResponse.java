@@ -1,6 +1,6 @@
 /*
  * MailOdds Email Validation API
- * MailOdds provides email validation services to help maintain clean email lists  and improve deliverability. The API performs multiple validation checks including  format verification, domain validation, MX record checking, and disposable email detection.  ## Authentication  All API requests require authentication using a Bearer token. Include your API key  in the Authorization header:  ``` Authorization: Bearer YOUR_API_KEY ```  API keys can be created in the MailOdds dashboard.  ## Rate Limits  Rate limits vary by plan: - Free: 10 requests/minute - Starter: 60 requests/minute   - Pro: 300 requests/minute - Business: 1000 requests/minute - Enterprise: Custom limits  ## Response Format  All responses include: - `schema_version`: API schema version (currently \"1.0\") - `request_id`: Unique request identifier for debugging  Error responses include: - `error`: Machine-readable error code - `message`: Human-readable error description 
+ * MailOdds provides email validation services to help maintain clean email lists  and improve deliverability. The API performs multiple validation checks including  format verification, domain validation, MX record checking, and disposable email detection.  ## Authentication  All API requests require authentication using a Bearer token. Include your API key  in the Authorization header:  ``` Authorization: Bearer YOUR_API_KEY ```  API keys can be created in the MailOdds dashboard.  ## Rate Limits  Rate limits vary by plan: - Free: 10 requests/minute - Starter: 60 requests/minute   - Pro: 300 requests/minute - Business: 1000 requests/minute - Enterprise: Custom limits  ## Response Format  All responses include: - `schema_version`: API schema version (currently \"1.0\") - `request_id`: Unique request identifier for debugging  Error responses include: - `error`: Machine-readable error code - `message`: Human-readable error description  ## Webhooks  MailOdds can send webhook notifications for job completion and email delivery events. Configure webhooks in the dashboard or per-job via the `webhook_url` field.  ### Event Types  | Event | Description | |-------|-------------| | `job.completed` | Validation job finished processing | | `job.failed` | Validation job failed | | `message.queued` | Email queued for delivery | | `message.delivered` | Email delivered to recipient | | `message.bounced` | Email bounced | | `message.deferred` | Email delivery deferred | | `message.failed` | Email delivery failed | | `message.opened` | Recipient opened the email | | `message.clicked` | Recipient clicked a link |  ### Payload Format  ```json {   \"event\": \"job.completed\",   \"job\": { ... },   \"timestamp\": \"2026-01-15T10:30:00Z\" } ```  ### Webhook Signing  If a webhook secret is configured, each request includes an `X-MailOdds-Signature` header containing an HMAC-SHA256 hex digest of the request body.  **Verification pseudocode:** ``` expected = HMAC-SHA256(webhook_secret, request_body) valid = constant_time_compare(request.headers[\"X-MailOdds-Signature\"], hex(expected)) ```  The payload is serialized with compact JSON (no extra whitespace, sorted keys) before signing.  ### Headers  All webhook requests include: - `Content-Type: application/json` - `User-Agent: MailOdds-Webhook/1.0` - `X-MailOdds-Event: {event_type}` - `X-Request-Id: {uuid}` - `X-MailOdds-Signature: {hmac}` (when secret is configured)  ### Retry Policy  Failed deliveries (non-2xx response or timeout) are retried up to 3 times with exponential backoff (10s, 60s, 300s). 
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@mailodds.com
@@ -20,11 +20,11 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.mailodds.model.Job;
-import com.mailodds.model.Pagination;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -52,7 +52,7 @@ import com.mailodds.JSON;
 /**
  * JobListResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-26T01:37:38.039547555+01:00[Europe/Amsterdam]", comments = "Generator version: 7.19.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-01T18:02:02.335122536+01:00[Europe/Amsterdam]", comments = "Generator version: 7.19.0")
 public class JobListResponse {
   public static final String SERIALIZED_NAME_SCHEMA_VERSION = "schema_version";
   @SerializedName(SERIALIZED_NAME_SCHEMA_VERSION)
@@ -64,15 +64,20 @@ public class JobListResponse {
   @javax.annotation.Nullable
   private String requestId;
 
-  public static final String SERIALIZED_NAME_JOBS = "jobs";
-  @SerializedName(SERIALIZED_NAME_JOBS)
+  public static final String SERIALIZED_NAME_DATA = "data";
+  @SerializedName(SERIALIZED_NAME_DATA)
   @javax.annotation.Nullable
-  private List<Job> jobs = new ArrayList<>();
+  private List<Job> data = new ArrayList<>();
 
-  public static final String SERIALIZED_NAME_PAGINATION = "pagination";
-  @SerializedName(SERIALIZED_NAME_PAGINATION)
+  public static final String SERIALIZED_NAME_NEXT_CURSOR = "next_cursor";
+  @SerializedName(SERIALIZED_NAME_NEXT_CURSOR)
   @javax.annotation.Nullable
-  private Pagination pagination;
+  private String nextCursor;
+
+  public static final String SERIALIZED_NAME_HAS_MORE = "has_more";
+  @SerializedName(SERIALIZED_NAME_HAS_MORE)
+  @javax.annotation.Nullable
+  private Boolean hasMore;
 
   public JobListResponse() {
   }
@@ -115,49 +120,68 @@ public class JobListResponse {
   }
 
 
-  public JobListResponse jobs(@javax.annotation.Nullable List<Job> jobs) {
-    this.jobs = jobs;
+  public JobListResponse data(@javax.annotation.Nullable List<Job> data) {
+    this.data = data;
     return this;
   }
 
-  public JobListResponse addJobsItem(Job jobsItem) {
-    if (this.jobs == null) {
-      this.jobs = new ArrayList<>();
+  public JobListResponse addDataItem(Job dataItem) {
+    if (this.data == null) {
+      this.data = new ArrayList<>();
     }
-    this.jobs.add(jobsItem);
+    this.data.add(dataItem);
     return this;
   }
 
   /**
-   * Get jobs
-   * @return jobs
+   * List of jobs
+   * @return data
    */
   @javax.annotation.Nullable
-  public List<Job> getJobs() {
-    return jobs;
+  public List<Job> getData() {
+    return data;
   }
 
-  public void setJobs(@javax.annotation.Nullable List<Job> jobs) {
-    this.jobs = jobs;
+  public void setData(@javax.annotation.Nullable List<Job> data) {
+    this.data = data;
   }
 
 
-  public JobListResponse pagination(@javax.annotation.Nullable Pagination pagination) {
-    this.pagination = pagination;
+  public JobListResponse nextCursor(@javax.annotation.Nullable String nextCursor) {
+    this.nextCursor = nextCursor;
     return this;
   }
 
   /**
-   * Get pagination
-   * @return pagination
+   * Cursor for next page. Null when no more results.
+   * @return nextCursor
    */
   @javax.annotation.Nullable
-  public Pagination getPagination() {
-    return pagination;
+  public String getNextCursor() {
+    return nextCursor;
   }
 
-  public void setPagination(@javax.annotation.Nullable Pagination pagination) {
-    this.pagination = pagination;
+  public void setNextCursor(@javax.annotation.Nullable String nextCursor) {
+    this.nextCursor = nextCursor;
+  }
+
+
+  public JobListResponse hasMore(@javax.annotation.Nullable Boolean hasMore) {
+    this.hasMore = hasMore;
+    return this;
+  }
+
+  /**
+   * Whether more results exist beyond this page
+   * @return hasMore
+   */
+  @javax.annotation.Nullable
+  public Boolean getHasMore() {
+    return hasMore;
+  }
+
+  public void setHasMore(@javax.annotation.Nullable Boolean hasMore) {
+    this.hasMore = hasMore;
   }
 
 
@@ -173,13 +197,25 @@ public class JobListResponse {
     JobListResponse jobListResponse = (JobListResponse) o;
     return Objects.equals(this.schemaVersion, jobListResponse.schemaVersion) &&
         Objects.equals(this.requestId, jobListResponse.requestId) &&
-        Objects.equals(this.jobs, jobListResponse.jobs) &&
-        Objects.equals(this.pagination, jobListResponse.pagination);
+        Objects.equals(this.data, jobListResponse.data) &&
+        Objects.equals(this.nextCursor, jobListResponse.nextCursor) &&
+        Objects.equals(this.hasMore, jobListResponse.hasMore);
+  }
+
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(schemaVersion, requestId, jobs, pagination);
+    return Objects.hash(schemaVersion, requestId, data, nextCursor, hasMore);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
@@ -188,8 +224,9 @@ public class JobListResponse {
     sb.append("class JobListResponse {\n");
     sb.append("    schemaVersion: ").append(toIndentedString(schemaVersion)).append("\n");
     sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
-    sb.append("    jobs: ").append(toIndentedString(jobs)).append("\n");
-    sb.append("    pagination: ").append(toIndentedString(pagination)).append("\n");
+    sb.append("    data: ").append(toIndentedString(data)).append("\n");
+    sb.append("    nextCursor: ").append(toIndentedString(nextCursor)).append("\n");
+    sb.append("    hasMore: ").append(toIndentedString(hasMore)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -211,7 +248,7 @@ public class JobListResponse {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("schema_version", "request_id", "jobs", "pagination"));
+    openapiFields = new HashSet<String>(Arrays.asList("schema_version", "request_id", "data", "next_cursor", "has_more"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -230,7 +267,13 @@ public class JobListResponse {
         }
       }
 
-
+      Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
+      // check to see if the JSON string contains additional fields
+      for (Map.Entry<String, JsonElement> entry : entries) {
+        if (!JobListResponse.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `JobListResponse` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        }
+      }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("schema_version") != null && !jsonObj.get("schema_version").isJsonNull()) && !jsonObj.get("schema_version").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `schema_version` to be a primitive type in the JSON string but got `%s`", jsonObj.get("schema_version").toString()));
@@ -238,23 +281,22 @@ public class JobListResponse {
       if ((jsonObj.get("request_id") != null && !jsonObj.get("request_id").isJsonNull()) && !jsonObj.get("request_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `request_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("request_id").toString()));
       }
-      if (jsonObj.get("jobs") != null && !jsonObj.get("jobs").isJsonNull()) {
-        JsonArray jsonArrayjobs = jsonObj.getAsJsonArray("jobs");
-        if (jsonArrayjobs != null) {
+      if (jsonObj.get("data") != null && !jsonObj.get("data").isJsonNull()) {
+        JsonArray jsonArraydata = jsonObj.getAsJsonArray("data");
+        if (jsonArraydata != null) {
           // ensure the json data is an array
-          if (!jsonObj.get("jobs").isJsonArray()) {
-            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `jobs` to be an array in the JSON string but got `%s`", jsonObj.get("jobs").toString()));
+          if (!jsonObj.get("data").isJsonArray()) {
+            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `data` to be an array in the JSON string but got `%s`", jsonObj.get("data").toString()));
           }
 
-          // validate the optional field `jobs` (array)
-          for (int i = 0; i < jsonArrayjobs.size(); i++) {
-            Job.validateJsonElement(jsonArrayjobs.get(i));
+          // validate the optional field `data` (array)
+          for (int i = 0; i < jsonArraydata.size(); i++) {
+            Job.validateJsonElement(jsonArraydata.get(i));
           };
         }
       }
-      // validate the optional field `pagination`
-      if (jsonObj.get("pagination") != null && !jsonObj.get("pagination").isJsonNull()) {
-        Pagination.validateJsonElement(jsonObj.get("pagination"));
+      if ((jsonObj.get("next_cursor") != null && !jsonObj.get("next_cursor").isJsonNull()) && !jsonObj.get("next_cursor").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `next_cursor` to be a primitive type in the JSON string but got `%s`", jsonObj.get("next_cursor").toString()));
       }
   }
 

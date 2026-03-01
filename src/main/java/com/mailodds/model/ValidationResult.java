@@ -1,6 +1,6 @@
 /*
  * MailOdds Email Validation API
- * MailOdds provides email validation services to help maintain clean email lists  and improve deliverability. The API performs multiple validation checks including  format verification, domain validation, MX record checking, and disposable email detection.  ## Authentication  All API requests require authentication using a Bearer token. Include your API key  in the Authorization header:  ``` Authorization: Bearer YOUR_API_KEY ```  API keys can be created in the MailOdds dashboard.  ## Rate Limits  Rate limits vary by plan: - Free: 10 requests/minute - Starter: 60 requests/minute   - Pro: 300 requests/minute - Business: 1000 requests/minute - Enterprise: Custom limits  ## Response Format  All responses include: - `schema_version`: API schema version (currently \"1.0\") - `request_id`: Unique request identifier for debugging  Error responses include: - `error`: Machine-readable error code - `message`: Human-readable error description 
+ * MailOdds provides email validation services to help maintain clean email lists  and improve deliverability. The API performs multiple validation checks including  format verification, domain validation, MX record checking, and disposable email detection.  ## Authentication  All API requests require authentication using a Bearer token. Include your API key  in the Authorization header:  ``` Authorization: Bearer YOUR_API_KEY ```  API keys can be created in the MailOdds dashboard.  ## Rate Limits  Rate limits vary by plan: - Free: 10 requests/minute - Starter: 60 requests/minute   - Pro: 300 requests/minute - Business: 1000 requests/minute - Enterprise: Custom limits  ## Response Format  All responses include: - `schema_version`: API schema version (currently \"1.0\") - `request_id`: Unique request identifier for debugging  Error responses include: - `error`: Machine-readable error code - `message`: Human-readable error description  ## Webhooks  MailOdds can send webhook notifications for job completion and email delivery events. Configure webhooks in the dashboard or per-job via the `webhook_url` field.  ### Event Types  | Event | Description | |-------|-------------| | `job.completed` | Validation job finished processing | | `job.failed` | Validation job failed | | `message.queued` | Email queued for delivery | | `message.delivered` | Email delivered to recipient | | `message.bounced` | Email bounced | | `message.deferred` | Email delivery deferred | | `message.failed` | Email delivery failed | | `message.opened` | Recipient opened the email | | `message.clicked` | Recipient clicked a link |  ### Payload Format  ```json {   \"event\": \"job.completed\",   \"job\": { ... },   \"timestamp\": \"2026-01-15T10:30:00Z\" } ```  ### Webhook Signing  If a webhook secret is configured, each request includes an `X-MailOdds-Signature` header containing an HMAC-SHA256 hex digest of the request body.  **Verification pseudocode:** ``` expected = HMAC-SHA256(webhook_secret, request_body) valid = constant_time_compare(request.headers[\"X-MailOdds-Signature\"], hex(expected)) ```  The payload is serialized with compact JSON (no extra whitespace, sorted keys) before signing.  ### Headers  All webhook requests include: - `Content-Type: application/json` - `User-Agent: MailOdds-Webhook/1.0` - `X-MailOdds-Event: {event_type}` - `X-Request-Id: {uuid}` - `X-MailOdds-Signature: {hmac}` (when secret is configured)  ### Retry Policy  Failed deliveries (non-2xx response or timeout) are retried up to 3 times with exponential backoff (10s, 60s, 300s). 
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: support@mailodds.com
@@ -19,9 +19,12 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.mailodds.model.ValidationResultSuppression;
 import java.io.IOException;
 import java.time.OffsetDateTime;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -47,13 +50,13 @@ import java.util.Set;
 import com.mailodds.JSON;
 
 /**
- * ValidationResult
+ * Individual result from a bulk validation job
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-26T01:37:38.039547555+01:00[Europe/Amsterdam]", comments = "Generator version: 7.19.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-01T18:02:02.335122536+01:00[Europe/Amsterdam]", comments = "Generator version: 7.19.0")
 public class ValidationResult {
   public static final String SERIALIZED_NAME_EMAIL = "email";
   @SerializedName(SERIALIZED_NAME_EMAIL)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private String email;
 
   /**
@@ -116,7 +119,7 @@ public class ValidationResult {
 
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private StatusEnum status;
 
   public static final String SERIALIZED_NAME_SUB_STATUS = "sub_status";
@@ -182,18 +185,38 @@ public class ValidationResult {
 
   public static final String SERIALIZED_NAME_ACTION = "action";
   @SerializedName(SERIALIZED_NAME_ACTION)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private ActionEnum action;
+
+  public static final String SERIALIZED_NAME_DOMAIN = "domain";
+  @SerializedName(SERIALIZED_NAME_DOMAIN)
+  @javax.annotation.Nonnull
+  private String domain;
+
+  public static final String SERIALIZED_NAME_MX_HOST = "mx_host";
+  @SerializedName(SERIALIZED_NAME_MX_HOST)
+  @javax.annotation.Nullable
+  private String mxHost;
+
+  public static final String SERIALIZED_NAME_CHECKS = "checks";
+  @SerializedName(SERIALIZED_NAME_CHECKS)
+  @javax.annotation.Nullable
+  private Map<String, Object> checks = new HashMap<>();
+
+  public static final String SERIALIZED_NAME_SUPPRESSION = "suppression";
+  @SerializedName(SERIALIZED_NAME_SUPPRESSION)
+  @javax.annotation.Nullable
+  private ValidationResultSuppression suppression;
 
   public static final String SERIALIZED_NAME_PROCESSED_AT = "processed_at";
   @SerializedName(SERIALIZED_NAME_PROCESSED_AT)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private OffsetDateTime processedAt;
 
   public ValidationResult() {
   }
 
-  public ValidationResult email(@javax.annotation.Nullable String email) {
+  public ValidationResult email(@javax.annotation.Nonnull String email) {
     this.email = email;
     return this;
   }
@@ -202,17 +225,17 @@ public class ValidationResult {
    * Get email
    * @return email
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public String getEmail() {
     return email;
   }
 
-  public void setEmail(@javax.annotation.Nullable String email) {
+  public void setEmail(@javax.annotation.Nonnull String email) {
     this.email = email;
   }
 
 
-  public ValidationResult status(@javax.annotation.Nullable StatusEnum status) {
+  public ValidationResult status(@javax.annotation.Nonnull StatusEnum status) {
     this.status = status;
     return this;
   }
@@ -221,12 +244,12 @@ public class ValidationResult {
    * Get status
    * @return status
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public StatusEnum getStatus() {
     return status;
   }
 
-  public void setStatus(@javax.annotation.Nullable StatusEnum status) {
+  public void setStatus(@javax.annotation.Nonnull StatusEnum status) {
     this.status = status;
   }
 
@@ -237,7 +260,7 @@ public class ValidationResult {
   }
 
   /**
-   * Get subStatus
+   * Detailed reason. Omitted when none.
    * @return subStatus
    */
   @javax.annotation.Nullable
@@ -250,7 +273,7 @@ public class ValidationResult {
   }
 
 
-  public ValidationResult action(@javax.annotation.Nullable ActionEnum action) {
+  public ValidationResult action(@javax.annotation.Nonnull ActionEnum action) {
     this.action = action;
     return this;
   }
@@ -259,17 +282,101 @@ public class ValidationResult {
    * Get action
    * @return action
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public ActionEnum getAction() {
     return action;
   }
 
-  public void setAction(@javax.annotation.Nullable ActionEnum action) {
+  public void setAction(@javax.annotation.Nonnull ActionEnum action) {
     this.action = action;
   }
 
 
-  public ValidationResult processedAt(@javax.annotation.Nullable OffsetDateTime processedAt) {
+  public ValidationResult domain(@javax.annotation.Nonnull String domain) {
+    this.domain = domain;
+    return this;
+  }
+
+  /**
+   * Email domain
+   * @return domain
+   */
+  @javax.annotation.Nonnull
+  public String getDomain() {
+    return domain;
+  }
+
+  public void setDomain(@javax.annotation.Nonnull String domain) {
+    this.domain = domain;
+  }
+
+
+  public ValidationResult mxHost(@javax.annotation.Nullable String mxHost) {
+    this.mxHost = mxHost;
+    return this;
+  }
+
+  /**
+   * Primary MX hostname. Omitted when not resolved.
+   * @return mxHost
+   */
+  @javax.annotation.Nullable
+  public String getMxHost() {
+    return mxHost;
+  }
+
+  public void setMxHost(@javax.annotation.Nullable String mxHost) {
+    this.mxHost = mxHost;
+  }
+
+
+  public ValidationResult checks(@javax.annotation.Nullable Map<String, Object> checks) {
+    this.checks = checks;
+    return this;
+  }
+
+  public ValidationResult putChecksItem(String key, Object checksItem) {
+    if (this.checks == null) {
+      this.checks = new HashMap<>();
+    }
+    this.checks.put(key, checksItem);
+    return this;
+  }
+
+  /**
+   * Detailed check results (JSONB). Omitted when not available.
+   * @return checks
+   */
+  @javax.annotation.Nullable
+  public Map<String, Object> getChecks() {
+    return checks;
+  }
+
+  public void setChecks(@javax.annotation.Nullable Map<String, Object> checks) {
+    this.checks = checks;
+  }
+
+
+  public ValidationResult suppression(@javax.annotation.Nullable ValidationResultSuppression suppression) {
+    this.suppression = suppression;
+    return this;
+  }
+
+  /**
+   * Get suppression
+   * @return suppression
+   */
+  @javax.annotation.Nullable
+  public ValidationResultSuppression getSuppression() {
+    return suppression;
+  }
+
+  public void setSuppression(@javax.annotation.Nullable ValidationResultSuppression suppression) {
+    this.suppression = suppression;
+  }
+
+
+  public ValidationResult processedAt(@javax.annotation.Nonnull OffsetDateTime processedAt) {
     this.processedAt = processedAt;
     return this;
   }
@@ -278,12 +385,12 @@ public class ValidationResult {
    * Get processedAt
    * @return processedAt
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public OffsetDateTime getProcessedAt() {
     return processedAt;
   }
 
-  public void setProcessedAt(@javax.annotation.Nullable OffsetDateTime processedAt) {
+  public void setProcessedAt(@javax.annotation.Nonnull OffsetDateTime processedAt) {
     this.processedAt = processedAt;
   }
 
@@ -302,12 +409,16 @@ public class ValidationResult {
         Objects.equals(this.status, validationResult.status) &&
         Objects.equals(this.subStatus, validationResult.subStatus) &&
         Objects.equals(this.action, validationResult.action) &&
+        Objects.equals(this.domain, validationResult.domain) &&
+        Objects.equals(this.mxHost, validationResult.mxHost) &&
+        Objects.equals(this.checks, validationResult.checks) &&
+        Objects.equals(this.suppression, validationResult.suppression) &&
         Objects.equals(this.processedAt, validationResult.processedAt);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(email, status, subStatus, action, processedAt);
+    return Objects.hash(email, status, subStatus, action, domain, mxHost, checks, suppression, processedAt);
   }
 
   @Override
@@ -318,6 +429,10 @@ public class ValidationResult {
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    subStatus: ").append(toIndentedString(subStatus)).append("\n");
     sb.append("    action: ").append(toIndentedString(action)).append("\n");
+    sb.append("    domain: ").append(toIndentedString(domain)).append("\n");
+    sb.append("    mxHost: ").append(toIndentedString(mxHost)).append("\n");
+    sb.append("    checks: ").append(toIndentedString(checks)).append("\n");
+    sb.append("    suppression: ").append(toIndentedString(suppression)).append("\n");
     sb.append("    processedAt: ").append(toIndentedString(processedAt)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -340,10 +455,10 @@ public class ValidationResult {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("email", "status", "sub_status", "action", "processed_at"));
+    openapiFields = new HashSet<String>(Arrays.asList("email", "status", "sub_status", "action", "domain", "mx_host", "checks", "suppression", "processed_at"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(0);
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("email", "status", "action", "domain", "processed_at"));
   }
 
   /**
@@ -359,27 +474,46 @@ public class ValidationResult {
         }
       }
 
+      Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
+      // check to see if the JSON string contains additional fields
+      for (Map.Entry<String, JsonElement> entry : entries) {
+        if (!ValidationResult.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `ValidationResult` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        }
+      }
 
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : ValidationResult.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        }
+      }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("email") != null && !jsonObj.get("email").isJsonNull()) && !jsonObj.get("email").isJsonPrimitive()) {
+      if (!jsonObj.get("email").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `email` to be a primitive type in the JSON string but got `%s`", jsonObj.get("email").toString()));
       }
-      if ((jsonObj.get("status") != null && !jsonObj.get("status").isJsonNull()) && !jsonObj.get("status").isJsonPrimitive()) {
+      if (!jsonObj.get("status").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `status` to be a primitive type in the JSON string but got `%s`", jsonObj.get("status").toString()));
       }
-      // validate the optional field `status`
-      if (jsonObj.get("status") != null && !jsonObj.get("status").isJsonNull()) {
-        StatusEnum.validateJsonElement(jsonObj.get("status"));
-      }
+      // validate the required field `status`
+      StatusEnum.validateJsonElement(jsonObj.get("status"));
       if ((jsonObj.get("sub_status") != null && !jsonObj.get("sub_status").isJsonNull()) && !jsonObj.get("sub_status").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `sub_status` to be a primitive type in the JSON string but got `%s`", jsonObj.get("sub_status").toString()));
       }
-      if ((jsonObj.get("action") != null && !jsonObj.get("action").isJsonNull()) && !jsonObj.get("action").isJsonPrimitive()) {
+      if (!jsonObj.get("action").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `action` to be a primitive type in the JSON string but got `%s`", jsonObj.get("action").toString()));
       }
-      // validate the optional field `action`
-      if (jsonObj.get("action") != null && !jsonObj.get("action").isJsonNull()) {
-        ActionEnum.validateJsonElement(jsonObj.get("action"));
+      // validate the required field `action`
+      ActionEnum.validateJsonElement(jsonObj.get("action"));
+      if (!jsonObj.get("domain").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `domain` to be a primitive type in the JSON string but got `%s`", jsonObj.get("domain").toString()));
+      }
+      if ((jsonObj.get("mx_host") != null && !jsonObj.get("mx_host").isJsonNull()) && !jsonObj.get("mx_host").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `mx_host` to be a primitive type in the JSON string but got `%s`", jsonObj.get("mx_host").toString()));
+      }
+      // validate the optional field `suppression`
+      if (jsonObj.get("suppression") != null && !jsonObj.get("suppression").isJsonNull()) {
+        ValidationResultSuppression.validateJsonElement(jsonObj.get("suppression"));
       }
   }
 

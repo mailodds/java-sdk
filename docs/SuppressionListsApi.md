@@ -6,6 +6,7 @@ All URIs are relative to *https://api.mailodds.com/v1*
 |------------- | ------------- | -------------|
 | [**addSuppression**](SuppressionListsApi.md#addSuppression) | **POST** /v1/suppression | Add suppression entries |
 | [**checkSuppression**](SuppressionListsApi.md#checkSuppression) | **POST** /v1/suppression/check | Check suppression status |
+| [**getSuppressionAuditLog**](SuppressionListsApi.md#getSuppressionAuditLog) | **GET** /v1/suppression/audit | Get suppression audit log |
 | [**getSuppressionStats**](SuppressionListsApi.md#getSuppressionStats) | **GET** /v1/suppression/stats | Get suppression statistics |
 | [**listSuppression**](SuppressionListsApi.md#listSuppression) | **GET** /v1/suppression | List suppression entries |
 | [**removeSuppression**](SuppressionListsApi.md#removeSuppression) | **DELETE** /v1/suppression | Remove suppression entries |
@@ -148,6 +149,76 @@ public class Example {
 | **200** | Suppression check result |  -  |
 | **401** | Unauthorized - Invalid or missing API key |  -  |
 
+<a id="getSuppressionAuditLog"></a>
+# **getSuppressionAuditLog**
+> SuppressionAuditResponse getSuppressionAuditLog(page, limit)
+
+Get suppression audit log
+
+Get a chronological log of suppression list changes (additions, removals).
+
+### Example
+```java
+// Import classes:
+import com.mailodds.ApiClient;
+import com.mailodds.ApiException;
+import com.mailodds.Configuration;
+import com.mailodds.auth.*;
+import com.mailodds.models.*;
+import com.mailodds.api.SuppressionListsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.mailodds.com/v1");
+    
+    // Configure HTTP bearer authorization: BearerAuth
+    HttpBearerAuth BearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("BearerAuth");
+    BearerAuth.setBearerToken("BEARER TOKEN");
+
+    SuppressionListsApi apiInstance = new SuppressionListsApi(defaultClient);
+    Integer page = 1; // Integer | 
+    Integer limit = 20; // Integer | 
+    try {
+      SuppressionAuditResponse result = apiInstance.getSuppressionAuditLog(page, limit);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling SuppressionListsApi#getSuppressionAuditLog");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **page** | **Integer**|  | [optional] [default to 1] |
+| **limit** | **Integer**|  | [optional] [default to 20] |
+
+### Return type
+
+[**SuppressionAuditResponse**](SuppressionAuditResponse.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Audit log entries |  -  |
+| **401** | Unauthorized - Invalid or missing API key |  -  |
+
 <a id="getSuppressionStats"></a>
 # **getSuppressionStats**
 > SuppressionStatsResponse getSuppressionStats()
@@ -214,7 +285,7 @@ This endpoint does not need any parameter.
 
 <a id="listSuppression"></a>
 # **listSuppression**
-> SuppressionListResponse listSuppression(page, perPage, type, search)
+> SuppressionListResponse listSuppression(page, perPage, type, search, source)
 
 List suppression entries
 
@@ -244,8 +315,9 @@ public class Example {
     Integer perPage = 50; // Integer | 
     String type = "email"; // String | 
     String search = "search_example"; // String | 
+    String source = "source_example"; // String | Filter by entry source (e.g. api, bounce, complaint)
     try {
-      SuppressionListResponse result = apiInstance.listSuppression(page, perPage, type, search);
+      SuppressionListResponse result = apiInstance.listSuppression(page, perPage, type, search, source);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling SuppressionListsApi#listSuppression");
@@ -266,6 +338,7 @@ public class Example {
 | **perPage** | **Integer**|  | [optional] [default to 50] |
 | **type** | **String**|  | [optional] [enum: email, domain] |
 | **search** | **String**|  | [optional] |
+| **source** | **String**| Filter by entry source (e.g. api, bounce, complaint) | [optional] |
 
 ### Return type
 
