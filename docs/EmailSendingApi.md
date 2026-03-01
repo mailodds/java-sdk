@@ -19,12 +19,12 @@ Send a single message to up to 100 recipients. Shares the same message body acro
 ### Example
 ```java
 // Import classes:
-import com.mailodds.ApiClient;
-import com.mailodds.ApiException;
-import com.mailodds.Configuration;
-import com.mailodds.auth.*;
-import com.mailodds.models.*;
-import com.mailodds.api.EmailSendingApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.auth.*;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.EmailSendingApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -89,12 +89,12 @@ Send a transactional email through the safety pipeline. Validates recipients, ch
 ### Example
 ```java
 // Import classes:
-import com.mailodds.ApiClient;
-import com.mailodds.ApiException;
-import com.mailodds.Configuration;
-import com.mailodds.auth.*;
-import com.mailodds.models.*;
-import com.mailodds.api.EmailSendingApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.auth.*;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.EmailSendingApi;
 
 public class Example {
   public static void main(String[] args) {

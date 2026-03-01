@@ -24,12 +24,12 @@ Register a new sending domain with NS delegation. After adding, configure DNS re
 ### Example
 ```java
 // Import classes:
-import com.mailodds.ApiClient;
-import com.mailodds.ApiException;
-import com.mailodds.Configuration;
-import com.mailodds.auth.*;
-import com.mailodds.models.*;
-import com.mailodds.api.SendingDomainsApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.auth.*;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.SendingDomainsApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -94,12 +94,12 @@ Permanently remove a sending domain from the account.
 ### Example
 ```java
 // Import classes:
-import com.mailodds.ApiClient;
-import com.mailodds.ApiException;
-import com.mailodds.Configuration;
-import com.mailodds.auth.*;
-import com.mailodds.models.*;
-import com.mailodds.api.SendingDomainsApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.auth.*;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.SendingDomainsApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -163,12 +163,12 @@ Get details of a specific sending domain including DNS verification status.
 ### Example
 ```java
 // Import classes:
-import com.mailodds.ApiClient;
-import com.mailodds.ApiException;
-import com.mailodds.Configuration;
-import com.mailodds.auth.*;
-import com.mailodds.models.*;
-import com.mailodds.api.SendingDomainsApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.auth.*;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.SendingDomainsApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -232,12 +232,12 @@ Get a composite DNS health score for the sending domain, checking DKIM, SPF, DMA
 ### Example
 ```java
 // Import classes:
-import com.mailodds.ApiClient;
-import com.mailodds.ApiException;
-import com.mailodds.Configuration;
-import com.mailodds.auth.*;
-import com.mailodds.models.*;
-import com.mailodds.api.SendingDomainsApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.auth.*;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.SendingDomainsApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -301,12 +301,12 @@ Get aggregate sending statistics across all domains for the account, including d
 ### Example
 ```java
 // Import classes:
-import com.mailodds.ApiClient;
-import com.mailodds.ApiException;
-import com.mailodds.Configuration;
-import com.mailodds.auth.*;
-import com.mailodds.models.*;
-import com.mailodds.api.SendingDomainsApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.auth.*;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.SendingDomainsApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -372,12 +372,12 @@ List all sending domains for the authenticated account.
 ### Example
 ```java
 // Import classes:
-import com.mailodds.ApiClient;
-import com.mailodds.ApiException;
-import com.mailodds.Configuration;
-import com.mailodds.auth.*;
-import com.mailodds.models.*;
-import com.mailodds.api.SendingDomainsApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.auth.*;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.SendingDomainsApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -437,12 +437,12 @@ Check and verify all DNS records (DKIM, SPF, DMARC, MX, return path) for the sen
 ### Example
 ```java
 // Import classes:
-import com.mailodds.ApiClient;
-import com.mailodds.ApiException;
-import com.mailodds.Configuration;
-import com.mailodds.auth.*;
-import com.mailodds.models.*;
-import com.mailodds.api.SendingDomainsApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.auth.*;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.SendingDomainsApi;
 
 public class Example {
   public static void main(String[] args) {

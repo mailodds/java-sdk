@@ -2,7 +2,7 @@
 
 MailOdds Email Validation API
 - API version: 1.0.0
-  - Build date: 2026-03-01T18:02:02.335122536+01:00[Europe/Amsterdam]
+  - Build date: 2026-03-01T18:49:07.435251235+01:00[Europe/Amsterdam]
   - Generator version: 7.19.0
 
 MailOdds provides email validation services to help maintain clean email lists 
@@ -170,12 +170,12 @@ Please follow the [installation](#installation) instruction and execute the foll
 ```java
 
 // Import classes:
-import com.mailodds.ApiClient;
-import com.mailodds.ApiException;
-import com.mailodds.Configuration;
-import com.mailodds.auth.*;
-import com.mailodds.model.*;
-import com.mailodds.api.BulkValidationApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.auth.*;
+import org.openapitools.client.model.*;
+import org.openapitools.client.api.BulkValidationApi;
 
 public class Example {
   public static void main(String[] args) {

@@ -19,12 +19,12 @@ Get validation metrics for your account. Useful for building dashboards and moni
 ### Example
 ```java
 // Import classes:
-import com.mailodds.ApiClient;
-import com.mailodds.ApiException;
-import com.mailodds.Configuration;
-import com.mailodds.auth.*;
-import com.mailodds.models.*;
-import com.mailodds.api.SystemApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.auth.*;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.SystemApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -88,11 +88,11 @@ Check API health status. No authentication required.
 ### Example
 ```java
 // Import classes:
-import com.mailodds.ApiClient;
-import com.mailodds.ApiException;
-import com.mailodds.Configuration;
-import com.mailodds.models.*;
-import com.mailodds.api.SystemApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.SystemApi;
 
 public class Example {
   public static void main(String[] args) {

@@ -23,12 +23,12 @@ Add emails or domains to the suppression list.
 ### Example
 ```java
 // Import classes:
-import com.mailodds.ApiClient;
-import com.mailodds.ApiException;
-import com.mailodds.Configuration;
-import com.mailodds.auth.*;
-import com.mailodds.models.*;
-import com.mailodds.api.SuppressionListsApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.auth.*;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.SuppressionListsApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -92,12 +92,12 @@ Check if an email is suppressed.
 ### Example
 ```java
 // Import classes:
-import com.mailodds.ApiClient;
-import com.mailodds.ApiException;
-import com.mailodds.Configuration;
-import com.mailodds.auth.*;
-import com.mailodds.models.*;
-import com.mailodds.api.SuppressionListsApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.auth.*;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.SuppressionListsApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -160,12 +160,12 @@ Get a chronological log of suppression list changes (additions, removals).
 ### Example
 ```java
 // Import classes:
-import com.mailodds.ApiClient;
-import com.mailodds.ApiException;
-import com.mailodds.Configuration;
-import com.mailodds.auth.*;
-import com.mailodds.models.*;
-import com.mailodds.api.SuppressionListsApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.auth.*;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.SuppressionListsApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -230,12 +230,12 @@ Get statistics about the suppression list.
 ### Example
 ```java
 // Import classes:
-import com.mailodds.ApiClient;
-import com.mailodds.ApiException;
-import com.mailodds.Configuration;
-import com.mailodds.auth.*;
-import com.mailodds.models.*;
-import com.mailodds.api.SuppressionListsApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.auth.*;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.SuppressionListsApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -294,12 +294,12 @@ List all suppression entries for the account.
 ### Example
 ```java
 // Import classes:
-import com.mailodds.ApiClient;
-import com.mailodds.ApiException;
-import com.mailodds.Configuration;
-import com.mailodds.auth.*;
-import com.mailodds.models.*;
-import com.mailodds.api.SuppressionListsApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.auth.*;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.SuppressionListsApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -370,12 +370,12 @@ Remove emails or domains from the suppression list.
 ### Example
 ```java
 // Import classes:
-import com.mailodds.ApiClient;
-import com.mailodds.ApiException;
-import com.mailodds.Configuration;
-import com.mailodds.auth.*;
-import com.mailodds.models.*;
-import com.mailodds.api.SuppressionListsApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.auth.*;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.SuppressionListsApi;
 
 public class Example {
   public static void main(String[] args) {

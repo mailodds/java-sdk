@@ -26,12 +26,12 @@ Cancel a pending or processing job. Partial results are preserved.
 ### Example
 ```java
 // Import classes:
-import com.mailodds.ApiClient;
-import com.mailodds.ApiException;
-import com.mailodds.Configuration;
-import com.mailodds.auth.*;
-import com.mailodds.models.*;
-import com.mailodds.api.BulkValidationApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.auth.*;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.BulkValidationApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -96,12 +96,12 @@ Create a new bulk validation job by submitting a JSON array of emails.
 ### Example
 ```java
 // Import classes:
-import com.mailodds.ApiClient;
-import com.mailodds.ApiException;
-import com.mailodds.Configuration;
-import com.mailodds.auth.*;
-import com.mailodds.models.*;
-import com.mailodds.api.BulkValidationApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.auth.*;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.BulkValidationApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -165,12 +165,12 @@ Create a validation job from a file previously uploaded to S3.
 ### Example
 ```java
 // Import classes:
-import com.mailodds.ApiClient;
-import com.mailodds.ApiException;
-import com.mailodds.Configuration;
-import com.mailodds.auth.*;
-import com.mailodds.models.*;
-import com.mailodds.api.BulkValidationApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.auth.*;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.BulkValidationApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -234,12 +234,12 @@ Create a new bulk validation job by uploading a CSV, Excel, or TXT file.
 ### Example
 ```java
 // Import classes:
-import com.mailodds.ApiClient;
-import com.mailodds.ApiException;
-import com.mailodds.Configuration;
-import com.mailodds.auth.*;
-import com.mailodds.models.*;
-import com.mailodds.api.BulkValidationApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.auth.*;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.BulkValidationApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -307,12 +307,12 @@ Permanently delete a completed or cancelled job and its results.
 ### Example
 ```java
 // Import classes:
-import com.mailodds.ApiClient;
-import com.mailodds.ApiException;
-import com.mailodds.Configuration;
-import com.mailodds.auth.*;
-import com.mailodds.models.*;
-import com.mailodds.api.BulkValidationApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.auth.*;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.BulkValidationApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -376,12 +376,12 @@ Get the status and details of a specific validation job.
 ### Example
 ```java
 // Import classes:
-import com.mailodds.ApiClient;
-import com.mailodds.ApiException;
-import com.mailodds.Configuration;
-import com.mailodds.auth.*;
-import com.mailodds.models.*;
-import com.mailodds.api.BulkValidationApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.auth.*;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.BulkValidationApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -445,12 +445,12 @@ Download validation results in JSON, CSV, or NDJSON format.
 ### Example
 ```java
 // Import classes:
-import com.mailodds.ApiClient;
-import com.mailodds.ApiException;
-import com.mailodds.Configuration;
-import com.mailodds.auth.*;
-import com.mailodds.models.*;
-import com.mailodds.api.BulkValidationApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.auth.*;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.BulkValidationApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -522,12 +522,12 @@ Get a presigned URL for uploading large files (&gt;10MB) directly to S3.
 ### Example
 ```java
 // Import classes:
-import com.mailodds.ApiClient;
-import com.mailodds.ApiException;
-import com.mailodds.Configuration;
-import com.mailodds.auth.*;
-import com.mailodds.models.*;
-import com.mailodds.api.BulkValidationApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.auth.*;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.BulkValidationApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -591,12 +591,12 @@ List all validation jobs for the authenticated account.
 ### Example
 ```java
 // Import classes:
-import com.mailodds.ApiClient;
-import com.mailodds.ApiException;
-import com.mailodds.Configuration;
-import com.mailodds.auth.*;
-import com.mailodds.models.*;
-import com.mailodds.api.BulkValidationApi;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.auth.*;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.BulkValidationApi;
 
 public class Example {
   public static void main(String[] args) {
