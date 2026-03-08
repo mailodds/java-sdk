@@ -167,10 +167,10 @@ public class BulkValidationApiTest {
      */
     @Test
     public void listJobsTest() throws ApiException {
-        Integer page = null;
-        Integer perPage = null;
+        String cursor = null;
+        Integer limit = null;
         String status = null;
-        JobListResponse response = api.listJobs(page, perPage, status);
+        JobListResponse response = api.listJobs(cursor, limit, status);
         // TODO: test validations
     }
 

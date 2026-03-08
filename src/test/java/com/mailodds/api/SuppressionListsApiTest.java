@@ -93,7 +93,8 @@ public class SuppressionListsApiTest {
         Integer perPage = null;
         String type = null;
         String search = null;
-        SuppressionListResponse response = api.listSuppression(page, perPage, type, search);
+        String source = null;
+        SuppressionListResponse response = api.listSuppression(page, perPage, type, search, source);
         // TODO: test validations
     }
 
