@@ -35,3 +35,4 @@ src/main/java/com/mailodds/enterprise/**
 ci/**
 # Preserve GitHub Actions workflows
 .github/**
+README.md
