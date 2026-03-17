@@ -19,9 +19,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.mailodds.model.ClassifyContent200ResponseContentCheckCategoriesInner;
 import java.io.IOException;
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -52,18 +50,13 @@ import com.mailodds.JSON;
 /**
  * ClassifyContent200ResponseContentCheck
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-14T19:29:56.931509901+01:00[Europe/Amsterdam]", comments = "Generator version: 7.19.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-17T02:16:37.261972134+01:00[Europe/Amsterdam]", comments = "Generator version: 7.19.0")
 public class ClassifyContent200ResponseContentCheck {
-  public static final String SERIALIZED_NAME_SCORE = "score";
-  @SerializedName(SERIALIZED_NAME_SCORE)
-  @javax.annotation.Nullable
-  private BigDecimal score;
-
   /**
-   * Overall verdict
+   * Overall content status
    */
-  @JsonAdapter(VerdictEnum.Adapter.class)
-  public enum VerdictEnum {
+  @JsonAdapter(StatusEnum.Adapter.class)
+  public enum StatusEnum {
     CLEAN("clean"),
     
     WARNING("warning"),
@@ -72,7 +65,7 @@ public class ClassifyContent200ResponseContentCheck {
 
     private String value;
 
-    VerdictEnum(String value) {
+    StatusEnum(String value) {
       this.value = value;
     }
 
@@ -85,8 +78,8 @@ public class ClassifyContent200ResponseContentCheck {
       return String.valueOf(value);
     }
 
-    public static VerdictEnum fromValue(String value) {
-      for (VerdictEnum b : VerdictEnum.values()) {
+    public static StatusEnum fromValue(String value) {
+      for (StatusEnum b : StatusEnum.values()) {
         if (b.value.equals(value)) {
           return b;
         }
@@ -94,105 +87,131 @@ public class ClassifyContent200ResponseContentCheck {
       throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
 
-    public static class Adapter extends TypeAdapter<VerdictEnum> {
+    public static class Adapter extends TypeAdapter<StatusEnum> {
       @Override
-      public void write(final JsonWriter jsonWriter, final VerdictEnum enumeration) throws IOException {
+      public void write(final JsonWriter jsonWriter, final StatusEnum enumeration) throws IOException {
         jsonWriter.value(enumeration.getValue());
       }
 
       @Override
-      public VerdictEnum read(final JsonReader jsonReader) throws IOException {
+      public StatusEnum read(final JsonReader jsonReader) throws IOException {
         String value =  jsonReader.nextString();
-        return VerdictEnum.fromValue(value);
+        return StatusEnum.fromValue(value);
       }
     }
 
     public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       String value = jsonElement.getAsString();
-      VerdictEnum.fromValue(value);
+      StatusEnum.fromValue(value);
     }
   }
 
-  public static final String SERIALIZED_NAME_VERDICT = "verdict";
-  @SerializedName(SERIALIZED_NAME_VERDICT)
+  public static final String SERIALIZED_NAME_STATUS = "status";
+  @SerializedName(SERIALIZED_NAME_STATUS)
   @javax.annotation.Nullable
-  private VerdictEnum verdict;
+  private StatusEnum status;
 
-  public static final String SERIALIZED_NAME_CATEGORIES = "categories";
-  @SerializedName(SERIALIZED_NAME_CATEGORIES)
+  public static final String SERIALIZED_NAME_FLAG = "flag";
+  @SerializedName(SERIALIZED_NAME_FLAG)
   @javax.annotation.Nullable
-  private List<ClassifyContent200ResponseContentCheckCategoriesInner> categories = new ArrayList<>();
+  private Boolean flag;
+
+  public static final String SERIALIZED_NAME_REASON = "reason";
+  @SerializedName(SERIALIZED_NAME_REASON)
+  @javax.annotation.Nullable
+  private String reason;
+
+  public static final String SERIALIZED_NAME_PRIORITY = "priority";
+  @SerializedName(SERIALIZED_NAME_PRIORITY)
+  @javax.annotation.Nullable
+  private Integer priority;
 
   public static final String SERIALIZED_NAME_SUGGESTIONS = "suggestions";
   @SerializedName(SERIALIZED_NAME_SUGGESTIONS)
   @javax.annotation.Nullable
   private List<String> suggestions = new ArrayList<>();
 
+  public static final String SERIALIZED_NAME_DURATION_MS = "duration_ms";
+  @SerializedName(SERIALIZED_NAME_DURATION_MS)
+  @javax.annotation.Nullable
+  private Integer durationMs;
+
   public ClassifyContent200ResponseContentCheck() {
   }
 
-  public ClassifyContent200ResponseContentCheck score(@javax.annotation.Nullable BigDecimal score) {
-    this.score = score;
+  public ClassifyContent200ResponseContentCheck status(@javax.annotation.Nullable StatusEnum status) {
+    this.status = status;
     return this;
   }
 
   /**
-   * Overall content quality score (0-100)
-   * @return score
+   * Overall content status
+   * @return status
    */
   @javax.annotation.Nullable
-  public BigDecimal getScore() {
-    return score;
+  public StatusEnum getStatus() {
+    return status;
   }
 
-  public void setScore(@javax.annotation.Nullable BigDecimal score) {
-    this.score = score;
+  public void setStatus(@javax.annotation.Nullable StatusEnum status) {
+    this.status = status;
   }
 
 
-  public ClassifyContent200ResponseContentCheck verdict(@javax.annotation.Nullable VerdictEnum verdict) {
-    this.verdict = verdict;
+  public ClassifyContent200ResponseContentCheck flag(@javax.annotation.Nullable Boolean flag) {
+    this.flag = flag;
     return this;
   }
 
   /**
-   * Overall verdict
-   * @return verdict
+   * Whether the content is flagged
+   * @return flag
    */
   @javax.annotation.Nullable
-  public VerdictEnum getVerdict() {
-    return verdict;
+  public Boolean getFlag() {
+    return flag;
   }
 
-  public void setVerdict(@javax.annotation.Nullable VerdictEnum verdict) {
-    this.verdict = verdict;
+  public void setFlag(@javax.annotation.Nullable Boolean flag) {
+    this.flag = flag;
   }
 
 
-  public ClassifyContent200ResponseContentCheck categories(@javax.annotation.Nullable List<ClassifyContent200ResponseContentCheckCategoriesInner> categories) {
-    this.categories = categories;
-    return this;
-  }
-
-  public ClassifyContent200ResponseContentCheck addCategoriesItem(ClassifyContent200ResponseContentCheckCategoriesInner categoriesItem) {
-    if (this.categories == null) {
-      this.categories = new ArrayList<>();
-    }
-    this.categories.add(categoriesItem);
+  public ClassifyContent200ResponseContentCheck reason(@javax.annotation.Nullable String reason) {
+    this.reason = reason;
     return this;
   }
 
   /**
-   * Get categories
-   * @return categories
+   * Human-readable reason for the status
+   * @return reason
    */
   @javax.annotation.Nullable
-  public List<ClassifyContent200ResponseContentCheckCategoriesInner> getCategories() {
-    return categories;
+  public String getReason() {
+    return reason;
   }
 
-  public void setCategories(@javax.annotation.Nullable List<ClassifyContent200ResponseContentCheckCategoriesInner> categories) {
-    this.categories = categories;
+  public void setReason(@javax.annotation.Nullable String reason) {
+    this.reason = reason;
+  }
+
+
+  public ClassifyContent200ResponseContentCheck priority(@javax.annotation.Nullable Integer priority) {
+    this.priority = priority;
+    return this;
+  }
+
+  /**
+   * Priority level (1&#x3D;lowest, 5&#x3D;highest)
+   * @return priority
+   */
+  @javax.annotation.Nullable
+  public Integer getPriority() {
+    return priority;
+  }
+
+  public void setPriority(@javax.annotation.Nullable Integer priority) {
+    this.priority = priority;
   }
 
 
@@ -223,6 +242,25 @@ public class ClassifyContent200ResponseContentCheck {
   }
 
 
+  public ClassifyContent200ResponseContentCheck durationMs(@javax.annotation.Nullable Integer durationMs) {
+    this.durationMs = durationMs;
+    return this;
+  }
+
+  /**
+   * Classification duration in milliseconds
+   * @return durationMs
+   */
+  @javax.annotation.Nullable
+  public Integer getDurationMs() {
+    return durationMs;
+  }
+
+  public void setDurationMs(@javax.annotation.Nullable Integer durationMs) {
+    this.durationMs = durationMs;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -233,25 +271,29 @@ public class ClassifyContent200ResponseContentCheck {
       return false;
     }
     ClassifyContent200ResponseContentCheck classifyContent200ResponseContentCheck = (ClassifyContent200ResponseContentCheck) o;
-    return Objects.equals(this.score, classifyContent200ResponseContentCheck.score) &&
-        Objects.equals(this.verdict, classifyContent200ResponseContentCheck.verdict) &&
-        Objects.equals(this.categories, classifyContent200ResponseContentCheck.categories) &&
-        Objects.equals(this.suggestions, classifyContent200ResponseContentCheck.suggestions);
+    return Objects.equals(this.status, classifyContent200ResponseContentCheck.status) &&
+        Objects.equals(this.flag, classifyContent200ResponseContentCheck.flag) &&
+        Objects.equals(this.reason, classifyContent200ResponseContentCheck.reason) &&
+        Objects.equals(this.priority, classifyContent200ResponseContentCheck.priority) &&
+        Objects.equals(this.suggestions, classifyContent200ResponseContentCheck.suggestions) &&
+        Objects.equals(this.durationMs, classifyContent200ResponseContentCheck.durationMs);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(score, verdict, categories, suggestions);
+    return Objects.hash(status, flag, reason, priority, suggestions, durationMs);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ClassifyContent200ResponseContentCheck {\n");
-    sb.append("    score: ").append(toIndentedString(score)).append("\n");
-    sb.append("    verdict: ").append(toIndentedString(verdict)).append("\n");
-    sb.append("    categories: ").append(toIndentedString(categories)).append("\n");
+    sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    sb.append("    flag: ").append(toIndentedString(flag)).append("\n");
+    sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
+    sb.append("    priority: ").append(toIndentedString(priority)).append("\n");
     sb.append("    suggestions: ").append(toIndentedString(suggestions)).append("\n");
+    sb.append("    durationMs: ").append(toIndentedString(durationMs)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -273,7 +315,7 @@ public class ClassifyContent200ResponseContentCheck {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("score", "verdict", "categories", "suggestions"));
+    openapiFields = new HashSet<String>(Arrays.asList("status", "flag", "reason", "priority", "suggestions", "duration_ms"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -300,26 +342,15 @@ public class ClassifyContent200ResponseContentCheck {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("verdict") != null && !jsonObj.get("verdict").isJsonNull()) && !jsonObj.get("verdict").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `verdict` to be a primitive type in the JSON string but got `%s`", jsonObj.get("verdict").toString()));
+      if ((jsonObj.get("status") != null && !jsonObj.get("status").isJsonNull()) && !jsonObj.get("status").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `status` to be a primitive type in the JSON string but got `%s`", jsonObj.get("status").toString()));
       }
-      // validate the optional field `verdict`
-      if (jsonObj.get("verdict") != null && !jsonObj.get("verdict").isJsonNull()) {
-        VerdictEnum.validateJsonElement(jsonObj.get("verdict"));
+      // validate the optional field `status`
+      if (jsonObj.get("status") != null && !jsonObj.get("status").isJsonNull()) {
+        StatusEnum.validateJsonElement(jsonObj.get("status"));
       }
-      if (jsonObj.get("categories") != null && !jsonObj.get("categories").isJsonNull()) {
-        JsonArray jsonArraycategories = jsonObj.getAsJsonArray("categories");
-        if (jsonArraycategories != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("categories").isJsonArray()) {
-            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `categories` to be an array in the JSON string but got `%s`", jsonObj.get("categories").toString()));
-          }
-
-          // validate the optional field `categories` (array)
-          for (int i = 0; i < jsonArraycategories.size(); i++) {
-            ClassifyContent200ResponseContentCheckCategoriesInner.validateJsonElement(jsonArraycategories.get(i));
-          };
-        }
+      if ((jsonObj.get("reason") != null && !jsonObj.get("reason").isJsonNull()) && !jsonObj.get("reason").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `reason` to be a primitive type in the JSON string but got `%s`", jsonObj.get("reason").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("suggestions") != null && !jsonObj.get("suggestions").isJsonNull() && !jsonObj.get("suggestions").isJsonArray()) {

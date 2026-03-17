@@ -6,6 +6,7 @@ All URIs are relative to *https://api.mailodds.com/v1*
 |------------- | ------------- | -------------|
 | [**createBounceAnalysis**](BounceAnalysisApi.md#createBounceAnalysis) | **POST** /v1/bounce-analyses | Analyze bounce logs |
 | [**crossReferenceBounces**](BounceAnalysisApi.md#crossReferenceBounces) | **GET** /v1/bounce-analyses/{analysis_id}/cross-reference | Cross-reference bounces with validation logs |
+| [**deleteBounceAnalysis**](BounceAnalysisApi.md#deleteBounceAnalysis) | **DELETE** /v1/bounce-analyses/{analysis_id} | Delete bounce analysis |
 | [**getBounceAnalysis**](BounceAnalysisApi.md#getBounceAnalysis) | **GET** /v1/bounce-analyses/{analysis_id} | Get bounce analysis |
 | [**getBounceRecords**](BounceAnalysisApi.md#getBounceRecords) | **GET** /v1/bounce-analyses/{analysis_id}/records | Get bounce records |
 
@@ -146,6 +147,75 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Cross-reference results |  -  |
+| **401** | Unauthorized - Invalid or missing API key |  -  |
+| **404** | Resource not found |  -  |
+
+<a id="deleteBounceAnalysis"></a>
+# **deleteBounceAnalysis**
+> DeletePolicyRule200Response deleteBounceAnalysis(analysisId)
+
+Delete bounce analysis
+
+Delete a bounce analysis and all associated records.
+
+### Example
+```java
+// Import classes:
+import com.mailodds.ApiClient;
+import com.mailodds.ApiException;
+import com.mailodds.Configuration;
+import com.mailodds.auth.*;
+import com.mailodds.models.*;
+import com.mailodds.api.BounceAnalysisApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.mailodds.com/v1");
+    
+    // Configure HTTP bearer authorization: BearerAuth
+    HttpBearerAuth BearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("BearerAuth");
+    BearerAuth.setBearerToken("BEARER TOKEN");
+
+    BounceAnalysisApi apiInstance = new BounceAnalysisApi(defaultClient);
+    String analysisId = "analysisId_example"; // String | Bounce analysis ID
+    try {
+      DeletePolicyRule200Response result = apiInstance.deleteBounceAnalysis(analysisId);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling BounceAnalysisApi#deleteBounceAnalysis");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **analysisId** | **String**| Bounce analysis ID | |
+
+### Return type
+
+[**DeletePolicyRule200Response**](DeletePolicyRule200Response.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Bounce analysis deleted |  -  |
 | **401** | Unauthorized - Invalid or missing API key |  -  |
 | **404** | Resource not found |  -  |
 

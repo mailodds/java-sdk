@@ -24,6 +24,7 @@ import com.mailodds.model.ValidationResponseSuppressionMatch;
 import java.io.IOException;
 import java.time.OffsetDateTime;
 import java.util.Arrays;
+import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -51,7 +52,7 @@ import com.mailodds.JSON;
 /**
  * Flat validation response. Conditional fields are omitted (not null) when not applicable.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-14T19:29:56.931509901+01:00[Europe/Amsterdam]", comments = "Generator version: 7.19.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-17T02:16:37.261972134+01:00[Europe/Amsterdam]", comments = "Generator version: 7.19.0")
 public class ValidationResponse {
   public static final String SERIALIZED_NAME_SCHEMA_VERSION = "schema_version";
   @SerializedName(SERIALIZED_NAME_SCHEMA_VERSION)
@@ -962,9 +963,20 @@ public class ValidationResponse {
         Objects.equals(this.policyApplied, validationResponse.policyApplied);
   }
 
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
+  }
+
   @Override
   public int hashCode() {
     return Objects.hash(schemaVersion, requestId, email, status, action, subStatus, domain, mxFound, mxHost, smtpCheck, catchAll, disposable, roleAccount, freeProvider, depth, processedAt, suggestedEmail, retryAfterMs, hasSpf, hasDmarc, dmarcPolicy, dnsblListed, suppressionMatch, policyApplied);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override

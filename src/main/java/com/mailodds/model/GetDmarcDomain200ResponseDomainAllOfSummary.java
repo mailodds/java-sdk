@@ -49,76 +49,157 @@ import com.mailodds.JSON;
 /**
  * GetDmarcDomain200ResponseDomainAllOfSummary
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-14T19:29:56.931509901+01:00[Europe/Amsterdam]", comments = "Generator version: 7.19.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-17T02:16:37.261972134+01:00[Europe/Amsterdam]", comments = "Generator version: 7.19.0")
 public class GetDmarcDomain200ResponseDomainAllOfSummary {
-  public static final String SERIALIZED_NAME_TOTAL_REPORTS = "total_reports";
-  @SerializedName(SERIALIZED_NAME_TOTAL_REPORTS)
+  public static final String SERIALIZED_NAME_DAYS = "days";
+  @SerializedName(SERIALIZED_NAME_DAYS)
   @javax.annotation.Nullable
-  private Integer totalReports;
+  private Integer days;
 
-  public static final String SERIALIZED_NAME_TOTAL_RECORDS = "total_records";
-  @SerializedName(SERIALIZED_NAME_TOTAL_RECORDS)
+  public static final String SERIALIZED_NAME_REPORT_COUNT = "report_count";
+  @SerializedName(SERIALIZED_NAME_REPORT_COUNT)
   @javax.annotation.Nullable
-  private Integer totalRecords;
+  private Integer reportCount;
+
+  public static final String SERIALIZED_NAME_SOURCE_COUNT = "source_count";
+  @SerializedName(SERIALIZED_NAME_SOURCE_COUNT)
+  @javax.annotation.Nullable
+  private Integer sourceCount;
+
+  public static final String SERIALIZED_NAME_TOTAL_MESSAGES = "total_messages";
+  @SerializedName(SERIALIZED_NAME_TOTAL_MESSAGES)
+  @javax.annotation.Nullable
+  private Integer totalMessages;
+
+  public static final String SERIALIZED_NAME_TOTAL_PASS = "total_pass";
+  @SerializedName(SERIALIZED_NAME_TOTAL_PASS)
+  @javax.annotation.Nullable
+  private Integer totalPass;
+
+  public static final String SERIALIZED_NAME_TOTAL_FAIL = "total_fail";
+  @SerializedName(SERIALIZED_NAME_TOTAL_FAIL)
+  @javax.annotation.Nullable
+  private Integer totalFail;
 
   public static final String SERIALIZED_NAME_PASS_RATE = "pass_rate";
   @SerializedName(SERIALIZED_NAME_PASS_RATE)
   @javax.annotation.Nullable
   private BigDecimal passRate;
 
-  public static final String SERIALIZED_NAME_FAIL_RATE = "fail_rate";
-  @SerializedName(SERIALIZED_NAME_FAIL_RATE)
-  @javax.annotation.Nullable
-  private BigDecimal failRate;
-
-  public static final String SERIALIZED_NAME_DKIM_ALIGNED = "dkim_aligned";
-  @SerializedName(SERIALIZED_NAME_DKIM_ALIGNED)
-  @javax.annotation.Nullable
-  private BigDecimal dkimAligned;
-
-  public static final String SERIALIZED_NAME_SPF_ALIGNED = "spf_aligned";
-  @SerializedName(SERIALIZED_NAME_SPF_ALIGNED)
-  @javax.annotation.Nullable
-  private BigDecimal spfAligned;
-
   public GetDmarcDomain200ResponseDomainAllOfSummary() {
   }
 
-  public GetDmarcDomain200ResponseDomainAllOfSummary totalReports(@javax.annotation.Nullable Integer totalReports) {
-    this.totalReports = totalReports;
+  public GetDmarcDomain200ResponseDomainAllOfSummary days(@javax.annotation.Nullable Integer days) {
+    this.days = days;
     return this;
   }
 
   /**
-   * Get totalReports
-   * @return totalReports
+   * Get days
+   * @return days
    */
   @javax.annotation.Nullable
-  public Integer getTotalReports() {
-    return totalReports;
+  public Integer getDays() {
+    return days;
   }
 
-  public void setTotalReports(@javax.annotation.Nullable Integer totalReports) {
-    this.totalReports = totalReports;
+  public void setDays(@javax.annotation.Nullable Integer days) {
+    this.days = days;
   }
 
 
-  public GetDmarcDomain200ResponseDomainAllOfSummary totalRecords(@javax.annotation.Nullable Integer totalRecords) {
-    this.totalRecords = totalRecords;
+  public GetDmarcDomain200ResponseDomainAllOfSummary reportCount(@javax.annotation.Nullable Integer reportCount) {
+    this.reportCount = reportCount;
     return this;
   }
 
   /**
-   * Get totalRecords
-   * @return totalRecords
+   * Get reportCount
+   * @return reportCount
    */
   @javax.annotation.Nullable
-  public Integer getTotalRecords() {
-    return totalRecords;
+  public Integer getReportCount() {
+    return reportCount;
   }
 
-  public void setTotalRecords(@javax.annotation.Nullable Integer totalRecords) {
-    this.totalRecords = totalRecords;
+  public void setReportCount(@javax.annotation.Nullable Integer reportCount) {
+    this.reportCount = reportCount;
+  }
+
+
+  public GetDmarcDomain200ResponseDomainAllOfSummary sourceCount(@javax.annotation.Nullable Integer sourceCount) {
+    this.sourceCount = sourceCount;
+    return this;
+  }
+
+  /**
+   * Get sourceCount
+   * @return sourceCount
+   */
+  @javax.annotation.Nullable
+  public Integer getSourceCount() {
+    return sourceCount;
+  }
+
+  public void setSourceCount(@javax.annotation.Nullable Integer sourceCount) {
+    this.sourceCount = sourceCount;
+  }
+
+
+  public GetDmarcDomain200ResponseDomainAllOfSummary totalMessages(@javax.annotation.Nullable Integer totalMessages) {
+    this.totalMessages = totalMessages;
+    return this;
+  }
+
+  /**
+   * Get totalMessages
+   * @return totalMessages
+   */
+  @javax.annotation.Nullable
+  public Integer getTotalMessages() {
+    return totalMessages;
+  }
+
+  public void setTotalMessages(@javax.annotation.Nullable Integer totalMessages) {
+    this.totalMessages = totalMessages;
+  }
+
+
+  public GetDmarcDomain200ResponseDomainAllOfSummary totalPass(@javax.annotation.Nullable Integer totalPass) {
+    this.totalPass = totalPass;
+    return this;
+  }
+
+  /**
+   * Get totalPass
+   * @return totalPass
+   */
+  @javax.annotation.Nullable
+  public Integer getTotalPass() {
+    return totalPass;
+  }
+
+  public void setTotalPass(@javax.annotation.Nullable Integer totalPass) {
+    this.totalPass = totalPass;
+  }
+
+
+  public GetDmarcDomain200ResponseDomainAllOfSummary totalFail(@javax.annotation.Nullable Integer totalFail) {
+    this.totalFail = totalFail;
+    return this;
+  }
+
+  /**
+   * Get totalFail
+   * @return totalFail
+   */
+  @javax.annotation.Nullable
+  public Integer getTotalFail() {
+    return totalFail;
+  }
+
+  public void setTotalFail(@javax.annotation.Nullable Integer totalFail) {
+    this.totalFail = totalFail;
   }
 
 
@@ -141,63 +222,6 @@ public class GetDmarcDomain200ResponseDomainAllOfSummary {
   }
 
 
-  public GetDmarcDomain200ResponseDomainAllOfSummary failRate(@javax.annotation.Nullable BigDecimal failRate) {
-    this.failRate = failRate;
-    return this;
-  }
-
-  /**
-   * Get failRate
-   * @return failRate
-   */
-  @javax.annotation.Nullable
-  public BigDecimal getFailRate() {
-    return failRate;
-  }
-
-  public void setFailRate(@javax.annotation.Nullable BigDecimal failRate) {
-    this.failRate = failRate;
-  }
-
-
-  public GetDmarcDomain200ResponseDomainAllOfSummary dkimAligned(@javax.annotation.Nullable BigDecimal dkimAligned) {
-    this.dkimAligned = dkimAligned;
-    return this;
-  }
-
-  /**
-   * Get dkimAligned
-   * @return dkimAligned
-   */
-  @javax.annotation.Nullable
-  public BigDecimal getDkimAligned() {
-    return dkimAligned;
-  }
-
-  public void setDkimAligned(@javax.annotation.Nullable BigDecimal dkimAligned) {
-    this.dkimAligned = dkimAligned;
-  }
-
-
-  public GetDmarcDomain200ResponseDomainAllOfSummary spfAligned(@javax.annotation.Nullable BigDecimal spfAligned) {
-    this.spfAligned = spfAligned;
-    return this;
-  }
-
-  /**
-   * Get spfAligned
-   * @return spfAligned
-   */
-  @javax.annotation.Nullable
-  public BigDecimal getSpfAligned() {
-    return spfAligned;
-  }
-
-  public void setSpfAligned(@javax.annotation.Nullable BigDecimal spfAligned) {
-    this.spfAligned = spfAligned;
-  }
-
-
 
   @Override
   public boolean equals(Object o) {
@@ -208,29 +232,31 @@ public class GetDmarcDomain200ResponseDomainAllOfSummary {
       return false;
     }
     GetDmarcDomain200ResponseDomainAllOfSummary getDmarcDomain200ResponseDomainAllOfSummary = (GetDmarcDomain200ResponseDomainAllOfSummary) o;
-    return Objects.equals(this.totalReports, getDmarcDomain200ResponseDomainAllOfSummary.totalReports) &&
-        Objects.equals(this.totalRecords, getDmarcDomain200ResponseDomainAllOfSummary.totalRecords) &&
-        Objects.equals(this.passRate, getDmarcDomain200ResponseDomainAllOfSummary.passRate) &&
-        Objects.equals(this.failRate, getDmarcDomain200ResponseDomainAllOfSummary.failRate) &&
-        Objects.equals(this.dkimAligned, getDmarcDomain200ResponseDomainAllOfSummary.dkimAligned) &&
-        Objects.equals(this.spfAligned, getDmarcDomain200ResponseDomainAllOfSummary.spfAligned);
+    return Objects.equals(this.days, getDmarcDomain200ResponseDomainAllOfSummary.days) &&
+        Objects.equals(this.reportCount, getDmarcDomain200ResponseDomainAllOfSummary.reportCount) &&
+        Objects.equals(this.sourceCount, getDmarcDomain200ResponseDomainAllOfSummary.sourceCount) &&
+        Objects.equals(this.totalMessages, getDmarcDomain200ResponseDomainAllOfSummary.totalMessages) &&
+        Objects.equals(this.totalPass, getDmarcDomain200ResponseDomainAllOfSummary.totalPass) &&
+        Objects.equals(this.totalFail, getDmarcDomain200ResponseDomainAllOfSummary.totalFail) &&
+        Objects.equals(this.passRate, getDmarcDomain200ResponseDomainAllOfSummary.passRate);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(totalReports, totalRecords, passRate, failRate, dkimAligned, spfAligned);
+    return Objects.hash(days, reportCount, sourceCount, totalMessages, totalPass, totalFail, passRate);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class GetDmarcDomain200ResponseDomainAllOfSummary {\n");
-    sb.append("    totalReports: ").append(toIndentedString(totalReports)).append("\n");
-    sb.append("    totalRecords: ").append(toIndentedString(totalRecords)).append("\n");
+    sb.append("    days: ").append(toIndentedString(days)).append("\n");
+    sb.append("    reportCount: ").append(toIndentedString(reportCount)).append("\n");
+    sb.append("    sourceCount: ").append(toIndentedString(sourceCount)).append("\n");
+    sb.append("    totalMessages: ").append(toIndentedString(totalMessages)).append("\n");
+    sb.append("    totalPass: ").append(toIndentedString(totalPass)).append("\n");
+    sb.append("    totalFail: ").append(toIndentedString(totalFail)).append("\n");
     sb.append("    passRate: ").append(toIndentedString(passRate)).append("\n");
-    sb.append("    failRate: ").append(toIndentedString(failRate)).append("\n");
-    sb.append("    dkimAligned: ").append(toIndentedString(dkimAligned)).append("\n");
-    sb.append("    spfAligned: ").append(toIndentedString(spfAligned)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -252,7 +278,7 @@ public class GetDmarcDomain200ResponseDomainAllOfSummary {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("total_reports", "total_records", "pass_rate", "fail_rate", "dkim_aligned", "spf_aligned"));
+    openapiFields = new HashSet<String>(Arrays.asList("days", "report_count", "source_count", "total_messages", "total_pass", "total_fail", "pass_rate"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);

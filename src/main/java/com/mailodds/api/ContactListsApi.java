@@ -27,15 +27,21 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+import com.mailodds.model.AddContact201Response;
+import com.mailodds.model.AddContactRequest;
 import com.mailodds.model.AppendToContactList200Response;
 import com.mailodds.model.AppendToContactListRequest;
 import com.mailodds.model.CreateContactList201Response;
 import com.mailodds.model.CreateContactListRequest;
+import com.mailodds.model.DeletePolicyRule200Response;
 import com.mailodds.model.ErrorResponse;
+import java.io.File;
 import com.mailodds.model.GetInactiveContactsReport200Response;
+import com.mailodds.model.ImportContactList200Response;
 import com.mailodds.model.ListContactLists200Response;
 import com.mailodds.model.QueryContactList200Response;
 import com.mailodds.model.QueryContactListRequest;
+import com.mailodds.model.UpdateContactRequest;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -80,6 +86,155 @@ public class ContactListsApi {
         this.localCustomBaseUrl = customBaseUrl;
     }
 
+    /**
+     * Build call for addContact
+     * @param listId Contact list ID (required)
+     * @param addContactRequest  (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td> Contact added </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call addContactCall(@javax.annotation.Nonnull String listId, @javax.annotation.Nonnull AddContactRequest addContactRequest, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = addContactRequest;
+
+        // create path and map variables
+        String localVarPath = "/v1/contact-lists/{list_id}/contacts"
+            .replace("{" + "list_id" + "}", localVarApiClient.escapeString(listId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "BearerAuth" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call addContactValidateBeforeCall(@javax.annotation.Nonnull String listId, @javax.annotation.Nonnull AddContactRequest addContactRequest, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'listId' is set
+        if (listId == null) {
+            throw new ApiException("Missing the required parameter 'listId' when calling addContact(Async)");
+        }
+
+        // verify the required parameter 'addContactRequest' is set
+        if (addContactRequest == null) {
+            throw new ApiException("Missing the required parameter 'addContactRequest' when calling addContact(Async)");
+        }
+
+        return addContactCall(listId, addContactRequest, _callback);
+
+    }
+
+    /**
+     * Add contact to list
+     * Add a single contact to a contact list.
+     * @param listId Contact list ID (required)
+     * @param addContactRequest  (required)
+     * @return AddContact201Response
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td> Contact added </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+     </table>
+     */
+    public AddContact201Response addContact(@javax.annotation.Nonnull String listId, @javax.annotation.Nonnull AddContactRequest addContactRequest) throws ApiException {
+        ApiResponse<AddContact201Response> localVarResp = addContactWithHttpInfo(listId, addContactRequest);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Add contact to list
+     * Add a single contact to a contact list.
+     * @param listId Contact list ID (required)
+     * @param addContactRequest  (required)
+     * @return ApiResponse&lt;AddContact201Response&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td> Contact added </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<AddContact201Response> addContactWithHttpInfo(@javax.annotation.Nonnull String listId, @javax.annotation.Nonnull AddContactRequest addContactRequest) throws ApiException {
+        okhttp3.Call localVarCall = addContactValidateBeforeCall(listId, addContactRequest, null);
+        Type localVarReturnType = new TypeToken<AddContact201Response>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Add contact to list (asynchronously)
+     * Add a single contact to a contact list.
+     * @param listId Contact list ID (required)
+     * @param addContactRequest  (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td> Contact added </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call addContactAsync(@javax.annotation.Nonnull String listId, @javax.annotation.Nonnull AddContactRequest addContactRequest, final ApiCallback<AddContact201Response> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = addContactValidateBeforeCall(listId, addContactRequest, _callback);
+        Type localVarReturnType = new TypeToken<AddContact201Response>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
     /**
      * Build call for appendToContactList
      * @param listId Contact list UUID (required)
@@ -369,6 +524,422 @@ public class ContactListsApi {
         return localVarCall;
     }
     /**
+     * Build call for deleteContact
+     * @param listId Contact list ID (required)
+     * @param contactId Contact ID (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Contact deleted </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call deleteContactCall(@javax.annotation.Nonnull String listId, @javax.annotation.Nonnull String contactId, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/v1/contact-lists/{list_id}/contacts/{contact_id}"
+            .replace("{" + "list_id" + "}", localVarApiClient.escapeString(listId.toString()))
+            .replace("{" + "contact_id" + "}", localVarApiClient.escapeString(contactId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "BearerAuth" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call deleteContactValidateBeforeCall(@javax.annotation.Nonnull String listId, @javax.annotation.Nonnull String contactId, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'listId' is set
+        if (listId == null) {
+            throw new ApiException("Missing the required parameter 'listId' when calling deleteContact(Async)");
+        }
+
+        // verify the required parameter 'contactId' is set
+        if (contactId == null) {
+            throw new ApiException("Missing the required parameter 'contactId' when calling deleteContact(Async)");
+        }
+
+        return deleteContactCall(listId, contactId, _callback);
+
+    }
+
+    /**
+     * Delete contact
+     * Remove a single contact from a contact list.
+     * @param listId Contact list ID (required)
+     * @param contactId Contact ID (required)
+     * @return DeletePolicyRule200Response
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Contact deleted </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+     </table>
+     */
+    public DeletePolicyRule200Response deleteContact(@javax.annotation.Nonnull String listId, @javax.annotation.Nonnull String contactId) throws ApiException {
+        ApiResponse<DeletePolicyRule200Response> localVarResp = deleteContactWithHttpInfo(listId, contactId);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Delete contact
+     * Remove a single contact from a contact list.
+     * @param listId Contact list ID (required)
+     * @param contactId Contact ID (required)
+     * @return ApiResponse&lt;DeletePolicyRule200Response&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Contact deleted </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<DeletePolicyRule200Response> deleteContactWithHttpInfo(@javax.annotation.Nonnull String listId, @javax.annotation.Nonnull String contactId) throws ApiException {
+        okhttp3.Call localVarCall = deleteContactValidateBeforeCall(listId, contactId, null);
+        Type localVarReturnType = new TypeToken<DeletePolicyRule200Response>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Delete contact (asynchronously)
+     * Remove a single contact from a contact list.
+     * @param listId Contact list ID (required)
+     * @param contactId Contact ID (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Contact deleted </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call deleteContactAsync(@javax.annotation.Nonnull String listId, @javax.annotation.Nonnull String contactId, final ApiCallback<DeletePolicyRule200Response> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = deleteContactValidateBeforeCall(listId, contactId, _callback);
+        Type localVarReturnType = new TypeToken<DeletePolicyRule200Response>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for deleteContactList
+     * @param listId Contact list UUID (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Contact list deleted </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call deleteContactListCall(@javax.annotation.Nonnull String listId, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/v1/contact-lists/{list_id}"
+            .replace("{" + "list_id" + "}", localVarApiClient.escapeString(listId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "BearerAuth" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call deleteContactListValidateBeforeCall(@javax.annotation.Nonnull String listId, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'listId' is set
+        if (listId == null) {
+            throw new ApiException("Missing the required parameter 'listId' when calling deleteContactList(Async)");
+        }
+
+        return deleteContactListCall(listId, _callback);
+
+    }
+
+    /**
+     * Delete a contact list
+     * Permanently delete a contact list and all its entries.
+     * @param listId Contact list UUID (required)
+     * @return DeletePolicyRule200Response
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Contact list deleted </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+     </table>
+     */
+    public DeletePolicyRule200Response deleteContactList(@javax.annotation.Nonnull String listId) throws ApiException {
+        ApiResponse<DeletePolicyRule200Response> localVarResp = deleteContactListWithHttpInfo(listId);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Delete a contact list
+     * Permanently delete a contact list and all its entries.
+     * @param listId Contact list UUID (required)
+     * @return ApiResponse&lt;DeletePolicyRule200Response&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Contact list deleted </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<DeletePolicyRule200Response> deleteContactListWithHttpInfo(@javax.annotation.Nonnull String listId) throws ApiException {
+        okhttp3.Call localVarCall = deleteContactListValidateBeforeCall(listId, null);
+        Type localVarReturnType = new TypeToken<DeletePolicyRule200Response>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Delete a contact list (asynchronously)
+     * Permanently delete a contact list and all its entries.
+     * @param listId Contact list UUID (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Contact list deleted </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call deleteContactListAsync(@javax.annotation.Nonnull String listId, final ApiCallback<DeletePolicyRule200Response> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = deleteContactListValidateBeforeCall(listId, _callback);
+        Type localVarReturnType = new TypeToken<DeletePolicyRule200Response>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for exportContactList
+     * @param listId Contact list ID (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> CSV export </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call exportContactListCall(@javax.annotation.Nonnull String listId, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/v1/contact-lists/{list_id}/export"
+            .replace("{" + "list_id" + "}", localVarApiClient.escapeString(listId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "text/csv",
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "BearerAuth" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call exportContactListValidateBeforeCall(@javax.annotation.Nonnull String listId, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'listId' is set
+        if (listId == null) {
+            throw new ApiException("Missing the required parameter 'listId' when calling exportContactList(Async)");
+        }
+
+        return exportContactListCall(listId, _callback);
+
+    }
+
+    /**
+     * Export contact list
+     * Export a contact list as CSV.
+     * @param listId Contact list ID (required)
+     * @return String
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> CSV export </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+     </table>
+     */
+    public String exportContactList(@javax.annotation.Nonnull String listId) throws ApiException {
+        ApiResponse<String> localVarResp = exportContactListWithHttpInfo(listId);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Export contact list
+     * Export a contact list as CSV.
+     * @param listId Contact list ID (required)
+     * @return ApiResponse&lt;String&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> CSV export </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<String> exportContactListWithHttpInfo(@javax.annotation.Nonnull String listId) throws ApiException {
+        okhttp3.Call localVarCall = exportContactListValidateBeforeCall(listId, null);
+        Type localVarReturnType = new TypeToken<String>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Export contact list (asynchronously)
+     * Export a contact list as CSV.
+     * @param listId Contact list ID (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> CSV export </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call exportContactListAsync(@javax.annotation.Nonnull String listId, final ApiCallback<String> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = exportContactListValidateBeforeCall(listId, _callback);
+        Type localVarReturnType = new TypeToken<String>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
      * Build call for getInactiveContactsReport
      * @param days Inactivity threshold in days (optional, default to 90)
      * @param _callback Callback for upload/download progress
@@ -498,6 +1069,183 @@ public class ContactListsApi {
 
         okhttp3.Call localVarCall = getInactiveContactsReportValidateBeforeCall(days, _callback);
         Type localVarReturnType = new TypeToken<GetInactiveContactsReport200Response>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for importContactList
+     * @param listId Contact list ID (required)
+     * @param _file CSV file (max 10MB) (required)
+     * @param columnMapping JSON mapping of CSV columns to contact fields (optional)
+     * @param consentSource Source of consent for imported contacts (optional)
+     * @param tags JSON array of tags to apply (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Import results </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call importContactListCall(@javax.annotation.Nonnull String listId, @javax.annotation.Nonnull File _file, @javax.annotation.Nullable String columnMapping, @javax.annotation.Nullable String consentSource, @javax.annotation.Nullable String tags, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/v1/contact-lists/{list_id}/import"
+            .replace("{" + "list_id" + "}", localVarApiClient.escapeString(listId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (_file != null) {
+            localVarFormParams.put("file", _file);
+        }
+
+        if (columnMapping != null) {
+            localVarFormParams.put("column_mapping", columnMapping);
+        }
+
+        if (consentSource != null) {
+            localVarFormParams.put("consent_source", consentSource);
+        }
+
+        if (tags != null) {
+            localVarFormParams.put("tags", tags);
+        }
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "multipart/form-data"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "BearerAuth" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call importContactListValidateBeforeCall(@javax.annotation.Nonnull String listId, @javax.annotation.Nonnull File _file, @javax.annotation.Nullable String columnMapping, @javax.annotation.Nullable String consentSource, @javax.annotation.Nullable String tags, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'listId' is set
+        if (listId == null) {
+            throw new ApiException("Missing the required parameter 'listId' when calling importContactList(Async)");
+        }
+
+        // verify the required parameter '_file' is set
+        if (_file == null) {
+            throw new ApiException("Missing the required parameter '_file' when calling importContactList(Async)");
+        }
+
+        return importContactListCall(listId, _file, columnMapping, consentSource, tags, _callback);
+
+    }
+
+    /**
+     * Import contacts from CSV
+     * Import contacts into a list from a CSV file (max 10MB).
+     * @param listId Contact list ID (required)
+     * @param _file CSV file (max 10MB) (required)
+     * @param columnMapping JSON mapping of CSV columns to contact fields (optional)
+     * @param consentSource Source of consent for imported contacts (optional)
+     * @param tags JSON array of tags to apply (optional)
+     * @return ImportContactList200Response
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Import results </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+     </table>
+     */
+    public ImportContactList200Response importContactList(@javax.annotation.Nonnull String listId, @javax.annotation.Nonnull File _file, @javax.annotation.Nullable String columnMapping, @javax.annotation.Nullable String consentSource, @javax.annotation.Nullable String tags) throws ApiException {
+        ApiResponse<ImportContactList200Response> localVarResp = importContactListWithHttpInfo(listId, _file, columnMapping, consentSource, tags);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Import contacts from CSV
+     * Import contacts into a list from a CSV file (max 10MB).
+     * @param listId Contact list ID (required)
+     * @param _file CSV file (max 10MB) (required)
+     * @param columnMapping JSON mapping of CSV columns to contact fields (optional)
+     * @param consentSource Source of consent for imported contacts (optional)
+     * @param tags JSON array of tags to apply (optional)
+     * @return ApiResponse&lt;ImportContactList200Response&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Import results </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<ImportContactList200Response> importContactListWithHttpInfo(@javax.annotation.Nonnull String listId, @javax.annotation.Nonnull File _file, @javax.annotation.Nullable String columnMapping, @javax.annotation.Nullable String consentSource, @javax.annotation.Nullable String tags) throws ApiException {
+        okhttp3.Call localVarCall = importContactListValidateBeforeCall(listId, _file, columnMapping, consentSource, tags, null);
+        Type localVarReturnType = new TypeToken<ImportContactList200Response>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Import contacts from CSV (asynchronously)
+     * Import contacts into a list from a CSV file (max 10MB).
+     * @param listId Contact list ID (required)
+     * @param _file CSV file (max 10MB) (required)
+     * @param columnMapping JSON mapping of CSV columns to contact fields (optional)
+     * @param consentSource Source of consent for imported contacts (optional)
+     * @param tags JSON array of tags to apply (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Import results </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call importContactListAsync(@javax.annotation.Nonnull String listId, @javax.annotation.Nonnull File _file, @javax.annotation.Nullable String columnMapping, @javax.annotation.Nullable String consentSource, @javax.annotation.Nullable String tags, final ApiCallback<ImportContactList200Response> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = importContactListValidateBeforeCall(listId, _file, columnMapping, consentSource, tags, _callback);
+        Type localVarReturnType = new TypeToken<ImportContactList200Response>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -788,6 +1536,165 @@ public class ContactListsApi {
 
         okhttp3.Call localVarCall = queryContactListValidateBeforeCall(listId, queryContactListRequest, _callback);
         Type localVarReturnType = new TypeToken<QueryContactList200Response>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for updateContact
+     * @param listId Contact list ID (required)
+     * @param contactId Contact ID (required)
+     * @param updateContactRequest  (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Contact updated </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call updateContactCall(@javax.annotation.Nonnull String listId, @javax.annotation.Nonnull String contactId, @javax.annotation.Nonnull UpdateContactRequest updateContactRequest, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = updateContactRequest;
+
+        // create path and map variables
+        String localVarPath = "/v1/contact-lists/{list_id}/contacts/{contact_id}"
+            .replace("{" + "list_id" + "}", localVarApiClient.escapeString(listId.toString()))
+            .replace("{" + "contact_id" + "}", localVarApiClient.escapeString(contactId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "BearerAuth" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "PATCH", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call updateContactValidateBeforeCall(@javax.annotation.Nonnull String listId, @javax.annotation.Nonnull String contactId, @javax.annotation.Nonnull UpdateContactRequest updateContactRequest, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'listId' is set
+        if (listId == null) {
+            throw new ApiException("Missing the required parameter 'listId' when calling updateContact(Async)");
+        }
+
+        // verify the required parameter 'contactId' is set
+        if (contactId == null) {
+            throw new ApiException("Missing the required parameter 'contactId' when calling updateContact(Async)");
+        }
+
+        // verify the required parameter 'updateContactRequest' is set
+        if (updateContactRequest == null) {
+            throw new ApiException("Missing the required parameter 'updateContactRequest' when calling updateContact(Async)");
+        }
+
+        return updateContactCall(listId, contactId, updateContactRequest, _callback);
+
+    }
+
+    /**
+     * Update contact
+     * Update a single contact in a contact list.
+     * @param listId Contact list ID (required)
+     * @param contactId Contact ID (required)
+     * @param updateContactRequest  (required)
+     * @return AddContact201Response
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Contact updated </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+     </table>
+     */
+    public AddContact201Response updateContact(@javax.annotation.Nonnull String listId, @javax.annotation.Nonnull String contactId, @javax.annotation.Nonnull UpdateContactRequest updateContactRequest) throws ApiException {
+        ApiResponse<AddContact201Response> localVarResp = updateContactWithHttpInfo(listId, contactId, updateContactRequest);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Update contact
+     * Update a single contact in a contact list.
+     * @param listId Contact list ID (required)
+     * @param contactId Contact ID (required)
+     * @param updateContactRequest  (required)
+     * @return ApiResponse&lt;AddContact201Response&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Contact updated </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<AddContact201Response> updateContactWithHttpInfo(@javax.annotation.Nonnull String listId, @javax.annotation.Nonnull String contactId, @javax.annotation.Nonnull UpdateContactRequest updateContactRequest) throws ApiException {
+        okhttp3.Call localVarCall = updateContactValidateBeforeCall(listId, contactId, updateContactRequest, null);
+        Type localVarReturnType = new TypeToken<AddContact201Response>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Update contact (asynchronously)
+     * Update a single contact in a contact list.
+     * @param listId Contact list ID (required)
+     * @param contactId Contact ID (required)
+     * @param updateContactRequest  (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Contact updated </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call updateContactAsync(@javax.annotation.Nonnull String listId, @javax.annotation.Nonnull String contactId, @javax.annotation.Nonnull UpdateContactRequest updateContactRequest, final ApiCallback<AddContact201Response> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = updateContactValidateBeforeCall(listId, contactId, updateContactRequest, _callback);
+        Type localVarReturnType = new TypeToken<AddContact201Response>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

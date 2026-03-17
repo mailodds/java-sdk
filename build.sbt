@@ -1,7 +1,7 @@
 lazy val root = (project in file(".")).
   settings(
     organization := "com.mailodds",
-    name := "mailodds-java",
+    name := "mailodds-sdk",
     version := "1.0.0",
     scalaVersion := "2.11.12",
     scalacOptions ++= Seq("-feature"),

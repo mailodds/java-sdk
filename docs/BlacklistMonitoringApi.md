@@ -5,6 +5,7 @@ All URIs are relative to *https://api.mailodds.com/v1*
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
 | [**addBlacklistMonitor**](BlacklistMonitoringApi.md#addBlacklistMonitor) | **POST** /v1/blacklist-monitors | Add blacklist monitor |
+| [**deleteBlacklistMonitor**](BlacklistMonitoringApi.md#deleteBlacklistMonitor) | **DELETE** /v1/blacklist-monitors/{monitor_id} | Delete a blacklist monitor |
 | [**getBlacklistHistory**](BlacklistMonitoringApi.md#getBlacklistHistory) | **GET** /v1/blacklist-monitors/{monitor_id}/history | Get blacklist check history |
 | [**listBlacklistMonitors**](BlacklistMonitoringApi.md#listBlacklistMonitors) | **GET** /v1/blacklist-monitors | List blacklist monitors |
 | [**runBlacklistCheck**](BlacklistMonitoringApi.md#runBlacklistCheck) | **POST** /v1/blacklist-monitors/{monitor_id}/check | Run blacklist check |
@@ -78,6 +79,75 @@ public class Example {
 | **201** | Monitor created with initial check result |  -  |
 | **400** | Bad request |  -  |
 | **401** | Unauthorized - Invalid or missing API key |  -  |
+
+<a id="deleteBlacklistMonitor"></a>
+# **deleteBlacklistMonitor**
+> DeletePolicyRule200Response deleteBlacklistMonitor(monitorId)
+
+Delete a blacklist monitor
+
+Permanently remove a blacklist monitor and its check history.
+
+### Example
+```java
+// Import classes:
+import com.mailodds.ApiClient;
+import com.mailodds.ApiException;
+import com.mailodds.Configuration;
+import com.mailodds.auth.*;
+import com.mailodds.models.*;
+import com.mailodds.api.BlacklistMonitoringApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.mailodds.com/v1");
+    
+    // Configure HTTP bearer authorization: BearerAuth
+    HttpBearerAuth BearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("BearerAuth");
+    BearerAuth.setBearerToken("BEARER TOKEN");
+
+    BlacklistMonitoringApi apiInstance = new BlacklistMonitoringApi(defaultClient);
+    String monitorId = "monitorId_example"; // String | Monitor UUID
+    try {
+      DeletePolicyRule200Response result = apiInstance.deleteBlacklistMonitor(monitorId);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling BlacklistMonitoringApi#deleteBlacklistMonitor");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **monitorId** | **String**| Monitor UUID | |
+
+### Return type
+
+[**DeletePolicyRule200Response**](DeletePolicyRule200Response.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Monitor deleted |  -  |
+| **401** | Unauthorized - Invalid or missing API key |  -  |
+| **404** | Resource not found |  -  |
 
 <a id="getBlacklistHistory"></a>
 # **getBlacklistHistory**

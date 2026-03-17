@@ -5,6 +5,7 @@ All URIs are relative to *https://api.mailodds.com/v1*
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
 | [**addDmarcDomain**](DmarcMonitoringApi.md#addDmarcDomain) | **POST** /v1/dmarc-domains | Add DMARC domain |
+| [**deleteDmarcDomain**](DmarcMonitoringApi.md#deleteDmarcDomain) | **DELETE** /v1/dmarc-domains/{domain_id} | Delete a DMARC domain |
 | [**getDmarcDomain**](DmarcMonitoringApi.md#getDmarcDomain) | **GET** /v1/dmarc-domains/{domain_id} | Get DMARC domain |
 | [**getDmarcRecommendation**](DmarcMonitoringApi.md#getDmarcRecommendation) | **GET** /v1/dmarc-domains/{domain_id}/recommendation | Get DMARC policy recommendation |
 | [**getDmarcSources**](DmarcMonitoringApi.md#getDmarcSources) | **GET** /v1/dmarc-domains/{domain_id}/sources | Get DMARC sending sources |
@@ -81,6 +82,75 @@ public class Example {
 | **201** | Domain added |  -  |
 | **400** | Bad request |  -  |
 | **401** | Unauthorized - Invalid or missing API key |  -  |
+
+<a id="deleteDmarcDomain"></a>
+# **deleteDmarcDomain**
+> DeletePolicyRule200Response deleteDmarcDomain(domainId)
+
+Delete a DMARC domain
+
+Delete a DMARC domain and all its associated reports.
+
+### Example
+```java
+// Import classes:
+import com.mailodds.ApiClient;
+import com.mailodds.ApiException;
+import com.mailodds.Configuration;
+import com.mailodds.auth.*;
+import com.mailodds.models.*;
+import com.mailodds.api.DmarcMonitoringApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.mailodds.com/v1");
+    
+    // Configure HTTP bearer authorization: BearerAuth
+    HttpBearerAuth BearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("BearerAuth");
+    BearerAuth.setBearerToken("BEARER TOKEN");
+
+    DmarcMonitoringApi apiInstance = new DmarcMonitoringApi(defaultClient);
+    String domainId = "domainId_example"; // String | DMARC domain UUID
+    try {
+      DeletePolicyRule200Response result = apiInstance.deleteDmarcDomain(domainId);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling DmarcMonitoringApi#deleteDmarcDomain");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **domainId** | **String**| DMARC domain UUID | |
+
+### Return type
+
+[**DeletePolicyRule200Response**](DeletePolicyRule200Response.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Domain deleted |  -  |
+| **401** | Unauthorized - Invalid or missing API key |  -  |
+| **404** | Resource not found |  -  |
 
 <a id="getDmarcDomain"></a>
 # **getDmarcDomain**

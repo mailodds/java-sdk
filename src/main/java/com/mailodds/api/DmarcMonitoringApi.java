@@ -29,6 +29,7 @@ import java.io.IOException;
 
 import com.mailodds.model.AddDmarcDomain201Response;
 import com.mailodds.model.AddDmarcDomainRequest;
+import com.mailodds.model.DeletePolicyRule200Response;
 import com.mailodds.model.ErrorResponse;
 import com.mailodds.model.GetDmarcDomain200Response;
 import com.mailodds.model.GetDmarcRecommendation200Response;
@@ -211,6 +212,141 @@ public class DmarcMonitoringApi {
 
         okhttp3.Call localVarCall = addDmarcDomainValidateBeforeCall(addDmarcDomainRequest, _callback);
         Type localVarReturnType = new TypeToken<AddDmarcDomain201Response>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for deleteDmarcDomain
+     * @param domainId DMARC domain UUID (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Domain deleted </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call deleteDmarcDomainCall(@javax.annotation.Nonnull String domainId, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/v1/dmarc-domains/{domain_id}"
+            .replace("{" + "domain_id" + "}", localVarApiClient.escapeString(domainId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "BearerAuth" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call deleteDmarcDomainValidateBeforeCall(@javax.annotation.Nonnull String domainId, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'domainId' is set
+        if (domainId == null) {
+            throw new ApiException("Missing the required parameter 'domainId' when calling deleteDmarcDomain(Async)");
+        }
+
+        return deleteDmarcDomainCall(domainId, _callback);
+
+    }
+
+    /**
+     * Delete a DMARC domain
+     * Delete a DMARC domain and all its associated reports.
+     * @param domainId DMARC domain UUID (required)
+     * @return DeletePolicyRule200Response
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Domain deleted </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+     </table>
+     */
+    public DeletePolicyRule200Response deleteDmarcDomain(@javax.annotation.Nonnull String domainId) throws ApiException {
+        ApiResponse<DeletePolicyRule200Response> localVarResp = deleteDmarcDomainWithHttpInfo(domainId);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Delete a DMARC domain
+     * Delete a DMARC domain and all its associated reports.
+     * @param domainId DMARC domain UUID (required)
+     * @return ApiResponse&lt;DeletePolicyRule200Response&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Domain deleted </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<DeletePolicyRule200Response> deleteDmarcDomainWithHttpInfo(@javax.annotation.Nonnull String domainId) throws ApiException {
+        okhttp3.Call localVarCall = deleteDmarcDomainValidateBeforeCall(domainId, null);
+        Type localVarReturnType = new TypeToken<DeletePolicyRule200Response>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Delete a DMARC domain (asynchronously)
+     * Delete a DMARC domain and all its associated reports.
+     * @param domainId DMARC domain UUID (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Domain deleted </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call deleteDmarcDomainAsync(@javax.annotation.Nonnull String domainId, final ApiCallback<DeletePolicyRule200Response> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = deleteDmarcDomainValidateBeforeCall(domainId, _callback);
+        Type localVarReturnType = new TypeToken<DeletePolicyRule200Response>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

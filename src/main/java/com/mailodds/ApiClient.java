@@ -65,7 +65,12 @@ public class ApiClient {
     protected List<ServerConfiguration> servers = new ArrayList<ServerConfiguration>(Arrays.asList(
     new ServerConfiguration(
       "https://api.mailodds.com/v1",
-      "Production server",
+      "Production server (API v1 endpoints)",
+      new HashMap<String, ServerVariable>()
+    ),
+    new ServerConfiguration(
+      "https://api.mailodds.com",
+      "Production server (OAuth and discovery endpoints)",
       new HashMap<String, ServerVariable>()
     )
   ));

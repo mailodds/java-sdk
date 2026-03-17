@@ -49,7 +49,7 @@ import com.mailodds.JSON;
 /**
  * ClassifyContent200ResponseContentCheckCategoriesInner
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-14T19:29:56.931509901+01:00[Europe/Amsterdam]", comments = "Generator version: 7.19.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-14T20:03:03.155849807+01:00[Europe/Amsterdam]", comments = "Generator version: 7.19.0")
 public class ClassifyContent200ResponseContentCheckCategoriesInner {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)

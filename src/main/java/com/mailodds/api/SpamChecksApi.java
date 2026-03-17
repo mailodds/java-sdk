@@ -27,6 +27,7 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+import com.mailodds.model.DeletePolicyRule200Response;
 import com.mailodds.model.ErrorResponse;
 import com.mailodds.model.ListSpamChecks200Response;
 import com.mailodds.model.RunSpamCheck201Response;
@@ -76,6 +77,141 @@ public class SpamChecksApi {
     }
 
     /**
+     * Build call for deleteSpamCheck
+     * @param checkId Spam check ID (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Spam check deleted </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call deleteSpamCheckCall(@javax.annotation.Nonnull String checkId, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/v1/spam-checks/{check_id}"
+            .replace("{" + "check_id" + "}", localVarApiClient.escapeString(checkId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "BearerAuth" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call deleteSpamCheckValidateBeforeCall(@javax.annotation.Nonnull String checkId, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'checkId' is set
+        if (checkId == null) {
+            throw new ApiException("Missing the required parameter 'checkId' when calling deleteSpamCheck(Async)");
+        }
+
+        return deleteSpamCheckCall(checkId, _callback);
+
+    }
+
+    /**
+     * Delete spam check
+     * Delete a spam check result.
+     * @param checkId Spam check ID (required)
+     * @return DeletePolicyRule200Response
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Spam check deleted </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+     </table>
+     */
+    public DeletePolicyRule200Response deleteSpamCheck(@javax.annotation.Nonnull String checkId) throws ApiException {
+        ApiResponse<DeletePolicyRule200Response> localVarResp = deleteSpamCheckWithHttpInfo(checkId);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Delete spam check
+     * Delete a spam check result.
+     * @param checkId Spam check ID (required)
+     * @return ApiResponse&lt;DeletePolicyRule200Response&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Spam check deleted </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<DeletePolicyRule200Response> deleteSpamCheckWithHttpInfo(@javax.annotation.Nonnull String checkId) throws ApiException {
+        okhttp3.Call localVarCall = deleteSpamCheckValidateBeforeCall(checkId, null);
+        Type localVarReturnType = new TypeToken<DeletePolicyRule200Response>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Delete spam check (asynchronously)
+     * Delete a spam check result.
+     * @param checkId Spam check ID (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Spam check deleted </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call deleteSpamCheckAsync(@javax.annotation.Nonnull String checkId, final ApiCallback<DeletePolicyRule200Response> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = deleteSpamCheckValidateBeforeCall(checkId, _callback);
+        Type localVarReturnType = new TypeToken<DeletePolicyRule200Response>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
      * Build call for getSpamCheck
      * @param checkId Spam check UUID (required)
      * @param _callback Callback for upload/download progress
@@ -87,7 +223,6 @@ public class SpamChecksApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Spam check details </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Feature not available - beta access required </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
      </table>
      */
@@ -149,7 +284,7 @@ public class SpamChecksApi {
 
     /**
      * Get spam check
-     * Get the detailed result of a specific spam check. Currently available to beta accounts only.
+     * Get the detailed result of a specific spam check.
      * @param checkId Spam check UUID (required)
      * @return RunSpamCheck201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -159,7 +294,6 @@ public class SpamChecksApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Spam check details </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Feature not available - beta access required </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
      </table>
      */
@@ -170,7 +304,7 @@ public class SpamChecksApi {
 
     /**
      * Get spam check
-     * Get the detailed result of a specific spam check. Currently available to beta accounts only.
+     * Get the detailed result of a specific spam check.
      * @param checkId Spam check UUID (required)
      * @return ApiResponse&lt;RunSpamCheck201Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -180,7 +314,6 @@ public class SpamChecksApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Spam check details </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Feature not available - beta access required </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
      </table>
      */
@@ -192,7 +325,7 @@ public class SpamChecksApi {
 
     /**
      * Get spam check (asynchronously)
-     * Get the detailed result of a specific spam check. Currently available to beta accounts only.
+     * Get the detailed result of a specific spam check.
      * @param checkId Spam check UUID (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -203,7 +336,6 @@ public class SpamChecksApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Spam check details </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Feature not available - beta access required </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
      </table>
      */
@@ -227,7 +359,6 @@ public class SpamChecksApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> List of spam checks </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Feature not available - beta access required </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call listSpamChecksCall(@javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, final ApiCallback _callback) throws ApiException {
@@ -290,7 +421,7 @@ public class SpamChecksApi {
 
     /**
      * List spam checks
-     * List past spam check results with pagination. Currently available to beta accounts only.
+     * List past spam check results with pagination.
      * @param page  (optional, default to 1)
      * @param perPage  (optional, default to 20)
      * @return ListSpamChecks200Response
@@ -301,7 +432,6 @@ public class SpamChecksApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> List of spam checks </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Feature not available - beta access required </td><td>  -  </td></tr>
      </table>
      */
     public ListSpamChecks200Response listSpamChecks(@javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage) throws ApiException {
@@ -311,7 +441,7 @@ public class SpamChecksApi {
 
     /**
      * List spam checks
-     * List past spam check results with pagination. Currently available to beta accounts only.
+     * List past spam check results with pagination.
      * @param page  (optional, default to 1)
      * @param perPage  (optional, default to 20)
      * @return ApiResponse&lt;ListSpamChecks200Response&gt;
@@ -322,7 +452,6 @@ public class SpamChecksApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> List of spam checks </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Feature not available - beta access required </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<ListSpamChecks200Response> listSpamChecksWithHttpInfo(@javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage) throws ApiException {
@@ -333,7 +462,7 @@ public class SpamChecksApi {
 
     /**
      * List spam checks (asynchronously)
-     * List past spam check results with pagination. Currently available to beta accounts only.
+     * List past spam check results with pagination.
      * @param page  (optional, default to 1)
      * @param perPage  (optional, default to 20)
      * @param _callback The callback to be executed when the API call finishes
@@ -345,7 +474,6 @@ public class SpamChecksApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> List of spam checks </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Feature not available - beta access required </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call listSpamChecksAsync(@javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, final ApiCallback<ListSpamChecks200Response> _callback) throws ApiException {
@@ -368,7 +496,6 @@ public class SpamChecksApi {
         <tr><td> 201 </td><td> Spam check result </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Feature not available - beta access required </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call runSpamCheckCall(@javax.annotation.Nonnull RunSpamCheckRequest runSpamCheckRequest, final ApiCallback _callback) throws ApiException {
@@ -429,7 +556,7 @@ public class SpamChecksApi {
 
     /**
      * Run spam check
-     * Run backend spam checks on email sending parameters. Checks domain reputation, link safety, and subject line quality. Currently available to beta accounts only.
+     * Run backend spam checks on email sending parameters. Checks domain reputation, link safety, and subject line quality.
      * @param runSpamCheckRequest  (required)
      * @return RunSpamCheck201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -440,7 +567,6 @@ public class SpamChecksApi {
         <tr><td> 201 </td><td> Spam check result </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Feature not available - beta access required </td><td>  -  </td></tr>
      </table>
      */
     public RunSpamCheck201Response runSpamCheck(@javax.annotation.Nonnull RunSpamCheckRequest runSpamCheckRequest) throws ApiException {
@@ -450,7 +576,7 @@ public class SpamChecksApi {
 
     /**
      * Run spam check
-     * Run backend spam checks on email sending parameters. Checks domain reputation, link safety, and subject line quality. Currently available to beta accounts only.
+     * Run backend spam checks on email sending parameters. Checks domain reputation, link safety, and subject line quality.
      * @param runSpamCheckRequest  (required)
      * @return ApiResponse&lt;RunSpamCheck201Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -461,7 +587,6 @@ public class SpamChecksApi {
         <tr><td> 201 </td><td> Spam check result </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Feature not available - beta access required </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<RunSpamCheck201Response> runSpamCheckWithHttpInfo(@javax.annotation.Nonnull RunSpamCheckRequest runSpamCheckRequest) throws ApiException {
@@ -472,7 +597,7 @@ public class SpamChecksApi {
 
     /**
      * Run spam check (asynchronously)
-     * Run backend spam checks on email sending parameters. Checks domain reputation, link safety, and subject line quality. Currently available to beta accounts only.
+     * Run backend spam checks on email sending parameters. Checks domain reputation, link safety, and subject line quality.
      * @param runSpamCheckRequest  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -484,7 +609,6 @@ public class SpamChecksApi {
         <tr><td> 201 </td><td> Spam check result </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Feature not available - beta access required </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call runSpamCheckAsync(@javax.annotation.Nonnull RunSpamCheckRequest runSpamCheckRequest, final ApiCallback<RunSpamCheck201Response> _callback) throws ApiException {

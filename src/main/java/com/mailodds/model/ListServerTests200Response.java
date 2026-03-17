@@ -52,7 +52,7 @@ import com.mailodds.JSON;
 /**
  * ListServerTests200Response
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-14T19:29:56.931509901+01:00[Europe/Amsterdam]", comments = "Generator version: 7.19.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-17T02:16:37.261972134+01:00[Europe/Amsterdam]", comments = "Generator version: 7.19.0")
 public class ListServerTests200Response {
   public static final String SERIALIZED_NAME_SCHEMA_VERSION = "schema_version";
   @SerializedName(SERIALIZED_NAME_SCHEMA_VERSION)
@@ -64,10 +64,10 @@ public class ListServerTests200Response {
   @javax.annotation.Nullable
   private String requestId;
 
-  public static final String SERIALIZED_NAME_TESTS = "tests";
-  @SerializedName(SERIALIZED_NAME_TESTS)
+  public static final String SERIALIZED_NAME_DATA = "data";
+  @SerializedName(SERIALIZED_NAME_DATA)
   @javax.annotation.Nullable
-  private List<ServerTest> tests = new ArrayList<>();
+  private List<ServerTest> data = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_PAGINATION = "pagination";
   @SerializedName(SERIALIZED_NAME_PAGINATION)
@@ -115,30 +115,30 @@ public class ListServerTests200Response {
   }
 
 
-  public ListServerTests200Response tests(@javax.annotation.Nullable List<ServerTest> tests) {
-    this.tests = tests;
+  public ListServerTests200Response data(@javax.annotation.Nullable List<ServerTest> data) {
+    this.data = data;
     return this;
   }
 
-  public ListServerTests200Response addTestsItem(ServerTest testsItem) {
-    if (this.tests == null) {
-      this.tests = new ArrayList<>();
+  public ListServerTests200Response addDataItem(ServerTest dataItem) {
+    if (this.data == null) {
+      this.data = new ArrayList<>();
     }
-    this.tests.add(testsItem);
+    this.data.add(dataItem);
     return this;
   }
 
   /**
-   * Get tests
-   * @return tests
+   * Get data
+   * @return data
    */
   @javax.annotation.Nullable
-  public List<ServerTest> getTests() {
-    return tests;
+  public List<ServerTest> getData() {
+    return data;
   }
 
-  public void setTests(@javax.annotation.Nullable List<ServerTest> tests) {
-    this.tests = tests;
+  public void setData(@javax.annotation.Nullable List<ServerTest> data) {
+    this.data = data;
   }
 
 
@@ -173,13 +173,13 @@ public class ListServerTests200Response {
     ListServerTests200Response listServerTests200Response = (ListServerTests200Response) o;
     return Objects.equals(this.schemaVersion, listServerTests200Response.schemaVersion) &&
         Objects.equals(this.requestId, listServerTests200Response.requestId) &&
-        Objects.equals(this.tests, listServerTests200Response.tests) &&
+        Objects.equals(this.data, listServerTests200Response.data) &&
         Objects.equals(this.pagination, listServerTests200Response.pagination);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(schemaVersion, requestId, tests, pagination);
+    return Objects.hash(schemaVersion, requestId, data, pagination);
   }
 
   @Override
@@ -188,7 +188,7 @@ public class ListServerTests200Response {
     sb.append("class ListServerTests200Response {\n");
     sb.append("    schemaVersion: ").append(toIndentedString(schemaVersion)).append("\n");
     sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
-    sb.append("    tests: ").append(toIndentedString(tests)).append("\n");
+    sb.append("    data: ").append(toIndentedString(data)).append("\n");
     sb.append("    pagination: ").append(toIndentedString(pagination)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -211,7 +211,7 @@ public class ListServerTests200Response {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("schema_version", "request_id", "tests", "pagination"));
+    openapiFields = new HashSet<String>(Arrays.asList("schema_version", "request_id", "data", "pagination"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -244,17 +244,17 @@ public class ListServerTests200Response {
       if ((jsonObj.get("request_id") != null && !jsonObj.get("request_id").isJsonNull()) && !jsonObj.get("request_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `request_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("request_id").toString()));
       }
-      if (jsonObj.get("tests") != null && !jsonObj.get("tests").isJsonNull()) {
-        JsonArray jsonArraytests = jsonObj.getAsJsonArray("tests");
-        if (jsonArraytests != null) {
+      if (jsonObj.get("data") != null && !jsonObj.get("data").isJsonNull()) {
+        JsonArray jsonArraydata = jsonObj.getAsJsonArray("data");
+        if (jsonArraydata != null) {
           // ensure the json data is an array
-          if (!jsonObj.get("tests").isJsonArray()) {
-            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `tests` to be an array in the JSON string but got `%s`", jsonObj.get("tests").toString()));
+          if (!jsonObj.get("data").isJsonArray()) {
+            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `data` to be an array in the JSON string but got `%s`", jsonObj.get("data").toString()));
           }
 
-          // validate the optional field `tests` (array)
-          for (int i = 0; i < jsonArraytests.size(); i++) {
-            ServerTest.validateJsonElement(jsonArraytests.get(i));
+          // validate the optional field `data` (array)
+          for (int i = 0; i < jsonArraydata.size(); i++) {
+            ServerTest.validateJsonElement(jsonArraydata.get(i));
           };
         }
       }

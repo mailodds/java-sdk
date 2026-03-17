@@ -4,10 +4,80 @@ All URIs are relative to *https://api.mailodds.com/v1*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
+| [**deleteSpamCheck**](SpamChecksApi.md#deleteSpamCheck) | **DELETE** /v1/spam-checks/{check_id} | Delete spam check |
 | [**getSpamCheck**](SpamChecksApi.md#getSpamCheck) | **GET** /v1/spam-checks/{check_id} | Get spam check |
 | [**listSpamChecks**](SpamChecksApi.md#listSpamChecks) | **GET** /v1/spam-checks | List spam checks |
 | [**runSpamCheck**](SpamChecksApi.md#runSpamCheck) | **POST** /v1/spam-checks | Run spam check |
 
+
+<a id="deleteSpamCheck"></a>
+# **deleteSpamCheck**
+> DeletePolicyRule200Response deleteSpamCheck(checkId)
+
+Delete spam check
+
+Delete a spam check result.
+
+### Example
+```java
+// Import classes:
+import com.mailodds.ApiClient;
+import com.mailodds.ApiException;
+import com.mailodds.Configuration;
+import com.mailodds.auth.*;
+import com.mailodds.models.*;
+import com.mailodds.api.SpamChecksApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.mailodds.com/v1");
+    
+    // Configure HTTP bearer authorization: BearerAuth
+    HttpBearerAuth BearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("BearerAuth");
+    BearerAuth.setBearerToken("BEARER TOKEN");
+
+    SpamChecksApi apiInstance = new SpamChecksApi(defaultClient);
+    String checkId = "checkId_example"; // String | Spam check ID
+    try {
+      DeletePolicyRule200Response result = apiInstance.deleteSpamCheck(checkId);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling SpamChecksApi#deleteSpamCheck");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **checkId** | **String**| Spam check ID | |
+
+### Return type
+
+[**DeletePolicyRule200Response**](DeletePolicyRule200Response.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Spam check deleted |  -  |
+| **401** | Unauthorized - Invalid or missing API key |  -  |
+| **404** | Resource not found |  -  |
 
 <a id="getSpamCheck"></a>
 # **getSpamCheck**
@@ -15,7 +85,7 @@ All URIs are relative to *https://api.mailodds.com/v1*
 
 Get spam check
 
-Get the detailed result of a specific spam check. Currently available to beta accounts only.
+Get the detailed result of a specific spam check.
 
 ### Example
 ```java
@@ -76,7 +146,6 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | Spam check details |  -  |
 | **401** | Unauthorized - Invalid or missing API key |  -  |
-| **403** | Feature not available - beta access required |  -  |
 | **404** | Resource not found |  -  |
 
 <a id="listSpamChecks"></a>
@@ -85,7 +154,7 @@ public class Example {
 
 List spam checks
 
-List past spam check results with pagination. Currently available to beta accounts only.
+List past spam check results with pagination.
 
 ### Example
 ```java
@@ -148,7 +217,6 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | List of spam checks |  -  |
 | **401** | Unauthorized - Invalid or missing API key |  -  |
-| **403** | Feature not available - beta access required |  -  |
 
 <a id="runSpamCheck"></a>
 # **runSpamCheck**
@@ -156,7 +224,7 @@ public class Example {
 
 Run spam check
 
-Run backend spam checks on email sending parameters. Checks domain reputation, link safety, and subject line quality. Currently available to beta accounts only.
+Run backend spam checks on email sending parameters. Checks domain reputation, link safety, and subject line quality.
 
 ### Example
 ```java
@@ -218,5 +286,4 @@ public class Example {
 | **201** | Spam check result |  -  |
 | **400** | Bad request |  -  |
 | **401** | Unauthorized - Invalid or missing API key |  -  |
-| **403** | Feature not available - beta access required |  -  |
 

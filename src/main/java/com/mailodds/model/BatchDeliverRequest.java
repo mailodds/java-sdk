@@ -51,7 +51,7 @@ import com.mailodds.JSON;
 /**
  * Same fields as DeliverRequest but &#39;to&#39; accepts up to 100 recipients.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-14T19:29:56.931509901+01:00[Europe/Amsterdam]", comments = "Generator version: 7.19.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-17T02:16:37.261972134+01:00[Europe/Amsterdam]", comments = "Generator version: 7.19.0")
 public class BatchDeliverRequest {
   public static final String SERIALIZED_NAME_TO = "to";
   @SerializedName(SERIALIZED_NAME_TO)

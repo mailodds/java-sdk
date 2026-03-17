@@ -7,14 +7,16 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**score** | **BigDecimal** | Overall content quality score (0-100) |  [optional] |
-|**verdict** | [**VerdictEnum**](#VerdictEnum) | Overall verdict |  [optional] |
-|**categories** | [**List&lt;ClassifyContent200ResponseContentCheckCategoriesInner&gt;**](ClassifyContent200ResponseContentCheckCategoriesInner.md) |  |  [optional] |
+|**status** | [**StatusEnum**](#StatusEnum) | Overall content status |  [optional] |
+|**flag** | **Boolean** | Whether the content is flagged |  [optional] |
+|**reason** | **String** | Human-readable reason for the status |  [optional] |
+|**priority** | **Integer** | Priority level (1&#x3D;lowest, 5&#x3D;highest) |  [optional] |
 |**suggestions** | **List&lt;String&gt;** | Improvement suggestions |  [optional] |
+|**durationMs** | **Integer** | Classification duration in milliseconds |  [optional] |
 
 
 
-## Enum: VerdictEnum
+## Enum: StatusEnum
 
 | Name | Value |
 |---- | -----|

@@ -2,7 +2,7 @@
 
 # ValidationResponseSuppressionMatch
 
-Present only when email matched a suppression list entry.
+Present only when email matched a suppression list entry. Null otherwise.
 
 ## Properties
 

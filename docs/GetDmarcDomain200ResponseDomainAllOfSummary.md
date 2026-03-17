@@ -7,12 +7,13 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**totalReports** | **Integer** |  |  [optional] |
-|**totalRecords** | **Integer** |  |  [optional] |
+|**days** | **Integer** |  |  [optional] |
+|**reportCount** | **Integer** |  |  [optional] |
+|**sourceCount** | **Integer** |  |  [optional] |
+|**totalMessages** | **Integer** |  |  [optional] |
+|**totalPass** | **Integer** |  |  [optional] |
+|**totalFail** | **Integer** |  |  [optional] |
 |**passRate** | **BigDecimal** |  |  [optional] |
-|**failRate** | **BigDecimal** |  |  [optional] |
-|**dkimAligned** | **BigDecimal** |  |  [optional] |
-|**spfAligned** | **BigDecimal** |  |  [optional] |
 
 
 

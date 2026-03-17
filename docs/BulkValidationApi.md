@@ -13,6 +13,7 @@ All URIs are relative to *https://api.mailodds.com/v1*
 | [**getJobResults**](BulkValidationApi.md#getJobResults) | **GET** /v1/jobs/{job_id}/results | Get job results |
 | [**getPresignedUpload**](BulkValidationApi.md#getPresignedUpload) | **POST** /v1/jobs/upload/presigned | Get S3 presigned upload URL |
 | [**listJobs**](BulkValidationApi.md#listJobs) | **GET** /v1/jobs | List validation jobs |
+| [**retryJob**](BulkValidationApi.md#retryJob) | **POST** /v1/jobs/{job_id}/retry | Retry failed job |
 
 
 <a id="cancelJob"></a>
@@ -651,4 +652,74 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | List of jobs |  -  |
 | **401** | Unauthorized - Invalid or missing API key |  -  |
+
+<a id="retryJob"></a>
+# **retryJob**
+> RetryJob200Response retryJob(jobId)
+
+Retry failed job
+
+Retry processing for a failed or cancelled validation job. Re-queues unprocessed emails.
+
+### Example
+```java
+// Import classes:
+import com.mailodds.ApiClient;
+import com.mailodds.ApiException;
+import com.mailodds.Configuration;
+import com.mailodds.auth.*;
+import com.mailodds.models.*;
+import com.mailodds.api.BulkValidationApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.mailodds.com/v1");
+    
+    // Configure HTTP bearer authorization: BearerAuth
+    HttpBearerAuth BearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("BearerAuth");
+    BearerAuth.setBearerToken("BEARER TOKEN");
+
+    BulkValidationApi apiInstance = new BulkValidationApi(defaultClient);
+    String jobId = "jobId_example"; // String | Job ID
+    try {
+      RetryJob200Response result = apiInstance.retryJob(jobId);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling BulkValidationApi#retryJob");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **jobId** | **String**| Job ID | |
+
+### Return type
+
+[**RetryJob200Response**](RetryJob200Response.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Job retry initiated |  -  |
+| **400** | Bad request |  -  |
+| **401** | Unauthorized - Invalid or missing API key |  -  |
+| **404** | Resource not found |  -  |
 

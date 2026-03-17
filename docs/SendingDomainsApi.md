@@ -6,10 +6,12 @@ All URIs are relative to *https://api.mailodds.com/v1*
 |------------- | ------------- | -------------|
 | [**createSendingDomain**](SendingDomainsApi.md#createSendingDomain) | **POST** /v1/sending-domains | Add a sending domain |
 | [**deleteSendingDomain**](SendingDomainsApi.md#deleteSendingDomain) | **DELETE** /v1/sending-domains/{domain_id} | Delete a sending domain |
+| [**getReplyForwarding**](SendingDomainsApi.md#getReplyForwarding) | **GET** /v1/sending-domains/{domain_id}/reply-forwarding | Get reply forwarding config |
 | [**getSendingDomain**](SendingDomainsApi.md#getSendingDomain) | **GET** /v1/sending-domains/{domain_id} | Get a sending domain |
 | [**getSendingDomainIdentityScore**](SendingDomainsApi.md#getSendingDomainIdentityScore) | **GET** /v1/sending-domains/{domain_id}/identity-score | Get domain identity score |
 | [**getSendingStats**](SendingDomainsApi.md#getSendingStats) | **GET** /v1/sending-stats | Get sending statistics |
 | [**listSendingDomains**](SendingDomainsApi.md#listSendingDomains) | **GET** /v1/sending-domains | List sending domains |
+| [**updateReplyForwarding**](SendingDomainsApi.md#updateReplyForwarding) | **PATCH** /v1/sending-domains/{domain_id}/reply-forwarding | Update reply forwarding config |
 | [**verifySendingDomain**](SendingDomainsApi.md#verifySendingDomain) | **POST** /v1/sending-domains/{domain_id}/verify | Verify domain DNS records |
 
 
@@ -150,6 +152,76 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | Domain deleted |  -  |
 | **401** | Unauthorized - Invalid or missing API key |  -  |
+| **404** | Resource not found |  -  |
+
+<a id="getReplyForwarding"></a>
+# **getReplyForwarding**
+> GetReplyForwarding200Response getReplyForwarding(domainId)
+
+Get reply forwarding config
+
+Get the reply forwarding configuration for a sending domain. Requires Growth+ plan.
+
+### Example
+```java
+// Import classes:
+import com.mailodds.ApiClient;
+import com.mailodds.ApiException;
+import com.mailodds.Configuration;
+import com.mailodds.auth.*;
+import com.mailodds.models.*;
+import com.mailodds.api.SendingDomainsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.mailodds.com/v1");
+    
+    // Configure HTTP bearer authorization: BearerAuth
+    HttpBearerAuth BearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("BearerAuth");
+    BearerAuth.setBearerToken("BEARER TOKEN");
+
+    SendingDomainsApi apiInstance = new SendingDomainsApi(defaultClient);
+    String domainId = "domainId_example"; // String | Sending domain ID
+    try {
+      GetReplyForwarding200Response result = apiInstance.getReplyForwarding(domainId);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling SendingDomainsApi#getReplyForwarding");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **domainId** | **String**| Sending domain ID | |
+
+### Return type
+
+[**GetReplyForwarding200Response**](GetReplyForwarding200Response.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Reply forwarding configuration |  -  |
+| **401** | Unauthorized - Invalid or missing API key |  -  |
+| **403** | Forbidden - Insufficient permissions or no credits |  -  |
 | **404** | Resource not found |  -  |
 
 <a id="getSendingDomain"></a>
@@ -425,6 +497,79 @@ This endpoint does not need any parameter.
 | **200** | List of sending domains |  -  |
 | **401** | Unauthorized - Invalid or missing API key |  -  |
 | **403** | Forbidden - Insufficient permissions or no credits |  -  |
+
+<a id="updateReplyForwarding"></a>
+# **updateReplyForwarding**
+> GetReplyForwarding200Response updateReplyForwarding(domainId, updateReplyForwardingRequest)
+
+Update reply forwarding config
+
+Configure reply forwarding for a sending domain. Set forward_replies_to to null to disable. Requires Growth+ plan.
+
+### Example
+```java
+// Import classes:
+import com.mailodds.ApiClient;
+import com.mailodds.ApiException;
+import com.mailodds.Configuration;
+import com.mailodds.auth.*;
+import com.mailodds.models.*;
+import com.mailodds.api.SendingDomainsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.mailodds.com/v1");
+    
+    // Configure HTTP bearer authorization: BearerAuth
+    HttpBearerAuth BearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("BearerAuth");
+    BearerAuth.setBearerToken("BEARER TOKEN");
+
+    SendingDomainsApi apiInstance = new SendingDomainsApi(defaultClient);
+    String domainId = "domainId_example"; // String | Sending domain ID
+    UpdateReplyForwardingRequest updateReplyForwardingRequest = new UpdateReplyForwardingRequest(); // UpdateReplyForwardingRequest | 
+    try {
+      GetReplyForwarding200Response result = apiInstance.updateReplyForwarding(domainId, updateReplyForwardingRequest);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling SendingDomainsApi#updateReplyForwarding");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **domainId** | **String**| Sending domain ID | |
+| **updateReplyForwardingRequest** | [**UpdateReplyForwardingRequest**](UpdateReplyForwardingRequest.md)|  | |
+
+### Return type
+
+[**GetReplyForwarding200Response**](GetReplyForwarding200Response.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Reply forwarding updated |  -  |
+| **400** | Bad request |  -  |
+| **401** | Unauthorized - Invalid or missing API key |  -  |
+| **403** | Forbidden - Insufficient permissions or no credits |  -  |
+| **404** | Resource not found |  -  |
 
 <a id="verifySendingDomain"></a>
 # **verifySendingDomain**
