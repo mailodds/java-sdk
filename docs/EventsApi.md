@@ -23,7 +23,7 @@ import com.mailodds.ApiException;
 import com.mailodds.Configuration;
 import com.mailodds.auth.*;
 import com.mailodds.models.*;
-import com.mailodds.api.EventsApi;
+import com.mailodds.apis.EventsApi;
 
 public class Example {
   public static void main(String[] args) {

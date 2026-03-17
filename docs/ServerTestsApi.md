@@ -25,7 +25,7 @@ import com.mailodds.ApiException;
 import com.mailodds.Configuration;
 import com.mailodds.auth.*;
 import com.mailodds.models.*;
-import com.mailodds.api.ServerTestsApi;
+import com.mailodds.apis.ServerTestsApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -94,7 +94,7 @@ import com.mailodds.ApiException;
 import com.mailodds.Configuration;
 import com.mailodds.auth.*;
 import com.mailodds.models.*;
-import com.mailodds.api.ServerTestsApi;
+import com.mailodds.apis.ServerTestsApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -164,7 +164,7 @@ import com.mailodds.ApiException;
 import com.mailodds.Configuration;
 import com.mailodds.auth.*;
 import com.mailodds.models.*;
-import com.mailodds.api.ServerTestsApi;
+import com.mailodds.apis.ServerTestsApi;
 
 public class Example {
   public static void main(String[] args) {

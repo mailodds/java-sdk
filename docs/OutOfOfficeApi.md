@@ -27,7 +27,7 @@ import com.mailodds.ApiException;
 import com.mailodds.Configuration;
 import com.mailodds.auth.*;
 import com.mailodds.models.*;
-import com.mailodds.api.OutOfOfficeApi;
+import com.mailodds.apis.OutOfOfficeApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -97,7 +97,7 @@ import com.mailodds.ApiException;
 import com.mailodds.Configuration;
 import com.mailodds.auth.*;
 import com.mailodds.models.*;
-import com.mailodds.api.OutOfOfficeApi;
+import com.mailodds.apis.OutOfOfficeApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -167,7 +167,7 @@ import com.mailodds.ApiException;
 import com.mailodds.Configuration;
 import com.mailodds.auth.*;
 import com.mailodds.models.*;
-import com.mailodds.api.OutOfOfficeApi;
+import com.mailodds.apis.OutOfOfficeApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -236,7 +236,7 @@ import com.mailodds.ApiException;
 import com.mailodds.Configuration;
 import com.mailodds.auth.*;
 import com.mailodds.models.*;
-import com.mailodds.api.OutOfOfficeApi;
+import com.mailodds.apis.OutOfOfficeApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -309,7 +309,7 @@ import com.mailodds.ApiException;
 import com.mailodds.Configuration;
 import com.mailodds.auth.*;
 import com.mailodds.models.*;
-import com.mailodds.api.OutOfOfficeApi;
+import com.mailodds.apis.OutOfOfficeApi;
 
 public class Example {
   public static void main(String[] args) {

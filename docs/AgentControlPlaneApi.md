@@ -22,7 +22,7 @@ import com.mailodds.ApiClient;
 import com.mailodds.ApiException;
 import com.mailodds.Configuration;
 import com.mailodds.models.*;
-import com.mailodds.api.AgentControlPlaneApi;
+import com.mailodds.apis.AgentControlPlaneApi;
 
 public class Example {
   public static void main(String[] args) {

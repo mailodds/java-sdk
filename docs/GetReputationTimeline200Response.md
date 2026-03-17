@@ -9,7 +9,7 @@
 |------------ | ------------- | ------------- | -------------|
 |**schemaVersion** | **String** |  |  [optional] |
 |**requestId** | **String** |  |  [optional] |
-|**timeline** | **List&lt;Object&gt;** |  |  [optional] |
+|**timeline** | [**GetReputationTimeline200ResponseTimeline**](GetReputationTimeline200ResponseTimeline.md) |  |  [optional] |
 
 
 

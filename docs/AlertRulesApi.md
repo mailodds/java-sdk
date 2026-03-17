@@ -27,7 +27,7 @@ import com.mailodds.ApiException;
 import com.mailodds.Configuration;
 import com.mailodds.auth.*;
 import com.mailodds.models.*;
-import com.mailodds.api.AlertRulesApi;
+import com.mailodds.apis.AlertRulesApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -97,7 +97,7 @@ import com.mailodds.ApiException;
 import com.mailodds.Configuration;
 import com.mailodds.auth.*;
 import com.mailodds.models.*;
-import com.mailodds.api.AlertRulesApi;
+import com.mailodds.apis.AlertRulesApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -167,7 +167,7 @@ import com.mailodds.ApiException;
 import com.mailodds.Configuration;
 import com.mailodds.auth.*;
 import com.mailodds.models.*;
-import com.mailodds.api.AlertRulesApi;
+import com.mailodds.apis.AlertRulesApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -237,7 +237,7 @@ import com.mailodds.ApiException;
 import com.mailodds.Configuration;
 import com.mailodds.auth.*;
 import com.mailodds.models.*;
-import com.mailodds.api.AlertRulesApi;
+import com.mailodds.apis.AlertRulesApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -302,7 +302,7 @@ import com.mailodds.ApiException;
 import com.mailodds.Configuration;
 import com.mailodds.auth.*;
 import com.mailodds.models.*;
-import com.mailodds.api.AlertRulesApi;
+import com.mailodds.apis.AlertRulesApi;
 
 public class Example {
   public static void main(String[] args) {
