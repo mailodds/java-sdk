@@ -11,6 +11,7 @@ All URIs are relative to *https://api.mailodds.com/v1*
 | [**getSendingDomainIdentityScore**](SendingDomainsApi.md#getSendingDomainIdentityScore) | **GET** /v1/sending-domains/{domain_id}/identity-score | Get domain identity score |
 | [**getSendingStats**](SendingDomainsApi.md#getSendingStats) | **GET** /v1/sending-stats | Get sending statistics |
 | [**listSendingDomains**](SendingDomainsApi.md#listSendingDomains) | **GET** /v1/sending-domains | List sending domains |
+| [**setPrimarySendingDomain**](SendingDomainsApi.md#setPrimarySendingDomain) | **POST** /v1/sending-domains/{domain_id}/set-primary | Set primary sending domain |
 | [**updateReplyForwarding**](SendingDomainsApi.md#updateReplyForwarding) | **PATCH** /v1/sending-domains/{domain_id}/reply-forwarding | Update reply forwarding config |
 | [**verifySendingDomain**](SendingDomainsApi.md#verifySendingDomain) | **POST** /v1/sending-domains/{domain_id}/verify | Verify domain DNS records |
 
@@ -496,6 +497,75 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 | **200** | List of sending domains |  -  |
 | **403** | Forbidden - Insufficient permissions or no credits |  -  |
+| **401** | Unauthorized - Invalid or missing API key |  -  |
+
+<a id="setPrimarySendingDomain"></a>
+# **setPrimarySendingDomain**
+> CreateSendingDomain201Response setPrimarySendingDomain(domainId)
+
+Set primary sending domain
+
+Designate a domain as the primary/default sending domain. When domain_id is omitted from deliver calls, the primary domain is used automatically.
+
+### Example
+```java
+// Import classes:
+import com.mailodds.ApiClient;
+import com.mailodds.ApiException;
+import com.mailodds.Configuration;
+import com.mailodds.auth.*;
+import com.mailodds.models.*;
+import com.mailodds.apis.SendingDomainsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.mailodds.com/v1");
+    
+    // Configure HTTP bearer authorization: BearerAuth
+    HttpBearerAuth BearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("BearerAuth");
+    BearerAuth.setBearerToken("BEARER TOKEN");
+
+    SendingDomainsApi apiInstance = new SendingDomainsApi(defaultClient);
+    String domainId = "domainId_example"; // String | 
+    try {
+      CreateSendingDomain201Response result = apiInstance.setPrimarySendingDomain(domainId);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling SendingDomainsApi#setPrimarySendingDomain");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **domainId** | **String**|  | |
+
+### Return type
+
+[**CreateSendingDomain201Response**](CreateSendingDomain201Response.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Primary domain set |  -  |
+| **404** | Resource not found |  -  |
 | **401** | Unauthorized - Invalid or missing API key |  -  |
 
 <a id="updateReplyForwarding"></a>

@@ -17,6 +17,7 @@
 |**bimiVmcUrl** | **String** | BIMI VMC certificate URL |  [optional] |
 |**bimiEnabled** | **Boolean** | Whether BIMI is enabled |  [optional] |
 |**forwardRepliesTo** | **String** | Reply forwarding address |  [optional] |
+|**isPrimary** | **Boolean** | Whether this is the account primary/default sending domain |  [optional] |
 |**createdAt** | **OffsetDateTime** |  |  [optional] |
 |**updatedAt** | **OffsetDateTime** |  |  [optional] |
 

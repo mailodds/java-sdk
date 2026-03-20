@@ -55,7 +55,7 @@ import com.mailodds.JSON;
 /**
  * DeliverRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-20T03:00:43.181944620+01:00[Europe/Amsterdam]", comments = "Generator version: 7.19.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-20T17:11:17.059173044+01:00[Europe/Amsterdam]", comments = "Generator version: 7.19.0")
 public class DeliverRequest {
   public static final String SERIALIZED_NAME_TO = "to";
   @SerializedName(SERIALIZED_NAME_TO)
@@ -84,7 +84,7 @@ public class DeliverRequest {
 
   public static final String SERIALIZED_NAME_DOMAIN_ID = "domain_id";
   @SerializedName(SERIALIZED_NAME_DOMAIN_ID)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private String domainId;
 
   public static final String SERIALIZED_NAME_REPLY_TO = "reply_to";
@@ -306,21 +306,21 @@ public class DeliverRequest {
   }
 
 
-  public DeliverRequest domainId(@javax.annotation.Nonnull String domainId) {
+  public DeliverRequest domainId(@javax.annotation.Nullable String domainId) {
     this.domainId = domainId;
     return this;
   }
 
   /**
-   * Sending domain UUID
+   * Sending domain UUID. Optional -- auto-resolved from the from address, or falls back to primary domain.
    * @return domainId
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public String getDomainId() {
     return domainId;
   }
 
-  public void setDomainId(@javax.annotation.Nonnull String domainId) {
+  public void setDomainId(@javax.annotation.Nullable String domainId) {
     this.domainId = domainId;
   }
 
@@ -587,7 +587,7 @@ public class DeliverRequest {
     openapiFields = new HashSet<String>(Arrays.asList("to", "from", "subject", "html", "text", "domain_id", "reply_to", "headers", "tags", "campaign_type", "structured_data", "schema_data", "auto_detect_schema", "ai_summary", "options"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(Arrays.asList("to", "from", "subject", "domain_id"));
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("to", "from", "subject"));
   }
 
   /**
@@ -640,7 +640,7 @@ public class DeliverRequest {
       if ((jsonObj.get("text") != null && !jsonObj.get("text").isJsonNull()) && !jsonObj.get("text").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `text` to be a primitive type in the JSON string but got `%s`", jsonObj.get("text").toString()));
       }
-      if (!jsonObj.get("domain_id").isJsonPrimitive()) {
+      if ((jsonObj.get("domain_id") != null && !jsonObj.get("domain_id").isJsonNull()) && !jsonObj.get("domain_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `domain_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("domain_id").toString()));
       }
       if ((jsonObj.get("reply_to") != null && !jsonObj.get("reply_to").isJsonNull()) && !jsonObj.get("reply_to").isJsonPrimitive()) {

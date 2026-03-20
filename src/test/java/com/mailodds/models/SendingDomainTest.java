@@ -121,6 +121,14 @@ public class SendingDomainTest {
     }
 
     /**
+     * Test the property 'isPrimary'
+     */
+    @Test
+    public void isPrimaryTest() {
+        // TODO: test isPrimary
+    }
+
+    /**
      * Test the property 'createdAt'
      */
     @Test

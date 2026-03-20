@@ -1030,6 +1030,141 @@ public class SendingDomainsApi {
         return localVarCall;
     }
     /**
+     * Build call for setPrimarySendingDomain
+     * @param domainId  (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Primary domain set </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call setPrimarySendingDomainCall(@javax.annotation.Nonnull String domainId, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/v1/sending-domains/{domain_id}/set-primary"
+            .replace("{" + "domain_id" + "}", localVarApiClient.escapeString(domainId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "BearerAuth" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call setPrimarySendingDomainValidateBeforeCall(@javax.annotation.Nonnull String domainId, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'domainId' is set
+        if (domainId == null) {
+            throw new ApiException("Missing the required parameter 'domainId' when calling setPrimarySendingDomain(Async)");
+        }
+
+        return setPrimarySendingDomainCall(domainId, _callback);
+
+    }
+
+    /**
+     * Set primary sending domain
+     * Designate a domain as the primary/default sending domain. When domain_id is omitted from deliver calls, the primary domain is used automatically.
+     * @param domainId  (required)
+     * @return CreateSendingDomain201Response
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Primary domain set </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
+     </table>
+     */
+    public CreateSendingDomain201Response setPrimarySendingDomain(@javax.annotation.Nonnull String domainId) throws ApiException {
+        ApiResponse<CreateSendingDomain201Response> localVarResp = setPrimarySendingDomainWithHttpInfo(domainId);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Set primary sending domain
+     * Designate a domain as the primary/default sending domain. When domain_id is omitted from deliver calls, the primary domain is used automatically.
+     * @param domainId  (required)
+     * @return ApiResponse&lt;CreateSendingDomain201Response&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Primary domain set </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<CreateSendingDomain201Response> setPrimarySendingDomainWithHttpInfo(@javax.annotation.Nonnull String domainId) throws ApiException {
+        okhttp3.Call localVarCall = setPrimarySendingDomainValidateBeforeCall(domainId, null);
+        Type localVarReturnType = new TypeToken<CreateSendingDomain201Response>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Set primary sending domain (asynchronously)
+     * Designate a domain as the primary/default sending domain. When domain_id is omitted from deliver calls, the primary domain is used automatically.
+     * @param domainId  (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Primary domain set </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call setPrimarySendingDomainAsync(@javax.annotation.Nonnull String domainId, final ApiCallback<CreateSendingDomain201Response> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = setPrimarySendingDomainValidateBeforeCall(domainId, _callback);
+        Type localVarReturnType = new TypeToken<CreateSendingDomain201Response>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
      * Build call for updateReplyForwarding
      * @param domainId Sending domain ID (required)
      * @param updateReplyForwardingRequest  (required)

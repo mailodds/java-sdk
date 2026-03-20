@@ -51,7 +51,7 @@ import com.mailodds.JSON;
 /**
  * SendingDomain
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-20T03:00:43.181944620+01:00[Europe/Amsterdam]", comments = "Generator version: 7.19.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-20T17:11:17.059173044+01:00[Europe/Amsterdam]", comments = "Generator version: 7.19.0")
 public class SendingDomain {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -158,6 +158,11 @@ public class SendingDomain {
   @SerializedName(SERIALIZED_NAME_FORWARD_REPLIES_TO)
   @javax.annotation.Nullable
   private String forwardRepliesTo;
+
+  public static final String SERIALIZED_NAME_IS_PRIMARY = "is_primary";
+  @SerializedName(SERIALIZED_NAME_IS_PRIMARY)
+  @javax.annotation.Nullable
+  private Boolean isPrimary;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
@@ -362,6 +367,25 @@ public class SendingDomain {
   }
 
 
+  public SendingDomain isPrimary(@javax.annotation.Nullable Boolean isPrimary) {
+    this.isPrimary = isPrimary;
+    return this;
+  }
+
+  /**
+   * Whether this is the account primary/default sending domain
+   * @return isPrimary
+   */
+  @javax.annotation.Nullable
+  public Boolean getIsPrimary() {
+    return isPrimary;
+  }
+
+  public void setIsPrimary(@javax.annotation.Nullable Boolean isPrimary) {
+    this.isPrimary = isPrimary;
+  }
+
+
   public SendingDomain createdAt(@javax.annotation.Nullable OffsetDateTime createdAt) {
     this.createdAt = createdAt;
     return this;
@@ -420,6 +444,7 @@ public class SendingDomain {
         Objects.equals(this.bimiVmcUrl, sendingDomain.bimiVmcUrl) &&
         Objects.equals(this.bimiEnabled, sendingDomain.bimiEnabled) &&
         Objects.equals(this.forwardRepliesTo, sendingDomain.forwardRepliesTo) &&
+        Objects.equals(this.isPrimary, sendingDomain.isPrimary) &&
         Objects.equals(this.createdAt, sendingDomain.createdAt) &&
         Objects.equals(this.updatedAt, sendingDomain.updatedAt);
   }
@@ -430,7 +455,7 @@ public class SendingDomain {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, domain, domainType, status, dkimSelector, dnsRecords, bimiSvgUrl, bimiVmcUrl, bimiEnabled, forwardRepliesTo, createdAt, updatedAt);
+    return Objects.hash(id, domain, domainType, status, dkimSelector, dnsRecords, bimiSvgUrl, bimiVmcUrl, bimiEnabled, forwardRepliesTo, isPrimary, createdAt, updatedAt);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -454,6 +479,7 @@ public class SendingDomain {
     sb.append("    bimiVmcUrl: ").append(toIndentedString(bimiVmcUrl)).append("\n");
     sb.append("    bimiEnabled: ").append(toIndentedString(bimiEnabled)).append("\n");
     sb.append("    forwardRepliesTo: ").append(toIndentedString(forwardRepliesTo)).append("\n");
+    sb.append("    isPrimary: ").append(toIndentedString(isPrimary)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("}");
@@ -477,7 +503,7 @@ public class SendingDomain {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("id", "domain", "domain_type", "status", "dkim_selector", "dns_records", "bimi_svg_url", "bimi_vmc_url", "bimi_enabled", "forward_replies_to", "created_at", "updated_at"));
+    openapiFields = new HashSet<String>(Arrays.asList("id", "domain", "domain_type", "status", "dkim_selector", "dns_records", "bimi_svg_url", "bimi_vmc_url", "bimi_enabled", "forward_replies_to", "is_primary", "created_at", "updated_at"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);

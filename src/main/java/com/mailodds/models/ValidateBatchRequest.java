@@ -50,7 +50,7 @@ import com.mailodds.JSON;
 /**
  * ValidateBatchRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-20T03:00:43.181944620+01:00[Europe/Amsterdam]", comments = "Generator version: 7.19.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-20T17:11:17.059173044+01:00[Europe/Amsterdam]", comments = "Generator version: 7.19.0")
 public class ValidateBatchRequest {
   public static final String SERIALIZED_NAME_EMAILS = "emails";
   @SerializedName(SERIALIZED_NAME_EMAILS)

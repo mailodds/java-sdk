@@ -138,6 +138,20 @@ public class SendingDomainsApiTest {
     }
 
     /**
+     * Set primary sending domain
+     *
+     * Designate a domain as the primary/default sending domain. When domain_id is omitted from deliver calls, the primary domain is used automatically.
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void setPrimarySendingDomainTest() throws ApiException {
+        String domainId = null;
+        CreateSendingDomain201Response response = api.setPrimarySendingDomain(domainId);
+        // TODO: test validations
+    }
+
+    /**
      * Update reply forwarding config
      *
      * Configure reply forwarding for a sending domain. Set forward_replies_to to null to disable. Requires Growth+ plan.
