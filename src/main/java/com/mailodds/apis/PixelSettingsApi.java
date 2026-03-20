@@ -206,9 +206,9 @@ public class PixelSettingsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Pixel settings updated </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call updatePixelSettingsCall(@javax.annotation.Nonnull UpdatePixelSettingsRequest updatePixelSettingsRequest, final ApiCallback _callback) throws ApiException {
@@ -278,9 +278,9 @@ public class PixelSettingsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Pixel settings updated </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
      </table>
      */
     public GetPixelSettings200Response updatePixelSettings(@javax.annotation.Nonnull UpdatePixelSettingsRequest updatePixelSettingsRequest) throws ApiException {
@@ -299,9 +299,9 @@ public class PixelSettingsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Pixel settings updated </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<GetPixelSettings200Response> updatePixelSettingsWithHttpInfo(@javax.annotation.Nonnull UpdatePixelSettingsRequest updatePixelSettingsRequest) throws ApiException {
@@ -322,9 +322,9 @@ public class PixelSettingsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Pixel settings updated </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call updatePixelSettingsAsync(@javax.annotation.Nonnull UpdatePixelSettingsRequest updatePixelSettingsRequest, final ApiCallback<GetPixelSettings200Response> _callback) throws ApiException {

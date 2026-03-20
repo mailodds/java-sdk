@@ -15,6 +15,7 @@ package com.mailodds.apis;
 
 import com.mailodds.ApiException;
 import com.mailodds.models.CreateToken200Response;
+import com.mailodds.models.ErrorResponse;
 import com.mailodds.models.IntrospectToken200Response;
 import com.mailodds.models.JwksResponse;
 import com.mailodds.models.OAuthServerMetadata;

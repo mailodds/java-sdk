@@ -96,10 +96,10 @@ public class ValidationPoliciesApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Rule added </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Rule limit exceeded </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Policy not found </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call addPolicyRuleCall(@javax.annotation.Nonnull Integer policyId, @javax.annotation.Nonnull PolicyRule policyRule, final ApiCallback _callback) throws ApiException {
@@ -176,10 +176,10 @@ public class ValidationPoliciesApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Rule added </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Rule limit exceeded </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Policy not found </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public AddPolicyRule201Response addPolicyRule(@javax.annotation.Nonnull Integer policyId, @javax.annotation.Nonnull PolicyRule policyRule) throws ApiException {
@@ -199,10 +199,10 @@ public class ValidationPoliciesApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Rule added </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Rule limit exceeded </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Policy not found </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<AddPolicyRule201Response> addPolicyRuleWithHttpInfo(@javax.annotation.Nonnull Integer policyId, @javax.annotation.Nonnull PolicyRule policyRule) throws ApiException {
@@ -224,10 +224,10 @@ public class ValidationPoliciesApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Rule added </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Rule limit exceeded </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Policy not found </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call addPolicyRuleAsync(@javax.annotation.Nonnull Integer policyId, @javax.annotation.Nonnull PolicyRule policyRule, final ApiCallback<AddPolicyRule201Response> _callback) throws ApiException {
@@ -248,9 +248,9 @@ public class ValidationPoliciesApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Policy created </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Plan limit exceeded </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Plan limit exceeded </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call createPolicyCall(@javax.annotation.Nonnull CreatePolicyRequest createPolicyRequest, final ApiCallback _callback) throws ApiException {
@@ -320,9 +320,9 @@ public class ValidationPoliciesApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Policy created </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Plan limit exceeded </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Plan limit exceeded </td><td>  -  </td></tr>
      </table>
      */
     public PolicyResponse createPolicy(@javax.annotation.Nonnull CreatePolicyRequest createPolicyRequest) throws ApiException {
@@ -341,9 +341,9 @@ public class ValidationPoliciesApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Policy created </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Plan limit exceeded </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Plan limit exceeded </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<PolicyResponse> createPolicyWithHttpInfo(@javax.annotation.Nonnull CreatePolicyRequest createPolicyRequest) throws ApiException {
@@ -364,9 +364,9 @@ public class ValidationPoliciesApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Policy created </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Plan limit exceeded </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Plan limit exceeded </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call createPolicyAsync(@javax.annotation.Nonnull CreatePolicyRequest createPolicyRequest, final ApiCallback<PolicyResponse> _callback) throws ApiException {
@@ -522,8 +522,8 @@ public class ValidationPoliciesApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Policy deleted </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Policy not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call deletePolicyCall(@javax.annotation.Nonnull Integer policyId, final ApiCallback _callback) throws ApiException {
@@ -593,8 +593,8 @@ public class ValidationPoliciesApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Policy deleted </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Policy not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public DeletePolicy200Response deletePolicy(@javax.annotation.Nonnull Integer policyId) throws ApiException {
@@ -613,8 +613,8 @@ public class ValidationPoliciesApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Policy deleted </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Policy not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<DeletePolicy200Response> deletePolicyWithHttpInfo(@javax.annotation.Nonnull Integer policyId) throws ApiException {
@@ -635,8 +635,8 @@ public class ValidationPoliciesApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Policy deleted </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Policy not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call deletePolicyAsync(@javax.annotation.Nonnull Integer policyId, final ApiCallback<DeletePolicy200Response> _callback) throws ApiException {
@@ -658,8 +658,8 @@ public class ValidationPoliciesApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Rule deleted </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Policy or rule not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call deletePolicyRuleCall(@javax.annotation.Nonnull Integer policyId, @javax.annotation.Nonnull Integer ruleId, final ApiCallback _callback) throws ApiException {
@@ -736,8 +736,8 @@ public class ValidationPoliciesApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Rule deleted </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Policy or rule not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public DeletePolicyRule200Response deletePolicyRule(@javax.annotation.Nonnull Integer policyId, @javax.annotation.Nonnull Integer ruleId) throws ApiException {
@@ -757,8 +757,8 @@ public class ValidationPoliciesApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Rule deleted </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Policy or rule not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<DeletePolicyRule200Response> deletePolicyRuleWithHttpInfo(@javax.annotation.Nonnull Integer policyId, @javax.annotation.Nonnull Integer ruleId) throws ApiException {
@@ -780,8 +780,8 @@ public class ValidationPoliciesApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Rule deleted </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Policy or rule not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call deletePolicyRuleAsync(@javax.annotation.Nonnull Integer policyId, @javax.annotation.Nonnull Integer ruleId, final ApiCallback<DeletePolicyRule200Response> _callback) throws ApiException {
@@ -802,8 +802,8 @@ public class ValidationPoliciesApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Policy details </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Policy not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getPolicyCall(@javax.annotation.Nonnull Integer policyId, final ApiCallback _callback) throws ApiException {
@@ -873,8 +873,8 @@ public class ValidationPoliciesApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Policy details </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Policy not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public PolicyResponse getPolicy(@javax.annotation.Nonnull Integer policyId) throws ApiException {
@@ -893,8 +893,8 @@ public class ValidationPoliciesApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Policy details </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Policy not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<PolicyResponse> getPolicyWithHttpInfo(@javax.annotation.Nonnull Integer policyId) throws ApiException {
@@ -915,8 +915,8 @@ public class ValidationPoliciesApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Policy details </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Policy not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getPolicyAsync(@javax.annotation.Nonnull Integer policyId, final ApiCallback<PolicyResponse> _callback) throws ApiException {
@@ -1187,9 +1187,9 @@ public class ValidationPoliciesApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Test result </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Policy not found </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Policy not found </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call testPolicyCall(@javax.annotation.Nonnull TestPolicyRequest testPolicyRequest, final ApiCallback _callback) throws ApiException {
@@ -1259,9 +1259,9 @@ public class ValidationPoliciesApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Test result </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Policy not found </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Policy not found </td><td>  -  </td></tr>
      </table>
      */
     public PolicyTestResponse testPolicy(@javax.annotation.Nonnull TestPolicyRequest testPolicyRequest) throws ApiException {
@@ -1280,9 +1280,9 @@ public class ValidationPoliciesApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Test result </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Policy not found </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Policy not found </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<PolicyTestResponse> testPolicyWithHttpInfo(@javax.annotation.Nonnull TestPolicyRequest testPolicyRequest) throws ApiException {
@@ -1303,9 +1303,9 @@ public class ValidationPoliciesApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Test result </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Policy not found </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Policy not found </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call testPolicyAsync(@javax.annotation.Nonnull TestPolicyRequest testPolicyRequest, final ApiCallback<PolicyTestResponse> _callback) throws ApiException {
@@ -1327,9 +1327,9 @@ public class ValidationPoliciesApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Policy updated </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Policy not found </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Policy not found </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call updatePolicyCall(@javax.annotation.Nonnull Integer policyId, @javax.annotation.Nonnull UpdatePolicyRequest updatePolicyRequest, final ApiCallback _callback) throws ApiException {
@@ -1406,9 +1406,9 @@ public class ValidationPoliciesApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Policy updated </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Policy not found </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Policy not found </td><td>  -  </td></tr>
      </table>
      */
     public PolicyResponse updatePolicy(@javax.annotation.Nonnull Integer policyId, @javax.annotation.Nonnull UpdatePolicyRequest updatePolicyRequest) throws ApiException {
@@ -1428,9 +1428,9 @@ public class ValidationPoliciesApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Policy updated </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Policy not found </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Policy not found </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<PolicyResponse> updatePolicyWithHttpInfo(@javax.annotation.Nonnull Integer policyId, @javax.annotation.Nonnull UpdatePolicyRequest updatePolicyRequest) throws ApiException {
@@ -1452,9 +1452,9 @@ public class ValidationPoliciesApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Policy updated </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Policy not found </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Policy not found </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call updatePolicyAsync(@javax.annotation.Nonnull Integer policyId, @javax.annotation.Nonnull UpdatePolicyRequest updatePolicyRequest, final ApiCallback<PolicyResponse> _callback) throws ApiException {

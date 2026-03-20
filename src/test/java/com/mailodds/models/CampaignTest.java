@@ -20,6 +20,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.mailodds.models.CampaignStats;
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.time.OffsetDateTime;
 import java.util.Arrays;
 import org.openapitools.jackson.nullable.JsonNullable;
@@ -49,6 +50,14 @@ public class CampaignTest {
     }
 
     /**
+     * Test the property 'accountId'
+     */
+    @Test
+    public void accountIdTest() {
+        // TODO: test accountId
+    }
+
+    /**
      * Test the property 'name'
      */
     @Test
@@ -65,14 +74,6 @@ public class CampaignTest {
     }
 
     /**
-     * Test the property 'listId'
-     */
-    @Test
-    public void listIdTest() {
-        // TODO: test listId
-    }
-
-    /**
      * Test the property 'domainId'
      */
     @Test
@@ -81,19 +82,19 @@ public class CampaignTest {
     }
 
     /**
-     * Test the property 'fromEmail'
+     * Test the property 'subject'
      */
     @Test
-    public void fromEmailTest() {
-        // TODO: test fromEmail
+    public void subjectTest() {
+        // TODO: test subject
     }
 
     /**
-     * Test the property 'fromName'
+     * Test the property 'fromAddress'
      */
     @Test
-    public void fromNameTest() {
-        // TODO: test fromName
+    public void fromAddressTest() {
+        // TODO: test fromAddress
     }
 
     /**
@@ -105,6 +106,70 @@ public class CampaignTest {
     }
 
     /**
+     * Test the property 'htmlBody'
+     */
+    @Test
+    public void htmlBodyTest() {
+        // TODO: test htmlBody
+    }
+
+    /**
+     * Test the property 'textBody'
+     */
+    @Test
+    public void textBodyTest() {
+        // TODO: test textBody
+    }
+
+    /**
+     * Test the property 'htmlBodyDark'
+     */
+    @Test
+    public void htmlBodyDarkTest() {
+        // TODO: test htmlBodyDark
+    }
+
+    /**
+     * Test the property 'textBodyDark'
+     */
+    @Test
+    public void textBodyDarkTest() {
+        // TODO: test textBodyDark
+    }
+
+    /**
+     * Test the property 'campaignType'
+     */
+    @Test
+    public void campaignTypeTest() {
+        // TODO: test campaignType
+    }
+
+    /**
+     * Test the property 'autoDetectSchema'
+     */
+    @Test
+    public void autoDetectSchemaTest() {
+        // TODO: test autoDetectSchema
+    }
+
+    /**
+     * Test the property 'promoAnnotations'
+     */
+    @Test
+    public void promoAnnotationsTest() {
+        // TODO: test promoAnnotations
+    }
+
+    /**
+     * Test the property 'throwawayPolicy'
+     */
+    @Test
+    public void throwawayPolicyTest() {
+        // TODO: test throwawayPolicy
+    }
+
+    /**
      * Test the property 'scheduledAt'
      */
     @Test
@@ -113,27 +178,59 @@ public class CampaignTest {
     }
 
     /**
-     * Test the property 'sentAt'
+     * Test the property 'startedAt'
      */
     @Test
-    public void sentAtTest() {
-        // TODO: test sentAt
+    public void startedAtTest() {
+        // TODO: test startedAt
     }
 
     /**
-     * Test the property 'cancelledAt'
+     * Test the property 'completedAt'
      */
     @Test
-    public void cancelledAtTest() {
-        // TODO: test cancelledAt
+    public void completedAtTest() {
+        // TODO: test completedAt
     }
 
     /**
-     * Test the property 'variantCount'
+     * Test the property 'recipientCount'
      */
     @Test
-    public void variantCountTest() {
-        // TODO: test variantCount
+    public void recipientCountTest() {
+        // TODO: test recipientCount
+    }
+
+    /**
+     * Test the property 'isAbTest'
+     */
+    @Test
+    public void isAbTestTest() {
+        // TODO: test isAbTest
+    }
+
+    /**
+     * Test the property 'winningVariantId'
+     */
+    @Test
+    public void winningVariantIdTest() {
+        // TODO: test winningVariantId
+    }
+
+    /**
+     * Test the property 'abTestConfig'
+     */
+    @Test
+    public void abTestConfigTest() {
+        // TODO: test abTestConfig
+    }
+
+    /**
+     * Test the property 'errorMessage'
+     */
+    @Test
+    public void errorMessageTest() {
+        // TODO: test errorMessage
     }
 
     /**
@@ -142,6 +239,22 @@ public class CampaignTest {
     @Test
     public void statsTest() {
         // TODO: test stats
+    }
+
+    /**
+     * Test the property 'openRate'
+     */
+    @Test
+    public void openRateTest() {
+        // TODO: test openRate
+    }
+
+    /**
+     * Test the property 'clickRate'
+     */
+    @Test
+    public void clickRateTest() {
+        // TODO: test clickRate
     }
 
     /**

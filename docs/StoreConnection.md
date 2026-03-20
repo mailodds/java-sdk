@@ -32,6 +32,7 @@
 | PRESTASHOP | &quot;prestashop&quot; |
 | SHOPIFY | &quot;shopify&quot; |
 | FEED | &quot;feed&quot; |
+| CUSTOM | &quot;custom&quot; |
 
 
 

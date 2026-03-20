@@ -230,9 +230,9 @@ public class SubscriberListsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> List created </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call createListCall(@javax.annotation.Nonnull CreateListRequest createListRequest, final ApiCallback _callback) throws ApiException {
@@ -302,9 +302,9 @@ public class SubscriberListsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> List created </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
      </table>
      */
     public CreateList201Response createList(@javax.annotation.Nonnull CreateListRequest createListRequest) throws ApiException {
@@ -323,9 +323,9 @@ public class SubscriberListsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> List created </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<CreateList201Response> createListWithHttpInfo(@javax.annotation.Nonnull CreateListRequest createListRequest) throws ApiException {
@@ -346,9 +346,9 @@ public class SubscriberListsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> List created </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call createListAsync(@javax.annotation.Nonnull CreateListRequest createListRequest, final ApiCallback<CreateList201Response> _callback) throws ApiException {
@@ -369,8 +369,8 @@ public class SubscriberListsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> List deleted </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call deleteListCall(@javax.annotation.Nonnull String listId, final ApiCallback _callback) throws ApiException {
@@ -440,8 +440,8 @@ public class SubscriberListsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> List deleted </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public DeletePolicyRule200Response deleteList(@javax.annotation.Nonnull String listId) throws ApiException {
@@ -460,8 +460,8 @@ public class SubscriberListsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> List deleted </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<DeletePolicyRule200Response> deleteListWithHttpInfo(@javax.annotation.Nonnull String listId) throws ApiException {
@@ -482,8 +482,8 @@ public class SubscriberListsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> List deleted </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call deleteListAsync(@javax.annotation.Nonnull String listId, final ApiCallback<DeletePolicyRule200Response> _callback) throws ApiException {
@@ -504,8 +504,8 @@ public class SubscriberListsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Subscriber list details </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getListCall(@javax.annotation.Nonnull String listId, final ApiCallback _callback) throws ApiException {
@@ -575,8 +575,8 @@ public class SubscriberListsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Subscriber list details </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public CreateList201Response getList(@javax.annotation.Nonnull String listId) throws ApiException {
@@ -595,8 +595,8 @@ public class SubscriberListsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Subscriber list details </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<CreateList201Response> getListWithHttpInfo(@javax.annotation.Nonnull String listId) throws ApiException {
@@ -617,8 +617,8 @@ public class SubscriberListsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Subscriber list details </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getListAsync(@javax.annotation.Nonnull String listId, final ApiCallback<CreateList201Response> _callback) throws ApiException {
@@ -779,8 +779,8 @@ public class SubscriberListsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Paginated list of subscribers </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getSubscribersCall(@javax.annotation.Nonnull String listId, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String status, final ApiCallback _callback) throws ApiException {
@@ -865,8 +865,8 @@ public class SubscriberListsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Paginated list of subscribers </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public GetSubscribers200Response getSubscribers(@javax.annotation.Nonnull String listId, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String status) throws ApiException {
@@ -888,8 +888,8 @@ public class SubscriberListsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Paginated list of subscribers </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<GetSubscribers200Response> getSubscribersWithHttpInfo(@javax.annotation.Nonnull String listId, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String status) throws ApiException {
@@ -913,8 +913,8 @@ public class SubscriberListsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Paginated list of subscribers </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getSubscribersAsync(@javax.annotation.Nonnull String listId, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String status, final ApiCallback<GetSubscribers200Response> _callback) throws ApiException {
@@ -936,11 +936,11 @@ public class SubscriberListsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Subscriber created (pending confirmation) </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Invalid email address </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Rate limit exceeded </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call subscribeCall(@javax.annotation.Nonnull String listId, @javax.annotation.Nonnull SubscribeRequest subscribeRequest, final ApiCallback _callback) throws ApiException {
@@ -1017,11 +1017,11 @@ public class SubscriberListsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Subscriber created (pending confirmation) </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Invalid email address </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Rate limit exceeded </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public UnsubscribeSubscriber200Response subscribe(@javax.annotation.Nonnull String listId, @javax.annotation.Nonnull SubscribeRequest subscribeRequest) throws ApiException {
@@ -1041,11 +1041,11 @@ public class SubscriberListsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Subscriber created (pending confirmation) </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Invalid email address </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Rate limit exceeded </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<UnsubscribeSubscriber200Response> subscribeWithHttpInfo(@javax.annotation.Nonnull String listId, @javax.annotation.Nonnull SubscribeRequest subscribeRequest) throws ApiException {
@@ -1067,11 +1067,11 @@ public class SubscriberListsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Subscriber created (pending confirmation) </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Invalid email address </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Rate limit exceeded </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call subscribeAsync(@javax.annotation.Nonnull String listId, @javax.annotation.Nonnull SubscribeRequest subscribeRequest, final ApiCallback<UnsubscribeSubscriber200Response> _callback) throws ApiException {
@@ -1093,8 +1093,8 @@ public class SubscriberListsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Subscriber unsubscribed </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call unsubscribeSubscriberCall(@javax.annotation.Nonnull String listId, @javax.annotation.Nonnull String subscriberId, final ApiCallback _callback) throws ApiException {
@@ -1171,8 +1171,8 @@ public class SubscriberListsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Subscriber unsubscribed </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public UnsubscribeSubscriber200Response unsubscribeSubscriber(@javax.annotation.Nonnull String listId, @javax.annotation.Nonnull String subscriberId) throws ApiException {
@@ -1192,8 +1192,8 @@ public class SubscriberListsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Subscriber unsubscribed </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<UnsubscribeSubscriber200Response> unsubscribeSubscriberWithHttpInfo(@javax.annotation.Nonnull String listId, @javax.annotation.Nonnull String subscriberId) throws ApiException {
@@ -1215,8 +1215,8 @@ public class SubscriberListsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Subscriber unsubscribed </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call unsubscribeSubscriberAsync(@javax.annotation.Nonnull String listId, @javax.annotation.Nonnull String subscriberId, final ApiCallback<UnsubscribeSubscriber200Response> _callback) throws ApiException {

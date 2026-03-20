@@ -8,11 +8,11 @@ Per-check scoring breakdown
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**dkim** | [**IdentityScoreCheck**](IdentityScoreCheck.md) |  |  [optional] |
 |**spf** | [**IdentityScoreCheck**](IdentityScoreCheck.md) |  |  [optional] |
+|**dkim** | [**IdentityScoreCheck**](IdentityScoreCheck.md) |  |  [optional] |
 |**dmarc** | [**IdentityScoreCheck**](IdentityScoreCheck.md) |  |  [optional] |
-|**mx** | [**IdentityScoreCheck**](IdentityScoreCheck.md) |  |  [optional] |
-|**returnPath** | [**IdentityScoreCheck**](IdentityScoreCheck.md) |  |  [optional] |
+|**bounce** | [**IdentityScoreCheck**](IdentityScoreCheck.md) |  |  [optional] |
+|**tracking** | [**IdentityScoreCheck**](IdentityScoreCheck.md) |  |  [optional] |
 |**bimi** | [**IdentityScoreCheck**](IdentityScoreCheck.md) |  |  [optional] |
 
 

@@ -89,9 +89,9 @@ public class OutOfOfficeApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Batch OOO check results </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call batchCheckOooCall(@javax.annotation.Nonnull BatchCheckOooRequest batchCheckOooRequest, final ApiCallback _callback) throws ApiException {
@@ -161,9 +161,9 @@ public class OutOfOfficeApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Batch OOO check results </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
      </table>
      */
     public BatchCheckOoo200Response batchCheckOoo(@javax.annotation.Nonnull BatchCheckOooRequest batchCheckOooRequest) throws ApiException {
@@ -182,9 +182,9 @@ public class OutOfOfficeApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Batch OOO check results </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<BatchCheckOoo200Response> batchCheckOooWithHttpInfo(@javax.annotation.Nonnull BatchCheckOooRequest batchCheckOooRequest) throws ApiException {
@@ -205,9 +205,9 @@ public class OutOfOfficeApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Batch OOO check results </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call batchCheckOooAsync(@javax.annotation.Nonnull BatchCheckOooRequest batchCheckOooRequest, final ApiCallback<BatchCheckOoo200Response> _callback) throws ApiException {
@@ -219,7 +219,7 @@ public class OutOfOfficeApi {
     }
     /**
      * Build call for deleteOooContact
-     * @param email Email address (required)
+     * @param email  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -228,9 +228,9 @@ public class OutOfOfficeApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OOO status cleared </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call deleteOooContactCall(@javax.annotation.Nonnull String email, final ApiCallback _callback) throws ApiException {
@@ -292,7 +292,7 @@ public class OutOfOfficeApi {
     /**
      * Delete OOO contact
      * Clear out-of-office status for an email address. Requires Growth+ plan.
-     * @param email Email address (required)
+     * @param email  (required)
      * @return DeleteOooContact200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -300,9 +300,9 @@ public class OutOfOfficeApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OOO status cleared </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public DeleteOooContact200Response deleteOooContact(@javax.annotation.Nonnull String email) throws ApiException {
@@ -313,7 +313,7 @@ public class OutOfOfficeApi {
     /**
      * Delete OOO contact
      * Clear out-of-office status for an email address. Requires Growth+ plan.
-     * @param email Email address (required)
+     * @param email  (required)
      * @return ApiResponse&lt;DeleteOooContact200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -321,9 +321,9 @@ public class OutOfOfficeApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OOO status cleared </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<DeleteOooContact200Response> deleteOooContactWithHttpInfo(@javax.annotation.Nonnull String email) throws ApiException {
@@ -335,7 +335,7 @@ public class OutOfOfficeApi {
     /**
      * Delete OOO contact (asynchronously)
      * Clear out-of-office status for an email address. Requires Growth+ plan.
-     * @param email Email address (required)
+     * @param email  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -344,9 +344,9 @@ public class OutOfOfficeApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OOO status cleared </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call deleteOooContactAsync(@javax.annotation.Nonnull String email, final ApiCallback<DeleteOooContact200Response> _callback) throws ApiException {
@@ -358,7 +358,7 @@ public class OutOfOfficeApi {
     }
     /**
      * Build call for getOooStatus
-     * @param email Email address to check (required)
+     * @param email  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -367,8 +367,8 @@ public class OutOfOfficeApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OOO status </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getOooStatusCall(@javax.annotation.Nonnull String email, final ApiCallback _callback) throws ApiException {
@@ -430,7 +430,7 @@ public class OutOfOfficeApi {
     /**
      * Get OOO status for email
      * Check if a specific email address is currently out-of-office. Requires Growth+ plan.
-     * @param email Email address to check (required)
+     * @param email  (required)
      * @return GetOooStatus200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -438,8 +438,8 @@ public class OutOfOfficeApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OOO status </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public GetOooStatus200Response getOooStatus(@javax.annotation.Nonnull String email) throws ApiException {
@@ -450,7 +450,7 @@ public class OutOfOfficeApi {
     /**
      * Get OOO status for email
      * Check if a specific email address is currently out-of-office. Requires Growth+ plan.
-     * @param email Email address to check (required)
+     * @param email  (required)
      * @return ApiResponse&lt;GetOooStatus200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -458,8 +458,8 @@ public class OutOfOfficeApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OOO status </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<GetOooStatus200Response> getOooStatusWithHttpInfo(@javax.annotation.Nonnull String email) throws ApiException {
@@ -471,7 +471,7 @@ public class OutOfOfficeApi {
     /**
      * Get OOO status for email (asynchronously)
      * Check if a specific email address is currently out-of-office. Requires Growth+ plan.
-     * @param email Email address to check (required)
+     * @param email  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -480,8 +480,8 @@ public class OutOfOfficeApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OOO status </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getOooStatusAsync(@javax.annotation.Nonnull String email, final ApiCallback<GetOooStatus200Response> _callback) throws ApiException {
@@ -504,8 +504,8 @@ public class OutOfOfficeApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Paginated list of OOO contacts </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call listOooContactsCall(@javax.annotation.Nullable Boolean activeOnly, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, final ApiCallback _callback) throws ApiException {
@@ -583,8 +583,8 @@ public class OutOfOfficeApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Paginated list of OOO contacts </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public ListOooContacts200Response listOooContacts(@javax.annotation.Nullable Boolean activeOnly, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage) throws ApiException {
@@ -605,8 +605,8 @@ public class OutOfOfficeApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Paginated list of OOO contacts </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<ListOooContacts200Response> listOooContactsWithHttpInfo(@javax.annotation.Nullable Boolean activeOnly, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage) throws ApiException {
@@ -629,8 +629,8 @@ public class OutOfOfficeApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Paginated list of OOO contacts </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call listOooContactsAsync(@javax.annotation.Nullable Boolean activeOnly, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, final ApiCallback<ListOooContacts200Response> _callback) throws ApiException {
@@ -642,7 +642,7 @@ public class OutOfOfficeApi {
     }
     /**
      * Build call for updateOooContact
-     * @param email Email address (required)
+     * @param email  (required)
      * @param updateOooContactRequest  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -652,8 +652,9 @@ public class OutOfOfficeApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OOO contact updated </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call updateOooContactCall(@javax.annotation.Nonnull String email, @javax.annotation.Nonnull UpdateOooContactRequest updateOooContactRequest, final ApiCallback _callback) throws ApiException {
@@ -721,7 +722,7 @@ public class OutOfOfficeApi {
     /**
      * Update OOO contact
      * Manually set or clear out-of-office status for an email. Requires Growth+ plan.
-     * @param email Email address (required)
+     * @param email  (required)
      * @param updateOooContactRequest  (required)
      * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -730,8 +731,9 @@ public class OutOfOfficeApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OOO contact updated </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public Object updateOooContact(@javax.annotation.Nonnull String email, @javax.annotation.Nonnull UpdateOooContactRequest updateOooContactRequest) throws ApiException {
@@ -742,7 +744,7 @@ public class OutOfOfficeApi {
     /**
      * Update OOO contact
      * Manually set or clear out-of-office status for an email. Requires Growth+ plan.
-     * @param email Email address (required)
+     * @param email  (required)
      * @param updateOooContactRequest  (required)
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -751,8 +753,9 @@ public class OutOfOfficeApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OOO contact updated </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<Object> updateOooContactWithHttpInfo(@javax.annotation.Nonnull String email, @javax.annotation.Nonnull UpdateOooContactRequest updateOooContactRequest) throws ApiException {
@@ -764,7 +767,7 @@ public class OutOfOfficeApi {
     /**
      * Update OOO contact (asynchronously)
      * Manually set or clear out-of-office status for an email. Requires Growth+ plan.
-     * @param email Email address (required)
+     * @param email  (required)
      * @param updateOooContactRequest  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -774,8 +777,9 @@ public class OutOfOfficeApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OOO contact updated </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call updateOooContactAsync(@javax.annotation.Nonnull String email, @javax.annotation.Nonnull UpdateOooContactRequest updateOooContactRequest, final ApiCallback<Object> _callback) throws ApiException {

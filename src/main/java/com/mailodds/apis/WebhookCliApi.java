@@ -88,6 +88,7 @@ public class WebhookCliApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Session created </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
@@ -153,6 +154,7 @@ public class WebhookCliApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Session created </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
@@ -172,6 +174,7 @@ public class WebhookCliApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Session created </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
@@ -193,6 +196,7 @@ public class WebhookCliApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Session created </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
@@ -205,7 +209,7 @@ public class WebhookCliApi {
     }
     /**
      * Build call for deleteWebhookCliSession
-     * @param sessionId Session ID (required)
+     * @param sessionId  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -214,8 +218,8 @@ public class WebhookCliApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Session closed </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call deleteWebhookCliSessionCall(@javax.annotation.Nonnull String sessionId, final ApiCallback _callback) throws ApiException {
@@ -277,7 +281,7 @@ public class WebhookCliApi {
     /**
      * Close CLI session
      * Close a webhook CLI forwarding session.
-     * @param sessionId Session ID (required)
+     * @param sessionId  (required)
      * @return DeleteWebhookCliSession200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -285,8 +289,8 @@ public class WebhookCliApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Session closed </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public DeleteWebhookCliSession200Response deleteWebhookCliSession(@javax.annotation.Nonnull String sessionId) throws ApiException {
@@ -297,7 +301,7 @@ public class WebhookCliApi {
     /**
      * Close CLI session
      * Close a webhook CLI forwarding session.
-     * @param sessionId Session ID (required)
+     * @param sessionId  (required)
      * @return ApiResponse&lt;DeleteWebhookCliSession200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -305,8 +309,8 @@ public class WebhookCliApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Session closed </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<DeleteWebhookCliSession200Response> deleteWebhookCliSessionWithHttpInfo(@javax.annotation.Nonnull String sessionId) throws ApiException {
@@ -318,7 +322,7 @@ public class WebhookCliApi {
     /**
      * Close CLI session (asynchronously)
      * Close a webhook CLI forwarding session.
-     * @param sessionId Session ID (required)
+     * @param sessionId  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -327,8 +331,8 @@ public class WebhookCliApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Session closed </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call deleteWebhookCliSessionAsync(@javax.annotation.Nonnull String sessionId, final ApiCallback<DeleteWebhookCliSession200Response> _callback) throws ApiException {
@@ -469,7 +473,7 @@ public class WebhookCliApi {
     }
     /**
      * Build call for replayWebhookDelivery
-     * @param deliveryId Delivery ID (required)
+     * @param deliveryId  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -478,8 +482,8 @@ public class WebhookCliApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Delivery replayed </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call replayWebhookDeliveryCall(@javax.annotation.Nonnull Integer deliveryId, final ApiCallback _callback) throws ApiException {
@@ -541,7 +545,7 @@ public class WebhookCliApi {
     /**
      * Replay webhook delivery
      * Replay a historical webhook delivery to active CLI sessions.
-     * @param deliveryId Delivery ID (required)
+     * @param deliveryId  (required)
      * @return ReplayWebhookDelivery200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -549,8 +553,8 @@ public class WebhookCliApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Delivery replayed </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public ReplayWebhookDelivery200Response replayWebhookDelivery(@javax.annotation.Nonnull Integer deliveryId) throws ApiException {
@@ -561,7 +565,7 @@ public class WebhookCliApi {
     /**
      * Replay webhook delivery
      * Replay a historical webhook delivery to active CLI sessions.
-     * @param deliveryId Delivery ID (required)
+     * @param deliveryId  (required)
      * @return ApiResponse&lt;ReplayWebhookDelivery200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -569,8 +573,8 @@ public class WebhookCliApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Delivery replayed </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<ReplayWebhookDelivery200Response> replayWebhookDeliveryWithHttpInfo(@javax.annotation.Nonnull Integer deliveryId) throws ApiException {
@@ -582,7 +586,7 @@ public class WebhookCliApi {
     /**
      * Replay webhook delivery (asynchronously)
      * Replay a historical webhook delivery to active CLI sessions.
-     * @param deliveryId Delivery ID (required)
+     * @param deliveryId  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -591,8 +595,8 @@ public class WebhookCliApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Delivery replayed </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call replayWebhookDeliveryAsync(@javax.annotation.Nonnull Integer deliveryId, final ApiCallback<ReplayWebhookDelivery200Response> _callback) throws ApiException {

@@ -91,9 +91,9 @@ public class SendingDomainsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Domain created </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call createSendingDomainCall(@javax.annotation.Nonnull CreateSendingDomainRequest createSendingDomainRequest, final ApiCallback _callback) throws ApiException {
@@ -163,9 +163,9 @@ public class SendingDomainsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Domain created </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
      </table>
      */
     public CreateSendingDomain201Response createSendingDomain(@javax.annotation.Nonnull CreateSendingDomainRequest createSendingDomainRequest) throws ApiException {
@@ -184,9 +184,9 @@ public class SendingDomainsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Domain created </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<CreateSendingDomain201Response> createSendingDomainWithHttpInfo(@javax.annotation.Nonnull CreateSendingDomainRequest createSendingDomainRequest) throws ApiException {
@@ -207,9 +207,9 @@ public class SendingDomainsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Domain created </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call createSendingDomainAsync(@javax.annotation.Nonnull CreateSendingDomainRequest createSendingDomainRequest, final ApiCallback<CreateSendingDomain201Response> _callback) throws ApiException {
@@ -230,8 +230,8 @@ public class SendingDomainsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Domain deleted </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call deleteSendingDomainCall(@javax.annotation.Nonnull String domainId, final ApiCallback _callback) throws ApiException {
@@ -301,8 +301,8 @@ public class SendingDomainsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Domain deleted </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public DeletePolicyRule200Response deleteSendingDomain(@javax.annotation.Nonnull String domainId) throws ApiException {
@@ -321,8 +321,8 @@ public class SendingDomainsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Domain deleted </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<DeletePolicyRule200Response> deleteSendingDomainWithHttpInfo(@javax.annotation.Nonnull String domainId) throws ApiException {
@@ -343,8 +343,8 @@ public class SendingDomainsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Domain deleted </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call deleteSendingDomainAsync(@javax.annotation.Nonnull String domainId, final ApiCallback<DeletePolicyRule200Response> _callback) throws ApiException {
@@ -365,9 +365,9 @@ public class SendingDomainsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Reply forwarding configuration </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getReplyForwardingCall(@javax.annotation.Nonnull String domainId, final ApiCallback _callback) throws ApiException {
@@ -437,9 +437,9 @@ public class SendingDomainsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Reply forwarding configuration </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public GetReplyForwarding200Response getReplyForwarding(@javax.annotation.Nonnull String domainId) throws ApiException {
@@ -458,9 +458,9 @@ public class SendingDomainsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Reply forwarding configuration </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<GetReplyForwarding200Response> getReplyForwardingWithHttpInfo(@javax.annotation.Nonnull String domainId) throws ApiException {
@@ -481,9 +481,9 @@ public class SendingDomainsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Reply forwarding configuration </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getReplyForwardingAsync(@javax.annotation.Nonnull String domainId, final ApiCallback<GetReplyForwarding200Response> _callback) throws ApiException {
@@ -504,8 +504,8 @@ public class SendingDomainsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Domain details </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getSendingDomainCall(@javax.annotation.Nonnull String domainId, final ApiCallback _callback) throws ApiException {
@@ -575,8 +575,8 @@ public class SendingDomainsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Domain details </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public CreateSendingDomain201Response getSendingDomain(@javax.annotation.Nonnull String domainId) throws ApiException {
@@ -595,8 +595,8 @@ public class SendingDomainsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Domain details </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<CreateSendingDomain201Response> getSendingDomainWithHttpInfo(@javax.annotation.Nonnull String domainId) throws ApiException {
@@ -617,8 +617,8 @@ public class SendingDomainsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Domain details </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getSendingDomainAsync(@javax.annotation.Nonnull String domainId, final ApiCallback<CreateSendingDomain201Response> _callback) throws ApiException {
@@ -639,8 +639,8 @@ public class SendingDomainsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Identity score </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getSendingDomainIdentityScoreCall(@javax.annotation.Nonnull String domainId, final ApiCallback _callback) throws ApiException {
@@ -710,8 +710,8 @@ public class SendingDomainsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Identity score </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public GetSendingDomainIdentityScore200Response getSendingDomainIdentityScore(@javax.annotation.Nonnull String domainId) throws ApiException {
@@ -730,8 +730,8 @@ public class SendingDomainsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Identity score </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<GetSendingDomainIdentityScore200Response> getSendingDomainIdentityScoreWithHttpInfo(@javax.annotation.Nonnull String domainId) throws ApiException {
@@ -752,8 +752,8 @@ public class SendingDomainsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Identity score </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getSendingDomainIdentityScoreAsync(@javax.annotation.Nonnull String domainId, final ApiCallback<GetSendingDomainIdentityScore200Response> _callback) throws ApiException {
@@ -775,8 +775,8 @@ public class SendingDomainsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Sending statistics </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getSendingStatsCall(@javax.annotation.Nullable String period, @javax.annotation.Nullable String domainId, final ApiCallback _callback) throws ApiException {
@@ -849,8 +849,8 @@ public class SendingDomainsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Sending statistics </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public GetSendingStats200Response getSendingStats(@javax.annotation.Nullable String period, @javax.annotation.Nullable String domainId) throws ApiException {
@@ -870,8 +870,8 @@ public class SendingDomainsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Sending statistics </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<GetSendingStats200Response> getSendingStatsWithHttpInfo(@javax.annotation.Nullable String period, @javax.annotation.Nullable String domainId) throws ApiException {
@@ -893,8 +893,8 @@ public class SendingDomainsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Sending statistics </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getSendingStatsAsync(@javax.annotation.Nullable String period, @javax.annotation.Nullable String domainId, final ApiCallback<GetSendingStats200Response> _callback) throws ApiException {
@@ -914,8 +914,8 @@ public class SendingDomainsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> List of sending domains </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call listSendingDomainsCall(final ApiCallback _callback) throws ApiException {
@@ -978,8 +978,8 @@ public class SendingDomainsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> List of sending domains </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public ListSendingDomains200Response listSendingDomains() throws ApiException {
@@ -997,8 +997,8 @@ public class SendingDomainsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> List of sending domains </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<ListSendingDomains200Response> listSendingDomainsWithHttpInfo() throws ApiException {
@@ -1018,8 +1018,8 @@ public class SendingDomainsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> List of sending domains </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call listSendingDomainsAsync(final ApiCallback<ListSendingDomains200Response> _callback) throws ApiException {
@@ -1041,10 +1041,10 @@ public class SendingDomainsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Reply forwarding updated </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call updateReplyForwardingCall(@javax.annotation.Nonnull String domainId, @javax.annotation.Nonnull UpdateReplyForwardingRequest updateReplyForwardingRequest, final ApiCallback _callback) throws ApiException {
@@ -1121,10 +1121,10 @@ public class SendingDomainsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Reply forwarding updated </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public GetReplyForwarding200Response updateReplyForwarding(@javax.annotation.Nonnull String domainId, @javax.annotation.Nonnull UpdateReplyForwardingRequest updateReplyForwardingRequest) throws ApiException {
@@ -1144,10 +1144,10 @@ public class SendingDomainsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Reply forwarding updated </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<GetReplyForwarding200Response> updateReplyForwardingWithHttpInfo(@javax.annotation.Nonnull String domainId, @javax.annotation.Nonnull UpdateReplyForwardingRequest updateReplyForwardingRequest) throws ApiException {
@@ -1169,10 +1169,10 @@ public class SendingDomainsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Reply forwarding updated </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call updateReplyForwardingAsync(@javax.annotation.Nonnull String domainId, @javax.annotation.Nonnull UpdateReplyForwardingRequest updateReplyForwardingRequest, final ApiCallback<GetReplyForwarding200Response> _callback) throws ApiException {
@@ -1193,8 +1193,8 @@ public class SendingDomainsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Verification result </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call verifySendingDomainCall(@javax.annotation.Nonnull String domainId, final ApiCallback _callback) throws ApiException {
@@ -1264,8 +1264,8 @@ public class SendingDomainsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Verification result </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public CreateSendingDomain201Response verifySendingDomain(@javax.annotation.Nonnull String domainId) throws ApiException {
@@ -1284,8 +1284,8 @@ public class SendingDomainsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Verification result </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<CreateSendingDomain201Response> verifySendingDomainWithHttpInfo(@javax.annotation.Nonnull String domainId) throws ApiException {
@@ -1306,8 +1306,8 @@ public class SendingDomainsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Verification result </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call verifySendingDomainAsync(@javax.annotation.Nonnull String domainId, final ApiCallback<CreateSendingDomain201Response> _callback) throws ApiException {

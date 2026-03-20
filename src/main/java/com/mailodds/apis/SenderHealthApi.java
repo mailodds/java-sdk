@@ -85,8 +85,8 @@ public class SenderHealthApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Sender health score </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getSenderHealthCall(@javax.annotation.Nullable String period, final ApiCallback _callback) throws ApiException {
@@ -154,8 +154,8 @@ public class SenderHealthApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Sender health score </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public GetSenderHealth200Response getSenderHealth(@javax.annotation.Nullable String period) throws ApiException {
@@ -174,8 +174,8 @@ public class SenderHealthApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Sender health score </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<GetSenderHealth200Response> getSenderHealthWithHttpInfo(@javax.annotation.Nullable String period) throws ApiException {
@@ -196,8 +196,8 @@ public class SenderHealthApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Sender health score </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getSenderHealthAsync(@javax.annotation.Nullable String period, final ApiCallback<GetSenderHealth200Response> _callback) throws ApiException {
@@ -218,8 +218,8 @@ public class SenderHealthApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Sender health trend </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getSenderHealthTrendCall(@javax.annotation.Nullable String period, final ApiCallback _callback) throws ApiException {
@@ -287,8 +287,8 @@ public class SenderHealthApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Sender health trend </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public GetSenderHealthTrend200Response getSenderHealthTrend(@javax.annotation.Nullable String period) throws ApiException {
@@ -307,8 +307,8 @@ public class SenderHealthApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Sender health trend </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<GetSenderHealthTrend200Response> getSenderHealthTrendWithHttpInfo(@javax.annotation.Nullable String period) throws ApiException {
@@ -329,8 +329,8 @@ public class SenderHealthApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Sender health trend </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getSenderHealthTrendAsync(@javax.annotation.Nullable String period, final ApiCallback<GetSenderHealthTrend200Response> _callback) throws ApiException {

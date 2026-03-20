@@ -215,7 +215,7 @@ public class BlacklistMonitoringApi {
     }
     /**
      * Build call for deleteBlacklistMonitor
-     * @param monitorId Monitor UUID (required)
+     * @param monitorId  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -224,8 +224,8 @@ public class BlacklistMonitoringApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Monitor deleted </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call deleteBlacklistMonitorCall(@javax.annotation.Nonnull String monitorId, final ApiCallback _callback) throws ApiException {
@@ -287,7 +287,7 @@ public class BlacklistMonitoringApi {
     /**
      * Delete a blacklist monitor
      * Permanently remove a blacklist monitor and its check history.
-     * @param monitorId Monitor UUID (required)
+     * @param monitorId  (required)
      * @return DeletePolicyRule200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -295,8 +295,8 @@ public class BlacklistMonitoringApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Monitor deleted </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public DeletePolicyRule200Response deleteBlacklistMonitor(@javax.annotation.Nonnull String monitorId) throws ApiException {
@@ -307,7 +307,7 @@ public class BlacklistMonitoringApi {
     /**
      * Delete a blacklist monitor
      * Permanently remove a blacklist monitor and its check history.
-     * @param monitorId Monitor UUID (required)
+     * @param monitorId  (required)
      * @return ApiResponse&lt;DeletePolicyRule200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -315,8 +315,8 @@ public class BlacklistMonitoringApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Monitor deleted </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<DeletePolicyRule200Response> deleteBlacklistMonitorWithHttpInfo(@javax.annotation.Nonnull String monitorId) throws ApiException {
@@ -328,7 +328,7 @@ public class BlacklistMonitoringApi {
     /**
      * Delete a blacklist monitor (asynchronously)
      * Permanently remove a blacklist monitor and its check history.
-     * @param monitorId Monitor UUID (required)
+     * @param monitorId  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -337,8 +337,8 @@ public class BlacklistMonitoringApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Monitor deleted </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call deleteBlacklistMonitorAsync(@javax.annotation.Nonnull String monitorId, final ApiCallback<DeletePolicyRule200Response> _callback) throws ApiException {
@@ -350,7 +350,7 @@ public class BlacklistMonitoringApi {
     }
     /**
      * Build call for getBlacklistHistory
-     * @param monitorId Monitor UUID (required)
+     * @param monitorId  (required)
      * @param page  (optional, default to 1)
      * @param perPage  (optional, default to 20)
      * @param _callback Callback for upload/download progress
@@ -361,8 +361,8 @@ public class BlacklistMonitoringApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Check history </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getBlacklistHistoryCall(@javax.annotation.Nonnull String monitorId, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, final ApiCallback _callback) throws ApiException {
@@ -432,7 +432,7 @@ public class BlacklistMonitoringApi {
     /**
      * Get blacklist check history
      * Get the listing and delisting timeline for a monitored IP or domain.
-     * @param monitorId Monitor UUID (required)
+     * @param monitorId  (required)
      * @param page  (optional, default to 1)
      * @param perPage  (optional, default to 20)
      * @return GetBlacklistHistory200Response
@@ -442,8 +442,8 @@ public class BlacklistMonitoringApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Check history </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public GetBlacklistHistory200Response getBlacklistHistory(@javax.annotation.Nonnull String monitorId, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage) throws ApiException {
@@ -454,7 +454,7 @@ public class BlacklistMonitoringApi {
     /**
      * Get blacklist check history
      * Get the listing and delisting timeline for a monitored IP or domain.
-     * @param monitorId Monitor UUID (required)
+     * @param monitorId  (required)
      * @param page  (optional, default to 1)
      * @param perPage  (optional, default to 20)
      * @return ApiResponse&lt;GetBlacklistHistory200Response&gt;
@@ -464,8 +464,8 @@ public class BlacklistMonitoringApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Check history </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<GetBlacklistHistory200Response> getBlacklistHistoryWithHttpInfo(@javax.annotation.Nonnull String monitorId, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage) throws ApiException {
@@ -477,7 +477,7 @@ public class BlacklistMonitoringApi {
     /**
      * Get blacklist check history (asynchronously)
      * Get the listing and delisting timeline for a monitored IP or domain.
-     * @param monitorId Monitor UUID (required)
+     * @param monitorId  (required)
      * @param page  (optional, default to 1)
      * @param perPage  (optional, default to 20)
      * @param _callback The callback to be executed when the API call finishes
@@ -488,8 +488,8 @@ public class BlacklistMonitoringApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Check history </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getBlacklistHistoryAsync(@javax.annotation.Nonnull String monitorId, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, final ApiCallback<GetBlacklistHistory200Response> _callback) throws ApiException {
@@ -622,7 +622,7 @@ public class BlacklistMonitoringApi {
     }
     /**
      * Build call for runBlacklistCheck
-     * @param monitorId Monitor UUID (required)
+     * @param monitorId  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -631,8 +631,8 @@ public class BlacklistMonitoringApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Check result </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call runBlacklistCheckCall(@javax.annotation.Nonnull String monitorId, final ApiCallback _callback) throws ApiException {
@@ -694,7 +694,7 @@ public class BlacklistMonitoringApi {
     /**
      * Run blacklist check
      * Run an on-demand DNSBL check for a monitored IP or domain.
-     * @param monitorId Monitor UUID (required)
+     * @param monitorId  (required)
      * @return RunBlacklistCheck200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -702,8 +702,8 @@ public class BlacklistMonitoringApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Check result </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public RunBlacklistCheck200Response runBlacklistCheck(@javax.annotation.Nonnull String monitorId) throws ApiException {
@@ -714,7 +714,7 @@ public class BlacklistMonitoringApi {
     /**
      * Run blacklist check
      * Run an on-demand DNSBL check for a monitored IP or domain.
-     * @param monitorId Monitor UUID (required)
+     * @param monitorId  (required)
      * @return ApiResponse&lt;RunBlacklistCheck200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -722,8 +722,8 @@ public class BlacklistMonitoringApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Check result </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<RunBlacklistCheck200Response> runBlacklistCheckWithHttpInfo(@javax.annotation.Nonnull String monitorId) throws ApiException {
@@ -735,7 +735,7 @@ public class BlacklistMonitoringApi {
     /**
      * Run blacklist check (asynchronously)
      * Run an on-demand DNSBL check for a monitored IP or domain.
-     * @param monitorId Monitor UUID (required)
+     * @param monitorId  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -744,8 +744,8 @@ public class BlacklistMonitoringApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Check result </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call runBlacklistCheckAsync(@javax.annotation.Nonnull String monitorId, final ApiCallback<RunBlacklistCheck200Response> _callback) throws ApiException {

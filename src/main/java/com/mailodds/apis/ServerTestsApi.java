@@ -77,7 +77,7 @@ public class ServerTestsApi {
 
     /**
      * Build call for getServerTest
-     * @param testId Server test UUID (required)
+     * @param testId  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -86,8 +86,8 @@ public class ServerTestsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Server test details </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getServerTestCall(@javax.annotation.Nonnull String testId, final ApiCallback _callback) throws ApiException {
@@ -149,7 +149,7 @@ public class ServerTestsApi {
     /**
      * Get server test
      * Get the detailed results of a specific server test.
-     * @param testId Server test UUID (required)
+     * @param testId  (required)
      * @return RunServerTest201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -157,8 +157,8 @@ public class ServerTestsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Server test details </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public RunServerTest201Response getServerTest(@javax.annotation.Nonnull String testId) throws ApiException {
@@ -169,7 +169,7 @@ public class ServerTestsApi {
     /**
      * Get server test
      * Get the detailed results of a specific server test.
-     * @param testId Server test UUID (required)
+     * @param testId  (required)
      * @return ApiResponse&lt;RunServerTest201Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -177,8 +177,8 @@ public class ServerTestsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Server test details </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<RunServerTest201Response> getServerTestWithHttpInfo(@javax.annotation.Nonnull String testId) throws ApiException {
@@ -190,7 +190,7 @@ public class ServerTestsApi {
     /**
      * Get server test (asynchronously)
      * Get the detailed results of a specific server test.
-     * @param testId Server test UUID (required)
+     * @param testId  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -199,8 +199,8 @@ public class ServerTestsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Server test details </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getServerTestAsync(@javax.annotation.Nonnull String testId, final ApiCallback<RunServerTest201Response> _callback) throws ApiException {

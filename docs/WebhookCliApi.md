@@ -76,6 +76,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **201** | Session created |  -  |
+| **400** | Bad request |  -  |
 | **401** | Unauthorized - Invalid or missing API key |  -  |
 
 <a id="deleteWebhookCliSession"></a>
@@ -106,7 +107,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     WebhookCliApi apiInstance = new WebhookCliApi(defaultClient);
-    String sessionId = "sessionId_example"; // String | Session ID
+    String sessionId = "sessionId_example"; // String | 
     try {
       DeleteWebhookCliSession200Response result = apiInstance.deleteWebhookCliSession(sessionId);
       System.out.println(result);
@@ -125,7 +126,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **sessionId** | **String**| Session ID | |
+| **sessionId** | **String**|  | |
 
 ### Return type
 
@@ -144,8 +145,8 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Session closed |  -  |
-| **401** | Unauthorized - Invalid or missing API key |  -  |
 | **404** | Resource not found |  -  |
+| **401** | Unauthorized - Invalid or missing API key |  -  |
 
 <a id="listWebhookDeliveries"></a>
 # **listWebhookDeliveries**
@@ -243,7 +244,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     WebhookCliApi apiInstance = new WebhookCliApi(defaultClient);
-    Integer deliveryId = 56; // Integer | Delivery ID
+    Integer deliveryId = 56; // Integer | 
     try {
       ReplayWebhookDelivery200Response result = apiInstance.replayWebhookDelivery(deliveryId);
       System.out.println(result);
@@ -262,7 +263,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **deliveryId** | **Integer**| Delivery ID | |
+| **deliveryId** | **Integer**|  | |
 
 ### Return type
 
@@ -281,6 +282,6 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Delivery replayed |  -  |
-| **401** | Unauthorized - Invalid or missing API key |  -  |
 | **404** | Resource not found |  -  |
+| **401** | Unauthorized - Invalid or missing API key |  -  |
 

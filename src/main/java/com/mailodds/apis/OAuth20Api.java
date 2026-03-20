@@ -28,6 +28,7 @@ import java.io.IOException;
 
 
 import com.mailodds.models.CreateToken200Response;
+import com.mailodds.models.ErrorResponse;
 import com.mailodds.models.IntrospectToken200Response;
 import com.mailodds.models.JwksResponse;
 import com.mailodds.models.OAuthServerMetadata;
@@ -101,7 +102,7 @@ public class OAuth20Api {
     public okhttp3.Call createTokenCall(@javax.annotation.Nonnull String grantType, @javax.annotation.Nullable String code, @javax.annotation.Nullable String redirectUri, @javax.annotation.Nullable String clientId, @javax.annotation.Nullable String clientSecret, @javax.annotation.Nullable String refreshToken, @javax.annotation.Nullable String scope, @javax.annotation.Nullable String codeVerifier, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
-        String[] localBasePaths = new String[] { "https://api.mailodds.com" };
+        String[] localBasePaths = new String[] {  };
 
         // Determine Base Path to Use
         if (localCustomBaseUrl != null){
@@ -289,7 +290,7 @@ public class OAuth20Api {
     public okhttp3.Call getJwksCall(final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
-        String[] localBasePaths = new String[] { "https://api.mailodds.com" };
+        String[] localBasePaths = new String[] {  };
 
         // Determine Base Path to Use
         if (localCustomBaseUrl != null){
@@ -406,12 +407,13 @@ public class OAuth20Api {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Introspection result </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid client credentials </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call introspectTokenCall(@javax.annotation.Nonnull String token, @javax.annotation.Nullable String tokenTypeHint, @javax.annotation.Nullable String clientId, @javax.annotation.Nullable String clientSecret, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
-        String[] localBasePaths = new String[] { "https://api.mailodds.com" };
+        String[] localBasePaths = new String[] {  };
 
         // Determine Base Path to Use
         if (localCustomBaseUrl != null){
@@ -495,6 +497,7 @@ public class OAuth20Api {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Introspection result </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid client credentials </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
      </table>
      */
     public IntrospectToken200Response introspectToken(@javax.annotation.Nonnull String token, @javax.annotation.Nullable String tokenTypeHint, @javax.annotation.Nullable String clientId, @javax.annotation.Nullable String clientSecret) throws ApiException {
@@ -517,6 +520,7 @@ public class OAuth20Api {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Introspection result </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid client credentials </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<IntrospectToken200Response> introspectTokenWithHttpInfo(@javax.annotation.Nonnull String token, @javax.annotation.Nullable String tokenTypeHint, @javax.annotation.Nullable String clientId, @javax.annotation.Nullable String clientSecret) throws ApiException {
@@ -541,6 +545,7 @@ public class OAuth20Api {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Introspection result </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid client credentials </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call introspectTokenAsync(@javax.annotation.Nonnull String token, @javax.annotation.Nullable String tokenTypeHint, @javax.annotation.Nullable String clientId, @javax.annotation.Nullable String clientSecret, final ApiCallback<IntrospectToken200Response> _callback) throws ApiException {
@@ -565,7 +570,7 @@ public class OAuth20Api {
     public okhttp3.Call oauthServerMetadataCall(final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
-        String[] localBasePaths = new String[] { "https://api.mailodds.com" };
+        String[] localBasePaths = new String[] {  };
 
         // Determine Base Path to Use
         if (localCustomBaseUrl != null){
@@ -682,12 +687,13 @@ public class OAuth20Api {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Token revoked (or not found, per RFC 7009) </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid client credentials </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call revokeTokenCall(@javax.annotation.Nonnull String token, @javax.annotation.Nullable String tokenTypeHint, @javax.annotation.Nullable String clientId, @javax.annotation.Nullable String clientSecret, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
-        String[] localBasePaths = new String[] { "https://api.mailodds.com" };
+        String[] localBasePaths = new String[] {  };
 
         // Determine Base Path to Use
         if (localCustomBaseUrl != null){
@@ -726,6 +732,7 @@ public class OAuth20Api {
         }
 
         final String[] localVarAccepts = {
+            "application/json"
         };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
@@ -769,6 +776,7 @@ public class OAuth20Api {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Token revoked (or not found, per RFC 7009) </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid client credentials </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
      </table>
      */
     public void revokeToken(@javax.annotation.Nonnull String token, @javax.annotation.Nullable String tokenTypeHint, @javax.annotation.Nullable String clientId, @javax.annotation.Nullable String clientSecret) throws ApiException {
@@ -790,6 +798,7 @@ public class OAuth20Api {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Token revoked (or not found, per RFC 7009) </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid client credentials </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<Void> revokeTokenWithHttpInfo(@javax.annotation.Nonnull String token, @javax.annotation.Nullable String tokenTypeHint, @javax.annotation.Nullable String clientId, @javax.annotation.Nullable String clientSecret) throws ApiException {
@@ -813,6 +822,7 @@ public class OAuth20Api {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Token revoked (or not found, per RFC 7009) </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid client credentials </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call revokeTokenAsync(@javax.annotation.Nonnull String token, @javax.annotation.Nullable String tokenTypeHint, @javax.annotation.Nullable String clientId, @javax.annotation.Nullable String clientSecret, final ApiCallback<Void> _callback) throws ApiException {

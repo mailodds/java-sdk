@@ -105,6 +105,7 @@ docs/GetBlacklistHistory200ResponseChecksInner.md
 docs/GetBounceRecords200Response.md
 docs/GetBounceRecords200ResponseRecordsInner.md
 docs/GetBounceStats200Response.md
+docs/GetBounceStats200ResponseStats.md
 docs/GetBounceStatsSummary200Response.md
 docs/GetCampaignABResults200Response.md
 docs/GetCampaignABResults200ResponseVariantsInner.md
@@ -443,6 +444,7 @@ src/main/java/com/mailodds/models/GetBlacklistHistory200ResponseChecksInner.java
 src/main/java/com/mailodds/models/GetBounceRecords200Response.java
 src/main/java/com/mailodds/models/GetBounceRecords200ResponseRecordsInner.java
 src/main/java/com/mailodds/models/GetBounceStats200Response.java
+src/main/java/com/mailodds/models/GetBounceStats200ResponseStats.java
 src/main/java/com/mailodds/models/GetBounceStatsSummary200Response.java
 src/main/java/com/mailodds/models/GetCampaignABResults200Response.java
 src/main/java/com/mailodds/models/GetCampaignABResults200ResponseVariantsInner.java
@@ -737,6 +739,7 @@ src/test/java/com/mailodds/models/GetBlacklistHistory200ResponseChecksInnerTest.
 src/test/java/com/mailodds/models/GetBlacklistHistory200ResponseTest.java
 src/test/java/com/mailodds/models/GetBounceRecords200ResponseRecordsInnerTest.java
 src/test/java/com/mailodds/models/GetBounceRecords200ResponseTest.java
+src/test/java/com/mailodds/models/GetBounceStats200ResponseStatsTest.java
 src/test/java/com/mailodds/models/GetBounceStats200ResponseTest.java
 src/test/java/com/mailodds/models/GetBounceStatsSummary200ResponseTest.java
 src/test/java/com/mailodds/models/GetCampaignABResults200ResponseTest.java

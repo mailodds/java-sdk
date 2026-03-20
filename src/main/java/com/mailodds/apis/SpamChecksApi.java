@@ -78,7 +78,7 @@ public class SpamChecksApi {
 
     /**
      * Build call for deleteSpamCheck
-     * @param checkId Spam check ID (required)
+     * @param checkId  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -87,8 +87,8 @@ public class SpamChecksApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Spam check deleted </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call deleteSpamCheckCall(@javax.annotation.Nonnull String checkId, final ApiCallback _callback) throws ApiException {
@@ -150,7 +150,7 @@ public class SpamChecksApi {
     /**
      * Delete spam check
      * Delete a spam check result.
-     * @param checkId Spam check ID (required)
+     * @param checkId  (required)
      * @return DeletePolicyRule200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -158,8 +158,8 @@ public class SpamChecksApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Spam check deleted </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public DeletePolicyRule200Response deleteSpamCheck(@javax.annotation.Nonnull String checkId) throws ApiException {
@@ -170,7 +170,7 @@ public class SpamChecksApi {
     /**
      * Delete spam check
      * Delete a spam check result.
-     * @param checkId Spam check ID (required)
+     * @param checkId  (required)
      * @return ApiResponse&lt;DeletePolicyRule200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -178,8 +178,8 @@ public class SpamChecksApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Spam check deleted </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<DeletePolicyRule200Response> deleteSpamCheckWithHttpInfo(@javax.annotation.Nonnull String checkId) throws ApiException {
@@ -191,7 +191,7 @@ public class SpamChecksApi {
     /**
      * Delete spam check (asynchronously)
      * Delete a spam check result.
-     * @param checkId Spam check ID (required)
+     * @param checkId  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -200,8 +200,8 @@ public class SpamChecksApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Spam check deleted </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call deleteSpamCheckAsync(@javax.annotation.Nonnull String checkId, final ApiCallback<DeletePolicyRule200Response> _callback) throws ApiException {
@@ -213,7 +213,7 @@ public class SpamChecksApi {
     }
     /**
      * Build call for getSpamCheck
-     * @param checkId Spam check UUID (required)
+     * @param checkId  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -222,8 +222,8 @@ public class SpamChecksApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Spam check details </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getSpamCheckCall(@javax.annotation.Nonnull String checkId, final ApiCallback _callback) throws ApiException {
@@ -285,7 +285,7 @@ public class SpamChecksApi {
     /**
      * Get spam check
      * Get the detailed result of a specific spam check.
-     * @param checkId Spam check UUID (required)
+     * @param checkId  (required)
      * @return RunSpamCheck201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -293,8 +293,8 @@ public class SpamChecksApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Spam check details </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public RunSpamCheck201Response getSpamCheck(@javax.annotation.Nonnull String checkId) throws ApiException {
@@ -305,7 +305,7 @@ public class SpamChecksApi {
     /**
      * Get spam check
      * Get the detailed result of a specific spam check.
-     * @param checkId Spam check UUID (required)
+     * @param checkId  (required)
      * @return ApiResponse&lt;RunSpamCheck201Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -313,8 +313,8 @@ public class SpamChecksApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Spam check details </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<RunSpamCheck201Response> getSpamCheckWithHttpInfo(@javax.annotation.Nonnull String checkId) throws ApiException {
@@ -326,7 +326,7 @@ public class SpamChecksApi {
     /**
      * Get spam check (asynchronously)
      * Get the detailed result of a specific spam check.
-     * @param checkId Spam check UUID (required)
+     * @param checkId  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -335,8 +335,8 @@ public class SpamChecksApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Spam check details </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getSpamCheckAsync(@javax.annotation.Nonnull String checkId, final ApiCallback<RunSpamCheck201Response> _callback) throws ApiException {

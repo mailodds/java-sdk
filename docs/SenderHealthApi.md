@@ -74,8 +74,8 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Sender health score |  -  |
-| **401** | Unauthorized - Invalid or missing API key |  -  |
 | **403** | Forbidden - Insufficient permissions or no credits |  -  |
+| **401** | Unauthorized - Invalid or missing API key |  -  |
 
 <a id="getSenderHealthTrend"></a>
 # **getSenderHealthTrend**
@@ -143,6 +143,6 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Sender health trend |  -  |
-| **401** | Unauthorized - Invalid or missing API key |  -  |
 | **403** | Forbidden - Insufficient permissions or no credits |  -  |
+| **401** | Unauthorized - Invalid or missing API key |  -  |
 

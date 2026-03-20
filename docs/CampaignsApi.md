@@ -80,8 +80,8 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | Campaign cancelled |  -  |
 | **400** | Bad request |  -  |
-| **401** | Unauthorized - Invalid or missing API key |  -  |
 | **404** | Resource not found |  -  |
+| **401** | Unauthorized - Invalid or missing API key |  -  |
 
 <a id="createCampaign"></a>
 # **createCampaign**
@@ -149,9 +149,9 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **201** | Campaign created |  -  |
+| **403** | Forbidden - Insufficient permissions or no credits |  -  |
 | **400** | Bad request |  -  |
 | **401** | Unauthorized - Invalid or missing API key |  -  |
-| **403** | Forbidden - Insufficient permissions or no credits |  -  |
 
 <a id="createCampaignVariant"></a>
 # **createCampaignVariant**
@@ -221,9 +221,9 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **201** | Variant created |  -  |
+| **404** | Resource not found |  -  |
 | **400** | Bad request |  -  |
 | **401** | Unauthorized - Invalid or missing API key |  -  |
-| **404** | Resource not found |  -  |
 
 <a id="getCampaign"></a>
 # **getCampaign**
@@ -291,8 +291,8 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Campaign details with stats |  -  |
-| **401** | Unauthorized - Invalid or missing API key |  -  |
 | **404** | Resource not found |  -  |
+| **401** | Unauthorized - Invalid or missing API key |  -  |
 
 <a id="listCampaigns"></a>
 # **listCampaigns**
@@ -434,9 +434,9 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Campaign scheduled |  -  |
+| **404** | Resource not found |  -  |
 | **400** | Bad request |  -  |
 | **401** | Unauthorized - Invalid or missing API key |  -  |
-| **404** | Resource not found |  -  |
 
 <a id="sendCampaign"></a>
 # **sendCampaign**
@@ -505,6 +505,6 @@ public class Example {
 |-------------|-------------|------------------|
 | **202** | Campaign accepted for sending |  -  |
 | **400** | Bad request |  -  |
-| **401** | Unauthorized - Invalid or missing API key |  -  |
 | **404** | Resource not found |  -  |
+| **401** | Unauthorized - Invalid or missing API key |  -  |
 

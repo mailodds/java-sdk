@@ -90,8 +90,8 @@ public class CampaignsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Campaign cancelled </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call cancelCampaignCall(@javax.annotation.Nonnull String campaignId, final ApiCallback _callback) throws ApiException {
@@ -162,8 +162,8 @@ public class CampaignsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Campaign cancelled </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public CampaignResponse cancelCampaign(@javax.annotation.Nonnull String campaignId) throws ApiException {
@@ -183,8 +183,8 @@ public class CampaignsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Campaign cancelled </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<CampaignResponse> cancelCampaignWithHttpInfo(@javax.annotation.Nonnull String campaignId) throws ApiException {
@@ -206,8 +206,8 @@ public class CampaignsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Campaign cancelled </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call cancelCampaignAsync(@javax.annotation.Nonnull String campaignId, final ApiCallback<CampaignResponse> _callback) throws ApiException {
@@ -228,9 +228,9 @@ public class CampaignsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Campaign created </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call createCampaignCall(@javax.annotation.Nonnull CreateCampaignRequest createCampaignRequest, final ApiCallback _callback) throws ApiException {
@@ -300,9 +300,9 @@ public class CampaignsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Campaign created </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
      </table>
      */
     public CampaignResponse createCampaign(@javax.annotation.Nonnull CreateCampaignRequest createCampaignRequest) throws ApiException {
@@ -321,9 +321,9 @@ public class CampaignsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Campaign created </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<CampaignResponse> createCampaignWithHttpInfo(@javax.annotation.Nonnull CreateCampaignRequest createCampaignRequest) throws ApiException {
@@ -344,9 +344,9 @@ public class CampaignsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Campaign created </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call createCampaignAsync(@javax.annotation.Nonnull CreateCampaignRequest createCampaignRequest, final ApiCallback<CampaignResponse> _callback) throws ApiException {
@@ -368,9 +368,9 @@ public class CampaignsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Variant created </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call createCampaignVariantCall(@javax.annotation.Nonnull String campaignId, @javax.annotation.Nonnull CreateVariantRequest createVariantRequest, final ApiCallback _callback) throws ApiException {
@@ -447,9 +447,9 @@ public class CampaignsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Variant created </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
      </table>
      */
     public CreateCampaignVariant201Response createCampaignVariant(@javax.annotation.Nonnull String campaignId, @javax.annotation.Nonnull CreateVariantRequest createVariantRequest) throws ApiException {
@@ -469,9 +469,9 @@ public class CampaignsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Variant created </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<CreateCampaignVariant201Response> createCampaignVariantWithHttpInfo(@javax.annotation.Nonnull String campaignId, @javax.annotation.Nonnull CreateVariantRequest createVariantRequest) throws ApiException {
@@ -493,9 +493,9 @@ public class CampaignsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Variant created </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call createCampaignVariantAsync(@javax.annotation.Nonnull String campaignId, @javax.annotation.Nonnull CreateVariantRequest createVariantRequest, final ApiCallback<CreateCampaignVariant201Response> _callback) throws ApiException {
@@ -516,8 +516,8 @@ public class CampaignsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Campaign details with stats </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getCampaignCall(@javax.annotation.Nonnull String campaignId, final ApiCallback _callback) throws ApiException {
@@ -587,8 +587,8 @@ public class CampaignsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Campaign details with stats </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public CampaignResponse getCampaign(@javax.annotation.Nonnull String campaignId) throws ApiException {
@@ -607,8 +607,8 @@ public class CampaignsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Campaign details with stats </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<CampaignResponse> getCampaignWithHttpInfo(@javax.annotation.Nonnull String campaignId) throws ApiException {
@@ -629,8 +629,8 @@ public class CampaignsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Campaign details with stats </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getCampaignAsync(@javax.annotation.Nonnull String campaignId, final ApiCallback<CampaignResponse> _callback) throws ApiException {
@@ -797,9 +797,9 @@ public class CampaignsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Campaign scheduled </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call scheduleCampaignCall(@javax.annotation.Nonnull String campaignId, @javax.annotation.Nonnull ScheduleCampaignRequest scheduleCampaignRequest, final ApiCallback _callback) throws ApiException {
@@ -876,9 +876,9 @@ public class CampaignsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Campaign scheduled </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
      </table>
      */
     public CampaignResponse scheduleCampaign(@javax.annotation.Nonnull String campaignId, @javax.annotation.Nonnull ScheduleCampaignRequest scheduleCampaignRequest) throws ApiException {
@@ -898,9 +898,9 @@ public class CampaignsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Campaign scheduled </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<CampaignResponse> scheduleCampaignWithHttpInfo(@javax.annotation.Nonnull String campaignId, @javax.annotation.Nonnull ScheduleCampaignRequest scheduleCampaignRequest) throws ApiException {
@@ -922,9 +922,9 @@ public class CampaignsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Campaign scheduled </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call scheduleCampaignAsync(@javax.annotation.Nonnull String campaignId, @javax.annotation.Nonnull ScheduleCampaignRequest scheduleCampaignRequest, final ApiCallback<CampaignResponse> _callback) throws ApiException {
@@ -946,8 +946,8 @@ public class CampaignsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 202 </td><td> Campaign accepted for sending </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call sendCampaignCall(@javax.annotation.Nonnull String campaignId, final ApiCallback _callback) throws ApiException {
@@ -1018,8 +1018,8 @@ public class CampaignsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 202 </td><td> Campaign accepted for sending </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public CampaignResponse sendCampaign(@javax.annotation.Nonnull String campaignId) throws ApiException {
@@ -1039,8 +1039,8 @@ public class CampaignsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 202 </td><td> Campaign accepted for sending </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<CampaignResponse> sendCampaignWithHttpInfo(@javax.annotation.Nonnull String campaignId) throws ApiException {
@@ -1062,8 +1062,8 @@ public class CampaignsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 202 </td><td> Campaign accepted for sending </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call sendCampaignAsync(@javax.annotation.Nonnull String campaignId, final ApiCallback<CampaignResponse> _callback) throws ApiException {

@@ -20,7 +20,6 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
-import java.math.BigDecimal;
 import java.util.Arrays;
 
 import com.google.gson.Gson;
@@ -47,9 +46,9 @@ import java.util.Set;
 import com.mailodds.JSON;
 
 /**
- * Delivery and engagement statistics. Present when the campaign has started sending.
+ * Delivery and engagement statistics.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-17T17:50:09.712858375+01:00[Europe/Amsterdam]", comments = "Generator version: 7.19.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-20T03:00:43.181944620+01:00[Europe/Amsterdam]", comments = "Generator version: 7.19.0")
 public class CampaignStats {
   public static final String SERIALIZED_NAME_SENT = "sent";
   @SerializedName(SERIALIZED_NAME_SENT)
@@ -81,25 +80,20 @@ public class CampaignStats {
   @javax.annotation.Nullable
   private Integer unsubscribed;
 
-  public static final String SERIALIZED_NAME_COMPLAINED = "complained";
-  @SerializedName(SERIALIZED_NAME_COMPLAINED)
+  public static final String SERIALIZED_NAME_SUPPRESSED = "suppressed";
+  @SerializedName(SERIALIZED_NAME_SUPPRESSED)
   @javax.annotation.Nullable
-  private Integer complained;
+  private Integer suppressed;
 
-  public static final String SERIALIZED_NAME_DELIVERY_RATE = "delivery_rate";
-  @SerializedName(SERIALIZED_NAME_DELIVERY_RATE)
+  public static final String SERIALIZED_NAME_FAILED = "failed";
+  @SerializedName(SERIALIZED_NAME_FAILED)
   @javax.annotation.Nullable
-  private BigDecimal deliveryRate;
+  private Integer failed;
 
-  public static final String SERIALIZED_NAME_OPEN_RATE = "open_rate";
-  @SerializedName(SERIALIZED_NAME_OPEN_RATE)
+  public static final String SERIALIZED_NAME_CONVERSIONS = "conversions";
+  @SerializedName(SERIALIZED_NAME_CONVERSIONS)
   @javax.annotation.Nullable
-  private BigDecimal openRate;
-
-  public static final String SERIALIZED_NAME_CLICK_RATE = "click_rate";
-  @SerializedName(SERIALIZED_NAME_CLICK_RATE)
-  @javax.annotation.Nullable
-  private BigDecimal clickRate;
+  private Integer conversions;
 
   public CampaignStats() {
   }
@@ -218,79 +212,60 @@ public class CampaignStats {
   }
 
 
-  public CampaignStats complained(@javax.annotation.Nullable Integer complained) {
-    this.complained = complained;
+  public CampaignStats suppressed(@javax.annotation.Nullable Integer suppressed) {
+    this.suppressed = suppressed;
     return this;
   }
 
   /**
-   * Get complained
-   * @return complained
+   * Get suppressed
+   * @return suppressed
    */
   @javax.annotation.Nullable
-  public Integer getComplained() {
-    return complained;
+  public Integer getSuppressed() {
+    return suppressed;
   }
 
-  public void setComplained(@javax.annotation.Nullable Integer complained) {
-    this.complained = complained;
+  public void setSuppressed(@javax.annotation.Nullable Integer suppressed) {
+    this.suppressed = suppressed;
   }
 
 
-  public CampaignStats deliveryRate(@javax.annotation.Nullable BigDecimal deliveryRate) {
-    this.deliveryRate = deliveryRate;
+  public CampaignStats failed(@javax.annotation.Nullable Integer failed) {
+    this.failed = failed;
     return this;
   }
 
   /**
-   * Get deliveryRate
-   * @return deliveryRate
+   * Get failed
+   * @return failed
    */
   @javax.annotation.Nullable
-  public BigDecimal getDeliveryRate() {
-    return deliveryRate;
+  public Integer getFailed() {
+    return failed;
   }
 
-  public void setDeliveryRate(@javax.annotation.Nullable BigDecimal deliveryRate) {
-    this.deliveryRate = deliveryRate;
+  public void setFailed(@javax.annotation.Nullable Integer failed) {
+    this.failed = failed;
   }
 
 
-  public CampaignStats openRate(@javax.annotation.Nullable BigDecimal openRate) {
-    this.openRate = openRate;
+  public CampaignStats conversions(@javax.annotation.Nullable Integer conversions) {
+    this.conversions = conversions;
     return this;
   }
 
   /**
-   * Get openRate
-   * @return openRate
+   * Get conversions
+   * @return conversions
    */
   @javax.annotation.Nullable
-  public BigDecimal getOpenRate() {
-    return openRate;
+  public Integer getConversions() {
+    return conversions;
   }
 
-  public void setOpenRate(@javax.annotation.Nullable BigDecimal openRate) {
-    this.openRate = openRate;
-  }
-
-
-  public CampaignStats clickRate(@javax.annotation.Nullable BigDecimal clickRate) {
-    this.clickRate = clickRate;
-    return this;
-  }
-
-  /**
-   * Get clickRate
-   * @return clickRate
-   */
-  @javax.annotation.Nullable
-  public BigDecimal getClickRate() {
-    return clickRate;
-  }
-
-  public void setClickRate(@javax.annotation.Nullable BigDecimal clickRate) {
-    this.clickRate = clickRate;
+  public void setConversions(@javax.annotation.Nullable Integer conversions) {
+    this.conversions = conversions;
   }
 
 
@@ -310,15 +285,14 @@ public class CampaignStats {
         Objects.equals(this.clicked, campaignStats.clicked) &&
         Objects.equals(this.bounced, campaignStats.bounced) &&
         Objects.equals(this.unsubscribed, campaignStats.unsubscribed) &&
-        Objects.equals(this.complained, campaignStats.complained) &&
-        Objects.equals(this.deliveryRate, campaignStats.deliveryRate) &&
-        Objects.equals(this.openRate, campaignStats.openRate) &&
-        Objects.equals(this.clickRate, campaignStats.clickRate);
+        Objects.equals(this.suppressed, campaignStats.suppressed) &&
+        Objects.equals(this.failed, campaignStats.failed) &&
+        Objects.equals(this.conversions, campaignStats.conversions);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(sent, delivered, opened, clicked, bounced, unsubscribed, complained, deliveryRate, openRate, clickRate);
+    return Objects.hash(sent, delivered, opened, clicked, bounced, unsubscribed, suppressed, failed, conversions);
   }
 
   @Override
@@ -331,10 +305,9 @@ public class CampaignStats {
     sb.append("    clicked: ").append(toIndentedString(clicked)).append("\n");
     sb.append("    bounced: ").append(toIndentedString(bounced)).append("\n");
     sb.append("    unsubscribed: ").append(toIndentedString(unsubscribed)).append("\n");
-    sb.append("    complained: ").append(toIndentedString(complained)).append("\n");
-    sb.append("    deliveryRate: ").append(toIndentedString(deliveryRate)).append("\n");
-    sb.append("    openRate: ").append(toIndentedString(openRate)).append("\n");
-    sb.append("    clickRate: ").append(toIndentedString(clickRate)).append("\n");
+    sb.append("    suppressed: ").append(toIndentedString(suppressed)).append("\n");
+    sb.append("    failed: ").append(toIndentedString(failed)).append("\n");
+    sb.append("    conversions: ").append(toIndentedString(conversions)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -356,7 +329,7 @@ public class CampaignStats {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("sent", "delivered", "opened", "clicked", "bounced", "unsubscribed", "complained", "delivery_rate", "open_rate", "click_rate"));
+    openapiFields = new HashSet<String>(Arrays.asList("sent", "delivered", "opened", "clicked", "bounced", "unsubscribed", "suppressed", "failed", "conversions"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);

@@ -48,7 +48,7 @@ import com.mailodds.JSON;
 /**
  * GetDisengagedContacts200ResponsePagination
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-17T17:50:09.712858375+01:00[Europe/Amsterdam]", comments = "Generator version: 7.19.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-20T03:00:43.181944620+01:00[Europe/Amsterdam]", comments = "Generator version: 7.19.0")
 public class GetDisengagedContacts200ResponsePagination {
   public static final String SERIALIZED_NAME_PAGE = "page";
   @SerializedName(SERIALIZED_NAME_PAGE)

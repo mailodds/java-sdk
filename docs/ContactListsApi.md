@@ -45,7 +45,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     ContactListsApi apiInstance = new ContactListsApi(defaultClient);
-    String listId = "listId_example"; // String | Contact list ID
+    String listId = "listId_example"; // String | 
     AddContactRequest addContactRequest = new AddContactRequest(); // AddContactRequest | 
     try {
       AddContact201Response result = apiInstance.addContact(listId, addContactRequest);
@@ -65,7 +65,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **listId** | **String**| Contact list ID | |
+| **listId** | **String**|  | |
 | **addContactRequest** | [**AddContactRequest**](AddContactRequest.md)|  | |
 
 ### Return type
@@ -85,9 +85,9 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **201** | Contact added |  -  |
+| **404** | Resource not found |  -  |
 | **400** | Bad request |  -  |
 | **401** | Unauthorized - Invalid or missing API key |  -  |
-| **404** | Resource not found |  -  |
 
 <a id="appendToContactList"></a>
 # **appendToContactList**
@@ -117,7 +117,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     ContactListsApi apiInstance = new ContactListsApi(defaultClient);
-    String listId = "listId_example"; // String | Contact list UUID
+    String listId = "listId_example"; // String | 
     AppendToContactListRequest appendToContactListRequest = new AppendToContactListRequest(); // AppendToContactListRequest | 
     try {
       AppendToContactList200Response result = apiInstance.appendToContactList(listId, appendToContactListRequest);
@@ -137,7 +137,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **listId** | **String**| Contact list UUID | |
+| **listId** | **String**|  | |
 | **appendToContactListRequest** | [**AppendToContactListRequest**](AppendToContactListRequest.md)|  | |
 
 ### Return type
@@ -157,9 +157,9 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Append result |  -  |
+| **404** | Resource not found |  -  |
 | **400** | Bad request |  -  |
 | **401** | Unauthorized - Invalid or missing API key |  -  |
-| **404** | Resource not found |  -  |
 
 <a id="createContactList"></a>
 # **createContactList**
@@ -227,9 +227,9 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **201** | Contact list created |  -  |
+| **403** | Forbidden - Insufficient permissions or no credits |  -  |
 | **400** | Bad request |  -  |
 | **401** | Unauthorized - Invalid or missing API key |  -  |
-| **403** | Forbidden - Insufficient permissions or no credits |  -  |
 
 <a id="deleteContact"></a>
 # **deleteContact**
@@ -259,8 +259,8 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     ContactListsApi apiInstance = new ContactListsApi(defaultClient);
-    String listId = "listId_example"; // String | Contact list ID
-    String contactId = "contactId_example"; // String | Contact ID
+    String listId = "listId_example"; // String | 
+    String contactId = "contactId_example"; // String | 
     try {
       DeletePolicyRule200Response result = apiInstance.deleteContact(listId, contactId);
       System.out.println(result);
@@ -279,8 +279,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **listId** | **String**| Contact list ID | |
-| **contactId** | **String**| Contact ID | |
+| **listId** | **String**|  | |
+| **contactId** | **String**|  | |
 
 ### Return type
 
@@ -299,8 +299,8 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Contact deleted |  -  |
-| **401** | Unauthorized - Invalid or missing API key |  -  |
 | **404** | Resource not found |  -  |
+| **401** | Unauthorized - Invalid or missing API key |  -  |
 
 <a id="deleteContactList"></a>
 # **deleteContactList**
@@ -330,7 +330,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     ContactListsApi apiInstance = new ContactListsApi(defaultClient);
-    String listId = "listId_example"; // String | Contact list UUID
+    String listId = "listId_example"; // String | 
     try {
       DeletePolicyRule200Response result = apiInstance.deleteContactList(listId);
       System.out.println(result);
@@ -349,7 +349,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **listId** | **String**| Contact list UUID | |
+| **listId** | **String**|  | |
 
 ### Return type
 
@@ -368,8 +368,8 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Contact list deleted |  -  |
-| **401** | Unauthorized - Invalid or missing API key |  -  |
 | **404** | Resource not found |  -  |
+| **401** | Unauthorized - Invalid or missing API key |  -  |
 
 <a id="exportContactList"></a>
 # **exportContactList**
@@ -399,7 +399,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     ContactListsApi apiInstance = new ContactListsApi(defaultClient);
-    String listId = "listId_example"; // String | Contact list ID
+    String listId = "listId_example"; // String | 
     try {
       String result = apiInstance.exportContactList(listId);
       System.out.println(result);
@@ -418,7 +418,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **listId** | **String**| Contact list ID | |
+| **listId** | **String**|  | |
 
 ### Return type
 
@@ -437,8 +437,8 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | CSV export |  -  |
-| **401** | Unauthorized - Invalid or missing API key |  -  |
 | **404** | Resource not found |  -  |
+| **401** | Unauthorized - Invalid or missing API key |  -  |
 
 <a id="getInactiveContactsReport"></a>
 # **getInactiveContactsReport**
@@ -506,8 +506,8 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Inactive contacts report |  -  |
-| **401** | Unauthorized - Invalid or missing API key |  -  |
 | **403** | Forbidden - Insufficient permissions or no credits |  -  |
+| **401** | Unauthorized - Invalid or missing API key |  -  |
 
 <a id="importContactList"></a>
 # **importContactList**
@@ -537,7 +537,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     ContactListsApi apiInstance = new ContactListsApi(defaultClient);
-    String listId = "listId_example"; // String | Contact list ID
+    String listId = "listId_example"; // String | 
     File _file = new File("/path/to/file"); // File | CSV file (max 10MB)
     String columnMapping = "columnMapping_example"; // String | JSON mapping of CSV columns to contact fields
     String consentSource = "consentSource_example"; // String | Source of consent for imported contacts
@@ -560,7 +560,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **listId** | **String**| Contact list ID | |
+| **listId** | **String**|  | |
 | **_file** | **File**| CSV file (max 10MB) | |
 | **columnMapping** | **String**| JSON mapping of CSV columns to contact fields | [optional] |
 | **consentSource** | **String**| Source of consent for imported contacts | [optional] |
@@ -583,9 +583,9 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Import results |  -  |
+| **404** | Resource not found |  -  |
 | **400** | Bad request |  -  |
 | **401** | Unauthorized - Invalid or missing API key |  -  |
-| **404** | Resource not found |  -  |
 
 <a id="listContactLists"></a>
 # **listContactLists**
@@ -655,8 +655,8 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | List of contact lists |  -  |
-| **401** | Unauthorized - Invalid or missing API key |  -  |
 | **403** | Forbidden - Insufficient permissions or no credits |  -  |
+| **401** | Unauthorized - Invalid or missing API key |  -  |
 
 <a id="queryContactList"></a>
 # **queryContactList**
@@ -686,7 +686,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     ContactListsApi apiInstance = new ContactListsApi(defaultClient);
-    String listId = "listId_example"; // String | Contact list UUID
+    String listId = "listId_example"; // String | 
     QueryContactListRequest queryContactListRequest = new QueryContactListRequest(); // QueryContactListRequest | 
     try {
       QueryContactList200Response result = apiInstance.queryContactList(listId, queryContactListRequest);
@@ -706,7 +706,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **listId** | **String**| Contact list UUID | |
+| **listId** | **String**|  | |
 | **queryContactListRequest** | [**QueryContactListRequest**](QueryContactListRequest.md)|  | |
 
 ### Return type
@@ -726,9 +726,9 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Query results |  -  |
+| **404** | Resource not found |  -  |
 | **400** | Bad request |  -  |
 | **401** | Unauthorized - Invalid or missing API key |  -  |
-| **404** | Resource not found |  -  |
 
 <a id="updateContact"></a>
 # **updateContact**
@@ -758,8 +758,8 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     ContactListsApi apiInstance = new ContactListsApi(defaultClient);
-    String listId = "listId_example"; // String | Contact list ID
-    String contactId = "contactId_example"; // String | Contact ID
+    String listId = "listId_example"; // String | 
+    String contactId = "contactId_example"; // String | 
     UpdateContactRequest updateContactRequest = new UpdateContactRequest(); // UpdateContactRequest | 
     try {
       AddContact201Response result = apiInstance.updateContact(listId, contactId, updateContactRequest);
@@ -779,8 +779,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **listId** | **String**| Contact list ID | |
-| **contactId** | **String**| Contact ID | |
+| **listId** | **String**|  | |
+| **contactId** | **String**|  | |
 | **updateContactRequest** | [**UpdateContactRequest**](UpdateContactRequest.md)|  | |
 
 ### Return type
@@ -800,7 +800,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Contact updated |  -  |
+| **404** | Resource not found |  -  |
 | **400** | Bad request |  -  |
 | **401** | Unauthorized - Invalid or missing API key |  -  |
-| **404** | Resource not found |  -  |
 

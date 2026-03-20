@@ -88,7 +88,7 @@ public class ContactListsApi {
 
     /**
      * Build call for addContact
-     * @param listId Contact list ID (required)
+     * @param listId  (required)
      * @param addContactRequest  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -98,9 +98,9 @@ public class ContactListsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Contact added </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call addContactCall(@javax.annotation.Nonnull String listId, @javax.annotation.Nonnull AddContactRequest addContactRequest, final ApiCallback _callback) throws ApiException {
@@ -168,7 +168,7 @@ public class ContactListsApi {
     /**
      * Add contact to list
      * Add a single contact to a contact list.
-     * @param listId Contact list ID (required)
+     * @param listId  (required)
      * @param addContactRequest  (required)
      * @return AddContact201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -177,9 +177,9 @@ public class ContactListsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Contact added </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
      </table>
      */
     public AddContact201Response addContact(@javax.annotation.Nonnull String listId, @javax.annotation.Nonnull AddContactRequest addContactRequest) throws ApiException {
@@ -190,7 +190,7 @@ public class ContactListsApi {
     /**
      * Add contact to list
      * Add a single contact to a contact list.
-     * @param listId Contact list ID (required)
+     * @param listId  (required)
      * @param addContactRequest  (required)
      * @return ApiResponse&lt;AddContact201Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -199,9 +199,9 @@ public class ContactListsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Contact added </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<AddContact201Response> addContactWithHttpInfo(@javax.annotation.Nonnull String listId, @javax.annotation.Nonnull AddContactRequest addContactRequest) throws ApiException {
@@ -213,7 +213,7 @@ public class ContactListsApi {
     /**
      * Add contact to list (asynchronously)
      * Add a single contact to a contact list.
-     * @param listId Contact list ID (required)
+     * @param listId  (required)
      * @param addContactRequest  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -223,9 +223,9 @@ public class ContactListsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Contact added </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call addContactAsync(@javax.annotation.Nonnull String listId, @javax.annotation.Nonnull AddContactRequest addContactRequest, final ApiCallback<AddContact201Response> _callback) throws ApiException {
@@ -237,7 +237,7 @@ public class ContactListsApi {
     }
     /**
      * Build call for appendToContactList
-     * @param listId Contact list UUID (required)
+     * @param listId  (required)
      * @param appendToContactListRequest  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -247,9 +247,9 @@ public class ContactListsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Append result </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call appendToContactListCall(@javax.annotation.Nonnull String listId, @javax.annotation.Nonnull AppendToContactListRequest appendToContactListRequest, final ApiCallback _callback) throws ApiException {
@@ -317,7 +317,7 @@ public class ContactListsApi {
     /**
      * Append to contact list
      * Append validated emails from additional jobs to an existing contact list. Duplicates are automatically skipped.
-     * @param listId Contact list UUID (required)
+     * @param listId  (required)
      * @param appendToContactListRequest  (required)
      * @return AppendToContactList200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -326,9 +326,9 @@ public class ContactListsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Append result </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
      </table>
      */
     public AppendToContactList200Response appendToContactList(@javax.annotation.Nonnull String listId, @javax.annotation.Nonnull AppendToContactListRequest appendToContactListRequest) throws ApiException {
@@ -339,7 +339,7 @@ public class ContactListsApi {
     /**
      * Append to contact list
      * Append validated emails from additional jobs to an existing contact list. Duplicates are automatically skipped.
-     * @param listId Contact list UUID (required)
+     * @param listId  (required)
      * @param appendToContactListRequest  (required)
      * @return ApiResponse&lt;AppendToContactList200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -348,9 +348,9 @@ public class ContactListsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Append result </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<AppendToContactList200Response> appendToContactListWithHttpInfo(@javax.annotation.Nonnull String listId, @javax.annotation.Nonnull AppendToContactListRequest appendToContactListRequest) throws ApiException {
@@ -362,7 +362,7 @@ public class ContactListsApi {
     /**
      * Append to contact list (asynchronously)
      * Append validated emails from additional jobs to an existing contact list. Duplicates are automatically skipped.
-     * @param listId Contact list UUID (required)
+     * @param listId  (required)
      * @param appendToContactListRequest  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -372,9 +372,9 @@ public class ContactListsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Append result </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call appendToContactListAsync(@javax.annotation.Nonnull String listId, @javax.annotation.Nonnull AppendToContactListRequest appendToContactListRequest, final ApiCallback<AppendToContactList200Response> _callback) throws ApiException {
@@ -395,9 +395,9 @@ public class ContactListsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Contact list created </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call createContactListCall(@javax.annotation.Nonnull CreateContactListRequest createContactListRequest, final ApiCallback _callback) throws ApiException {
@@ -467,9 +467,9 @@ public class ContactListsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Contact list created </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
      </table>
      */
     public CreateContactList201Response createContactList(@javax.annotation.Nonnull CreateContactListRequest createContactListRequest) throws ApiException {
@@ -488,9 +488,9 @@ public class ContactListsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Contact list created </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<CreateContactList201Response> createContactListWithHttpInfo(@javax.annotation.Nonnull CreateContactListRequest createContactListRequest) throws ApiException {
@@ -511,9 +511,9 @@ public class ContactListsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Contact list created </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call createContactListAsync(@javax.annotation.Nonnull CreateContactListRequest createContactListRequest, final ApiCallback<CreateContactList201Response> _callback) throws ApiException {
@@ -525,8 +525,8 @@ public class ContactListsApi {
     }
     /**
      * Build call for deleteContact
-     * @param listId Contact list ID (required)
-     * @param contactId Contact ID (required)
+     * @param listId  (required)
+     * @param contactId  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -535,8 +535,8 @@ public class ContactListsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Contact deleted </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call deleteContactCall(@javax.annotation.Nonnull String listId, @javax.annotation.Nonnull String contactId, final ApiCallback _callback) throws ApiException {
@@ -604,8 +604,8 @@ public class ContactListsApi {
     /**
      * Delete contact
      * Remove a single contact from a contact list.
-     * @param listId Contact list ID (required)
-     * @param contactId Contact ID (required)
+     * @param listId  (required)
+     * @param contactId  (required)
      * @return DeletePolicyRule200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -613,8 +613,8 @@ public class ContactListsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Contact deleted </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public DeletePolicyRule200Response deleteContact(@javax.annotation.Nonnull String listId, @javax.annotation.Nonnull String contactId) throws ApiException {
@@ -625,8 +625,8 @@ public class ContactListsApi {
     /**
      * Delete contact
      * Remove a single contact from a contact list.
-     * @param listId Contact list ID (required)
-     * @param contactId Contact ID (required)
+     * @param listId  (required)
+     * @param contactId  (required)
      * @return ApiResponse&lt;DeletePolicyRule200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -634,8 +634,8 @@ public class ContactListsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Contact deleted </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<DeletePolicyRule200Response> deleteContactWithHttpInfo(@javax.annotation.Nonnull String listId, @javax.annotation.Nonnull String contactId) throws ApiException {
@@ -647,8 +647,8 @@ public class ContactListsApi {
     /**
      * Delete contact (asynchronously)
      * Remove a single contact from a contact list.
-     * @param listId Contact list ID (required)
-     * @param contactId Contact ID (required)
+     * @param listId  (required)
+     * @param contactId  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -657,8 +657,8 @@ public class ContactListsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Contact deleted </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call deleteContactAsync(@javax.annotation.Nonnull String listId, @javax.annotation.Nonnull String contactId, final ApiCallback<DeletePolicyRule200Response> _callback) throws ApiException {
@@ -670,7 +670,7 @@ public class ContactListsApi {
     }
     /**
      * Build call for deleteContactList
-     * @param listId Contact list UUID (required)
+     * @param listId  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -679,8 +679,8 @@ public class ContactListsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Contact list deleted </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call deleteContactListCall(@javax.annotation.Nonnull String listId, final ApiCallback _callback) throws ApiException {
@@ -742,7 +742,7 @@ public class ContactListsApi {
     /**
      * Delete a contact list
      * Permanently delete a contact list and all its entries.
-     * @param listId Contact list UUID (required)
+     * @param listId  (required)
      * @return DeletePolicyRule200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -750,8 +750,8 @@ public class ContactListsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Contact list deleted </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public DeletePolicyRule200Response deleteContactList(@javax.annotation.Nonnull String listId) throws ApiException {
@@ -762,7 +762,7 @@ public class ContactListsApi {
     /**
      * Delete a contact list
      * Permanently delete a contact list and all its entries.
-     * @param listId Contact list UUID (required)
+     * @param listId  (required)
      * @return ApiResponse&lt;DeletePolicyRule200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -770,8 +770,8 @@ public class ContactListsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Contact list deleted </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<DeletePolicyRule200Response> deleteContactListWithHttpInfo(@javax.annotation.Nonnull String listId) throws ApiException {
@@ -783,7 +783,7 @@ public class ContactListsApi {
     /**
      * Delete a contact list (asynchronously)
      * Permanently delete a contact list and all its entries.
-     * @param listId Contact list UUID (required)
+     * @param listId  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -792,8 +792,8 @@ public class ContactListsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Contact list deleted </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call deleteContactListAsync(@javax.annotation.Nonnull String listId, final ApiCallback<DeletePolicyRule200Response> _callback) throws ApiException {
@@ -805,7 +805,7 @@ public class ContactListsApi {
     }
     /**
      * Build call for exportContactList
-     * @param listId Contact list ID (required)
+     * @param listId  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -814,8 +814,8 @@ public class ContactListsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> CSV export </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call exportContactListCall(@javax.annotation.Nonnull String listId, final ApiCallback _callback) throws ApiException {
@@ -878,7 +878,7 @@ public class ContactListsApi {
     /**
      * Export contact list
      * Export a contact list as CSV.
-     * @param listId Contact list ID (required)
+     * @param listId  (required)
      * @return String
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -886,8 +886,8 @@ public class ContactListsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> CSV export </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public String exportContactList(@javax.annotation.Nonnull String listId) throws ApiException {
@@ -898,7 +898,7 @@ public class ContactListsApi {
     /**
      * Export contact list
      * Export a contact list as CSV.
-     * @param listId Contact list ID (required)
+     * @param listId  (required)
      * @return ApiResponse&lt;String&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -906,8 +906,8 @@ public class ContactListsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> CSV export </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<String> exportContactListWithHttpInfo(@javax.annotation.Nonnull String listId) throws ApiException {
@@ -919,7 +919,7 @@ public class ContactListsApi {
     /**
      * Export contact list (asynchronously)
      * Export a contact list as CSV.
-     * @param listId Contact list ID (required)
+     * @param listId  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -928,8 +928,8 @@ public class ContactListsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> CSV export </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call exportContactListAsync(@javax.annotation.Nonnull String listId, final ApiCallback<String> _callback) throws ApiException {
@@ -950,8 +950,8 @@ public class ContactListsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Inactive contacts report </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getInactiveContactsReportCall(@javax.annotation.Nullable Integer days, final ApiCallback _callback) throws ApiException {
@@ -1019,8 +1019,8 @@ public class ContactListsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Inactive contacts report </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public GetInactiveContactsReport200Response getInactiveContactsReport(@javax.annotation.Nullable Integer days) throws ApiException {
@@ -1039,8 +1039,8 @@ public class ContactListsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Inactive contacts report </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<GetInactiveContactsReport200Response> getInactiveContactsReportWithHttpInfo(@javax.annotation.Nullable Integer days) throws ApiException {
@@ -1061,8 +1061,8 @@ public class ContactListsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Inactive contacts report </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getInactiveContactsReportAsync(@javax.annotation.Nullable Integer days, final ApiCallback<GetInactiveContactsReport200Response> _callback) throws ApiException {
@@ -1074,7 +1074,7 @@ public class ContactListsApi {
     }
     /**
      * Build call for importContactList
-     * @param listId Contact list ID (required)
+     * @param listId  (required)
      * @param _file CSV file (max 10MB) (required)
      * @param columnMapping JSON mapping of CSV columns to contact fields (optional)
      * @param consentSource Source of consent for imported contacts (optional)
@@ -1087,9 +1087,9 @@ public class ContactListsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Import results </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call importContactListCall(@javax.annotation.Nonnull String listId, @javax.annotation.Nonnull File _file, @javax.annotation.Nullable String columnMapping, @javax.annotation.Nullable String consentSource, @javax.annotation.Nullable String tags, final ApiCallback _callback) throws ApiException {
@@ -1173,7 +1173,7 @@ public class ContactListsApi {
     /**
      * Import contacts from CSV
      * Import contacts into a list from a CSV file (max 10MB).
-     * @param listId Contact list ID (required)
+     * @param listId  (required)
      * @param _file CSV file (max 10MB) (required)
      * @param columnMapping JSON mapping of CSV columns to contact fields (optional)
      * @param consentSource Source of consent for imported contacts (optional)
@@ -1185,9 +1185,9 @@ public class ContactListsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Import results </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
      </table>
      */
     public ImportContactList200Response importContactList(@javax.annotation.Nonnull String listId, @javax.annotation.Nonnull File _file, @javax.annotation.Nullable String columnMapping, @javax.annotation.Nullable String consentSource, @javax.annotation.Nullable String tags) throws ApiException {
@@ -1198,7 +1198,7 @@ public class ContactListsApi {
     /**
      * Import contacts from CSV
      * Import contacts into a list from a CSV file (max 10MB).
-     * @param listId Contact list ID (required)
+     * @param listId  (required)
      * @param _file CSV file (max 10MB) (required)
      * @param columnMapping JSON mapping of CSV columns to contact fields (optional)
      * @param consentSource Source of consent for imported contacts (optional)
@@ -1210,9 +1210,9 @@ public class ContactListsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Import results </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<ImportContactList200Response> importContactListWithHttpInfo(@javax.annotation.Nonnull String listId, @javax.annotation.Nonnull File _file, @javax.annotation.Nullable String columnMapping, @javax.annotation.Nullable String consentSource, @javax.annotation.Nullable String tags) throws ApiException {
@@ -1224,7 +1224,7 @@ public class ContactListsApi {
     /**
      * Import contacts from CSV (asynchronously)
      * Import contacts into a list from a CSV file (max 10MB).
-     * @param listId Contact list ID (required)
+     * @param listId  (required)
      * @param _file CSV file (max 10MB) (required)
      * @param columnMapping JSON mapping of CSV columns to contact fields (optional)
      * @param consentSource Source of consent for imported contacts (optional)
@@ -1237,9 +1237,9 @@ public class ContactListsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Import results </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call importContactListAsync(@javax.annotation.Nonnull String listId, @javax.annotation.Nonnull File _file, @javax.annotation.Nullable String columnMapping, @javax.annotation.Nullable String consentSource, @javax.annotation.Nullable String tags, final ApiCallback<ImportContactList200Response> _callback) throws ApiException {
@@ -1261,8 +1261,8 @@ public class ContactListsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> List of contact lists </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call listContactListsCall(@javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, final ApiCallback _callback) throws ApiException {
@@ -1335,8 +1335,8 @@ public class ContactListsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> List of contact lists </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public ListContactLists200Response listContactLists(@javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage) throws ApiException {
@@ -1356,8 +1356,8 @@ public class ContactListsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> List of contact lists </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<ListContactLists200Response> listContactListsWithHttpInfo(@javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage) throws ApiException {
@@ -1379,8 +1379,8 @@ public class ContactListsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> List of contact lists </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call listContactListsAsync(@javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, final ApiCallback<ListContactLists200Response> _callback) throws ApiException {
@@ -1392,7 +1392,7 @@ public class ContactListsApi {
     }
     /**
      * Build call for queryContactList
-     * @param listId Contact list UUID (required)
+     * @param listId  (required)
      * @param queryContactListRequest  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -1402,9 +1402,9 @@ public class ContactListsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Query results </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call queryContactListCall(@javax.annotation.Nonnull String listId, @javax.annotation.Nonnull QueryContactListRequest queryContactListRequest, final ApiCallback _callback) throws ApiException {
@@ -1472,7 +1472,7 @@ public class ContactListsApi {
     /**
      * Query contact list
      * Query contact list entries with structured filters. Supports filtering by validation status, domain, and other attributes.
-     * @param listId Contact list UUID (required)
+     * @param listId  (required)
      * @param queryContactListRequest  (required)
      * @return QueryContactList200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1481,9 +1481,9 @@ public class ContactListsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Query results </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
      </table>
      */
     public QueryContactList200Response queryContactList(@javax.annotation.Nonnull String listId, @javax.annotation.Nonnull QueryContactListRequest queryContactListRequest) throws ApiException {
@@ -1494,7 +1494,7 @@ public class ContactListsApi {
     /**
      * Query contact list
      * Query contact list entries with structured filters. Supports filtering by validation status, domain, and other attributes.
-     * @param listId Contact list UUID (required)
+     * @param listId  (required)
      * @param queryContactListRequest  (required)
      * @return ApiResponse&lt;QueryContactList200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1503,9 +1503,9 @@ public class ContactListsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Query results </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<QueryContactList200Response> queryContactListWithHttpInfo(@javax.annotation.Nonnull String listId, @javax.annotation.Nonnull QueryContactListRequest queryContactListRequest) throws ApiException {
@@ -1517,7 +1517,7 @@ public class ContactListsApi {
     /**
      * Query contact list (asynchronously)
      * Query contact list entries with structured filters. Supports filtering by validation status, domain, and other attributes.
-     * @param listId Contact list UUID (required)
+     * @param listId  (required)
      * @param queryContactListRequest  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -1527,9 +1527,9 @@ public class ContactListsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Query results </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call queryContactListAsync(@javax.annotation.Nonnull String listId, @javax.annotation.Nonnull QueryContactListRequest queryContactListRequest, final ApiCallback<QueryContactList200Response> _callback) throws ApiException {
@@ -1541,8 +1541,8 @@ public class ContactListsApi {
     }
     /**
      * Build call for updateContact
-     * @param listId Contact list ID (required)
-     * @param contactId Contact ID (required)
+     * @param listId  (required)
+     * @param contactId  (required)
      * @param updateContactRequest  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -1552,9 +1552,9 @@ public class ContactListsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Contact updated </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call updateContactCall(@javax.annotation.Nonnull String listId, @javax.annotation.Nonnull String contactId, @javax.annotation.Nonnull UpdateContactRequest updateContactRequest, final ApiCallback _callback) throws ApiException {
@@ -1628,8 +1628,8 @@ public class ContactListsApi {
     /**
      * Update contact
      * Update a single contact in a contact list.
-     * @param listId Contact list ID (required)
-     * @param contactId Contact ID (required)
+     * @param listId  (required)
+     * @param contactId  (required)
      * @param updateContactRequest  (required)
      * @return AddContact201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1638,9 +1638,9 @@ public class ContactListsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Contact updated </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
      </table>
      */
     public AddContact201Response updateContact(@javax.annotation.Nonnull String listId, @javax.annotation.Nonnull String contactId, @javax.annotation.Nonnull UpdateContactRequest updateContactRequest) throws ApiException {
@@ -1651,8 +1651,8 @@ public class ContactListsApi {
     /**
      * Update contact
      * Update a single contact in a contact list.
-     * @param listId Contact list ID (required)
-     * @param contactId Contact ID (required)
+     * @param listId  (required)
+     * @param contactId  (required)
      * @param updateContactRequest  (required)
      * @return ApiResponse&lt;AddContact201Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1661,9 +1661,9 @@ public class ContactListsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Contact updated </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<AddContact201Response> updateContactWithHttpInfo(@javax.annotation.Nonnull String listId, @javax.annotation.Nonnull String contactId, @javax.annotation.Nonnull UpdateContactRequest updateContactRequest) throws ApiException {
@@ -1675,8 +1675,8 @@ public class ContactListsApi {
     /**
      * Update contact (asynchronously)
      * Update a single contact in a contact list.
-     * @param listId Contact list ID (required)
-     * @param contactId Contact ID (required)
+     * @param listId  (required)
+     * @param contactId  (required)
      * @param updateContactRequest  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -1686,9 +1686,9 @@ public class ContactListsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Contact updated </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call updateContactAsync(@javax.annotation.Nonnull String listId, @javax.annotation.Nonnull String contactId, @javax.annotation.Nonnull UpdateContactRequest updateContactRequest, final ApiCallback<AddContact201Response> _callback) throws ApiException {

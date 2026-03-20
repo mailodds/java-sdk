@@ -21,6 +21,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.mailodds.models.CampaignStats;
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.time.OffsetDateTime;
 import java.util.Arrays;
 import org.openapitools.jackson.nullable.JsonNullable;
@@ -51,12 +52,17 @@ import com.mailodds.JSON;
 /**
  * Campaign
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-17T17:50:09.712858375+01:00[Europe/Amsterdam]", comments = "Generator version: 7.19.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-20T03:00:43.181944620+01:00[Europe/Amsterdam]", comments = "Generator version: 7.19.0")
 public class Campaign {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
   @javax.annotation.Nonnull
   private String id;
+
+  public static final String SERIALIZED_NAME_ACCOUNT_ID = "account_id";
+  @SerializedName(SERIALIZED_NAME_ACCOUNT_ID)
+  @javax.annotation.Nullable
+  private Integer accountId;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -126,55 +132,120 @@ public class Campaign {
   @javax.annotation.Nonnull
   private StatusEnum status;
 
-  public static final String SERIALIZED_NAME_LIST_ID = "list_id";
-  @SerializedName(SERIALIZED_NAME_LIST_ID)
-  @javax.annotation.Nonnull
-  private String listId;
-
   public static final String SERIALIZED_NAME_DOMAIN_ID = "domain_id";
   @SerializedName(SERIALIZED_NAME_DOMAIN_ID)
   @javax.annotation.Nonnull
   private String domainId;
 
-  public static final String SERIALIZED_NAME_FROM_EMAIL = "from_email";
-  @SerializedName(SERIALIZED_NAME_FROM_EMAIL)
-  @javax.annotation.Nonnull
-  private String fromEmail;
-
-  public static final String SERIALIZED_NAME_FROM_NAME = "from_name";
-  @SerializedName(SERIALIZED_NAME_FROM_NAME)
+  public static final String SERIALIZED_NAME_SUBJECT = "subject";
+  @SerializedName(SERIALIZED_NAME_SUBJECT)
   @javax.annotation.Nullable
-  private String fromName;
+  private String subject;
+
+  public static final String SERIALIZED_NAME_FROM_ADDRESS = "from_address";
+  @SerializedName(SERIALIZED_NAME_FROM_ADDRESS)
+  @javax.annotation.Nonnull
+  private String fromAddress;
 
   public static final String SERIALIZED_NAME_REPLY_TO = "reply_to";
   @SerializedName(SERIALIZED_NAME_REPLY_TO)
   @javax.annotation.Nullable
   private String replyTo;
 
+  public static final String SERIALIZED_NAME_HTML_BODY = "html_body";
+  @SerializedName(SERIALIZED_NAME_HTML_BODY)
+  @javax.annotation.Nullable
+  private String htmlBody;
+
+  public static final String SERIALIZED_NAME_TEXT_BODY = "text_body";
+  @SerializedName(SERIALIZED_NAME_TEXT_BODY)
+  @javax.annotation.Nullable
+  private String textBody;
+
+  public static final String SERIALIZED_NAME_HTML_BODY_DARK = "html_body_dark";
+  @SerializedName(SERIALIZED_NAME_HTML_BODY_DARK)
+  @javax.annotation.Nullable
+  private String htmlBodyDark;
+
+  public static final String SERIALIZED_NAME_TEXT_BODY_DARK = "text_body_dark";
+  @SerializedName(SERIALIZED_NAME_TEXT_BODY_DARK)
+  @javax.annotation.Nullable
+  private String textBodyDark;
+
+  public static final String SERIALIZED_NAME_CAMPAIGN_TYPE = "campaign_type";
+  @SerializedName(SERIALIZED_NAME_CAMPAIGN_TYPE)
+  @javax.annotation.Nullable
+  private String campaignType;
+
+  public static final String SERIALIZED_NAME_AUTO_DETECT_SCHEMA = "auto_detect_schema";
+  @SerializedName(SERIALIZED_NAME_AUTO_DETECT_SCHEMA)
+  @javax.annotation.Nullable
+  private Boolean autoDetectSchema;
+
+  public static final String SERIALIZED_NAME_PROMO_ANNOTATIONS = "promo_annotations";
+  @SerializedName(SERIALIZED_NAME_PROMO_ANNOTATIONS)
+  @javax.annotation.Nullable
+  private Object promoAnnotations;
+
+  public static final String SERIALIZED_NAME_THROWAWAY_POLICY = "throwaway_policy";
+  @SerializedName(SERIALIZED_NAME_THROWAWAY_POLICY)
+  @javax.annotation.Nullable
+  private String throwawayPolicy;
+
   public static final String SERIALIZED_NAME_SCHEDULED_AT = "scheduled_at";
   @SerializedName(SERIALIZED_NAME_SCHEDULED_AT)
   @javax.annotation.Nullable
   private OffsetDateTime scheduledAt;
 
-  public static final String SERIALIZED_NAME_SENT_AT = "sent_at";
-  @SerializedName(SERIALIZED_NAME_SENT_AT)
+  public static final String SERIALIZED_NAME_STARTED_AT = "started_at";
+  @SerializedName(SERIALIZED_NAME_STARTED_AT)
   @javax.annotation.Nullable
-  private OffsetDateTime sentAt;
+  private OffsetDateTime startedAt;
 
-  public static final String SERIALIZED_NAME_CANCELLED_AT = "cancelled_at";
-  @SerializedName(SERIALIZED_NAME_CANCELLED_AT)
+  public static final String SERIALIZED_NAME_COMPLETED_AT = "completed_at";
+  @SerializedName(SERIALIZED_NAME_COMPLETED_AT)
   @javax.annotation.Nullable
-  private OffsetDateTime cancelledAt;
+  private OffsetDateTime completedAt;
 
-  public static final String SERIALIZED_NAME_VARIANT_COUNT = "variant_count";
-  @SerializedName(SERIALIZED_NAME_VARIANT_COUNT)
+  public static final String SERIALIZED_NAME_RECIPIENT_COUNT = "recipient_count";
+  @SerializedName(SERIALIZED_NAME_RECIPIENT_COUNT)
   @javax.annotation.Nullable
-  private Integer variantCount;
+  private Integer recipientCount;
+
+  public static final String SERIALIZED_NAME_IS_AB_TEST = "is_ab_test";
+  @SerializedName(SERIALIZED_NAME_IS_AB_TEST)
+  @javax.annotation.Nullable
+  private Boolean isAbTest;
+
+  public static final String SERIALIZED_NAME_WINNING_VARIANT_ID = "winning_variant_id";
+  @SerializedName(SERIALIZED_NAME_WINNING_VARIANT_ID)
+  @javax.annotation.Nullable
+  private String winningVariantId;
+
+  public static final String SERIALIZED_NAME_AB_TEST_CONFIG = "ab_test_config";
+  @SerializedName(SERIALIZED_NAME_AB_TEST_CONFIG)
+  @javax.annotation.Nullable
+  private Object abTestConfig;
+
+  public static final String SERIALIZED_NAME_ERROR_MESSAGE = "error_message";
+  @SerializedName(SERIALIZED_NAME_ERROR_MESSAGE)
+  @javax.annotation.Nullable
+  private String errorMessage;
 
   public static final String SERIALIZED_NAME_STATS = "stats";
   @SerializedName(SERIALIZED_NAME_STATS)
   @javax.annotation.Nullable
   private CampaignStats stats;
+
+  public static final String SERIALIZED_NAME_OPEN_RATE = "open_rate";
+  @SerializedName(SERIALIZED_NAME_OPEN_RATE)
+  @javax.annotation.Nullable
+  private BigDecimal openRate;
+
+  public static final String SERIALIZED_NAME_CLICK_RATE = "click_rate";
+  @SerializedName(SERIALIZED_NAME_CLICK_RATE)
+  @javax.annotation.Nullable
+  private BigDecimal clickRate;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
@@ -205,6 +276,25 @@ public class Campaign {
 
   public void setId(@javax.annotation.Nonnull String id) {
     this.id = id;
+  }
+
+
+  public Campaign accountId(@javax.annotation.Nullable Integer accountId) {
+    this.accountId = accountId;
+    return this;
+  }
+
+  /**
+   * Get accountId
+   * @return accountId
+   */
+  @javax.annotation.Nullable
+  public Integer getAccountId() {
+    return accountId;
+  }
+
+  public void setAccountId(@javax.annotation.Nullable Integer accountId) {
+    this.accountId = accountId;
   }
 
 
@@ -246,25 +336,6 @@ public class Campaign {
   }
 
 
-  public Campaign listId(@javax.annotation.Nonnull String listId) {
-    this.listId = listId;
-    return this;
-  }
-
-  /**
-   * Target subscriber list UUID
-   * @return listId
-   */
-  @javax.annotation.Nonnull
-  public String getListId() {
-    return listId;
-  }
-
-  public void setListId(@javax.annotation.Nonnull String listId) {
-    this.listId = listId;
-  }
-
-
   public Campaign domainId(@javax.annotation.Nonnull String domainId) {
     this.domainId = domainId;
     return this;
@@ -284,41 +355,41 @@ public class Campaign {
   }
 
 
-  public Campaign fromEmail(@javax.annotation.Nonnull String fromEmail) {
-    this.fromEmail = fromEmail;
+  public Campaign subject(@javax.annotation.Nullable String subject) {
+    this.subject = subject;
     return this;
   }
 
   /**
-   * Get fromEmail
-   * @return fromEmail
-   */
-  @javax.annotation.Nonnull
-  public String getFromEmail() {
-    return fromEmail;
-  }
-
-  public void setFromEmail(@javax.annotation.Nonnull String fromEmail) {
-    this.fromEmail = fromEmail;
-  }
-
-
-  public Campaign fromName(@javax.annotation.Nullable String fromName) {
-    this.fromName = fromName;
-    return this;
-  }
-
-  /**
-   * Get fromName
-   * @return fromName
+   * Get subject
+   * @return subject
    */
   @javax.annotation.Nullable
-  public String getFromName() {
-    return fromName;
+  public String getSubject() {
+    return subject;
   }
 
-  public void setFromName(@javax.annotation.Nullable String fromName) {
-    this.fromName = fromName;
+  public void setSubject(@javax.annotation.Nullable String subject) {
+    this.subject = subject;
+  }
+
+
+  public Campaign fromAddress(@javax.annotation.Nonnull String fromAddress) {
+    this.fromAddress = fromAddress;
+    return this;
+  }
+
+  /**
+   * Sender email address
+   * @return fromAddress
+   */
+  @javax.annotation.Nonnull
+  public String getFromAddress() {
+    return fromAddress;
+  }
+
+  public void setFromAddress(@javax.annotation.Nonnull String fromAddress) {
+    this.fromAddress = fromAddress;
   }
 
 
@@ -341,6 +412,158 @@ public class Campaign {
   }
 
 
+  public Campaign htmlBody(@javax.annotation.Nullable String htmlBody) {
+    this.htmlBody = htmlBody;
+    return this;
+  }
+
+  /**
+   * Get htmlBody
+   * @return htmlBody
+   */
+  @javax.annotation.Nullable
+  public String getHtmlBody() {
+    return htmlBody;
+  }
+
+  public void setHtmlBody(@javax.annotation.Nullable String htmlBody) {
+    this.htmlBody = htmlBody;
+  }
+
+
+  public Campaign textBody(@javax.annotation.Nullable String textBody) {
+    this.textBody = textBody;
+    return this;
+  }
+
+  /**
+   * Get textBody
+   * @return textBody
+   */
+  @javax.annotation.Nullable
+  public String getTextBody() {
+    return textBody;
+  }
+
+  public void setTextBody(@javax.annotation.Nullable String textBody) {
+    this.textBody = textBody;
+  }
+
+
+  public Campaign htmlBodyDark(@javax.annotation.Nullable String htmlBodyDark) {
+    this.htmlBodyDark = htmlBodyDark;
+    return this;
+  }
+
+  /**
+   * Get htmlBodyDark
+   * @return htmlBodyDark
+   */
+  @javax.annotation.Nullable
+  public String getHtmlBodyDark() {
+    return htmlBodyDark;
+  }
+
+  public void setHtmlBodyDark(@javax.annotation.Nullable String htmlBodyDark) {
+    this.htmlBodyDark = htmlBodyDark;
+  }
+
+
+  public Campaign textBodyDark(@javax.annotation.Nullable String textBodyDark) {
+    this.textBodyDark = textBodyDark;
+    return this;
+  }
+
+  /**
+   * Get textBodyDark
+   * @return textBodyDark
+   */
+  @javax.annotation.Nullable
+  public String getTextBodyDark() {
+    return textBodyDark;
+  }
+
+  public void setTextBodyDark(@javax.annotation.Nullable String textBodyDark) {
+    this.textBodyDark = textBodyDark;
+  }
+
+
+  public Campaign campaignType(@javax.annotation.Nullable String campaignType) {
+    this.campaignType = campaignType;
+    return this;
+  }
+
+  /**
+   * Get campaignType
+   * @return campaignType
+   */
+  @javax.annotation.Nullable
+  public String getCampaignType() {
+    return campaignType;
+  }
+
+  public void setCampaignType(@javax.annotation.Nullable String campaignType) {
+    this.campaignType = campaignType;
+  }
+
+
+  public Campaign autoDetectSchema(@javax.annotation.Nullable Boolean autoDetectSchema) {
+    this.autoDetectSchema = autoDetectSchema;
+    return this;
+  }
+
+  /**
+   * Get autoDetectSchema
+   * @return autoDetectSchema
+   */
+  @javax.annotation.Nullable
+  public Boolean getAutoDetectSchema() {
+    return autoDetectSchema;
+  }
+
+  public void setAutoDetectSchema(@javax.annotation.Nullable Boolean autoDetectSchema) {
+    this.autoDetectSchema = autoDetectSchema;
+  }
+
+
+  public Campaign promoAnnotations(@javax.annotation.Nullable Object promoAnnotations) {
+    this.promoAnnotations = promoAnnotations;
+    return this;
+  }
+
+  /**
+   * Get promoAnnotations
+   * @return promoAnnotations
+   */
+  @javax.annotation.Nullable
+  public Object getPromoAnnotations() {
+    return promoAnnotations;
+  }
+
+  public void setPromoAnnotations(@javax.annotation.Nullable Object promoAnnotations) {
+    this.promoAnnotations = promoAnnotations;
+  }
+
+
+  public Campaign throwawayPolicy(@javax.annotation.Nullable String throwawayPolicy) {
+    this.throwawayPolicy = throwawayPolicy;
+    return this;
+  }
+
+  /**
+   * Get throwawayPolicy
+   * @return throwawayPolicy
+   */
+  @javax.annotation.Nullable
+  public String getThrowawayPolicy() {
+    return throwawayPolicy;
+  }
+
+  public void setThrowawayPolicy(@javax.annotation.Nullable String throwawayPolicy) {
+    this.throwawayPolicy = throwawayPolicy;
+  }
+
+
   public Campaign scheduledAt(@javax.annotation.Nullable OffsetDateTime scheduledAt) {
     this.scheduledAt = scheduledAt;
     return this;
@@ -360,60 +583,136 @@ public class Campaign {
   }
 
 
-  public Campaign sentAt(@javax.annotation.Nullable OffsetDateTime sentAt) {
-    this.sentAt = sentAt;
+  public Campaign startedAt(@javax.annotation.Nullable OffsetDateTime startedAt) {
+    this.startedAt = startedAt;
     return this;
   }
 
   /**
-   * Get sentAt
-   * @return sentAt
+   * Get startedAt
+   * @return startedAt
    */
   @javax.annotation.Nullable
-  public OffsetDateTime getSentAt() {
-    return sentAt;
+  public OffsetDateTime getStartedAt() {
+    return startedAt;
   }
 
-  public void setSentAt(@javax.annotation.Nullable OffsetDateTime sentAt) {
-    this.sentAt = sentAt;
+  public void setStartedAt(@javax.annotation.Nullable OffsetDateTime startedAt) {
+    this.startedAt = startedAt;
   }
 
 
-  public Campaign cancelledAt(@javax.annotation.Nullable OffsetDateTime cancelledAt) {
-    this.cancelledAt = cancelledAt;
+  public Campaign completedAt(@javax.annotation.Nullable OffsetDateTime completedAt) {
+    this.completedAt = completedAt;
     return this;
   }
 
   /**
-   * Get cancelledAt
-   * @return cancelledAt
+   * Get completedAt
+   * @return completedAt
    */
   @javax.annotation.Nullable
-  public OffsetDateTime getCancelledAt() {
-    return cancelledAt;
+  public OffsetDateTime getCompletedAt() {
+    return completedAt;
   }
 
-  public void setCancelledAt(@javax.annotation.Nullable OffsetDateTime cancelledAt) {
-    this.cancelledAt = cancelledAt;
+  public void setCompletedAt(@javax.annotation.Nullable OffsetDateTime completedAt) {
+    this.completedAt = completedAt;
   }
 
 
-  public Campaign variantCount(@javax.annotation.Nullable Integer variantCount) {
-    this.variantCount = variantCount;
+  public Campaign recipientCount(@javax.annotation.Nullable Integer recipientCount) {
+    this.recipientCount = recipientCount;
     return this;
   }
 
   /**
-   * Number of A/B variants
-   * @return variantCount
+   * Get recipientCount
+   * @return recipientCount
    */
   @javax.annotation.Nullable
-  public Integer getVariantCount() {
-    return variantCount;
+  public Integer getRecipientCount() {
+    return recipientCount;
   }
 
-  public void setVariantCount(@javax.annotation.Nullable Integer variantCount) {
-    this.variantCount = variantCount;
+  public void setRecipientCount(@javax.annotation.Nullable Integer recipientCount) {
+    this.recipientCount = recipientCount;
+  }
+
+
+  public Campaign isAbTest(@javax.annotation.Nullable Boolean isAbTest) {
+    this.isAbTest = isAbTest;
+    return this;
+  }
+
+  /**
+   * Get isAbTest
+   * @return isAbTest
+   */
+  @javax.annotation.Nullable
+  public Boolean getIsAbTest() {
+    return isAbTest;
+  }
+
+  public void setIsAbTest(@javax.annotation.Nullable Boolean isAbTest) {
+    this.isAbTest = isAbTest;
+  }
+
+
+  public Campaign winningVariantId(@javax.annotation.Nullable String winningVariantId) {
+    this.winningVariantId = winningVariantId;
+    return this;
+  }
+
+  /**
+   * Get winningVariantId
+   * @return winningVariantId
+   */
+  @javax.annotation.Nullable
+  public String getWinningVariantId() {
+    return winningVariantId;
+  }
+
+  public void setWinningVariantId(@javax.annotation.Nullable String winningVariantId) {
+    this.winningVariantId = winningVariantId;
+  }
+
+
+  public Campaign abTestConfig(@javax.annotation.Nullable Object abTestConfig) {
+    this.abTestConfig = abTestConfig;
+    return this;
+  }
+
+  /**
+   * Get abTestConfig
+   * @return abTestConfig
+   */
+  @javax.annotation.Nullable
+  public Object getAbTestConfig() {
+    return abTestConfig;
+  }
+
+  public void setAbTestConfig(@javax.annotation.Nullable Object abTestConfig) {
+    this.abTestConfig = abTestConfig;
+  }
+
+
+  public Campaign errorMessage(@javax.annotation.Nullable String errorMessage) {
+    this.errorMessage = errorMessage;
+    return this;
+  }
+
+  /**
+   * Get errorMessage
+   * @return errorMessage
+   */
+  @javax.annotation.Nullable
+  public String getErrorMessage() {
+    return errorMessage;
+  }
+
+  public void setErrorMessage(@javax.annotation.Nullable String errorMessage) {
+    this.errorMessage = errorMessage;
   }
 
 
@@ -433,6 +732,44 @@ public class Campaign {
 
   public void setStats(@javax.annotation.Nullable CampaignStats stats) {
     this.stats = stats;
+  }
+
+
+  public Campaign openRate(@javax.annotation.Nullable BigDecimal openRate) {
+    this.openRate = openRate;
+    return this;
+  }
+
+  /**
+   * Get openRate
+   * @return openRate
+   */
+  @javax.annotation.Nullable
+  public BigDecimal getOpenRate() {
+    return openRate;
+  }
+
+  public void setOpenRate(@javax.annotation.Nullable BigDecimal openRate) {
+    this.openRate = openRate;
+  }
+
+
+  public Campaign clickRate(@javax.annotation.Nullable BigDecimal clickRate) {
+    this.clickRate = clickRate;
+    return this;
+  }
+
+  /**
+   * Get clickRate
+   * @return clickRate
+   */
+  @javax.annotation.Nullable
+  public BigDecimal getClickRate() {
+    return clickRate;
+  }
+
+  public void setClickRate(@javax.annotation.Nullable BigDecimal clickRate) {
+    this.clickRate = clickRate;
   }
 
 
@@ -485,18 +822,32 @@ public class Campaign {
     }
     Campaign campaign = (Campaign) o;
     return Objects.equals(this.id, campaign.id) &&
+        Objects.equals(this.accountId, campaign.accountId) &&
         Objects.equals(this.name, campaign.name) &&
         Objects.equals(this.status, campaign.status) &&
-        Objects.equals(this.listId, campaign.listId) &&
         Objects.equals(this.domainId, campaign.domainId) &&
-        Objects.equals(this.fromEmail, campaign.fromEmail) &&
-        Objects.equals(this.fromName, campaign.fromName) &&
+        Objects.equals(this.subject, campaign.subject) &&
+        Objects.equals(this.fromAddress, campaign.fromAddress) &&
         Objects.equals(this.replyTo, campaign.replyTo) &&
+        Objects.equals(this.htmlBody, campaign.htmlBody) &&
+        Objects.equals(this.textBody, campaign.textBody) &&
+        Objects.equals(this.htmlBodyDark, campaign.htmlBodyDark) &&
+        Objects.equals(this.textBodyDark, campaign.textBodyDark) &&
+        Objects.equals(this.campaignType, campaign.campaignType) &&
+        Objects.equals(this.autoDetectSchema, campaign.autoDetectSchema) &&
+        Objects.equals(this.promoAnnotations, campaign.promoAnnotations) &&
+        Objects.equals(this.throwawayPolicy, campaign.throwawayPolicy) &&
         Objects.equals(this.scheduledAt, campaign.scheduledAt) &&
-        Objects.equals(this.sentAt, campaign.sentAt) &&
-        Objects.equals(this.cancelledAt, campaign.cancelledAt) &&
-        Objects.equals(this.variantCount, campaign.variantCount) &&
+        Objects.equals(this.startedAt, campaign.startedAt) &&
+        Objects.equals(this.completedAt, campaign.completedAt) &&
+        Objects.equals(this.recipientCount, campaign.recipientCount) &&
+        Objects.equals(this.isAbTest, campaign.isAbTest) &&
+        Objects.equals(this.winningVariantId, campaign.winningVariantId) &&
+        Objects.equals(this.abTestConfig, campaign.abTestConfig) &&
+        Objects.equals(this.errorMessage, campaign.errorMessage) &&
         Objects.equals(this.stats, campaign.stats) &&
+        Objects.equals(this.openRate, campaign.openRate) &&
+        Objects.equals(this.clickRate, campaign.clickRate) &&
         Objects.equals(this.createdAt, campaign.createdAt) &&
         Objects.equals(this.updatedAt, campaign.updatedAt);
   }
@@ -507,7 +858,7 @@ public class Campaign {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, status, listId, domainId, fromEmail, fromName, replyTo, scheduledAt, sentAt, cancelledAt, variantCount, stats, createdAt, updatedAt);
+    return Objects.hash(id, accountId, name, status, domainId, subject, fromAddress, replyTo, htmlBody, textBody, htmlBodyDark, textBodyDark, campaignType, autoDetectSchema, promoAnnotations, throwawayPolicy, scheduledAt, startedAt, completedAt, recipientCount, isAbTest, winningVariantId, abTestConfig, errorMessage, stats, openRate, clickRate, createdAt, updatedAt);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -522,18 +873,32 @@ public class Campaign {
     StringBuilder sb = new StringBuilder();
     sb.append("class Campaign {\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    accountId: ").append(toIndentedString(accountId)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
-    sb.append("    listId: ").append(toIndentedString(listId)).append("\n");
     sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");
-    sb.append("    fromEmail: ").append(toIndentedString(fromEmail)).append("\n");
-    sb.append("    fromName: ").append(toIndentedString(fromName)).append("\n");
+    sb.append("    subject: ").append(toIndentedString(subject)).append("\n");
+    sb.append("    fromAddress: ").append(toIndentedString(fromAddress)).append("\n");
     sb.append("    replyTo: ").append(toIndentedString(replyTo)).append("\n");
+    sb.append("    htmlBody: ").append(toIndentedString(htmlBody)).append("\n");
+    sb.append("    textBody: ").append(toIndentedString(textBody)).append("\n");
+    sb.append("    htmlBodyDark: ").append(toIndentedString(htmlBodyDark)).append("\n");
+    sb.append("    textBodyDark: ").append(toIndentedString(textBodyDark)).append("\n");
+    sb.append("    campaignType: ").append(toIndentedString(campaignType)).append("\n");
+    sb.append("    autoDetectSchema: ").append(toIndentedString(autoDetectSchema)).append("\n");
+    sb.append("    promoAnnotations: ").append(toIndentedString(promoAnnotations)).append("\n");
+    sb.append("    throwawayPolicy: ").append(toIndentedString(throwawayPolicy)).append("\n");
     sb.append("    scheduledAt: ").append(toIndentedString(scheduledAt)).append("\n");
-    sb.append("    sentAt: ").append(toIndentedString(sentAt)).append("\n");
-    sb.append("    cancelledAt: ").append(toIndentedString(cancelledAt)).append("\n");
-    sb.append("    variantCount: ").append(toIndentedString(variantCount)).append("\n");
+    sb.append("    startedAt: ").append(toIndentedString(startedAt)).append("\n");
+    sb.append("    completedAt: ").append(toIndentedString(completedAt)).append("\n");
+    sb.append("    recipientCount: ").append(toIndentedString(recipientCount)).append("\n");
+    sb.append("    isAbTest: ").append(toIndentedString(isAbTest)).append("\n");
+    sb.append("    winningVariantId: ").append(toIndentedString(winningVariantId)).append("\n");
+    sb.append("    abTestConfig: ").append(toIndentedString(abTestConfig)).append("\n");
+    sb.append("    errorMessage: ").append(toIndentedString(errorMessage)).append("\n");
     sb.append("    stats: ").append(toIndentedString(stats)).append("\n");
+    sb.append("    openRate: ").append(toIndentedString(openRate)).append("\n");
+    sb.append("    clickRate: ").append(toIndentedString(clickRate)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("}");
@@ -557,10 +922,10 @@ public class Campaign {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("id", "name", "status", "list_id", "domain_id", "from_email", "from_name", "reply_to", "scheduled_at", "sent_at", "cancelled_at", "variant_count", "stats", "created_at", "updated_at"));
+    openapiFields = new HashSet<String>(Arrays.asList("id", "account_id", "name", "status", "domain_id", "subject", "from_address", "reply_to", "html_body", "text_body", "html_body_dark", "text_body_dark", "campaign_type", "auto_detect_schema", "promo_annotations", "throwaway_policy", "scheduled_at", "started_at", "completed_at", "recipient_count", "is_ab_test", "winning_variant_id", "ab_test_config", "error_message", "stats", "open_rate", "click_rate", "created_at", "updated_at"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(Arrays.asList("id", "name", "status", "list_id", "domain_id", "from_email", "created_at"));
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("id", "name", "status", "domain_id", "from_address", "created_at"));
   }
 
   /**
@@ -602,20 +967,41 @@ public class Campaign {
       }
       // validate the required field `status`
       StatusEnum.validateJsonElement(jsonObj.get("status"));
-      if (!jsonObj.get("list_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `list_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("list_id").toString()));
-      }
       if (!jsonObj.get("domain_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `domain_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("domain_id").toString()));
       }
-      if (!jsonObj.get("from_email").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `from_email` to be a primitive type in the JSON string but got `%s`", jsonObj.get("from_email").toString()));
+      if ((jsonObj.get("subject") != null && !jsonObj.get("subject").isJsonNull()) && !jsonObj.get("subject").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `subject` to be a primitive type in the JSON string but got `%s`", jsonObj.get("subject").toString()));
       }
-      if ((jsonObj.get("from_name") != null && !jsonObj.get("from_name").isJsonNull()) && !jsonObj.get("from_name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `from_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("from_name").toString()));
+      if (!jsonObj.get("from_address").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `from_address` to be a primitive type in the JSON string but got `%s`", jsonObj.get("from_address").toString()));
       }
       if ((jsonObj.get("reply_to") != null && !jsonObj.get("reply_to").isJsonNull()) && !jsonObj.get("reply_to").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `reply_to` to be a primitive type in the JSON string but got `%s`", jsonObj.get("reply_to").toString()));
+      }
+      if ((jsonObj.get("html_body") != null && !jsonObj.get("html_body").isJsonNull()) && !jsonObj.get("html_body").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `html_body` to be a primitive type in the JSON string but got `%s`", jsonObj.get("html_body").toString()));
+      }
+      if ((jsonObj.get("text_body") != null && !jsonObj.get("text_body").isJsonNull()) && !jsonObj.get("text_body").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `text_body` to be a primitive type in the JSON string but got `%s`", jsonObj.get("text_body").toString()));
+      }
+      if ((jsonObj.get("html_body_dark") != null && !jsonObj.get("html_body_dark").isJsonNull()) && !jsonObj.get("html_body_dark").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `html_body_dark` to be a primitive type in the JSON string but got `%s`", jsonObj.get("html_body_dark").toString()));
+      }
+      if ((jsonObj.get("text_body_dark") != null && !jsonObj.get("text_body_dark").isJsonNull()) && !jsonObj.get("text_body_dark").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `text_body_dark` to be a primitive type in the JSON string but got `%s`", jsonObj.get("text_body_dark").toString()));
+      }
+      if ((jsonObj.get("campaign_type") != null && !jsonObj.get("campaign_type").isJsonNull()) && !jsonObj.get("campaign_type").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `campaign_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("campaign_type").toString()));
+      }
+      if ((jsonObj.get("throwaway_policy") != null && !jsonObj.get("throwaway_policy").isJsonNull()) && !jsonObj.get("throwaway_policy").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `throwaway_policy` to be a primitive type in the JSON string but got `%s`", jsonObj.get("throwaway_policy").toString()));
+      }
+      if ((jsonObj.get("winning_variant_id") != null && !jsonObj.get("winning_variant_id").isJsonNull()) && !jsonObj.get("winning_variant_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `winning_variant_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("winning_variant_id").toString()));
+      }
+      if ((jsonObj.get("error_message") != null && !jsonObj.get("error_message").isJsonNull()) && !jsonObj.get("error_message").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `error_message` to be a primitive type in the JSON string but got `%s`", jsonObj.get("error_message").toString()));
       }
       // validate the optional field `stats`
       if (jsonObj.get("stats") != null && !jsonObj.get("stats").isJsonNull()) {

@@ -83,8 +83,8 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | Job cancelled |  -  |
 | **400** | Bad request |  -  |
-| **401** | Unauthorized - Invalid or missing API key |  -  |
 | **404** | Resource not found |  -  |
+| **401** | Unauthorized - Invalid or missing API key |  -  |
 
 <a id="createJob"></a>
 # **createJob**
@@ -363,8 +363,8 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Job deleted |  -  |
-| **401** | Unauthorized - Invalid or missing API key |  -  |
 | **404** | Resource not found |  -  |
+| **401** | Unauthorized - Invalid or missing API key |  -  |
 
 <a id="getJob"></a>
 # **getJob**
@@ -432,8 +432,8 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Job details |  -  |
-| **401** | Unauthorized - Invalid or missing API key |  -  |
 | **404** | Resource not found |  -  |
+| **401** | Unauthorized - Invalid or missing API key |  -  |
 
 <a id="getJobResults"></a>
 # **getJobResults**
@@ -509,8 +509,8 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Validation results |  -  |
-| **401** | Unauthorized - Invalid or missing API key |  -  |
 | **404** | Resource not found |  -  |
+| **401** | Unauthorized - Invalid or missing API key |  -  |
 
 <a id="getPresignedUpload"></a>
 # **getPresignedUpload**
@@ -578,8 +578,9 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Presigned upload credentials |  -  |
-| **401** | Unauthorized - Invalid or missing API key |  -  |
 | **503** | S3 not configured |  -  |
+| **400** | Bad request |  -  |
+| **401** | Unauthorized - Invalid or missing API key |  -  |
 
 <a id="listJobs"></a>
 # **listJobs**
@@ -681,7 +682,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     BulkValidationApi apiInstance = new BulkValidationApi(defaultClient);
-    String jobId = "jobId_example"; // String | Job ID
+    String jobId = "jobId_example"; // String | 
     try {
       RetryJob200Response result = apiInstance.retryJob(jobId);
       System.out.println(result);
@@ -700,7 +701,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **jobId** | **String**| Job ID | |
+| **jobId** | **String**|  | |
 
 ### Return type
 
@@ -720,6 +721,6 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | Job retry initiated |  -  |
 | **400** | Bad request |  -  |
-| **401** | Unauthorized - Invalid or missing API key |  -  |
 | **404** | Resource not found |  -  |
+| **401** | Unauthorized - Invalid or missing API key |  -  |
 

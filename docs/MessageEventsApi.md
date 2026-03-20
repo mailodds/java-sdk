@@ -74,6 +74,6 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | Message events with summary |  -  |
 | **400** | Bad request |  -  |
-| **401** | Unauthorized - Invalid or missing API key |  -  |
 | **403** | Forbidden - Insufficient permissions or no credits |  -  |
+| **401** | Unauthorized - Invalid or missing API key |  -  |
 

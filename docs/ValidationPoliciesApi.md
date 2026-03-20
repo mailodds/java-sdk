@@ -84,10 +84,10 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **201** | Rule added |  -  |
-| **400** | Bad request |  -  |
-| **401** | Unauthorized - Invalid or missing API key |  -  |
 | **403** | Rule limit exceeded |  -  |
 | **404** | Policy not found |  -  |
+| **400** | Bad request |  -  |
+| **401** | Unauthorized - Invalid or missing API key |  -  |
 
 <a id="createPolicy"></a>
 # **createPolicy**
@@ -155,9 +155,9 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **201** | Policy created |  -  |
+| **403** | Plan limit exceeded |  -  |
 | **400** | Bad request |  -  |
 | **401** | Unauthorized - Invalid or missing API key |  -  |
-| **403** | Plan limit exceeded |  -  |
 
 <a id="createPolicyFromPreset"></a>
 # **createPolicyFromPreset**
@@ -294,8 +294,8 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Policy deleted |  -  |
-| **401** | Unauthorized - Invalid or missing API key |  -  |
 | **404** | Policy not found |  -  |
+| **401** | Unauthorized - Invalid or missing API key |  -  |
 
 <a id="deletePolicyRule"></a>
 # **deletePolicyRule**
@@ -365,8 +365,8 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Rule deleted |  -  |
-| **401** | Unauthorized - Invalid or missing API key |  -  |
 | **404** | Policy or rule not found |  -  |
+| **401** | Unauthorized - Invalid or missing API key |  -  |
 
 <a id="getPolicy"></a>
 # **getPolicy**
@@ -434,8 +434,8 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Policy details |  -  |
-| **401** | Unauthorized - Invalid or missing API key |  -  |
 | **404** | Policy not found |  -  |
+| **401** | Unauthorized - Invalid or missing API key |  -  |
 
 <a id="getPolicyPresets"></a>
 # **getPolicyPresets**
@@ -635,9 +635,9 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Test result |  -  |
+| **404** | Policy not found |  -  |
 | **400** | Bad request |  -  |
 | **401** | Unauthorized - Invalid or missing API key |  -  |
-| **404** | Policy not found |  -  |
 
 <a id="updatePolicy"></a>
 # **updatePolicy**
@@ -707,7 +707,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Policy updated |  -  |
+| **404** | Policy not found |  -  |
 | **400** | Bad request |  -  |
 | **401** | Unauthorized - Invalid or missing API key |  -  |
-| **404** | Policy not found |  -  |
 

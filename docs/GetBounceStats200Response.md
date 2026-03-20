@@ -9,7 +9,7 @@
 |------------ | ------------- | ------------- | -------------|
 |**schemaVersion** | **String** |  |  [optional] |
 |**requestId** | **String** |  |  [optional] |
-|**stats** | **List&lt;Object&gt;** |  |  [optional] |
+|**stats** | [**GetBounceStats200ResponseStats**](GetBounceStats200ResponseStats.md) |  |  [optional] |
 
 
 

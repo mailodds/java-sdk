@@ -49,32 +49,32 @@ import com.mailodds.JSON;
 /**
  * Per-check scoring breakdown
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-17T17:50:09.712858375+01:00[Europe/Amsterdam]", comments = "Generator version: 7.19.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-20T03:00:43.181944620+01:00[Europe/Amsterdam]", comments = "Generator version: 7.19.0")
 public class SendingDomainIdentityScoreBreakdown {
-  public static final String SERIALIZED_NAME_DKIM = "dkim";
-  @SerializedName(SERIALIZED_NAME_DKIM)
-  @javax.annotation.Nullable
-  private IdentityScoreCheck dkim;
-
   public static final String SERIALIZED_NAME_SPF = "spf";
   @SerializedName(SERIALIZED_NAME_SPF)
   @javax.annotation.Nullable
   private IdentityScoreCheck spf;
+
+  public static final String SERIALIZED_NAME_DKIM = "dkim";
+  @SerializedName(SERIALIZED_NAME_DKIM)
+  @javax.annotation.Nullable
+  private IdentityScoreCheck dkim;
 
   public static final String SERIALIZED_NAME_DMARC = "dmarc";
   @SerializedName(SERIALIZED_NAME_DMARC)
   @javax.annotation.Nullable
   private IdentityScoreCheck dmarc;
 
-  public static final String SERIALIZED_NAME_MX = "mx";
-  @SerializedName(SERIALIZED_NAME_MX)
+  public static final String SERIALIZED_NAME_BOUNCE = "bounce";
+  @SerializedName(SERIALIZED_NAME_BOUNCE)
   @javax.annotation.Nullable
-  private IdentityScoreCheck mx;
+  private IdentityScoreCheck bounce;
 
-  public static final String SERIALIZED_NAME_RETURN_PATH = "return_path";
-  @SerializedName(SERIALIZED_NAME_RETURN_PATH)
+  public static final String SERIALIZED_NAME_TRACKING = "tracking";
+  @SerializedName(SERIALIZED_NAME_TRACKING)
   @javax.annotation.Nullable
-  private IdentityScoreCheck returnPath;
+  private IdentityScoreCheck tracking;
 
   public static final String SERIALIZED_NAME_BIMI = "bimi";
   @SerializedName(SERIALIZED_NAME_BIMI)
@@ -83,25 +83,6 @@ public class SendingDomainIdentityScoreBreakdown {
 
   public SendingDomainIdentityScoreBreakdown() {
   }
-
-  public SendingDomainIdentityScoreBreakdown dkim(@javax.annotation.Nullable IdentityScoreCheck dkim) {
-    this.dkim = dkim;
-    return this;
-  }
-
-  /**
-   * Get dkim
-   * @return dkim
-   */
-  @javax.annotation.Nullable
-  public IdentityScoreCheck getDkim() {
-    return dkim;
-  }
-
-  public void setDkim(@javax.annotation.Nullable IdentityScoreCheck dkim) {
-    this.dkim = dkim;
-  }
-
 
   public SendingDomainIdentityScoreBreakdown spf(@javax.annotation.Nullable IdentityScoreCheck spf) {
     this.spf = spf;
@@ -119,6 +100,25 @@ public class SendingDomainIdentityScoreBreakdown {
 
   public void setSpf(@javax.annotation.Nullable IdentityScoreCheck spf) {
     this.spf = spf;
+  }
+
+
+  public SendingDomainIdentityScoreBreakdown dkim(@javax.annotation.Nullable IdentityScoreCheck dkim) {
+    this.dkim = dkim;
+    return this;
+  }
+
+  /**
+   * Get dkim
+   * @return dkim
+   */
+  @javax.annotation.Nullable
+  public IdentityScoreCheck getDkim() {
+    return dkim;
+  }
+
+  public void setDkim(@javax.annotation.Nullable IdentityScoreCheck dkim) {
+    this.dkim = dkim;
   }
 
 
@@ -141,41 +141,41 @@ public class SendingDomainIdentityScoreBreakdown {
   }
 
 
-  public SendingDomainIdentityScoreBreakdown mx(@javax.annotation.Nullable IdentityScoreCheck mx) {
-    this.mx = mx;
+  public SendingDomainIdentityScoreBreakdown bounce(@javax.annotation.Nullable IdentityScoreCheck bounce) {
+    this.bounce = bounce;
     return this;
   }
 
   /**
-   * Get mx
-   * @return mx
+   * Get bounce
+   * @return bounce
    */
   @javax.annotation.Nullable
-  public IdentityScoreCheck getMx() {
-    return mx;
+  public IdentityScoreCheck getBounce() {
+    return bounce;
   }
 
-  public void setMx(@javax.annotation.Nullable IdentityScoreCheck mx) {
-    this.mx = mx;
+  public void setBounce(@javax.annotation.Nullable IdentityScoreCheck bounce) {
+    this.bounce = bounce;
   }
 
 
-  public SendingDomainIdentityScoreBreakdown returnPath(@javax.annotation.Nullable IdentityScoreCheck returnPath) {
-    this.returnPath = returnPath;
+  public SendingDomainIdentityScoreBreakdown tracking(@javax.annotation.Nullable IdentityScoreCheck tracking) {
+    this.tracking = tracking;
     return this;
   }
 
   /**
-   * Get returnPath
-   * @return returnPath
+   * Get tracking
+   * @return tracking
    */
   @javax.annotation.Nullable
-  public IdentityScoreCheck getReturnPath() {
-    return returnPath;
+  public IdentityScoreCheck getTracking() {
+    return tracking;
   }
 
-  public void setReturnPath(@javax.annotation.Nullable IdentityScoreCheck returnPath) {
-    this.returnPath = returnPath;
+  public void setTracking(@javax.annotation.Nullable IdentityScoreCheck tracking) {
+    this.tracking = tracking;
   }
 
 
@@ -208,28 +208,28 @@ public class SendingDomainIdentityScoreBreakdown {
       return false;
     }
     SendingDomainIdentityScoreBreakdown sendingDomainIdentityScoreBreakdown = (SendingDomainIdentityScoreBreakdown) o;
-    return Objects.equals(this.dkim, sendingDomainIdentityScoreBreakdown.dkim) &&
-        Objects.equals(this.spf, sendingDomainIdentityScoreBreakdown.spf) &&
+    return Objects.equals(this.spf, sendingDomainIdentityScoreBreakdown.spf) &&
+        Objects.equals(this.dkim, sendingDomainIdentityScoreBreakdown.dkim) &&
         Objects.equals(this.dmarc, sendingDomainIdentityScoreBreakdown.dmarc) &&
-        Objects.equals(this.mx, sendingDomainIdentityScoreBreakdown.mx) &&
-        Objects.equals(this.returnPath, sendingDomainIdentityScoreBreakdown.returnPath) &&
+        Objects.equals(this.bounce, sendingDomainIdentityScoreBreakdown.bounce) &&
+        Objects.equals(this.tracking, sendingDomainIdentityScoreBreakdown.tracking) &&
         Objects.equals(this.bimi, sendingDomainIdentityScoreBreakdown.bimi);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(dkim, spf, dmarc, mx, returnPath, bimi);
+    return Objects.hash(spf, dkim, dmarc, bounce, tracking, bimi);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class SendingDomainIdentityScoreBreakdown {\n");
-    sb.append("    dkim: ").append(toIndentedString(dkim)).append("\n");
     sb.append("    spf: ").append(toIndentedString(spf)).append("\n");
+    sb.append("    dkim: ").append(toIndentedString(dkim)).append("\n");
     sb.append("    dmarc: ").append(toIndentedString(dmarc)).append("\n");
-    sb.append("    mx: ").append(toIndentedString(mx)).append("\n");
-    sb.append("    returnPath: ").append(toIndentedString(returnPath)).append("\n");
+    sb.append("    bounce: ").append(toIndentedString(bounce)).append("\n");
+    sb.append("    tracking: ").append(toIndentedString(tracking)).append("\n");
     sb.append("    bimi: ").append(toIndentedString(bimi)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -252,7 +252,7 @@ public class SendingDomainIdentityScoreBreakdown {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("dkim", "spf", "dmarc", "mx", "return_path", "bimi"));
+    openapiFields = new HashSet<String>(Arrays.asList("spf", "dkim", "dmarc", "bounce", "tracking", "bimi"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -279,25 +279,25 @@ public class SendingDomainIdentityScoreBreakdown {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      // validate the optional field `dkim`
-      if (jsonObj.get("dkim") != null && !jsonObj.get("dkim").isJsonNull()) {
-        IdentityScoreCheck.validateJsonElement(jsonObj.get("dkim"));
-      }
       // validate the optional field `spf`
       if (jsonObj.get("spf") != null && !jsonObj.get("spf").isJsonNull()) {
         IdentityScoreCheck.validateJsonElement(jsonObj.get("spf"));
+      }
+      // validate the optional field `dkim`
+      if (jsonObj.get("dkim") != null && !jsonObj.get("dkim").isJsonNull()) {
+        IdentityScoreCheck.validateJsonElement(jsonObj.get("dkim"));
       }
       // validate the optional field `dmarc`
       if (jsonObj.get("dmarc") != null && !jsonObj.get("dmarc").isJsonNull()) {
         IdentityScoreCheck.validateJsonElement(jsonObj.get("dmarc"));
       }
-      // validate the optional field `mx`
-      if (jsonObj.get("mx") != null && !jsonObj.get("mx").isJsonNull()) {
-        IdentityScoreCheck.validateJsonElement(jsonObj.get("mx"));
+      // validate the optional field `bounce`
+      if (jsonObj.get("bounce") != null && !jsonObj.get("bounce").isJsonNull()) {
+        IdentityScoreCheck.validateJsonElement(jsonObj.get("bounce"));
       }
-      // validate the optional field `return_path`
-      if (jsonObj.get("return_path") != null && !jsonObj.get("return_path").isJsonNull()) {
-        IdentityScoreCheck.validateJsonElement(jsonObj.get("return_path"));
+      // validate the optional field `tracking`
+      if (jsonObj.get("tracking") != null && !jsonObj.get("tracking").isJsonNull()) {
+        IdentityScoreCheck.validateJsonElement(jsonObj.get("tracking"));
       }
       // validate the optional field `bimi`
       if (jsonObj.get("bimi") != null && !jsonObj.get("bimi").isJsonNull()) {

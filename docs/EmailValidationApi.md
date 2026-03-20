@@ -143,7 +143,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Validation result |  -  |
+| **403** | Forbidden - Insufficient permissions or no credits |  -  |
 | **400** | Bad request |  -  |
 | **401** | Unauthorized - Invalid or missing API key |  -  |
-| **403** | Forbidden - Insufficient permissions or no credits |  -  |
 

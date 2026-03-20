@@ -147,6 +147,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Suppression check result |  -  |
+| **400** | Bad request |  -  |
 | **401** | Unauthorized - Invalid or missing API key |  -  |
 
 <a id="getSuppressionAuditLog"></a>
@@ -425,5 +426,6 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Entries removed |  -  |
+| **400** | Bad request |  -  |
 | **401** | Unauthorized - Invalid or missing API key |  -  |
 

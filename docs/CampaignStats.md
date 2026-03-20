@@ -2,7 +2,7 @@
 
 # CampaignStats
 
-Delivery and engagement statistics. Present when the campaign has started sending.
+Delivery and engagement statistics.
 
 ## Properties
 
@@ -14,10 +14,9 @@ Delivery and engagement statistics. Present when the campaign has started sendin
 |**clicked** | **Integer** |  |  [optional] |
 |**bounced** | **Integer** |  |  [optional] |
 |**unsubscribed** | **Integer** |  |  [optional] |
-|**complained** | **Integer** |  |  [optional] |
-|**deliveryRate** | **BigDecimal** |  |  [optional] |
-|**openRate** | **BigDecimal** |  |  [optional] |
-|**clickRate** | **BigDecimal** |  |  [optional] |
+|**suppressed** | **Integer** |  |  [optional] |
+|**failed** | **Integer** |  |  [optional] |
+|**conversions** | **Integer** |  |  [optional] |
 
 
 

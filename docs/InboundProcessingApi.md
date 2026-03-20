@@ -40,7 +40,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     InboundProcessingApi apiInstance = new InboundProcessingApi(defaultClient);
-    String messageId = "messageId_example"; // String | Message ID
+    String messageId = "messageId_example"; // String | 
     CorrectInboundMessageRequest correctInboundMessageRequest = new CorrectInboundMessageRequest(); // CorrectInboundMessageRequest | 
     try {
       GetInboundMessage200Response result = apiInstance.correctInboundMessage(messageId, correctInboundMessageRequest);
@@ -60,7 +60,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **messageId** | **String**| Message ID | |
+| **messageId** | **String**|  | |
 | **correctInboundMessageRequest** | [**CorrectInboundMessageRequest**](CorrectInboundMessageRequest.md)|  | |
 
 ### Return type
@@ -80,9 +80,10 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Message updated with correction |  -  |
-| **401** | Unauthorized - Invalid or missing API key |  -  |
 | **403** | Forbidden - Insufficient permissions or no credits |  -  |
 | **404** | Resource not found |  -  |
+| **400** | Bad request |  -  |
+| **401** | Unauthorized - Invalid or missing API key |  -  |
 
 <a id="getBounceStats"></a>
 # **getBounceStats**
@@ -154,8 +155,8 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Bounce statistics |  -  |
-| **401** | Unauthorized - Invalid or missing API key |  -  |
 | **403** | Forbidden - Insufficient permissions or no credits |  -  |
+| **401** | Unauthorized - Invalid or missing API key |  -  |
 
 <a id="getBounceStatsSummary"></a>
 # **getBounceStatsSummary**
@@ -225,8 +226,8 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Bounce statistics summary |  -  |
-| **401** | Unauthorized - Invalid or missing API key |  -  |
 | **403** | Forbidden - Insufficient permissions or no credits |  -  |
+| **401** | Unauthorized - Invalid or missing API key |  -  |
 
 <a id="getComplaintAssessment"></a>
 # **getComplaintAssessment**
@@ -296,8 +297,8 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Complaint assessment |  -  |
-| **401** | Unauthorized - Invalid or missing API key |  -  |
 | **403** | Forbidden - Insufficient permissions or no credits |  -  |
+| **401** | Unauthorized - Invalid or missing API key |  -  |
 
 <a id="getInboundMessage"></a>
 # **getInboundMessage**
@@ -327,7 +328,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     InboundProcessingApi apiInstance = new InboundProcessingApi(defaultClient);
-    String messageId = "messageId_example"; // String | Message ID
+    String messageId = "messageId_example"; // String | 
     try {
       GetInboundMessage200Response result = apiInstance.getInboundMessage(messageId);
       System.out.println(result);
@@ -346,7 +347,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **messageId** | **String**| Message ID | |
+| **messageId** | **String**|  | |
 
 ### Return type
 
@@ -365,9 +366,9 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Inbound message details |  -  |
-| **401** | Unauthorized - Invalid or missing API key |  -  |
 | **403** | Forbidden - Insufficient permissions or no credits |  -  |
 | **404** | Resource not found |  -  |
+| **401** | Unauthorized - Invalid or missing API key |  -  |
 
 <a id="listInboundMessages"></a>
 # **listInboundMessages**
@@ -451,6 +452,6 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Paginated list of inbound messages |  -  |
-| **401** | Unauthorized - Invalid or missing API key |  -  |
 | **403** | Forbidden - Insufficient permissions or no credits |  -  |
+| **401** | Unauthorized - Invalid or missing API key |  -  |
 

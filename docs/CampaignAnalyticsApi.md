@@ -77,8 +77,8 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | A/B test results |  -  |
-| **401** | Unauthorized - Invalid or missing API key |  -  |
 | **404** | Resource not found |  -  |
+| **401** | Unauthorized - Invalid or missing API key |  -  |
 
 <a id="getCampaignAttribution"></a>
 # **getCampaignAttribution**
@@ -146,8 +146,8 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Attribution data |  -  |
-| **401** | Unauthorized - Invalid or missing API key |  -  |
 | **404** | Resource not found |  -  |
+| **401** | Unauthorized - Invalid or missing API key |  -  |
 
 <a id="getCampaignDeliveryConfidence"></a>
 # **getCampaignDeliveryConfidence**
@@ -215,8 +215,8 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Delivery confidence score |  -  |
-| **401** | Unauthorized - Invalid or missing API key |  -  |
 | **404** | Resource not found |  -  |
+| **401** | Unauthorized - Invalid or missing API key |  -  |
 
 <a id="getCampaignFunnel"></a>
 # **getCampaignFunnel**
@@ -284,8 +284,8 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Campaign funnel analytics |  -  |
-| **401** | Unauthorized - Invalid or missing API key |  -  |
 | **404** | Resource not found |  -  |
+| **401** | Unauthorized - Invalid or missing API key |  -  |
 
 <a id="getCampaignProviderIntelligence"></a>
 # **getCampaignProviderIntelligence**
@@ -353,6 +353,6 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Provider intelligence data |  -  |
-| **401** | Unauthorized - Invalid or missing API key |  -  |
 | **404** | Resource not found |  -  |
+| **401** | Unauthorized - Invalid or missing API key |  -  |
 

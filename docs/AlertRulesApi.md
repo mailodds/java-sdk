@@ -77,9 +77,9 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **201** | Alert rule created |  -  |
+| **403** | Forbidden - Insufficient permissions or no credits |  -  |
 | **400** | Bad request |  -  |
 | **401** | Unauthorized - Invalid or missing API key |  -  |
-| **403** | Forbidden - Insufficient permissions or no credits |  -  |
 
 <a id="deleteAlertRule"></a>
 # **deleteAlertRule**
@@ -109,7 +109,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     AlertRulesApi apiInstance = new AlertRulesApi(defaultClient);
-    String ruleId = "ruleId_example"; // String | Alert rule ID
+    String ruleId = "ruleId_example"; // String | 
     try {
       DeletePolicyRule200Response result = apiInstance.deleteAlertRule(ruleId);
       System.out.println(result);
@@ -128,7 +128,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **ruleId** | **String**| Alert rule ID | |
+| **ruleId** | **String**|  | |
 
 ### Return type
 
@@ -147,9 +147,9 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Alert rule deleted |  -  |
-| **401** | Unauthorized - Invalid or missing API key |  -  |
 | **403** | Forbidden - Insufficient permissions or no credits |  -  |
 | **404** | Resource not found |  -  |
+| **401** | Unauthorized - Invalid or missing API key |  -  |
 
 <a id="getAlertRule"></a>
 # **getAlertRule**
@@ -179,7 +179,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     AlertRulesApi apiInstance = new AlertRulesApi(defaultClient);
-    String ruleId = "ruleId_example"; // String | Alert rule ID
+    String ruleId = "ruleId_example"; // String | 
     try {
       CreateAlertRule201Response result = apiInstance.getAlertRule(ruleId);
       System.out.println(result);
@@ -198,7 +198,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **ruleId** | **String**| Alert rule ID | |
+| **ruleId** | **String**|  | |
 
 ### Return type
 
@@ -217,9 +217,9 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Alert rule details |  -  |
-| **401** | Unauthorized - Invalid or missing API key |  -  |
 | **403** | Forbidden - Insufficient permissions or no credits |  -  |
 | **404** | Resource not found |  -  |
+| **401** | Unauthorized - Invalid or missing API key |  -  |
 
 <a id="listAlertRules"></a>
 # **listAlertRules**
@@ -283,8 +283,8 @@ This endpoint does not need any parameter.
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | List of alert rules |  -  |
-| **401** | Unauthorized - Invalid or missing API key |  -  |
 | **403** | Forbidden - Insufficient permissions or no credits |  -  |
+| **401** | Unauthorized - Invalid or missing API key |  -  |
 
 <a id="updateAlertRule"></a>
 # **updateAlertRule**
@@ -314,7 +314,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     AlertRulesApi apiInstance = new AlertRulesApi(defaultClient);
-    String ruleId = "ruleId_example"; // String | Alert rule ID
+    String ruleId = "ruleId_example"; // String | 
     UpdateAlertRuleRequest updateAlertRuleRequest = new UpdateAlertRuleRequest(); // UpdateAlertRuleRequest | 
     try {
       CreateAlertRule201Response result = apiInstance.updateAlertRule(ruleId, updateAlertRuleRequest);
@@ -334,7 +334,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **ruleId** | **String**| Alert rule ID | |
+| **ruleId** | **String**|  | |
 | **updateAlertRuleRequest** | [**UpdateAlertRuleRequest**](UpdateAlertRuleRequest.md)|  | |
 
 ### Return type
@@ -354,8 +354,8 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Alert rule updated |  -  |
-| **400** | Bad request |  -  |
-| **401** | Unauthorized - Invalid or missing API key |  -  |
 | **403** | Forbidden - Insufficient permissions or no credits |  -  |
 | **404** | Resource not found |  -  |
+| **400** | Bad request |  -  |
+| **401** | Unauthorized - Invalid or missing API key |  -  |
 

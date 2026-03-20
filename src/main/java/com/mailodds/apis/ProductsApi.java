@@ -80,7 +80,7 @@ public class ProductsApi {
 
     /**
      * Build call for batchProducts
-     * @param storeId Store connection UUID (required)
+     * @param storeId  (required)
      * @param batchProductsRequest  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -90,9 +90,9 @@ public class ProductsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Batch results </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call batchProductsCall(@javax.annotation.Nonnull String storeId, @javax.annotation.Nonnull BatchProductsRequest batchProductsRequest, final ApiCallback _callback) throws ApiException {
@@ -160,7 +160,7 @@ public class ProductsApi {
     /**
      * Batch push products
      * Push up to 100 products to a custom platform store. Creates new products or updates existing ones matched by external_id. Only available for stores with platform&#x3D;custom.
-     * @param storeId Store connection UUID (required)
+     * @param storeId  (required)
      * @param batchProductsRequest  (required)
      * @return BatchProductsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -169,9 +169,9 @@ public class ProductsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Batch results </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
      </table>
      */
     public BatchProductsResponse batchProducts(@javax.annotation.Nonnull String storeId, @javax.annotation.Nonnull BatchProductsRequest batchProductsRequest) throws ApiException {
@@ -182,7 +182,7 @@ public class ProductsApi {
     /**
      * Batch push products
      * Push up to 100 products to a custom platform store. Creates new products or updates existing ones matched by external_id. Only available for stores with platform&#x3D;custom.
-     * @param storeId Store connection UUID (required)
+     * @param storeId  (required)
      * @param batchProductsRequest  (required)
      * @return ApiResponse&lt;BatchProductsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -191,9 +191,9 @@ public class ProductsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Batch results </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<BatchProductsResponse> batchProductsWithHttpInfo(@javax.annotation.Nonnull String storeId, @javax.annotation.Nonnull BatchProductsRequest batchProductsRequest) throws ApiException {
@@ -205,7 +205,7 @@ public class ProductsApi {
     /**
      * Batch push products (asynchronously)
      * Push up to 100 products to a custom platform store. Creates new products or updates existing ones matched by external_id. Only available for stores with platform&#x3D;custom.
-     * @param storeId Store connection UUID (required)
+     * @param storeId  (required)
      * @param batchProductsRequest  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -215,9 +215,9 @@ public class ProductsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Batch results </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call batchProductsAsync(@javax.annotation.Nonnull String storeId, @javax.annotation.Nonnull BatchProductsRequest batchProductsRequest, final ApiCallback<BatchProductsResponse> _callback) throws ApiException {
@@ -364,7 +364,7 @@ public class ProductsApi {
     }
     /**
      * Build call for getProduct
-     * @param productId Product UUID (required)
+     * @param productId  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -373,8 +373,8 @@ public class ProductsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Product details </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getProductCall(@javax.annotation.Nonnull String productId, final ApiCallback _callback) throws ApiException {
@@ -436,7 +436,7 @@ public class ProductsApi {
     /**
      * Get a product
      * Get detailed information about a specific product.
-     * @param productId Product UUID (required)
+     * @param productId  (required)
      * @return GetProduct200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -444,8 +444,8 @@ public class ProductsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Product details </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public GetProduct200Response getProduct(@javax.annotation.Nonnull String productId) throws ApiException {
@@ -456,7 +456,7 @@ public class ProductsApi {
     /**
      * Get a product
      * Get detailed information about a specific product.
-     * @param productId Product UUID (required)
+     * @param productId  (required)
      * @return ApiResponse&lt;GetProduct200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -464,8 +464,8 @@ public class ProductsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Product details </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<GetProduct200Response> getProductWithHttpInfo(@javax.annotation.Nonnull String productId) throws ApiException {
@@ -477,7 +477,7 @@ public class ProductsApi {
     /**
      * Get a product (asynchronously)
      * Get detailed information about a specific product.
-     * @param productId Product UUID (required)
+     * @param productId  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -486,8 +486,8 @@ public class ProductsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Product details </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getProductAsync(@javax.annotation.Nonnull String productId, final ApiCallback<GetProduct200Response> _callback) throws ApiException {

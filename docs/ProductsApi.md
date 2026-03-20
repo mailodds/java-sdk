@@ -38,7 +38,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     ProductsApi apiInstance = new ProductsApi(defaultClient);
-    String storeId = "storeId_example"; // String | Store connection UUID
+    String storeId = "storeId_example"; // String | 
     BatchProductsRequest batchProductsRequest = new BatchProductsRequest(); // BatchProductsRequest | 
     try {
       BatchProductsResponse result = apiInstance.batchProducts(storeId, batchProductsRequest);
@@ -58,7 +58,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **storeId** | **String**| Store connection UUID | |
+| **storeId** | **String**|  | |
 | **batchProductsRequest** | [**BatchProductsRequest**](BatchProductsRequest.md)|  | |
 
 ### Return type
@@ -78,9 +78,9 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Batch results |  -  |
+| **404** | Resource not found |  -  |
 | **400** | Bad request |  -  |
 | **401** | Unauthorized - Invalid or missing API key |  -  |
-| **404** | Resource not found |  -  |
 
 <a id="bulkUpdateProducts"></a>
 # **bulkUpdateProducts**
@@ -179,7 +179,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     ProductsApi apiInstance = new ProductsApi(defaultClient);
-    String productId = "productId_example"; // String | Product UUID
+    String productId = "productId_example"; // String | 
     try {
       GetProduct200Response result = apiInstance.getProduct(productId);
       System.out.println(result);
@@ -198,7 +198,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **productId** | **String**| Product UUID | |
+| **productId** | **String**|  | |
 
 ### Return type
 
@@ -217,8 +217,8 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Product details |  -  |
-| **401** | Unauthorized - Invalid or missing API key |  -  |
 | **404** | Resource not found |  -  |
+| **401** | Unauthorized - Invalid or missing API key |  -  |
 
 <a id="queryProducts"></a>
 # **queryProducts**

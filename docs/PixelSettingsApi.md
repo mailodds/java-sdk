@@ -138,7 +138,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Pixel settings updated |  -  |
+| **404** | Resource not found |  -  |
 | **400** | Bad request |  -  |
 | **401** | Unauthorized - Invalid or missing API key |  -  |
-| **404** | Resource not found |  -  |
 

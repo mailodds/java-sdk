@@ -183,6 +183,7 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.mailodds.models.GetBounceRecords200Response.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.mailodds.models.GetBounceRecords200ResponseRecordsInner.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.mailodds.models.GetBounceStats200Response.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.mailodds.models.GetBounceStats200ResponseStats.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.mailodds.models.GetBounceStatsSummary200Response.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.mailodds.models.GetCampaignABResults200Response.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.mailodds.models.GetCampaignABResults200ResponseVariantsInner.CustomTypeAdapterFactory());

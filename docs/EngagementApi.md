@@ -84,8 +84,8 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Paginated list of disengaged contacts |  -  |
-| **401** | Unauthorized - Invalid or missing API key |  -  |
 | **403** | Forbidden - Insufficient permissions or no credits |  -  |
+| **401** | Unauthorized - Invalid or missing API key |  -  |
 
 <a id="getEngagementScore"></a>
 # **getEngagementScore**
@@ -115,7 +115,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     EngagementApi apiInstance = new EngagementApi(defaultClient);
-    String email = "email_example"; // String | Email address
+    String email = "email_example"; // String | 
     try {
       GetEngagementScore200Response result = apiInstance.getEngagementScore(email);
       System.out.println(result);
@@ -134,7 +134,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **email** | **String**| Email address | |
+| **email** | **String**|  | |
 
 ### Return type
 
@@ -153,8 +153,8 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Engagement score |  -  |
-| **401** | Unauthorized - Invalid or missing API key |  -  |
 | **403** | Forbidden - Insufficient permissions or no credits |  -  |
+| **401** | Unauthorized - Invalid or missing API key |  -  |
 
 <a id="getEngagementSummary"></a>
 # **getEngagementSummary**
@@ -222,8 +222,8 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Engagement summary |  -  |
-| **401** | Unauthorized - Invalid or missing API key |  -  |
 | **403** | Forbidden - Insufficient permissions or no credits |  -  |
+| **401** | Unauthorized - Invalid or missing API key |  -  |
 
 <a id="suppressDisengaged"></a>
 # **suppressDisengaged**
@@ -291,6 +291,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Suppression result or dry-run preview |  -  |
-| **401** | Unauthorized - Invalid or missing API key |  -  |
 | **403** | Forbidden - Insufficient permissions or no credits |  -  |
+| **400** | Bad request |  -  |
+| **401** | Unauthorized - Invalid or missing API key |  -  |
 

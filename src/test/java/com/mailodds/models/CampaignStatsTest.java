@@ -19,7 +19,6 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
-import java.math.BigDecimal;
 import java.util.Arrays;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -87,35 +86,27 @@ public class CampaignStatsTest {
     }
 
     /**
-     * Test the property 'complained'
+     * Test the property 'suppressed'
      */
     @Test
-    public void complainedTest() {
-        // TODO: test complained
+    public void suppressedTest() {
+        // TODO: test suppressed
     }
 
     /**
-     * Test the property 'deliveryRate'
+     * Test the property 'failed'
      */
     @Test
-    public void deliveryRateTest() {
-        // TODO: test deliveryRate
+    public void failedTest() {
+        // TODO: test failed
     }
 
     /**
-     * Test the property 'openRate'
+     * Test the property 'conversions'
      */
     @Test
-    public void openRateTest() {
-        // TODO: test openRate
-    }
-
-    /**
-     * Test the property 'clickRate'
-     */
-    @Test
-    public void clickRateTest() {
-        // TODO: test clickRate
+    public void conversionsTest() {
+        // TODO: test conversions
     }
 
 }

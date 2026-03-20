@@ -77,9 +77,9 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Batch OOO check results |  -  |
+| **403** | Forbidden - Insufficient permissions or no credits |  -  |
 | **400** | Bad request |  -  |
 | **401** | Unauthorized - Invalid or missing API key |  -  |
-| **403** | Forbidden - Insufficient permissions or no credits |  -  |
 
 <a id="deleteOooContact"></a>
 # **deleteOooContact**
@@ -109,7 +109,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     OutOfOfficeApi apiInstance = new OutOfOfficeApi(defaultClient);
-    String email = "email_example"; // String | Email address
+    String email = "email_example"; // String | 
     try {
       DeleteOooContact200Response result = apiInstance.deleteOooContact(email);
       System.out.println(result);
@@ -128,7 +128,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **email** | **String**| Email address | |
+| **email** | **String**|  | |
 
 ### Return type
 
@@ -147,9 +147,9 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | OOO status cleared |  -  |
-| **401** | Unauthorized - Invalid or missing API key |  -  |
 | **403** | Forbidden - Insufficient permissions or no credits |  -  |
 | **404** | Resource not found |  -  |
+| **401** | Unauthorized - Invalid or missing API key |  -  |
 
 <a id="getOooStatus"></a>
 # **getOooStatus**
@@ -179,7 +179,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     OutOfOfficeApi apiInstance = new OutOfOfficeApi(defaultClient);
-    String email = "email_example"; // String | Email address to check
+    String email = "email_example"; // String | 
     try {
       GetOooStatus200Response result = apiInstance.getOooStatus(email);
       System.out.println(result);
@@ -198,7 +198,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **email** | **String**| Email address to check | |
+| **email** | **String**|  | |
 
 ### Return type
 
@@ -217,8 +217,8 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | OOO status |  -  |
-| **401** | Unauthorized - Invalid or missing API key |  -  |
 | **403** | Forbidden - Insufficient permissions or no credits |  -  |
+| **401** | Unauthorized - Invalid or missing API key |  -  |
 
 <a id="listOooContacts"></a>
 # **listOooContacts**
@@ -290,8 +290,8 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Paginated list of OOO contacts |  -  |
-| **401** | Unauthorized - Invalid or missing API key |  -  |
 | **403** | Forbidden - Insufficient permissions or no credits |  -  |
+| **401** | Unauthorized - Invalid or missing API key |  -  |
 
 <a id="updateOooContact"></a>
 # **updateOooContact**
@@ -321,7 +321,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     OutOfOfficeApi apiInstance = new OutOfOfficeApi(defaultClient);
-    String email = "email_example"; // String | Email address
+    String email = "email_example"; // String | 
     UpdateOooContactRequest updateOooContactRequest = new UpdateOooContactRequest(); // UpdateOooContactRequest | 
     try {
       Object result = apiInstance.updateOooContact(email, updateOooContactRequest);
@@ -341,7 +341,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **email** | **String**| Email address | |
+| **email** | **String**|  | |
 | **updateOooContactRequest** | [**UpdateOooContactRequest**](UpdateOooContactRequest.md)|  | |
 
 ### Return type
@@ -361,6 +361,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | OOO contact updated |  -  |
-| **401** | Unauthorized - Invalid or missing API key |  -  |
 | **403** | Forbidden - Insufficient permissions or no credits |  -  |
+| **400** | Bad request |  -  |
+| **401** | Unauthorized - Invalid or missing API key |  -  |
 

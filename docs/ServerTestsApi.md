@@ -37,7 +37,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     ServerTestsApi apiInstance = new ServerTestsApi(defaultClient);
-    String testId = "testId_example"; // String | Server test UUID
+    String testId = "testId_example"; // String | 
     try {
       RunServerTest201Response result = apiInstance.getServerTest(testId);
       System.out.println(result);
@@ -56,7 +56,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **testId** | **String**| Server test UUID | |
+| **testId** | **String**|  | |
 
 ### Return type
 
@@ -75,8 +75,8 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Server test details |  -  |
-| **401** | Unauthorized - Invalid or missing API key |  -  |
 | **404** | Resource not found |  -  |
+| **401** | Unauthorized - Invalid or missing API key |  -  |
 
 <a id="listServerTests"></a>
 # **listServerTests**

@@ -88,9 +88,9 @@ public class AlertRulesApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Alert rule created </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call createAlertRuleCall(@javax.annotation.Nonnull CreateAlertRuleRequest createAlertRuleRequest, final ApiCallback _callback) throws ApiException {
@@ -160,9 +160,9 @@ public class AlertRulesApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Alert rule created </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
      </table>
      */
     public CreateAlertRule201Response createAlertRule(@javax.annotation.Nonnull CreateAlertRuleRequest createAlertRuleRequest) throws ApiException {
@@ -181,9 +181,9 @@ public class AlertRulesApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Alert rule created </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<CreateAlertRule201Response> createAlertRuleWithHttpInfo(@javax.annotation.Nonnull CreateAlertRuleRequest createAlertRuleRequest) throws ApiException {
@@ -204,9 +204,9 @@ public class AlertRulesApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Alert rule created </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call createAlertRuleAsync(@javax.annotation.Nonnull CreateAlertRuleRequest createAlertRuleRequest, final ApiCallback<CreateAlertRule201Response> _callback) throws ApiException {
@@ -218,7 +218,7 @@ public class AlertRulesApi {
     }
     /**
      * Build call for deleteAlertRule
-     * @param ruleId Alert rule ID (required)
+     * @param ruleId  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -227,9 +227,9 @@ public class AlertRulesApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Alert rule deleted </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call deleteAlertRuleCall(@javax.annotation.Nonnull String ruleId, final ApiCallback _callback) throws ApiException {
@@ -291,7 +291,7 @@ public class AlertRulesApi {
     /**
      * Delete alert rule
      * Delete an alert rule. Requires Growth+ plan.
-     * @param ruleId Alert rule ID (required)
+     * @param ruleId  (required)
      * @return DeletePolicyRule200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -299,9 +299,9 @@ public class AlertRulesApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Alert rule deleted </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public DeletePolicyRule200Response deleteAlertRule(@javax.annotation.Nonnull String ruleId) throws ApiException {
@@ -312,7 +312,7 @@ public class AlertRulesApi {
     /**
      * Delete alert rule
      * Delete an alert rule. Requires Growth+ plan.
-     * @param ruleId Alert rule ID (required)
+     * @param ruleId  (required)
      * @return ApiResponse&lt;DeletePolicyRule200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -320,9 +320,9 @@ public class AlertRulesApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Alert rule deleted </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<DeletePolicyRule200Response> deleteAlertRuleWithHttpInfo(@javax.annotation.Nonnull String ruleId) throws ApiException {
@@ -334,7 +334,7 @@ public class AlertRulesApi {
     /**
      * Delete alert rule (asynchronously)
      * Delete an alert rule. Requires Growth+ plan.
-     * @param ruleId Alert rule ID (required)
+     * @param ruleId  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -343,9 +343,9 @@ public class AlertRulesApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Alert rule deleted </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call deleteAlertRuleAsync(@javax.annotation.Nonnull String ruleId, final ApiCallback<DeletePolicyRule200Response> _callback) throws ApiException {
@@ -357,7 +357,7 @@ public class AlertRulesApi {
     }
     /**
      * Build call for getAlertRule
-     * @param ruleId Alert rule ID (required)
+     * @param ruleId  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -366,9 +366,9 @@ public class AlertRulesApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Alert rule details </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getAlertRuleCall(@javax.annotation.Nonnull String ruleId, final ApiCallback _callback) throws ApiException {
@@ -430,7 +430,7 @@ public class AlertRulesApi {
     /**
      * Get alert rule
      * Get a single alert rule by ID. Requires Growth+ plan.
-     * @param ruleId Alert rule ID (required)
+     * @param ruleId  (required)
      * @return CreateAlertRule201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -438,9 +438,9 @@ public class AlertRulesApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Alert rule details </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public CreateAlertRule201Response getAlertRule(@javax.annotation.Nonnull String ruleId) throws ApiException {
@@ -451,7 +451,7 @@ public class AlertRulesApi {
     /**
      * Get alert rule
      * Get a single alert rule by ID. Requires Growth+ plan.
-     * @param ruleId Alert rule ID (required)
+     * @param ruleId  (required)
      * @return ApiResponse&lt;CreateAlertRule201Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -459,9 +459,9 @@ public class AlertRulesApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Alert rule details </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<CreateAlertRule201Response> getAlertRuleWithHttpInfo(@javax.annotation.Nonnull String ruleId) throws ApiException {
@@ -473,7 +473,7 @@ public class AlertRulesApi {
     /**
      * Get alert rule (asynchronously)
      * Get a single alert rule by ID. Requires Growth+ plan.
-     * @param ruleId Alert rule ID (required)
+     * @param ruleId  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -482,9 +482,9 @@ public class AlertRulesApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Alert rule details </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getAlertRuleAsync(@javax.annotation.Nonnull String ruleId, final ApiCallback<CreateAlertRule201Response> _callback) throws ApiException {
@@ -504,8 +504,8 @@ public class AlertRulesApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> List of alert rules </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call listAlertRulesCall(final ApiCallback _callback) throws ApiException {
@@ -568,8 +568,8 @@ public class AlertRulesApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> List of alert rules </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public ListAlertRules200Response listAlertRules() throws ApiException {
@@ -587,8 +587,8 @@ public class AlertRulesApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> List of alert rules </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<ListAlertRules200Response> listAlertRulesWithHttpInfo() throws ApiException {
@@ -608,8 +608,8 @@ public class AlertRulesApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> List of alert rules </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call listAlertRulesAsync(final ApiCallback<ListAlertRules200Response> _callback) throws ApiException {
@@ -621,7 +621,7 @@ public class AlertRulesApi {
     }
     /**
      * Build call for updateAlertRule
-     * @param ruleId Alert rule ID (required)
+     * @param ruleId  (required)
      * @param updateAlertRuleRequest  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -631,10 +631,10 @@ public class AlertRulesApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Alert rule updated </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call updateAlertRuleCall(@javax.annotation.Nonnull String ruleId, @javax.annotation.Nonnull UpdateAlertRuleRequest updateAlertRuleRequest, final ApiCallback _callback) throws ApiException {
@@ -702,7 +702,7 @@ public class AlertRulesApi {
     /**
      * Update alert rule
      * Update an existing alert rule. Requires Growth+ plan.
-     * @param ruleId Alert rule ID (required)
+     * @param ruleId  (required)
      * @param updateAlertRuleRequest  (required)
      * @return CreateAlertRule201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -711,10 +711,10 @@ public class AlertRulesApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Alert rule updated </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public CreateAlertRule201Response updateAlertRule(@javax.annotation.Nonnull String ruleId, @javax.annotation.Nonnull UpdateAlertRuleRequest updateAlertRuleRequest) throws ApiException {
@@ -725,7 +725,7 @@ public class AlertRulesApi {
     /**
      * Update alert rule
      * Update an existing alert rule. Requires Growth+ plan.
-     * @param ruleId Alert rule ID (required)
+     * @param ruleId  (required)
      * @param updateAlertRuleRequest  (required)
      * @return ApiResponse&lt;CreateAlertRule201Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -734,10 +734,10 @@ public class AlertRulesApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Alert rule updated </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<CreateAlertRule201Response> updateAlertRuleWithHttpInfo(@javax.annotation.Nonnull String ruleId, @javax.annotation.Nonnull UpdateAlertRuleRequest updateAlertRuleRequest) throws ApiException {
@@ -749,7 +749,7 @@ public class AlertRulesApi {
     /**
      * Update alert rule (asynchronously)
      * Update an existing alert rule. Requires Growth+ plan.
-     * @param ruleId Alert rule ID (required)
+     * @param ruleId  (required)
      * @param updateAlertRuleRequest  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -759,10 +759,10 @@ public class AlertRulesApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Alert rule updated </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call updateAlertRuleAsync(@javax.annotation.Nonnull String ruleId, @javax.annotation.Nonnull UpdateAlertRuleRequest updateAlertRuleRequest, final ApiCallback<CreateAlertRule201Response> _callback) throws ApiException {

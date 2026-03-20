@@ -19,10 +19,9 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.mailodds.models.GetBounceStats200ResponseStats;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -50,7 +49,7 @@ import com.mailodds.JSON;
 /**
  * GetBounceStats200Response
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-17T17:50:09.712858375+01:00[Europe/Amsterdam]", comments = "Generator version: 7.19.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-20T03:00:43.181944620+01:00[Europe/Amsterdam]", comments = "Generator version: 7.19.0")
 public class GetBounceStats200Response {
   public static final String SERIALIZED_NAME_SCHEMA_VERSION = "schema_version";
   @SerializedName(SERIALIZED_NAME_SCHEMA_VERSION)
@@ -65,7 +64,7 @@ public class GetBounceStats200Response {
   public static final String SERIALIZED_NAME_STATS = "stats";
   @SerializedName(SERIALIZED_NAME_STATS)
   @javax.annotation.Nullable
-  private List<Object> stats = new ArrayList<>();
+  private GetBounceStats200ResponseStats stats;
 
   public GetBounceStats200Response() {
   }
@@ -108,16 +107,8 @@ public class GetBounceStats200Response {
   }
 
 
-  public GetBounceStats200Response stats(@javax.annotation.Nullable List<Object> stats) {
+  public GetBounceStats200Response stats(@javax.annotation.Nullable GetBounceStats200ResponseStats stats) {
     this.stats = stats;
-    return this;
-  }
-
-  public GetBounceStats200Response addStatsItem(Object statsItem) {
-    if (this.stats == null) {
-      this.stats = new ArrayList<>();
-    }
-    this.stats.add(statsItem);
     return this;
   }
 
@@ -126,11 +117,11 @@ public class GetBounceStats200Response {
    * @return stats
    */
   @javax.annotation.Nullable
-  public List<Object> getStats() {
+  public GetBounceStats200ResponseStats getStats() {
     return stats;
   }
 
-  public void setStats(@javax.annotation.Nullable List<Object> stats) {
+  public void setStats(@javax.annotation.Nullable GetBounceStats200ResponseStats stats) {
     this.stats = stats;
   }
 
@@ -216,9 +207,9 @@ public class GetBounceStats200Response {
       if ((jsonObj.get("request_id") != null && !jsonObj.get("request_id").isJsonNull()) && !jsonObj.get("request_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `request_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("request_id").toString()));
       }
-      // ensure the optional json data is an array if present
-      if (jsonObj.get("stats") != null && !jsonObj.get("stats").isJsonNull() && !jsonObj.get("stats").isJsonArray()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `stats` to be an array in the JSON string but got `%s`", jsonObj.get("stats").toString()));
+      // validate the optional field `stats`
+      if (jsonObj.get("stats") != null && !jsonObj.get("stats").isJsonNull()) {
+        GetBounceStats200ResponseStats.validateJsonElement(jsonObj.get("stats"));
       }
   }
 

@@ -81,7 +81,7 @@ public class InboundProcessingApi {
 
     /**
      * Build call for correctInboundMessage
-     * @param messageId Message ID (required)
+     * @param messageId  (required)
      * @param correctInboundMessageRequest  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -91,9 +91,10 @@ public class InboundProcessingApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Message updated with correction </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call correctInboundMessageCall(@javax.annotation.Nonnull String messageId, @javax.annotation.Nonnull CorrectInboundMessageRequest correctInboundMessageRequest, final ApiCallback _callback) throws ApiException {
@@ -161,7 +162,7 @@ public class InboundProcessingApi {
     /**
      * Correct inbound message classification
      * Submit a human correction for an inbound message classification. Requires Pro+ plan.
-     * @param messageId Message ID (required)
+     * @param messageId  (required)
      * @param correctInboundMessageRequest  (required)
      * @return GetInboundMessage200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -170,9 +171,10 @@ public class InboundProcessingApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Message updated with correction </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public GetInboundMessage200Response correctInboundMessage(@javax.annotation.Nonnull String messageId, @javax.annotation.Nonnull CorrectInboundMessageRequest correctInboundMessageRequest) throws ApiException {
@@ -183,7 +185,7 @@ public class InboundProcessingApi {
     /**
      * Correct inbound message classification
      * Submit a human correction for an inbound message classification. Requires Pro+ plan.
-     * @param messageId Message ID (required)
+     * @param messageId  (required)
      * @param correctInboundMessageRequest  (required)
      * @return ApiResponse&lt;GetInboundMessage200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -192,9 +194,10 @@ public class InboundProcessingApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Message updated with correction </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<GetInboundMessage200Response> correctInboundMessageWithHttpInfo(@javax.annotation.Nonnull String messageId, @javax.annotation.Nonnull CorrectInboundMessageRequest correctInboundMessageRequest) throws ApiException {
@@ -206,7 +209,7 @@ public class InboundProcessingApi {
     /**
      * Correct inbound message classification (asynchronously)
      * Submit a human correction for an inbound message classification. Requires Pro+ plan.
-     * @param messageId Message ID (required)
+     * @param messageId  (required)
      * @param correctInboundMessageRequest  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -216,9 +219,10 @@ public class InboundProcessingApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Message updated with correction </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call correctInboundMessageAsync(@javax.annotation.Nonnull String messageId, @javax.annotation.Nonnull CorrectInboundMessageRequest correctInboundMessageRequest, final ApiCallback<GetInboundMessage200Response> _callback) throws ApiException {
@@ -241,8 +245,8 @@ public class InboundProcessingApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Bounce statistics </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getBounceStatsCall(@javax.annotation.Nullable String domainId, @javax.annotation.Nullable String period, @javax.annotation.Nullable String groupBy, final ApiCallback _callback) throws ApiException {
@@ -320,8 +324,8 @@ public class InboundProcessingApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Bounce statistics </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public GetBounceStats200Response getBounceStats(@javax.annotation.Nullable String domainId, @javax.annotation.Nullable String period, @javax.annotation.Nullable String groupBy) throws ApiException {
@@ -342,8 +346,8 @@ public class InboundProcessingApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Bounce statistics </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<GetBounceStats200Response> getBounceStatsWithHttpInfo(@javax.annotation.Nullable String domainId, @javax.annotation.Nullable String period, @javax.annotation.Nullable String groupBy) throws ApiException {
@@ -366,8 +370,8 @@ public class InboundProcessingApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Bounce statistics </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getBounceStatsAsync(@javax.annotation.Nullable String domainId, @javax.annotation.Nullable String period, @javax.annotation.Nullable String groupBy, final ApiCallback<GetBounceStats200Response> _callback) throws ApiException {
@@ -389,8 +393,8 @@ public class InboundProcessingApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Bounce statistics summary </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getBounceStatsSummaryCall(@javax.annotation.Nullable String domainId, @javax.annotation.Nullable String period, final ApiCallback _callback) throws ApiException {
@@ -463,8 +467,8 @@ public class InboundProcessingApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Bounce statistics summary </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public GetBounceStatsSummary200Response getBounceStatsSummary(@javax.annotation.Nullable String domainId, @javax.annotation.Nullable String period) throws ApiException {
@@ -484,8 +488,8 @@ public class InboundProcessingApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Bounce statistics summary </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<GetBounceStatsSummary200Response> getBounceStatsSummaryWithHttpInfo(@javax.annotation.Nullable String domainId, @javax.annotation.Nullable String period) throws ApiException {
@@ -507,8 +511,8 @@ public class InboundProcessingApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Bounce statistics summary </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getBounceStatsSummaryAsync(@javax.annotation.Nullable String domainId, @javax.annotation.Nullable String period, final ApiCallback<GetBounceStatsSummary200Response> _callback) throws ApiException {
@@ -530,8 +534,8 @@ public class InboundProcessingApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Complaint assessment </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getComplaintAssessmentCall(@javax.annotation.Nullable String domainId, @javax.annotation.Nullable String period, final ApiCallback _callback) throws ApiException {
@@ -604,8 +608,8 @@ public class InboundProcessingApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Complaint assessment </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public GetComplaintAssessment200Response getComplaintAssessment(@javax.annotation.Nullable String domainId, @javax.annotation.Nullable String period) throws ApiException {
@@ -625,8 +629,8 @@ public class InboundProcessingApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Complaint assessment </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<GetComplaintAssessment200Response> getComplaintAssessmentWithHttpInfo(@javax.annotation.Nullable String domainId, @javax.annotation.Nullable String period) throws ApiException {
@@ -648,8 +652,8 @@ public class InboundProcessingApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Complaint assessment </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getComplaintAssessmentAsync(@javax.annotation.Nullable String domainId, @javax.annotation.Nullable String period, final ApiCallback<GetComplaintAssessment200Response> _callback) throws ApiException {
@@ -661,7 +665,7 @@ public class InboundProcessingApi {
     }
     /**
      * Build call for getInboundMessage
-     * @param messageId Message ID (required)
+     * @param messageId  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -670,9 +674,9 @@ public class InboundProcessingApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Inbound message details </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getInboundMessageCall(@javax.annotation.Nonnull String messageId, final ApiCallback _callback) throws ApiException {
@@ -734,7 +738,7 @@ public class InboundProcessingApi {
     /**
      * Get inbound message
      * Get a single inbound message with full body content. Requires Growth+ plan.
-     * @param messageId Message ID (required)
+     * @param messageId  (required)
      * @return GetInboundMessage200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -742,9 +746,9 @@ public class InboundProcessingApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Inbound message details </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public GetInboundMessage200Response getInboundMessage(@javax.annotation.Nonnull String messageId) throws ApiException {
@@ -755,7 +759,7 @@ public class InboundProcessingApi {
     /**
      * Get inbound message
      * Get a single inbound message with full body content. Requires Growth+ plan.
-     * @param messageId Message ID (required)
+     * @param messageId  (required)
      * @return ApiResponse&lt;GetInboundMessage200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -763,9 +767,9 @@ public class InboundProcessingApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Inbound message details </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<GetInboundMessage200Response> getInboundMessageWithHttpInfo(@javax.annotation.Nonnull String messageId) throws ApiException {
@@ -777,7 +781,7 @@ public class InboundProcessingApi {
     /**
      * Get inbound message (asynchronously)
      * Get a single inbound message with full body content. Requires Growth+ plan.
-     * @param messageId Message ID (required)
+     * @param messageId  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -786,9 +790,9 @@ public class InboundProcessingApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Inbound message details </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getInboundMessageAsync(@javax.annotation.Nonnull String messageId, final ApiCallback<GetInboundMessage200Response> _callback) throws ApiException {
@@ -817,8 +821,8 @@ public class InboundProcessingApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Paginated list of inbound messages </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call listInboundMessagesCall(@javax.annotation.Nullable String category, @javax.annotation.Nullable String domainId, @javax.annotation.Nullable OffsetDateTime since, @javax.annotation.Nullable OffsetDateTime until, @javax.annotation.Nullable Boolean isRead, @javax.annotation.Nullable String recipient, @javax.annotation.Nullable String search, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, final ApiCallback _callback) throws ApiException {
@@ -926,8 +930,8 @@ public class InboundProcessingApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Paginated list of inbound messages </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public ListInboundMessages200Response listInboundMessages(@javax.annotation.Nullable String category, @javax.annotation.Nullable String domainId, @javax.annotation.Nullable OffsetDateTime since, @javax.annotation.Nullable OffsetDateTime until, @javax.annotation.Nullable Boolean isRead, @javax.annotation.Nullable String recipient, @javax.annotation.Nullable String search, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage) throws ApiException {
@@ -954,8 +958,8 @@ public class InboundProcessingApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Paginated list of inbound messages </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<ListInboundMessages200Response> listInboundMessagesWithHttpInfo(@javax.annotation.Nullable String category, @javax.annotation.Nullable String domainId, @javax.annotation.Nullable OffsetDateTime since, @javax.annotation.Nullable OffsetDateTime until, @javax.annotation.Nullable Boolean isRead, @javax.annotation.Nullable String recipient, @javax.annotation.Nullable String search, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage) throws ApiException {
@@ -984,8 +988,8 @@ public class InboundProcessingApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Paginated list of inbound messages </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden - Insufficient permissions or no credits </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call listInboundMessagesAsync(@javax.annotation.Nullable String category, @javax.annotation.Nullable String domainId, @javax.annotation.Nullable OffsetDateTime since, @javax.annotation.Nullable OffsetDateTime until, @javax.annotation.Nullable Boolean isRead, @javax.annotation.Nullable String recipient, @javax.annotation.Nullable String search, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, final ApiCallback<ListInboundMessages200Response> _callback) throws ApiException {

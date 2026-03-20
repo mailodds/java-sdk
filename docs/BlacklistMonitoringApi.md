@@ -108,7 +108,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     BlacklistMonitoringApi apiInstance = new BlacklistMonitoringApi(defaultClient);
-    String monitorId = "monitorId_example"; // String | Monitor UUID
+    String monitorId = "monitorId_example"; // String | 
     try {
       DeletePolicyRule200Response result = apiInstance.deleteBlacklistMonitor(monitorId);
       System.out.println(result);
@@ -127,7 +127,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **monitorId** | **String**| Monitor UUID | |
+| **monitorId** | **String**|  | |
 
 ### Return type
 
@@ -146,8 +146,8 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Monitor deleted |  -  |
-| **401** | Unauthorized - Invalid or missing API key |  -  |
 | **404** | Resource not found |  -  |
+| **401** | Unauthorized - Invalid or missing API key |  -  |
 
 <a id="getBlacklistHistory"></a>
 # **getBlacklistHistory**
@@ -177,7 +177,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     BlacklistMonitoringApi apiInstance = new BlacklistMonitoringApi(defaultClient);
-    String monitorId = "monitorId_example"; // String | Monitor UUID
+    String monitorId = "monitorId_example"; // String | 
     Integer page = 1; // Integer | 
     Integer perPage = 20; // Integer | 
     try {
@@ -198,7 +198,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **monitorId** | **String**| Monitor UUID | |
+| **monitorId** | **String**|  | |
 | **page** | **Integer**|  | [optional] [default to 1] |
 | **perPage** | **Integer**|  | [optional] [default to 20] |
 
@@ -219,8 +219,8 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Check history |  -  |
-| **401** | Unauthorized - Invalid or missing API key |  -  |
 | **404** | Resource not found |  -  |
+| **401** | Unauthorized - Invalid or missing API key |  -  |
 
 <a id="listBlacklistMonitors"></a>
 # **listBlacklistMonitors**
@@ -314,7 +314,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     BlacklistMonitoringApi apiInstance = new BlacklistMonitoringApi(defaultClient);
-    String monitorId = "monitorId_example"; // String | Monitor UUID
+    String monitorId = "monitorId_example"; // String | 
     try {
       RunBlacklistCheck200Response result = apiInstance.runBlacklistCheck(monitorId);
       System.out.println(result);
@@ -333,7 +333,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **monitorId** | **String**| Monitor UUID | |
+| **monitorId** | **String**|  | |
 
 ### Return type
 
@@ -352,6 +352,6 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Check result |  -  |
-| **401** | Unauthorized - Invalid or missing API key |  -  |
 | **404** | Resource not found |  -  |
+| **401** | Unauthorized - Invalid or missing API key |  -  |
 

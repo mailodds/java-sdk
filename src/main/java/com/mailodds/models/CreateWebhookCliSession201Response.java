@@ -48,7 +48,7 @@ import com.mailodds.JSON;
 /**
  * CreateWebhookCliSession201Response
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-17T17:50:09.712858375+01:00[Europe/Amsterdam]", comments = "Generator version: 7.19.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-20T03:00:43.181944620+01:00[Europe/Amsterdam]", comments = "Generator version: 7.19.0")
 public class CreateWebhookCliSession201Response {
   public static final String SERIALIZED_NAME_SESSION_ID = "session_id";
   @SerializedName(SERIALIZED_NAME_SESSION_ID)

@@ -39,19 +39,19 @@ public class SendingDomainIdentityScoreBreakdownTest {
     }
 
     /**
-     * Test the property 'dkim'
-     */
-    @Test
-    public void dkimTest() {
-        // TODO: test dkim
-    }
-
-    /**
      * Test the property 'spf'
      */
     @Test
     public void spfTest() {
         // TODO: test spf
+    }
+
+    /**
+     * Test the property 'dkim'
+     */
+    @Test
+    public void dkimTest() {
+        // TODO: test dkim
     }
 
     /**
@@ -63,19 +63,19 @@ public class SendingDomainIdentityScoreBreakdownTest {
     }
 
     /**
-     * Test the property 'mx'
+     * Test the property 'bounce'
      */
     @Test
-    public void mxTest() {
-        // TODO: test mx
+    public void bounceTest() {
+        // TODO: test bounce
     }
 
     /**
-     * Test the property 'returnPath'
+     * Test the property 'tracking'
      */
     @Test
-    public void returnPathTest() {
-        // TODO: test returnPath
+    public void trackingTest() {
+        // TODO: test tracking
     }
 
     /**

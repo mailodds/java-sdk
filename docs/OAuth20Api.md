@@ -216,6 +216,7 @@ No authorization required
 |-------------|-------------|------------------|
 | **200** | Introspection result |  -  |
 | **401** | Invalid client credentials |  -  |
+| **400** | Bad request |  -  |
 
 <a id="oauthServerMetadata"></a>
 # **oauthServerMetadata**
@@ -335,11 +336,12 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/x-www-form-urlencoded
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Token revoked (or not found, per RFC 7009) |  -  |
 | **401** | Invalid client credentials |  -  |
+| **400** | Bad request |  -  |
 

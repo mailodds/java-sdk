@@ -217,7 +217,7 @@ public class StoreConnectionsApi {
     }
     /**
      * Build call for disconnectStore
-     * @param storeId Store connection UUID (required)
+     * @param storeId  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -226,8 +226,8 @@ public class StoreConnectionsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Store disconnected </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call disconnectStoreCall(@javax.annotation.Nonnull String storeId, final ApiCallback _callback) throws ApiException {
@@ -289,7 +289,7 @@ public class StoreConnectionsApi {
     /**
      * Disconnect a store
      * Disconnect a store and deactivate its products. Products are retained but marked inactive.
-     * @param storeId Store connection UUID (required)
+     * @param storeId  (required)
      * @return DisconnectStore200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -297,8 +297,8 @@ public class StoreConnectionsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Store disconnected </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public DisconnectStore200Response disconnectStore(@javax.annotation.Nonnull String storeId) throws ApiException {
@@ -309,7 +309,7 @@ public class StoreConnectionsApi {
     /**
      * Disconnect a store
      * Disconnect a store and deactivate its products. Products are retained but marked inactive.
-     * @param storeId Store connection UUID (required)
+     * @param storeId  (required)
      * @return ApiResponse&lt;DisconnectStore200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -317,8 +317,8 @@ public class StoreConnectionsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Store disconnected </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<DisconnectStore200Response> disconnectStoreWithHttpInfo(@javax.annotation.Nonnull String storeId) throws ApiException {
@@ -330,7 +330,7 @@ public class StoreConnectionsApi {
     /**
      * Disconnect a store (asynchronously)
      * Disconnect a store and deactivate its products. Products are retained but marked inactive.
-     * @param storeId Store connection UUID (required)
+     * @param storeId  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -339,8 +339,8 @@ public class StoreConnectionsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Store disconnected </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call disconnectStoreAsync(@javax.annotation.Nonnull String storeId, final ApiCallback<DisconnectStore200Response> _callback) throws ApiException {
@@ -352,7 +352,7 @@ public class StoreConnectionsApi {
     }
     /**
      * Build call for getStore
-     * @param storeId Store connection UUID (required)
+     * @param storeId  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -361,8 +361,8 @@ public class StoreConnectionsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Store connection details </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getStoreCall(@javax.annotation.Nonnull String storeId, final ApiCallback _callback) throws ApiException {
@@ -424,7 +424,7 @@ public class StoreConnectionsApi {
     /**
      * Get a store connection
      * Get details of a specific store connection including sync status and product count.
-     * @param storeId Store connection UUID (required)
+     * @param storeId  (required)
      * @return CreateStore201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -432,8 +432,8 @@ public class StoreConnectionsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Store connection details </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public CreateStore201Response getStore(@javax.annotation.Nonnull String storeId) throws ApiException {
@@ -444,7 +444,7 @@ public class StoreConnectionsApi {
     /**
      * Get a store connection
      * Get details of a specific store connection including sync status and product count.
-     * @param storeId Store connection UUID (required)
+     * @param storeId  (required)
      * @return ApiResponse&lt;CreateStore201Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -452,8 +452,8 @@ public class StoreConnectionsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Store connection details </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<CreateStore201Response> getStoreWithHttpInfo(@javax.annotation.Nonnull String storeId) throws ApiException {
@@ -465,7 +465,7 @@ public class StoreConnectionsApi {
     /**
      * Get a store connection (asynchronously)
      * Get details of a specific store connection including sync status and product count.
-     * @param storeId Store connection UUID (required)
+     * @param storeId  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -474,8 +474,8 @@ public class StoreConnectionsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Store connection details </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getStoreAsync(@javax.annotation.Nonnull String storeId, final ApiCallback<CreateStore201Response> _callback) throws ApiException {
@@ -487,8 +487,8 @@ public class StoreConnectionsApi {
     }
     /**
      * Build call for getSyncJobErrors
-     * @param storeId Store ID (required)
-     * @param jobId Sync job ID (required)
+     * @param storeId  (required)
+     * @param jobId  (required)
      * @param page  (optional, default to 1)
      * @param perPage  (optional, default to 50)
      * @param _callback Callback for upload/download progress
@@ -499,8 +499,8 @@ public class StoreConnectionsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Sync job errors </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getSyncJobErrorsCall(@javax.annotation.Nonnull String storeId, @javax.annotation.Nonnull String jobId, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, final ApiCallback _callback) throws ApiException {
@@ -576,8 +576,8 @@ public class StoreConnectionsApi {
     /**
      * Get sync job errors
      * Get error details for a sync job.
-     * @param storeId Store ID (required)
-     * @param jobId Sync job ID (required)
+     * @param storeId  (required)
+     * @param jobId  (required)
      * @param page  (optional, default to 1)
      * @param perPage  (optional, default to 50)
      * @return GetSyncJobErrors200Response
@@ -587,8 +587,8 @@ public class StoreConnectionsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Sync job errors </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public GetSyncJobErrors200Response getSyncJobErrors(@javax.annotation.Nonnull String storeId, @javax.annotation.Nonnull String jobId, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage) throws ApiException {
@@ -599,8 +599,8 @@ public class StoreConnectionsApi {
     /**
      * Get sync job errors
      * Get error details for a sync job.
-     * @param storeId Store ID (required)
-     * @param jobId Sync job ID (required)
+     * @param storeId  (required)
+     * @param jobId  (required)
      * @param page  (optional, default to 1)
      * @param perPage  (optional, default to 50)
      * @return ApiResponse&lt;GetSyncJobErrors200Response&gt;
@@ -610,8 +610,8 @@ public class StoreConnectionsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Sync job errors </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<GetSyncJobErrors200Response> getSyncJobErrorsWithHttpInfo(@javax.annotation.Nonnull String storeId, @javax.annotation.Nonnull String jobId, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage) throws ApiException {
@@ -623,8 +623,8 @@ public class StoreConnectionsApi {
     /**
      * Get sync job errors (asynchronously)
      * Get error details for a sync job.
-     * @param storeId Store ID (required)
-     * @param jobId Sync job ID (required)
+     * @param storeId  (required)
+     * @param jobId  (required)
      * @param page  (optional, default to 1)
      * @param perPage  (optional, default to 50)
      * @param _callback The callback to be executed when the API call finishes
@@ -635,8 +635,8 @@ public class StoreConnectionsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Sync job errors </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call getSyncJobErrorsAsync(@javax.annotation.Nonnull String storeId, @javax.annotation.Nonnull String jobId, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, final ApiCallback<GetSyncJobErrors200Response> _callback) throws ApiException {
@@ -777,7 +777,7 @@ public class StoreConnectionsApi {
     }
     /**
      * Build call for listSyncJobs
-     * @param storeId Store ID (required)
+     * @param storeId  (required)
      * @param page  (optional, default to 1)
      * @param perPage  (optional, default to 20)
      * @param _callback Callback for upload/download progress
@@ -788,8 +788,8 @@ public class StoreConnectionsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> List of sync jobs </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call listSyncJobsCall(@javax.annotation.Nonnull String storeId, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, final ApiCallback _callback) throws ApiException {
@@ -859,7 +859,7 @@ public class StoreConnectionsApi {
     /**
      * List sync jobs
      * List sync job history for a store.
-     * @param storeId Store ID (required)
+     * @param storeId  (required)
      * @param page  (optional, default to 1)
      * @param perPage  (optional, default to 20)
      * @return ListSyncJobs200Response
@@ -869,8 +869,8 @@ public class StoreConnectionsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> List of sync jobs </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public ListSyncJobs200Response listSyncJobs(@javax.annotation.Nonnull String storeId, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage) throws ApiException {
@@ -881,7 +881,7 @@ public class StoreConnectionsApi {
     /**
      * List sync jobs
      * List sync job history for a store.
-     * @param storeId Store ID (required)
+     * @param storeId  (required)
      * @param page  (optional, default to 1)
      * @param perPage  (optional, default to 20)
      * @return ApiResponse&lt;ListSyncJobs200Response&gt;
@@ -891,8 +891,8 @@ public class StoreConnectionsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> List of sync jobs </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<ListSyncJobs200Response> listSyncJobsWithHttpInfo(@javax.annotation.Nonnull String storeId, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage) throws ApiException {
@@ -904,7 +904,7 @@ public class StoreConnectionsApi {
     /**
      * List sync jobs (asynchronously)
      * List sync job history for a store.
-     * @param storeId Store ID (required)
+     * @param storeId  (required)
      * @param page  (optional, default to 1)
      * @param perPage  (optional, default to 20)
      * @param _callback The callback to be executed when the API call finishes
@@ -915,8 +915,8 @@ public class StoreConnectionsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> List of sync jobs </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call listSyncJobsAsync(@javax.annotation.Nonnull String storeId, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, final ApiCallback<ListSyncJobs200Response> _callback) throws ApiException {
@@ -928,7 +928,7 @@ public class StoreConnectionsApi {
     }
     /**
      * Build call for triggerSync
-     * @param storeId Store connection UUID (required)
+     * @param storeId  (required)
      * @param idempotencyKey Idempotency key to prevent duplicate syncs (5 min TTL) (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -939,8 +939,8 @@ public class StoreConnectionsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Sync scheduled </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call triggerSyncCall(@javax.annotation.Nonnull String storeId, @javax.annotation.Nullable String idempotencyKey, final ApiCallback _callback) throws ApiException {
@@ -1007,7 +1007,7 @@ public class StoreConnectionsApi {
     /**
      * Trigger product sync
      * Trigger a manual product sync for a store. Supports idempotency via the Idempotency-Key header (5 minute TTL).
-     * @param storeId Store connection UUID (required)
+     * @param storeId  (required)
      * @param idempotencyKey Idempotency key to prevent duplicate syncs (5 min TTL) (optional)
      * @return SyncResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1017,8 +1017,8 @@ public class StoreConnectionsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Sync scheduled </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public SyncResponse triggerSync(@javax.annotation.Nonnull String storeId, @javax.annotation.Nullable String idempotencyKey) throws ApiException {
@@ -1029,7 +1029,7 @@ public class StoreConnectionsApi {
     /**
      * Trigger product sync
      * Trigger a manual product sync for a store. Supports idempotency via the Idempotency-Key header (5 minute TTL).
-     * @param storeId Store connection UUID (required)
+     * @param storeId  (required)
      * @param idempotencyKey Idempotency key to prevent duplicate syncs (5 min TTL) (optional)
      * @return ApiResponse&lt;SyncResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1039,8 +1039,8 @@ public class StoreConnectionsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Sync scheduled </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<SyncResponse> triggerSyncWithHttpInfo(@javax.annotation.Nonnull String storeId, @javax.annotation.Nullable String idempotencyKey) throws ApiException {
@@ -1052,7 +1052,7 @@ public class StoreConnectionsApi {
     /**
      * Trigger product sync (asynchronously)
      * Trigger a manual product sync for a store. Supports idempotency via the Idempotency-Key header (5 minute TTL).
-     * @param storeId Store connection UUID (required)
+     * @param storeId  (required)
      * @param idempotencyKey Idempotency key to prevent duplicate syncs (5 min TTL) (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -1063,8 +1063,8 @@ public class StoreConnectionsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Sync scheduled </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call triggerSyncAsync(@javax.annotation.Nonnull String storeId, @javax.annotation.Nullable String idempotencyKey, final ApiCallback<SyncResponse> _callback) throws ApiException {
@@ -1076,7 +1076,7 @@ public class StoreConnectionsApi {
     }
     /**
      * Build call for updateStore
-     * @param storeId Store connection UUID (required)
+     * @param storeId  (required)
      * @param updateStoreRequest  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -1086,9 +1086,9 @@ public class StoreConnectionsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Store connection updated </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call updateStoreCall(@javax.annotation.Nonnull String storeId, @javax.annotation.Nonnull UpdateStoreRequest updateStoreRequest, final ApiCallback _callback) throws ApiException {
@@ -1156,7 +1156,7 @@ public class StoreConnectionsApi {
     /**
      * Update a store connection
      * Update store settings such as name, sync interval, or credentials.
-     * @param storeId Store connection UUID (required)
+     * @param storeId  (required)
      * @param updateStoreRequest  (required)
      * @return CreateStore201Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1165,9 +1165,9 @@ public class StoreConnectionsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Store connection updated </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
      </table>
      */
     public CreateStore201Response updateStore(@javax.annotation.Nonnull String storeId, @javax.annotation.Nonnull UpdateStoreRequest updateStoreRequest) throws ApiException {
@@ -1178,7 +1178,7 @@ public class StoreConnectionsApi {
     /**
      * Update a store connection
      * Update store settings such as name, sync interval, or credentials.
-     * @param storeId Store connection UUID (required)
+     * @param storeId  (required)
      * @param updateStoreRequest  (required)
      * @return ApiResponse&lt;CreateStore201Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1187,9 +1187,9 @@ public class StoreConnectionsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Store connection updated </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<CreateStore201Response> updateStoreWithHttpInfo(@javax.annotation.Nonnull String storeId, @javax.annotation.Nonnull UpdateStoreRequest updateStoreRequest) throws ApiException {
@@ -1201,7 +1201,7 @@ public class StoreConnectionsApi {
     /**
      * Update a store connection (asynchronously)
      * Update store settings such as name, sync interval, or credentials.
-     * @param storeId Store connection UUID (required)
+     * @param storeId  (required)
      * @param updateStoreRequest  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -1211,9 +1211,9 @@ public class StoreConnectionsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Store connection updated </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call updateStoreAsync(@javax.annotation.Nonnull String storeId, @javax.annotation.Nonnull UpdateStoreRequest updateStoreRequest, final ApiCallback<CreateStore201Response> _callback) throws ApiException {

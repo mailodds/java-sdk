@@ -111,7 +111,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     StoreConnectionsApi apiInstance = new StoreConnectionsApi(defaultClient);
-    String storeId = "storeId_example"; // String | Store connection UUID
+    String storeId = "storeId_example"; // String | 
     try {
       DisconnectStore200Response result = apiInstance.disconnectStore(storeId);
       System.out.println(result);
@@ -130,7 +130,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **storeId** | **String**| Store connection UUID | |
+| **storeId** | **String**|  | |
 
 ### Return type
 
@@ -149,8 +149,8 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Store disconnected |  -  |
-| **401** | Unauthorized - Invalid or missing API key |  -  |
 | **404** | Resource not found |  -  |
+| **401** | Unauthorized - Invalid or missing API key |  -  |
 
 <a id="getStore"></a>
 # **getStore**
@@ -180,7 +180,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     StoreConnectionsApi apiInstance = new StoreConnectionsApi(defaultClient);
-    String storeId = "storeId_example"; // String | Store connection UUID
+    String storeId = "storeId_example"; // String | 
     try {
       CreateStore201Response result = apiInstance.getStore(storeId);
       System.out.println(result);
@@ -199,7 +199,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **storeId** | **String**| Store connection UUID | |
+| **storeId** | **String**|  | |
 
 ### Return type
 
@@ -218,8 +218,8 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Store connection details |  -  |
-| **401** | Unauthorized - Invalid or missing API key |  -  |
 | **404** | Resource not found |  -  |
+| **401** | Unauthorized - Invalid or missing API key |  -  |
 
 <a id="getSyncJobErrors"></a>
 # **getSyncJobErrors**
@@ -249,8 +249,8 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     StoreConnectionsApi apiInstance = new StoreConnectionsApi(defaultClient);
-    String storeId = "storeId_example"; // String | Store ID
-    String jobId = "jobId_example"; // String | Sync job ID
+    String storeId = "storeId_example"; // String | 
+    String jobId = "jobId_example"; // String | 
     Integer page = 1; // Integer | 
     Integer perPage = 50; // Integer | 
     try {
@@ -271,8 +271,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **storeId** | **String**| Store ID | |
-| **jobId** | **String**| Sync job ID | |
+| **storeId** | **String**|  | |
+| **jobId** | **String**|  | |
 | **page** | **Integer**|  | [optional] [default to 1] |
 | **perPage** | **Integer**|  | [optional] [default to 50] |
 
@@ -293,8 +293,8 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Sync job errors |  -  |
-| **401** | Unauthorized - Invalid or missing API key |  -  |
 | **404** | Resource not found |  -  |
+| **401** | Unauthorized - Invalid or missing API key |  -  |
 
 <a id="listStores"></a>
 # **listStores**
@@ -392,7 +392,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     StoreConnectionsApi apiInstance = new StoreConnectionsApi(defaultClient);
-    String storeId = "storeId_example"; // String | Store ID
+    String storeId = "storeId_example"; // String | 
     Integer page = 1; // Integer | 
     Integer perPage = 20; // Integer | 
     try {
@@ -413,7 +413,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **storeId** | **String**| Store ID | |
+| **storeId** | **String**|  | |
 | **page** | **Integer**|  | [optional] [default to 1] |
 | **perPage** | **Integer**|  | [optional] [default to 20] |
 
@@ -434,8 +434,8 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | List of sync jobs |  -  |
-| **401** | Unauthorized - Invalid or missing API key |  -  |
 | **404** | Resource not found |  -  |
+| **401** | Unauthorized - Invalid or missing API key |  -  |
 
 <a id="triggerSync"></a>
 # **triggerSync**
@@ -465,7 +465,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     StoreConnectionsApi apiInstance = new StoreConnectionsApi(defaultClient);
-    String storeId = "storeId_example"; // String | Store connection UUID
+    String storeId = "storeId_example"; // String | 
     String idempotencyKey = "idempotencyKey_example"; // String | Idempotency key to prevent duplicate syncs (5 min TTL)
     try {
       SyncResponse result = apiInstance.triggerSync(storeId, idempotencyKey);
@@ -485,7 +485,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **storeId** | **String**| Store connection UUID | |
+| **storeId** | **String**|  | |
 | **idempotencyKey** | **String**| Idempotency key to prevent duplicate syncs (5 min TTL) | [optional] |
 
 ### Return type
@@ -506,8 +506,8 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | Sync scheduled |  -  |
 | **400** | Bad request |  -  |
-| **401** | Unauthorized - Invalid or missing API key |  -  |
 | **404** | Resource not found |  -  |
+| **401** | Unauthorized - Invalid or missing API key |  -  |
 
 <a id="updateStore"></a>
 # **updateStore**
@@ -537,7 +537,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     StoreConnectionsApi apiInstance = new StoreConnectionsApi(defaultClient);
-    String storeId = "storeId_example"; // String | Store connection UUID
+    String storeId = "storeId_example"; // String | 
     UpdateStoreRequest updateStoreRequest = new UpdateStoreRequest(); // UpdateStoreRequest | 
     try {
       CreateStore201Response result = apiInstance.updateStore(storeId, updateStoreRequest);
@@ -557,7 +557,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **storeId** | **String**| Store connection UUID | |
+| **storeId** | **String**|  | |
 | **updateStoreRequest** | [**UpdateStoreRequest**](UpdateStoreRequest.md)|  | |
 
 ### Return type
@@ -577,7 +577,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Store connection updated |  -  |
+| **404** | Resource not found |  -  |
 | **400** | Bad request |  -  |
 | **401** | Unauthorized - Invalid or missing API key |  -  |
-| **404** | Resource not found |  -  |
 

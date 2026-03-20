@@ -38,7 +38,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     SpamChecksApi apiInstance = new SpamChecksApi(defaultClient);
-    String checkId = "checkId_example"; // String | Spam check ID
+    String checkId = "checkId_example"; // String | 
     try {
       DeletePolicyRule200Response result = apiInstance.deleteSpamCheck(checkId);
       System.out.println(result);
@@ -57,7 +57,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **checkId** | **String**| Spam check ID | |
+| **checkId** | **String**|  | |
 
 ### Return type
 
@@ -76,8 +76,8 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Spam check deleted |  -  |
-| **401** | Unauthorized - Invalid or missing API key |  -  |
 | **404** | Resource not found |  -  |
+| **401** | Unauthorized - Invalid or missing API key |  -  |
 
 <a id="getSpamCheck"></a>
 # **getSpamCheck**
@@ -107,7 +107,7 @@ public class Example {
     BearerAuth.setBearerToken("BEARER TOKEN");
 
     SpamChecksApi apiInstance = new SpamChecksApi(defaultClient);
-    String checkId = "checkId_example"; // String | Spam check UUID
+    String checkId = "checkId_example"; // String | 
     try {
       RunSpamCheck201Response result = apiInstance.getSpamCheck(checkId);
       System.out.println(result);
@@ -126,7 +126,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **checkId** | **String**| Spam check UUID | |
+| **checkId** | **String**|  | |
 
 ### Return type
 
@@ -145,8 +145,8 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Spam check details |  -  |
-| **401** | Unauthorized - Invalid or missing API key |  -  |
 | **404** | Resource not found |  -  |
+| **401** | Unauthorized - Invalid or missing API key |  -  |
 
 <a id="listSpamChecks"></a>
 # **listSpamChecks**
