@@ -10,19 +10,8 @@
 |**metric** | **String** |  |  [optional] |
 |**threshold** | **BigDecimal** |  |  [optional] |
 |**channel** | **String** |  |  [optional] |
-|**windowMinutes** | [**WindowMinutesEnum**](#WindowMinutesEnum) |  |  [optional] |
+|**windowMinutes** | **Integer** | Evaluation window in minutes (15, 60, 1440, or 2880) |  [optional] |
 |**enabled** | **Boolean** |  |  [optional] |
-
-
-
-## Enum: WindowMinutesEnum
-
-| Name | Value |
-|---- | -----|
-| NUMBER_15 | 15 |
-| NUMBER_60 | 60 |
-| NUMBER_1440 | 1440 |
-| NUMBER_2880 | 2880 |
 
 
 
