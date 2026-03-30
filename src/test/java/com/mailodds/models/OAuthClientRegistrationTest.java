@@ -26,33 +26,97 @@ import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
- * Model tests for BulkUpdateProductsRequest
+ * Model tests for OAuthClientRegistration
  */
-public class BulkUpdateProductsRequestTest {
-    private final BulkUpdateProductsRequest model = new BulkUpdateProductsRequest();
+public class OAuthClientRegistrationTest {
+    private final OAuthClientRegistration model = new OAuthClientRegistration();
 
     /**
-     * Model tests for BulkUpdateProductsRequest
+     * Model tests for OAuthClientRegistration
      */
     @Test
-    public void testBulkUpdateProductsRequest() {
-        // TODO: test BulkUpdateProductsRequest
+    public void testOAuthClientRegistration() {
+        // TODO: test OAuthClientRegistration
     }
 
     /**
-     * Test the property 'productIds'
+     * Test the property 'clientId'
      */
     @Test
-    public void productIdsTest() {
-        // TODO: test productIds
+    public void clientIdTest() {
+        // TODO: test clientId
     }
 
     /**
-     * Test the property 'isActive'
+     * Test the property 'clientName'
      */
     @Test
-    public void isActiveTest() {
-        // TODO: test isActive
+    public void clientNameTest() {
+        // TODO: test clientName
+    }
+
+    /**
+     * Test the property 'redirectUris'
+     */
+    @Test
+    public void redirectUrisTest() {
+        // TODO: test redirectUris
+    }
+
+    /**
+     * Test the property 'grantTypes'
+     */
+    @Test
+    public void grantTypesTest() {
+        // TODO: test grantTypes
+    }
+
+    /**
+     * Test the property 'responseTypes'
+     */
+    @Test
+    public void responseTypesTest() {
+        // TODO: test responseTypes
+    }
+
+    /**
+     * Test the property 'tokenEndpointAuthMethod'
+     */
+    @Test
+    public void tokenEndpointAuthMethodTest() {
+        // TODO: test tokenEndpointAuthMethod
+    }
+
+    /**
+     * Test the property 'scope'
+     */
+    @Test
+    public void scopeTest() {
+        // TODO: test scope
+    }
+
+    /**
+     * Test the property 'clientIdIssuedAt'
+     */
+    @Test
+    public void clientIdIssuedAtTest() {
+        // TODO: test clientIdIssuedAt
+    }
+
+    /**
+     * Test the property 'clientSecret'
+     */
+    @Test
+    public void clientSecretTest() {
+        // TODO: test clientSecret
+    }
+
+    /**
+     * Test the property 'clientSecretExpiresAt'
+     */
+    @Test
+    public void clientSecretExpiresAtTest() {
+        // TODO: test clientSecretExpiresAt
     }
 
 }

@@ -38,8 +38,6 @@ docs/BounceAnalysisResponse.md
 docs/BounceAnalysisResponseAnalysis.md
 docs/BounceAnalysisResponseAnalysisCategories.md
 docs/BounceAnalysisResponseAnalysisTopDomainsInner.md
-docs/BulkUpdateProducts200Response.md
-docs/BulkUpdateProductsRequest.md
 docs/BulkValidationApi.md
 docs/Campaign.md
 docs/CampaignAnalyticsApi.md
@@ -72,7 +70,6 @@ docs/CreatePolicyFromPresetRequest.md
 docs/CreatePolicyRequest.md
 docs/CreateSendingDomain201Response.md
 docs/CreateSendingDomainRequest.md
-docs/CreateStore201Response.md
 docs/CreateStoreRequest.md
 docs/CreateToken200Response.md
 docs/CreateVariantRequest.md
@@ -93,7 +90,6 @@ docs/DeliverRequestToInner.md
 docs/DeliverResponse.md
 docs/DeliverResponseDelivery.md
 docs/DeliverabilityAdvisorApi.md
-docs/DisconnectStore200Response.md
 docs/DkimManagementApi.md
 docs/DmarcDomain.md
 docs/DmarcMonitoringApi.md
@@ -154,7 +150,6 @@ docs/GetMessageEvents200ResponseSummary.md
 docs/GetOooStatus200Response.md
 docs/GetPixelSettings200Response.md
 docs/GetPresignedUploadRequest.md
-docs/GetProduct200Response.md
 docs/GetReplyForwarding200Response.md
 docs/GetReputation200Response.md
 docs/GetReputationTimeline200Response.md
@@ -170,7 +165,6 @@ docs/GetSendingDomainIdentityScore200Response.md
 docs/GetSendingStats200Response.md
 docs/GetSendingStats200ResponseStats.md
 docs/GetSubscribers200Response.md
-docs/GetSyncJobErrors200Response.md
 docs/GlobalSuppressionsApi.md
 docs/HealthCheck200Response.md
 docs/IdentityScoreCheck.md
@@ -196,8 +190,6 @@ docs/ListOooContacts200Response.md
 docs/ListSendingDomains200Response.md
 docs/ListServerTests200Response.md
 docs/ListSpamChecks200Response.md
-docs/ListStores200Response.md
-docs/ListSyncJobs200Response.md
 docs/ListWebhookDeliveries200Response.md
 docs/ListWebhookDeliveries200ResponseDeliveriesInner.md
 docs/ManagedSpfApi.md
@@ -206,6 +198,7 @@ docs/McpCapabilitiesPillarsInner.md
 docs/McpCapabilitiesPillarsInnerToolsInner.md
 docs/MessageEventsApi.md
 docs/OAuth20Api.md
+docs/OAuthClientRegistration.md
 docs/OAuthServerMetadata.md
 docs/OutOfOfficeApi.md
 docs/Pagination.md
@@ -226,12 +219,10 @@ docs/ProductFacets.md
 docs/ProductFacetsCategoriesInner.md
 docs/ProductFacetsPriceRangesInner.md
 docs/ProductFacetsStoresInner.md
-docs/ProductsApi.md
 docs/QueryContactList200Response.md
 docs/QueryContactList200ResponseEmailsInner.md
 docs/QueryContactListRequest.md
 docs/QueryContactListRequestFiltersInner.md
-docs/QueryProducts200Response.md
 docs/RemoveSuppression200Response.md
 docs/RemoveSuppressionRequest.md
 docs/ReplayWebhookDelivery200Response.md
@@ -263,7 +254,6 @@ docs/SpamCheck.md
 docs/SpamCheckChecks.md
 docs/SpamChecksApi.md
 docs/StoreConnection.md
-docs/StoreConnectionsApi.md
 docs/StoreProduct.md
 docs/SubscribeRequest.md
 docs/Subscriber.md
@@ -298,7 +288,6 @@ docs/UpdateOooContactRequest.md
 docs/UpdatePixelSettingsRequest.md
 docs/UpdatePolicyRequest.md
 docs/UpdateReplyForwardingRequest.md
-docs/UpdateStoreRequest.md
 docs/ValidateBatch200Response.md
 docs/ValidateBatch200ResponseSummary.md
 docs/ValidateBatchRequest.md
@@ -361,7 +350,6 @@ src/main/java/com/mailodds/apis/OAuth20Api.java
 src/main/java/com/mailodds/apis/OutOfOfficeApi.java
 src/main/java/com/mailodds/apis/PipelineSimulationApi.java
 src/main/java/com/mailodds/apis/PixelSettingsApi.java
-src/main/java/com/mailodds/apis/ProductsApi.java
 src/main/java/com/mailodds/apis/ReputationApi.java
 src/main/java/com/mailodds/apis/ReputationPoliciesApi.java
 src/main/java/com/mailodds/apis/SenderHealthApi.java
@@ -369,7 +357,6 @@ src/main/java/com/mailodds/apis/SendingDelegationsApi.java
 src/main/java/com/mailodds/apis/SendingDomainsApi.java
 src/main/java/com/mailodds/apis/ServerTestsApi.java
 src/main/java/com/mailodds/apis/SpamChecksApi.java
-src/main/java/com/mailodds/apis/StoreConnectionsApi.java
 src/main/java/com/mailodds/apis/SubscriberListsApi.java
 src/main/java/com/mailodds/apis/SuppressionListsApi.java
 src/main/java/com/mailodds/apis/SystemApi.java
@@ -412,8 +399,6 @@ src/main/java/com/mailodds/models/BounceAnalysisResponse.java
 src/main/java/com/mailodds/models/BounceAnalysisResponseAnalysis.java
 src/main/java/com/mailodds/models/BounceAnalysisResponseAnalysisCategories.java
 src/main/java/com/mailodds/models/BounceAnalysisResponseAnalysisTopDomainsInner.java
-src/main/java/com/mailodds/models/BulkUpdateProducts200Response.java
-src/main/java/com/mailodds/models/BulkUpdateProductsRequest.java
 src/main/java/com/mailodds/models/Campaign.java
 src/main/java/com/mailodds/models/CampaignResponse.java
 src/main/java/com/mailodds/models/CampaignStats.java
@@ -440,7 +425,6 @@ src/main/java/com/mailodds/models/CreatePolicyFromPresetRequest.java
 src/main/java/com/mailodds/models/CreatePolicyRequest.java
 src/main/java/com/mailodds/models/CreateSendingDomain201Response.java
 src/main/java/com/mailodds/models/CreateSendingDomainRequest.java
-src/main/java/com/mailodds/models/CreateStore201Response.java
 src/main/java/com/mailodds/models/CreateStoreRequest.java
 src/main/java/com/mailodds/models/CreateToken200Response.java
 src/main/java/com/mailodds/models/CreateVariantRequest.java
@@ -460,7 +444,6 @@ src/main/java/com/mailodds/models/DeliverRequestStructuredData.java
 src/main/java/com/mailodds/models/DeliverRequestToInner.java
 src/main/java/com/mailodds/models/DeliverResponse.java
 src/main/java/com/mailodds/models/DeliverResponseDelivery.java
-src/main/java/com/mailodds/models/DisconnectStore200Response.java
 src/main/java/com/mailodds/models/DmarcDomain.java
 src/main/java/com/mailodds/models/ErrorResponse.java
 src/main/java/com/mailodds/models/GetBlacklistHistory200Response.java
@@ -513,7 +496,6 @@ src/main/java/com/mailodds/models/GetMessageEvents200ResponseSummary.java
 src/main/java/com/mailodds/models/GetOooStatus200Response.java
 src/main/java/com/mailodds/models/GetPixelSettings200Response.java
 src/main/java/com/mailodds/models/GetPresignedUploadRequest.java
-src/main/java/com/mailodds/models/GetProduct200Response.java
 src/main/java/com/mailodds/models/GetReplyForwarding200Response.java
 src/main/java/com/mailodds/models/GetReputation200Response.java
 src/main/java/com/mailodds/models/GetReputationTimeline200Response.java
@@ -529,7 +511,6 @@ src/main/java/com/mailodds/models/GetSendingDomainIdentityScore200Response.java
 src/main/java/com/mailodds/models/GetSendingStats200Response.java
 src/main/java/com/mailodds/models/GetSendingStats200ResponseStats.java
 src/main/java/com/mailodds/models/GetSubscribers200Response.java
-src/main/java/com/mailodds/models/GetSyncJobErrors200Response.java
 src/main/java/com/mailodds/models/HealthCheck200Response.java
 src/main/java/com/mailodds/models/IdentityScoreCheck.java
 src/main/java/com/mailodds/models/ImportContactList200Response.java
@@ -551,13 +532,12 @@ src/main/java/com/mailodds/models/ListOooContacts200Response.java
 src/main/java/com/mailodds/models/ListSendingDomains200Response.java
 src/main/java/com/mailodds/models/ListServerTests200Response.java
 src/main/java/com/mailodds/models/ListSpamChecks200Response.java
-src/main/java/com/mailodds/models/ListStores200Response.java
-src/main/java/com/mailodds/models/ListSyncJobs200Response.java
 src/main/java/com/mailodds/models/ListWebhookDeliveries200Response.java
 src/main/java/com/mailodds/models/ListWebhookDeliveries200ResponseDeliveriesInner.java
 src/main/java/com/mailodds/models/McpCapabilities.java
 src/main/java/com/mailodds/models/McpCapabilitiesPillarsInner.java
 src/main/java/com/mailodds/models/McpCapabilitiesPillarsInnerToolsInner.java
+src/main/java/com/mailodds/models/OAuthClientRegistration.java
 src/main/java/com/mailodds/models/OAuthServerMetadata.java
 src/main/java/com/mailodds/models/Pagination.java
 src/main/java/com/mailodds/models/Policy.java
@@ -579,7 +559,6 @@ src/main/java/com/mailodds/models/QueryContactList200Response.java
 src/main/java/com/mailodds/models/QueryContactList200ResponseEmailsInner.java
 src/main/java/com/mailodds/models/QueryContactListRequest.java
 src/main/java/com/mailodds/models/QueryContactListRequestFiltersInner.java
-src/main/java/com/mailodds/models/QueryProducts200Response.java
 src/main/java/com/mailodds/models/RemoveSuppression200Response.java
 src/main/java/com/mailodds/models/RemoveSuppressionRequest.java
 src/main/java/com/mailodds/models/ReplayWebhookDelivery200Response.java
@@ -634,7 +613,6 @@ src/main/java/com/mailodds/models/UpdateOooContactRequest.java
 src/main/java/com/mailodds/models/UpdatePixelSettingsRequest.java
 src/main/java/com/mailodds/models/UpdatePolicyRequest.java
 src/main/java/com/mailodds/models/UpdateReplyForwardingRequest.java
-src/main/java/com/mailodds/models/UpdateStoreRequest.java
 src/main/java/com/mailodds/models/ValidateBatch200Response.java
 src/main/java/com/mailodds/models/ValidateBatch200ResponseSummary.java
 src/main/java/com/mailodds/models/ValidateBatchRequest.java
@@ -674,7 +652,6 @@ src/test/java/com/mailodds/apis/OAuth20ApiTest.java
 src/test/java/com/mailodds/apis/OutOfOfficeApiTest.java
 src/test/java/com/mailodds/apis/PipelineSimulationApiTest.java
 src/test/java/com/mailodds/apis/PixelSettingsApiTest.java
-src/test/java/com/mailodds/apis/ProductsApiTest.java
 src/test/java/com/mailodds/apis/ReputationApiTest.java
 src/test/java/com/mailodds/apis/ReputationPoliciesApiTest.java
 src/test/java/com/mailodds/apis/SenderHealthApiTest.java
@@ -682,7 +659,6 @@ src/test/java/com/mailodds/apis/SendingDelegationsApiTest.java
 src/test/java/com/mailodds/apis/SendingDomainsApiTest.java
 src/test/java/com/mailodds/apis/ServerTestsApiTest.java
 src/test/java/com/mailodds/apis/SpamChecksApiTest.java
-src/test/java/com/mailodds/apis/StoreConnectionsApiTest.java
 src/test/java/com/mailodds/apis/SubscriberListsApiTest.java
 src/test/java/com/mailodds/apis/SuppressionListsApiTest.java
 src/test/java/com/mailodds/apis/SystemApiTest.java
@@ -720,8 +696,6 @@ src/test/java/com/mailodds/models/BounceAnalysisResponseAnalysisCategoriesTest.j
 src/test/java/com/mailodds/models/BounceAnalysisResponseAnalysisTest.java
 src/test/java/com/mailodds/models/BounceAnalysisResponseAnalysisTopDomainsInnerTest.java
 src/test/java/com/mailodds/models/BounceAnalysisResponseTest.java
-src/test/java/com/mailodds/models/BulkUpdateProducts200ResponseTest.java
-src/test/java/com/mailodds/models/BulkUpdateProductsRequestTest.java
 src/test/java/com/mailodds/models/CampaignResponseTest.java
 src/test/java/com/mailodds/models/CampaignStatsTest.java
 src/test/java/com/mailodds/models/CampaignTest.java
@@ -748,7 +722,6 @@ src/test/java/com/mailodds/models/CreatePolicyFromPresetRequestTest.java
 src/test/java/com/mailodds/models/CreatePolicyRequestTest.java
 src/test/java/com/mailodds/models/CreateSendingDomain201ResponseTest.java
 src/test/java/com/mailodds/models/CreateSendingDomainRequestTest.java
-src/test/java/com/mailodds/models/CreateStore201ResponseTest.java
 src/test/java/com/mailodds/models/CreateStoreRequestTest.java
 src/test/java/com/mailodds/models/CreateToken200ResponseTest.java
 src/test/java/com/mailodds/models/CreateVariantRequestTest.java
@@ -768,7 +741,6 @@ src/test/java/com/mailodds/models/DeliverRequestTest.java
 src/test/java/com/mailodds/models/DeliverRequestToInnerTest.java
 src/test/java/com/mailodds/models/DeliverResponseDeliveryTest.java
 src/test/java/com/mailodds/models/DeliverResponseTest.java
-src/test/java/com/mailodds/models/DisconnectStore200ResponseTest.java
 src/test/java/com/mailodds/models/DmarcDomainTest.java
 src/test/java/com/mailodds/models/ErrorResponseTest.java
 src/test/java/com/mailodds/models/GetBlacklistHistory200ResponseChecksInnerTest.java
@@ -821,7 +793,6 @@ src/test/java/com/mailodds/models/GetMessageEvents200ResponseTest.java
 src/test/java/com/mailodds/models/GetOooStatus200ResponseTest.java
 src/test/java/com/mailodds/models/GetPixelSettings200ResponseTest.java
 src/test/java/com/mailodds/models/GetPresignedUploadRequestTest.java
-src/test/java/com/mailodds/models/GetProduct200ResponseTest.java
 src/test/java/com/mailodds/models/GetReplyForwarding200ResponseTest.java
 src/test/java/com/mailodds/models/GetReputation200ResponseTest.java
 src/test/java/com/mailodds/models/GetReputationTimeline200ResponseTest.java
@@ -837,7 +808,6 @@ src/test/java/com/mailodds/models/GetSendingDomainIdentityScore200ResponseTest.j
 src/test/java/com/mailodds/models/GetSendingStats200ResponseStatsTest.java
 src/test/java/com/mailodds/models/GetSendingStats200ResponseTest.java
 src/test/java/com/mailodds/models/GetSubscribers200ResponseTest.java
-src/test/java/com/mailodds/models/GetSyncJobErrors200ResponseTest.java
 src/test/java/com/mailodds/models/HealthCheck200ResponseTest.java
 src/test/java/com/mailodds/models/IdentityScoreCheckTest.java
 src/test/java/com/mailodds/models/ImportContactList200ResponseTest.java
@@ -859,13 +829,12 @@ src/test/java/com/mailodds/models/ListOooContacts200ResponseTest.java
 src/test/java/com/mailodds/models/ListSendingDomains200ResponseTest.java
 src/test/java/com/mailodds/models/ListServerTests200ResponseTest.java
 src/test/java/com/mailodds/models/ListSpamChecks200ResponseTest.java
-src/test/java/com/mailodds/models/ListStores200ResponseTest.java
-src/test/java/com/mailodds/models/ListSyncJobs200ResponseTest.java
 src/test/java/com/mailodds/models/ListWebhookDeliveries200ResponseDeliveriesInnerTest.java
 src/test/java/com/mailodds/models/ListWebhookDeliveries200ResponseTest.java
 src/test/java/com/mailodds/models/McpCapabilitiesPillarsInnerTest.java
 src/test/java/com/mailodds/models/McpCapabilitiesPillarsInnerToolsInnerTest.java
 src/test/java/com/mailodds/models/McpCapabilitiesTest.java
+src/test/java/com/mailodds/models/OAuthClientRegistrationTest.java
 src/test/java/com/mailodds/models/OAuthServerMetadataTest.java
 src/test/java/com/mailodds/models/PaginationTest.java
 src/test/java/com/mailodds/models/PolicyListResponseLimitsTest.java
@@ -887,7 +856,6 @@ src/test/java/com/mailodds/models/QueryContactList200ResponseEmailsInnerTest.jav
 src/test/java/com/mailodds/models/QueryContactList200ResponseTest.java
 src/test/java/com/mailodds/models/QueryContactListRequestFiltersInnerTest.java
 src/test/java/com/mailodds/models/QueryContactListRequestTest.java
-src/test/java/com/mailodds/models/QueryProducts200ResponseTest.java
 src/test/java/com/mailodds/models/RemoveSuppression200ResponseTest.java
 src/test/java/com/mailodds/models/RemoveSuppressionRequestTest.java
 src/test/java/com/mailodds/models/ReplayWebhookDelivery200ResponseTest.java
@@ -942,7 +910,6 @@ src/test/java/com/mailodds/models/UpdateOooContactRequestTest.java
 src/test/java/com/mailodds/models/UpdatePixelSettingsRequestTest.java
 src/test/java/com/mailodds/models/UpdatePolicyRequestTest.java
 src/test/java/com/mailodds/models/UpdateReplyForwardingRequestTest.java
-src/test/java/com/mailodds/models/UpdateStoreRequestTest.java
 src/test/java/com/mailodds/models/ValidateBatch200ResponseSummaryTest.java
 src/test/java/com/mailodds/models/ValidateBatch200ResponseTest.java
 src/test/java/com/mailodds/models/ValidateBatchRequestTest.java

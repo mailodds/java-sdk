@@ -7,6 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
+|**deleted** | **Boolean** |  |  [optional] |
 |**status** | **String** |  |  [optional] |
 
 

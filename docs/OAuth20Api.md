@@ -1,12 +1,13 @@
 # OAuth20Api
 
-All URIs are relative to *https://api.mailodds.com/v1*
+All URIs are relative to *https://api.mailodds.com*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
 | [**createToken**](OAuth20Api.md#createToken) | **POST** /oauth/token | Create token |
 | [**getJwks**](OAuth20Api.md#getJwks) | **GET** /.well-known/jwks.json | Get JSON Web Key Set |
 | [**introspectToken**](OAuth20Api.md#introspectToken) | **POST** /oauth/introspect | Introspect token |
+| [**oauthRegisterClient**](OAuth20Api.md#oauthRegisterClient) | **POST** /oauth/register | Register OAuth client |
 | [**oauthServerMetadata**](OAuth20Api.md#oauthServerMetadata) | **GET** /.well-known/oauth-authorization-server | OAuth server metadata |
 | [**revokeToken**](OAuth20Api.md#revokeToken) | **POST** /oauth/revoke | Revoke token |
 
@@ -31,7 +32,7 @@ import com.mailodds.apis.OAuth20Api;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api.mailodds.com/v1");
+    defaultClient.setBasePath("https://api.mailodds.com");
 
     OAuth20Api apiInstance = new OAuth20Api(defaultClient);
     String grantType = "authorization_code"; // String | 
@@ -110,7 +111,7 @@ import com.mailodds.apis.OAuth20Api;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api.mailodds.com/v1");
+    defaultClient.setBasePath("https://api.mailodds.com");
 
     OAuth20Api apiInstance = new OAuth20Api(defaultClient);
     try {
@@ -168,7 +169,7 @@ import com.mailodds.apis.OAuth20Api;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api.mailodds.com/v1");
+    defaultClient.setBasePath("https://api.mailodds.com");
 
     OAuth20Api apiInstance = new OAuth20Api(defaultClient);
     String token = "token_example"; // String | Token to introspect
@@ -218,6 +219,64 @@ No authorization required
 | **401** | Invalid client credentials |  -  |
 | **400** | Bad request |  -  |
 
+<a id="oauthRegisterClient"></a>
+# **oauthRegisterClient**
+> OAuthClientRegistration oauthRegisterClient()
+
+Register OAuth client
+
+Dynamic Client Registration (RFC 7591). Allows MCP clients to auto-register without user interaction.
+
+### Example
+```java
+// Import classes:
+import com.mailodds.ApiClient;
+import com.mailodds.ApiException;
+import com.mailodds.Configuration;
+import com.mailodds.models.*;
+import com.mailodds.apis.OAuth20Api;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.mailodds.com");
+
+    OAuth20Api apiInstance = new OAuth20Api(defaultClient);
+    try {
+      OAuthClientRegistration result = apiInstance.oauthRegisterClient();
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling OAuth20Api#oauthRegisterClient");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**OAuthClientRegistration**](OAuthClientRegistration.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Registered client credentials |  -  |
+
 <a id="oauthServerMetadata"></a>
 # **oauthServerMetadata**
 > OAuthServerMetadata oauthServerMetadata()
@@ -238,7 +297,7 @@ import com.mailodds.apis.OAuth20Api;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api.mailodds.com/v1");
+    defaultClient.setBasePath("https://api.mailodds.com");
 
     OAuth20Api apiInstance = new OAuth20Api(defaultClient);
     try {
@@ -296,7 +355,7 @@ import com.mailodds.apis.OAuth20Api;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api.mailodds.com/v1");
+    defaultClient.setBasePath("https://api.mailodds.com");
 
     OAuth20Api apiInstance = new OAuth20Api(defaultClient);
     String token = "token_example"; // String | Token to revoke

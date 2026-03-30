@@ -38,6 +38,14 @@ public class DeleteWebhookCliSession200ResponseTest {
     }
 
     /**
+     * Test the property 'deleted'
+     */
+    @Test
+    public void deletedTest() {
+        // TODO: test deleted
+    }
+
+    /**
      * Test the property 'status'
      */
     @Test

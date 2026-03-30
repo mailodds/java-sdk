@@ -49,7 +49,7 @@ import com.mailodds.JSON;
 /**
  * UpdateAlertRuleRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-20T17:11:17.059173044+01:00[Europe/Amsterdam]", comments = "Generator version: 7.19.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-31T01:07:54.593648492+02:00[Europe/Amsterdam]", comments = "Generator version: 7.19.0")
 public class UpdateAlertRuleRequest {
   public static final String SERIALIZED_NAME_METRIC = "metric";
   @SerializedName(SERIALIZED_NAME_METRIC)
@@ -66,10 +66,66 @@ public class UpdateAlertRuleRequest {
   @javax.annotation.Nullable
   private String channel;
 
+  /**
+   * Gets or Sets windowMinutes
+   */
+  @JsonAdapter(WindowMinutesEnum.Adapter.class)
+  public enum WindowMinutesEnum {
+    NUMBER_15(15),
+    
+    NUMBER_60(60),
+    
+    NUMBER_1440(1440),
+    
+    NUMBER_2880(2880);
+
+    private Integer value;
+
+    WindowMinutesEnum(Integer value) {
+      this.value = value;
+    }
+
+    public Integer getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static WindowMinutesEnum fromValue(Integer value) {
+      for (WindowMinutesEnum b : WindowMinutesEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<WindowMinutesEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final WindowMinutesEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public WindowMinutesEnum read(final JsonReader jsonReader) throws IOException {
+        Integer value =  jsonReader.nextInt();
+        return WindowMinutesEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      Integer value = jsonElement.getAsInt();
+      WindowMinutesEnum.fromValue(value);
+    }
+  }
+
   public static final String SERIALIZED_NAME_WINDOW_MINUTES = "window_minutes";
   @SerializedName(SERIALIZED_NAME_WINDOW_MINUTES)
   @javax.annotation.Nullable
-  private Integer windowMinutes;
+  private WindowMinutesEnum windowMinutes;
 
   public static final String SERIALIZED_NAME_ENABLED = "enabled";
   @SerializedName(SERIALIZED_NAME_ENABLED)
@@ -105,6 +161,8 @@ public class UpdateAlertRuleRequest {
 
   /**
    * Get threshold
+   * minimum: 0
+   * maximum: 1
    * @return threshold
    */
   @javax.annotation.Nullable
@@ -136,7 +194,7 @@ public class UpdateAlertRuleRequest {
   }
 
 
-  public UpdateAlertRuleRequest windowMinutes(@javax.annotation.Nullable Integer windowMinutes) {
+  public UpdateAlertRuleRequest windowMinutes(@javax.annotation.Nullable WindowMinutesEnum windowMinutes) {
     this.windowMinutes = windowMinutes;
     return this;
   }
@@ -146,11 +204,11 @@ public class UpdateAlertRuleRequest {
    * @return windowMinutes
    */
   @javax.annotation.Nullable
-  public Integer getWindowMinutes() {
+  public WindowMinutesEnum getWindowMinutes() {
     return windowMinutes;
   }
 
-  public void setWindowMinutes(@javax.annotation.Nullable Integer windowMinutes) {
+  public void setWindowMinutes(@javax.annotation.Nullable WindowMinutesEnum windowMinutes) {
     this.windowMinutes = windowMinutes;
   }
 
@@ -258,6 +316,10 @@ public class UpdateAlertRuleRequest {
       }
       if ((jsonObj.get("channel") != null && !jsonObj.get("channel").isJsonNull()) && !jsonObj.get("channel").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `channel` to be a primitive type in the JSON string but got `%s`", jsonObj.get("channel").toString()));
+      }
+      // validate the optional field `window_minutes`
+      if (jsonObj.get("window_minutes") != null && !jsonObj.get("window_minutes").isJsonNull()) {
+        WindowMinutesEnum.validateJsonElement(jsonObj.get("window_minutes"));
       }
   }
 

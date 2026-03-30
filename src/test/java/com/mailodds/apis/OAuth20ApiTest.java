@@ -18,6 +18,7 @@ import com.mailodds.models.CreateToken200Response;
 import com.mailodds.models.ErrorResponse;
 import com.mailodds.models.IntrospectToken200Response;
 import com.mailodds.models.JwksResponse;
+import com.mailodds.models.OAuthClientRegistration;
 import com.mailodds.models.OAuthServerMetadata;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -83,6 +84,19 @@ public class OAuth20ApiTest {
         String clientId = null;
         String clientSecret = null;
         IntrospectToken200Response response = api.introspectToken(token, tokenTypeHint, clientId, clientSecret);
+        // TODO: test validations
+    }
+
+    /**
+     * Register OAuth client
+     *
+     * Dynamic Client Registration (RFC 7591). Allows MCP clients to auto-register without user interaction.
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void oauthRegisterClientTest() throws ApiException {
+        OAuthClientRegistration response = api.oauthRegisterClient();
         // TODO: test validations
     }
 

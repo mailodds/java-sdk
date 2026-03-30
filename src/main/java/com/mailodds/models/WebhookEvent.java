@@ -51,7 +51,7 @@ import com.mailodds.JSON;
 /**
  * Webhook payload delivered to your endpoint. Fields vary by event type.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-20T17:11:17.059173044+01:00[Europe/Amsterdam]", comments = "Generator version: 7.19.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-31T01:07:54.593648492+02:00[Europe/Amsterdam]", comments = "Generator version: 7.19.0")
 public class WebhookEvent {
   /**
    * Event type

@@ -61,16 +61,11 @@ import com.mailodds.auth.ApiKeyAuth;
  */
 public class ApiClient {
 
-    protected String basePath = "https://api.mailodds.com/v1";
+    protected String basePath = "https://api.mailodds.com";
     protected List<ServerConfiguration> servers = new ArrayList<ServerConfiguration>(Arrays.asList(
     new ServerConfiguration(
-      "https://api.mailodds.com/v1",
-      "Production server (API v1 endpoints)",
-      new HashMap<String, ServerVariable>()
-    ),
-    new ServerConfiguration(
       "https://api.mailodds.com",
-      "Production server (OAuth and discovery endpoints)",
+      "Production server",
       new HashMap<String, ServerVariable>()
     )
   ));
@@ -164,7 +159,7 @@ public class ApiClient {
     /**
      * Set base path
      *
-     * @param basePath Base path of the URL (e.g https://api.mailodds.com/v1)
+     * @param basePath Base path of the URL (e.g https://api.mailodds.com)
      * @return An instance of ApiClient
      */
     public ApiClient setBasePath(String basePath) {

@@ -48,7 +48,7 @@ import com.mailodds.JSON;
 /**
  * CreateJobFromS3Request
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-20T17:11:17.059173044+01:00[Europe/Amsterdam]", comments = "Generator version: 7.19.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-31T01:07:54.593648492+02:00[Europe/Amsterdam]", comments = "Generator version: 7.19.0")
 public class CreateJobFromS3Request {
   public static final String SERIALIZED_NAME_S3_KEY = "s3_key";
   @SerializedName(SERIALIZED_NAME_S3_KEY)

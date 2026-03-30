@@ -49,7 +49,7 @@ import com.mailodds.JSON;
 /**
  * Winning variant, or null if no statistical winner yet
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-20T17:11:17.059173044+01:00[Europe/Amsterdam]", comments = "Generator version: 7.19.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-31T01:07:54.593648492+02:00[Europe/Amsterdam]", comments = "Generator version: 7.19.0")
 public class GetCampaignABResults200ResponseWinner {
   public static final String SERIALIZED_NAME_VARIANT_ID = "variant_id";
   @SerializedName(SERIALIZED_NAME_VARIANT_ID)

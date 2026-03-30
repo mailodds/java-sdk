@@ -127,8 +127,6 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.mailodds.models.BounceAnalysisResponseAnalysis.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.mailodds.models.BounceAnalysisResponseAnalysisCategories.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.mailodds.models.BounceAnalysisResponseAnalysisTopDomainsInner.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new com.mailodds.models.BulkUpdateProducts200Response.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new com.mailodds.models.BulkUpdateProductsRequest.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.mailodds.models.Campaign.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.mailodds.models.CampaignResponse.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.mailodds.models.CampaignStats.CustomTypeAdapterFactory());
@@ -155,7 +153,6 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.mailodds.models.CreatePolicyRequest.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.mailodds.models.CreateSendingDomain201Response.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.mailodds.models.CreateSendingDomainRequest.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new com.mailodds.models.CreateStore201Response.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.mailodds.models.CreateStoreRequest.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.mailodds.models.CreateToken200Response.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.mailodds.models.CreateVariantRequest.CustomTypeAdapterFactory());
@@ -175,7 +172,6 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.mailodds.models.DeliverRequestToInner.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.mailodds.models.DeliverResponse.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.mailodds.models.DeliverResponseDelivery.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new com.mailodds.models.DisconnectStore200Response.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.mailodds.models.DmarcDomain.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.mailodds.models.ErrorResponse.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.mailodds.models.GetBlacklistHistory200Response.CustomTypeAdapterFactory());
@@ -228,7 +224,6 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.mailodds.models.GetOooStatus200Response.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.mailodds.models.GetPixelSettings200Response.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.mailodds.models.GetPresignedUploadRequest.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new com.mailodds.models.GetProduct200Response.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.mailodds.models.GetReplyForwarding200Response.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.mailodds.models.GetReputation200Response.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.mailodds.models.GetReputationTimeline200Response.CustomTypeAdapterFactory());
@@ -244,7 +239,6 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.mailodds.models.GetSendingStats200Response.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.mailodds.models.GetSendingStats200ResponseStats.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.mailodds.models.GetSubscribers200Response.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new com.mailodds.models.GetSyncJobErrors200Response.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.mailodds.models.HealthCheck200Response.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.mailodds.models.IdentityScoreCheck.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.mailodds.models.ImportContactList200Response.CustomTypeAdapterFactory());
@@ -266,13 +260,12 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.mailodds.models.ListSendingDomains200Response.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.mailodds.models.ListServerTests200Response.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.mailodds.models.ListSpamChecks200Response.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new com.mailodds.models.ListStores200Response.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new com.mailodds.models.ListSyncJobs200Response.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.mailodds.models.ListWebhookDeliveries200Response.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.mailodds.models.ListWebhookDeliveries200ResponseDeliveriesInner.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.mailodds.models.McpCapabilities.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.mailodds.models.McpCapabilitiesPillarsInner.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.mailodds.models.McpCapabilitiesPillarsInnerToolsInner.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.mailodds.models.OAuthClientRegistration.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.mailodds.models.OAuthServerMetadata.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.mailodds.models.Pagination.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.mailodds.models.Policy.CustomTypeAdapterFactory());
@@ -294,7 +287,6 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.mailodds.models.QueryContactList200ResponseEmailsInner.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.mailodds.models.QueryContactListRequest.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.mailodds.models.QueryContactListRequestFiltersInner.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new com.mailodds.models.QueryProducts200Response.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.mailodds.models.RemoveSuppression200Response.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.mailodds.models.RemoveSuppressionRequest.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.mailodds.models.ReplayWebhookDelivery200Response.CustomTypeAdapterFactory());
@@ -349,7 +341,6 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.mailodds.models.UpdatePixelSettingsRequest.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.mailodds.models.UpdatePolicyRequest.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.mailodds.models.UpdateReplyForwardingRequest.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new com.mailodds.models.UpdateStoreRequest.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.mailodds.models.ValidateBatch200Response.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.mailodds.models.ValidateBatch200ResponseSummary.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.mailodds.models.ValidateBatchRequest.CustomTypeAdapterFactory());

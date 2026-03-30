@@ -48,8 +48,13 @@ import com.mailodds.JSON;
 /**
  * DeleteWebhookCliSession200Response
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-20T17:11:17.059173044+01:00[Europe/Amsterdam]", comments = "Generator version: 7.19.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-31T01:07:54.593648492+02:00[Europe/Amsterdam]", comments = "Generator version: 7.19.0")
 public class DeleteWebhookCliSession200Response {
+  public static final String SERIALIZED_NAME_DELETED = "deleted";
+  @SerializedName(SERIALIZED_NAME_DELETED)
+  @javax.annotation.Nullable
+  private Boolean deleted;
+
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
   @javax.annotation.Nullable
@@ -57,6 +62,25 @@ public class DeleteWebhookCliSession200Response {
 
   public DeleteWebhookCliSession200Response() {
   }
+
+  public DeleteWebhookCliSession200Response deleted(@javax.annotation.Nullable Boolean deleted) {
+    this.deleted = deleted;
+    return this;
+  }
+
+  /**
+   * Get deleted
+   * @return deleted
+   */
+  @javax.annotation.Nullable
+  public Boolean getDeleted() {
+    return deleted;
+  }
+
+  public void setDeleted(@javax.annotation.Nullable Boolean deleted) {
+    this.deleted = deleted;
+  }
+
 
   public DeleteWebhookCliSession200Response status(@javax.annotation.Nullable String status) {
     this.status = status;
@@ -87,18 +111,20 @@ public class DeleteWebhookCliSession200Response {
       return false;
     }
     DeleteWebhookCliSession200Response deleteWebhookCliSession200Response = (DeleteWebhookCliSession200Response) o;
-    return Objects.equals(this.status, deleteWebhookCliSession200Response.status);
+    return Objects.equals(this.deleted, deleteWebhookCliSession200Response.deleted) &&
+        Objects.equals(this.status, deleteWebhookCliSession200Response.status);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(status);
+    return Objects.hash(deleted, status);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class DeleteWebhookCliSession200Response {\n");
+    sb.append("    deleted: ").append(toIndentedString(deleted)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -121,7 +147,7 @@ public class DeleteWebhookCliSession200Response {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("status"));
+    openapiFields = new HashSet<String>(Arrays.asList("deleted", "status"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
