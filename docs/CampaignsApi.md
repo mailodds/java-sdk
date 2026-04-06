@@ -7,6 +7,7 @@ All URIs are relative to *https://api.mailodds.com*
 | [**cancelCampaign**](CampaignsApi.md#cancelCampaign) | **POST** /v1/campaigns/{campaign_id}/cancel | Cancel a campaign |
 | [**createCampaign**](CampaignsApi.md#createCampaign) | **POST** /v1/campaigns | Create a campaign |
 | [**createCampaignVariant**](CampaignsApi.md#createCampaignVariant) | **POST** /v1/campaigns/{campaign_id}/variants | Create A/B variant |
+| [**deleteCampaign**](CampaignsApi.md#deleteCampaign) | **DELETE** /v1/campaigns/{campaign_id} | Delete a campaign |
 | [**getCampaign**](CampaignsApi.md#getCampaign) | **GET** /v1/campaigns/{campaign_id} | Get campaign with stats |
 | [**listCampaigns**](CampaignsApi.md#listCampaigns) | **GET** /v1/campaigns | List campaigns |
 | [**scheduleCampaign**](CampaignsApi.md#scheduleCampaign) | **POST** /v1/campaigns/{campaign_id}/schedule | Schedule a campaign |
@@ -223,6 +224,75 @@ public class Example {
 | **201** | Variant created |  -  |
 | **404** | Resource not found |  -  |
 | **400** | Bad request |  -  |
+| **401** | Unauthorized - Invalid or missing API key |  -  |
+
+<a id="deleteCampaign"></a>
+# **deleteCampaign**
+> DeletePolicyRule200Response deleteCampaign(campaignId)
+
+Delete a campaign
+
+Permanently delete a campaign. Only campaigns in draft, sent, failed, or cancelled status can be deleted.
+
+### Example
+```java
+// Import classes:
+import com.mailodds.ApiClient;
+import com.mailodds.ApiException;
+import com.mailodds.Configuration;
+import com.mailodds.auth.*;
+import com.mailodds.models.*;
+import com.mailodds.apis.CampaignsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.mailodds.com");
+    
+    // Configure HTTP bearer authorization: BearerAuth
+    HttpBearerAuth BearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("BearerAuth");
+    BearerAuth.setBearerToken("BEARER TOKEN");
+
+    CampaignsApi apiInstance = new CampaignsApi(defaultClient);
+    String campaignId = "campaignId_example"; // String | Campaign UUID
+    try {
+      DeletePolicyRule200Response result = apiInstance.deleteCampaign(campaignId);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling CampaignsApi#deleteCampaign");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **campaignId** | **String**| Campaign UUID | |
+
+### Return type
+
+[**DeletePolicyRule200Response**](DeletePolicyRule200Response.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Campaign deleted |  -  |
+| **404** | Resource not found |  -  |
 | **401** | Unauthorized - Invalid or missing API key |  -  |
 
 <a id="getCampaign"></a>

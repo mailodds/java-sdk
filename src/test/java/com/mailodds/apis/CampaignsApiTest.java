@@ -18,6 +18,7 @@ import com.mailodds.models.CampaignResponse;
 import com.mailodds.models.CreateCampaignRequest;
 import com.mailodds.models.CreateCampaignVariant201Response;
 import com.mailodds.models.CreateVariantRequest;
+import com.mailodds.models.DeletePolicyRule200Response;
 import com.mailodds.models.ErrorResponse;
 import com.mailodds.models.ListCampaigns200Response;
 import com.mailodds.models.ScheduleCampaignRequest;
@@ -77,6 +78,20 @@ public class CampaignsApiTest {
         String campaignId = null;
         CreateVariantRequest createVariantRequest = null;
         CreateCampaignVariant201Response response = api.createCampaignVariant(campaignId, createVariantRequest);
+        // TODO: test validations
+    }
+
+    /**
+     * Delete a campaign
+     *
+     * Permanently delete a campaign. Only campaigns in draft, sent, failed, or cancelled status can be deleted.
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void deleteCampaignTest() throws ApiException {
+        String campaignId = null;
+        DeletePolicyRule200Response response = api.deleteCampaign(campaignId);
         // TODO: test validations
     }
 

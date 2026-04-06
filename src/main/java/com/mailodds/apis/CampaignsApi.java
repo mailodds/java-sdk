@@ -31,6 +31,7 @@ import com.mailodds.models.CampaignResponse;
 import com.mailodds.models.CreateCampaignRequest;
 import com.mailodds.models.CreateCampaignVariant201Response;
 import com.mailodds.models.CreateVariantRequest;
+import com.mailodds.models.DeletePolicyRule200Response;
 import com.mailodds.models.ErrorResponse;
 import com.mailodds.models.ListCampaigns200Response;
 import com.mailodds.models.ScheduleCampaignRequest;
@@ -502,6 +503,141 @@ public class CampaignsApi {
 
         okhttp3.Call localVarCall = createCampaignVariantValidateBeforeCall(campaignId, createVariantRequest, _callback);
         Type localVarReturnType = new TypeToken<CreateCampaignVariant201Response>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for deleteCampaign
+     * @param campaignId Campaign UUID (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Campaign deleted </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call deleteCampaignCall(@javax.annotation.Nonnull String campaignId, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/v1/campaigns/{campaign_id}"
+            .replace("{" + "campaign_id" + "}", localVarApiClient.escapeString(campaignId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "BearerAuth" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call deleteCampaignValidateBeforeCall(@javax.annotation.Nonnull String campaignId, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'campaignId' is set
+        if (campaignId == null) {
+            throw new ApiException("Missing the required parameter 'campaignId' when calling deleteCampaign(Async)");
+        }
+
+        return deleteCampaignCall(campaignId, _callback);
+
+    }
+
+    /**
+     * Delete a campaign
+     * Permanently delete a campaign. Only campaigns in draft, sent, failed, or cancelled status can be deleted.
+     * @param campaignId Campaign UUID (required)
+     * @return DeletePolicyRule200Response
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Campaign deleted </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
+     </table>
+     */
+    public DeletePolicyRule200Response deleteCampaign(@javax.annotation.Nonnull String campaignId) throws ApiException {
+        ApiResponse<DeletePolicyRule200Response> localVarResp = deleteCampaignWithHttpInfo(campaignId);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Delete a campaign
+     * Permanently delete a campaign. Only campaigns in draft, sent, failed, or cancelled status can be deleted.
+     * @param campaignId Campaign UUID (required)
+     * @return ApiResponse&lt;DeletePolicyRule200Response&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Campaign deleted </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<DeletePolicyRule200Response> deleteCampaignWithHttpInfo(@javax.annotation.Nonnull String campaignId) throws ApiException {
+        okhttp3.Call localVarCall = deleteCampaignValidateBeforeCall(campaignId, null);
+        Type localVarReturnType = new TypeToken<DeletePolicyRule200Response>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Delete a campaign (asynchronously)
+     * Permanently delete a campaign. Only campaigns in draft, sent, failed, or cancelled status can be deleted.
+     * @param campaignId Campaign UUID (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Campaign deleted </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Resource not found </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized - Invalid or missing API key </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call deleteCampaignAsync(@javax.annotation.Nonnull String campaignId, final ApiCallback<DeletePolicyRule200Response> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = deleteCampaignValidateBeforeCall(campaignId, _callback);
+        Type localVarReturnType = new TypeToken<DeletePolicyRule200Response>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

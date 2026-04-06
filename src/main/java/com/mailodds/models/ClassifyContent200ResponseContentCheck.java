@@ -50,7 +50,7 @@ import com.mailodds.JSON;
 /**
  * ClassifyContent200ResponseContentCheck
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-31T01:17:22.290066895+02:00[Europe/Amsterdam]", comments = "Generator version: 7.19.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-07T00:43:15.884518106+02:00[Europe/Amsterdam]", comments = "Generator version: 7.19.0")
 public class ClassifyContent200ResponseContentCheck {
   /**
    * Overall content status

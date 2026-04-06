@@ -51,6 +51,7 @@ docs/ClassifyContent200ResponseContentCheck.md
 docs/ClassifyContentRequest.md
 docs/ConfigurationSetsApi.md
 docs/ConfirmSubscription200Response.md
+docs/ConnectDnsProviderRequest.md
 docs/ContactList.md
 docs/ContactListsApi.md
 docs/ContentClassificationApi.md
@@ -71,6 +72,7 @@ docs/CreatePolicyRequest.md
 docs/CreateSendingDomain201Response.md
 docs/CreateSendingDomainRequest.md
 docs/CreateStoreRequest.md
+docs/CreateStorefrontDomainRequest.md
 docs/CreateToken200Response.md
 docs/CreateVariantRequest.md
 docs/CreateWebhookCliSession201Response.md
@@ -93,6 +95,7 @@ docs/DeliverabilityAdvisorApi.md
 docs/DkimManagementApi.md
 docs/DmarcDomain.md
 docs/DmarcMonitoringApi.md
+docs/DnsProviderApi.md
 docs/DomainInsightsApi.md
 docs/EmailSendingApi.md
 docs/EmailValidationApi.md
@@ -255,6 +258,7 @@ docs/SpamCheckChecks.md
 docs/SpamChecksApi.md
 docs/StoreConnection.md
 docs/StoreProduct.md
+docs/StorefrontDomainsApi.md
 docs/SubscribeRequest.md
 docs/Subscriber.md
 docs/SubscriberList.md
@@ -334,6 +338,7 @@ src/main/java/com/mailodds/apis/ContentClassificationApi.java
 src/main/java/com/mailodds/apis/DeliverabilityAdvisorApi.java
 src/main/java/com/mailodds/apis/DkimManagementApi.java
 src/main/java/com/mailodds/apis/DmarcMonitoringApi.java
+src/main/java/com/mailodds/apis/DnsProviderApi.java
 src/main/java/com/mailodds/apis/DomainInsightsApi.java
 src/main/java/com/mailodds/apis/EmailSendingApi.java
 src/main/java/com/mailodds/apis/EmailValidationApi.java
@@ -357,6 +362,7 @@ src/main/java/com/mailodds/apis/SendingDelegationsApi.java
 src/main/java/com/mailodds/apis/SendingDomainsApi.java
 src/main/java/com/mailodds/apis/ServerTestsApi.java
 src/main/java/com/mailodds/apis/SpamChecksApi.java
+src/main/java/com/mailodds/apis/StorefrontDomainsApi.java
 src/main/java/com/mailodds/apis/SubscriberListsApi.java
 src/main/java/com/mailodds/apis/SuppressionListsApi.java
 src/main/java/com/mailodds/apis/SystemApi.java
@@ -408,6 +414,7 @@ src/main/java/com/mailodds/models/ClassifyContent200Response.java
 src/main/java/com/mailodds/models/ClassifyContent200ResponseContentCheck.java
 src/main/java/com/mailodds/models/ClassifyContentRequest.java
 src/main/java/com/mailodds/models/ConfirmSubscription200Response.java
+src/main/java/com/mailodds/models/ConnectDnsProviderRequest.java
 src/main/java/com/mailodds/models/ContactList.java
 src/main/java/com/mailodds/models/CorrectInboundMessageRequest.java
 src/main/java/com/mailodds/models/CreateAlertRule201Response.java
@@ -426,6 +433,7 @@ src/main/java/com/mailodds/models/CreatePolicyRequest.java
 src/main/java/com/mailodds/models/CreateSendingDomain201Response.java
 src/main/java/com/mailodds/models/CreateSendingDomainRequest.java
 src/main/java/com/mailodds/models/CreateStoreRequest.java
+src/main/java/com/mailodds/models/CreateStorefrontDomainRequest.java
 src/main/java/com/mailodds/models/CreateToken200Response.java
 src/main/java/com/mailodds/models/CreateVariantRequest.java
 src/main/java/com/mailodds/models/CreateWebhookCliSession201Response.java
@@ -636,6 +644,7 @@ src/test/java/com/mailodds/apis/ContentClassificationApiTest.java
 src/test/java/com/mailodds/apis/DeliverabilityAdvisorApiTest.java
 src/test/java/com/mailodds/apis/DkimManagementApiTest.java
 src/test/java/com/mailodds/apis/DmarcMonitoringApiTest.java
+src/test/java/com/mailodds/apis/DnsProviderApiTest.java
 src/test/java/com/mailodds/apis/DomainInsightsApiTest.java
 src/test/java/com/mailodds/apis/EmailSendingApiTest.java
 src/test/java/com/mailodds/apis/EmailValidationApiTest.java
@@ -659,6 +668,7 @@ src/test/java/com/mailodds/apis/SendingDelegationsApiTest.java
 src/test/java/com/mailodds/apis/SendingDomainsApiTest.java
 src/test/java/com/mailodds/apis/ServerTestsApiTest.java
 src/test/java/com/mailodds/apis/SpamChecksApiTest.java
+src/test/java/com/mailodds/apis/StorefrontDomainsApiTest.java
 src/test/java/com/mailodds/apis/SubscriberListsApiTest.java
 src/test/java/com/mailodds/apis/SuppressionListsApiTest.java
 src/test/java/com/mailodds/apis/SystemApiTest.java
@@ -705,6 +715,7 @@ src/test/java/com/mailodds/models/ClassifyContent200ResponseContentCheckTest.jav
 src/test/java/com/mailodds/models/ClassifyContent200ResponseTest.java
 src/test/java/com/mailodds/models/ClassifyContentRequestTest.java
 src/test/java/com/mailodds/models/ConfirmSubscription200ResponseTest.java
+src/test/java/com/mailodds/models/ConnectDnsProviderRequestTest.java
 src/test/java/com/mailodds/models/ContactListTest.java
 src/test/java/com/mailodds/models/CorrectInboundMessageRequestTest.java
 src/test/java/com/mailodds/models/CreateAlertRule201ResponseTest.java
@@ -723,6 +734,7 @@ src/test/java/com/mailodds/models/CreatePolicyRequestTest.java
 src/test/java/com/mailodds/models/CreateSendingDomain201ResponseTest.java
 src/test/java/com/mailodds/models/CreateSendingDomainRequestTest.java
 src/test/java/com/mailodds/models/CreateStoreRequestTest.java
+src/test/java/com/mailodds/models/CreateStorefrontDomainRequestTest.java
 src/test/java/com/mailodds/models/CreateToken200ResponseTest.java
 src/test/java/com/mailodds/models/CreateVariantRequestTest.java
 src/test/java/com/mailodds/models/CreateWebhookCliSession201ResponseTest.java
